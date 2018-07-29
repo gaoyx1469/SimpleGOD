@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	//创建XML文档解析器对象
+	var xmldoc = new ActiveXObject("Microsoft.XMLDOM");
+	//开启XML校验
+	xmldoc.validateOnParse="true";
+	//装载XML文档
+	xmldoc.load("xml的URL");
+	//获得错误信息内容
+	var reason = xmldoc.parseError.reason;
+	//获得错误位置
+	var line = xmldoc.parseError.line;
+	//显示
+	document.write(reason+"<br/>");
+	document.write(line);
+</script>
