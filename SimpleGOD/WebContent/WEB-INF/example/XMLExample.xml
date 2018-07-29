@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><MN>
+	<Language>
+		<Java id="0001">JAVA</Java>
+		<Python>PYTHON</Python>
+		<C/>
+	</Language>
+	<Tech name="技术">
+		<MVC/>
+		<distributed>分布式</distributed>
+		<concurrent>并发</concurrent>
+	</Tech>
+</MN>
