@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><exam>
+	<student examId="120001" id="0001">
+		<name>Adam</name>
+		<city>北京</city>
+		<grade>99</grade>
+	</student>
+	<student examId="120002" id="0002">
+		<name>Tony</name>
+		<city>上海</city>
+		<grade>88</grade>
+	</student>
+	<student examId="120003" id="0003">
+		<name>Candy</name>
+		<city>威海</city>
+		<grade>95.5</grade>
+	</student>
+</exam>
