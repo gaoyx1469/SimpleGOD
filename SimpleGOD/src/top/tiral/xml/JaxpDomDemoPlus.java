@@ -8,6 +8,11 @@ import java.util.Scanner;
 import top.tiral.xml.dao.StudentDao;
 import top.tiral.xml.domain.Student;
 
+/**
+ * 此类演示对XML文件的实用级示例操作
+ * @author 高宇翔
+ *
+ */
 public class JaxpDomDemoPlus {
 
 	public static void main(String[] args) {
