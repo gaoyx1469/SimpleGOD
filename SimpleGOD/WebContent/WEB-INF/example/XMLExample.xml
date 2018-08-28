@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><MN>
-	<Language>
-		<Java id="0001">JAVA</Java>
-		<Python>PYTHON</Python>
-		<C/>
-	</Language>
-	<Tech name="ÊäÄÊúØ">
-		<MVC/>
-		<distributed>ÂàÜÂ∏ÉÂºè</distributed>
-		<concurrent>Âπ∂Âèë</concurrent>
-	</Tech>
+<?xml version="1.0" encoding="GBK"?>
+
+<MN> 
+  <Language> 
+    <Java id="0001">JAVA</Java>  
+    <Python>PYTHON</Python>  
+    <C/> 
+  </Language>  
+  <Tech name="ºº ı"> 
+    <MVC/>  
+    <distributed>∑÷≤º Ω</distributed>  
+    <concurrent>≤¢∑¢</concurrent> 
+  </Tech> 
 </MN>

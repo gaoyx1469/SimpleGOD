@@ -23,21 +23,22 @@ public class DocumentUtil {
 	 * @throws Exception
 	 */
 	public static Document getDocument(String url) throws Exception {
-		//获取DocumentBuilder
+		// 获取DocumentBuilder
 		DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		//解析并返回
+		// 解析并返回
 		return db.parse(url);
 	}
-	
+
 	/**
 	 * 将Document对象写回XML文件
+	 * 
 	 * @param document
-	 * @throws Exception 
+	 * @throws Exception
 	 */
-	public static void write2xml(Document document,String url) throws Exception{
-		//获取Transformer
+	public static void write2xml(Document document, String url) throws Exception {
+		// 获取Transformer
 		Transformer tf = TransformerFactory.newInstance().newTransformer();
-		//写入XML文件
+		// 写入XML文件
 		tf.transform(new DOMSource(document), new StreamResult(url));
 	}
 

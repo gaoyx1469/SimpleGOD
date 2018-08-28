@@ -16,7 +16,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * 此类演示对XML文件的直接增删改查操作
+ * 此类演示DOM方式对XML文件的直接增删改查操作
  * @author 高宇翔
  *
  */
