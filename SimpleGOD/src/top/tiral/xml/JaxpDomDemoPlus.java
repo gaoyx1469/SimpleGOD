@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-import top.tiral.xml.dao.StudentDOMDao;
+import top.tiral.xml.dao.StudentXMLDao;
+import top.tiral.xml.dao.impl.StudentDOMDaoImpl;
 import top.tiral.xml.domain.Student;
 
 /**
@@ -17,7 +18,7 @@ import top.tiral.xml.domain.Student;
 public class JaxpDomDemoPlus {
 
 	public static void main(String[] args) {
-		StudentDOMDao studentDao = new StudentDOMDao();
+		StudentXMLDao studentDao = new StudentDOMDaoImpl();
 
 		// Ôö
 		// addAStudent(studentDao);
@@ -40,7 +41,7 @@ public class JaxpDomDemoPlus {
 		System.out.println(studentDao.deleteStudent(deleteTip));
 	}
 
-	private static void addAStudent(StudentDOMDao studentDao) {
+	private static void addAStudent(StudentXMLDao studentDao) {
 		Student student = new Student();
 
 		student.setId("0003");

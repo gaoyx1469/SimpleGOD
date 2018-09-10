@@ -1,10 +1,11 @@
-package top.tiral.xml.dao;
+package top.tiral.xml.dao.impl;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import top.tiral.xml.dao.StudentXMLDao;
 import top.tiral.xml.domain.Student;
 import top.util.xml.DocumentUtil;
 
@@ -14,16 +15,14 @@ import top.util.xml.DocumentUtil;
  * @author 高宇翔
  *
  */
-public class StudentDOMDao {
+public class StudentDOMDaoImpl implements StudentXMLDao {
 
 	private final String url = "WebContent/WEB-INF/example/XMLExampleStu.xml";
 
-	/**
-	 * 添加Student到XML文件中
-	 * 
-	 * @param student
-	 * @return 成功返回true；失败返回false
+	/* (non-Javadoc)
+	 * @see top.tiral.xml.dao.StudentXMLDao#creatStudent(top.tiral.xml.domain.Student)
 	 */
+	@Override
 	public boolean creatStudent(Student student) {
 		boolean result = false;
 		try {
@@ -60,12 +59,10 @@ public class StudentDOMDao {
 		return result;
 	}
 
-	/**
-	 * 根据name属性，从XML文件中删除Student
-	 * 
-	 * @param student
-	 * @return 成功返回true；失败返回false
+	/* (non-Javadoc)
+	 * @see top.tiral.xml.dao.StudentXMLDao#deleteStudent(java.lang.String)
 	 */
+	@Override
 	public boolean deleteStudent(String name) {
 		boolean result = false;
 
@@ -93,12 +90,10 @@ public class StudentDOMDao {
 		return result;
 	}
 
-	/**
-	 * 根据examId查询Student信息
-	 * 
-	 * @param examId
-	 * @return 成功返回Student；失败返回null
+	/* (non-Javadoc)
+	 * @see top.tiral.xml.dao.StudentXMLDao#findStudent(java.lang.String)
 	 */
+	@Override
 	public Student findStudent(String examId) {
 
 		Student student = null;
