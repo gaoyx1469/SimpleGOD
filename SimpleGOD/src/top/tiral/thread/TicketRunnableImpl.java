@@ -1,5 +1,10 @@
 package top.tiral.thread;
 
+/**
+ * 卖票问题实现举例
+ * @author 高宇翔
+ *
+ */
 public class TicketRunnableImpl implements Runnable {
 
 	private int ticketNum = 100;

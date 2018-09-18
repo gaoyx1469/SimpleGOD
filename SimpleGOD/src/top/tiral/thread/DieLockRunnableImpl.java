@@ -1,5 +1,10 @@
 package top.tiral.thread;
 
+/**
+ * 死锁问题示例类
+ * @author 高宇翔
+ *
+ */
 public class DieLockRunnableImpl implements Runnable {
 
 	private boolean flag;
