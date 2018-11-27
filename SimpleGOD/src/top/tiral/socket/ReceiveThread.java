@@ -5,32 +5,27 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-/**
- * UDP协议接受数据
- * @author 高宇翔
- *
- * 1、创建接收端Socket对象DatagramSocket
- * 2、创建数据接收包DatagramPacket
- * 3、调用Socket对象接收方法接收数据包
- * 4、解析数据
- * 5、释放资源
- *
- */
-public class UDPReceiveDemo {
+public class ReceiveThread implements Runnable {
+	
+	private DatagramSocket dReceive;
 
-	public static void main(String[] args) throws IOException {
-
-		//创建接收端Socket对象DatagramSocket
-		//参数定义接收端口
-		DatagramSocket ds = new DatagramSocket(10010);
-		
-		while (true) {
-			ReceiveUDPSimple(ds);
-		}
-		//释放资源
-		//ds.close();
+	public ReceiveThread(DatagramSocket dReceive) {
+		this.dReceive = dReceive;
 	}
 
+	@Override
+	public void run() {
+		
+		while(true) {
+			try {
+				ReceiveUDPSimple(dReceive);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
 	/**
 	 * 创建数据接受包接收数据并打印
 	 * @param ds
@@ -51,5 +46,6 @@ public class UDPReceiveDemo {
 		String name = ia.getHostName();
 		System.out.println(name + "[" + ip + "]" + "------" + data);
 	}
+
 
 }
