@@ -12,24 +12,21 @@ public class Dom4JDemoPlus {
 		StudentDom4JDaoImpl studentDao = new StudentDom4JDaoImpl();
 
 		// Ôö
-		//addAStudent(studentDao);
+		// addAStudent(studentDao);
 
 		// ²é
-		//Student student = studentDao.findStudent("120003");
-		//System.out.println(student);
+		// Student student = studentDao.findStudent("120003");
+		// System.out.println(student);
 
-		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		/*String deleteTip = "";
-		try {
-			deleteTip = br.readLine();
-		} catch (IOException e) {
-			// e.printStackTrace();
-			throw new RuntimeException(e);
-		}*/
+		/*
+		 * String deleteTip = ""; try { deleteTip = br.readLine(); } catch (IOException
+		 * e) { // e.printStackTrace(); throw new RuntimeException(e); }
+		 */
 
 		// É¾
-		//System.out.println(studentDao.deleteStudent(deleteTip));
+		// System.out.println(studentDao.deleteStudent(deleteTip));
 	}
 
 	private static void addAStudent(StudentDom4JDaoImpl studentDao) {

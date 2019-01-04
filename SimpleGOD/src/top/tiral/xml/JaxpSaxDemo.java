@@ -60,23 +60,23 @@ public class JaxpSaxDemo {
 			}
 
 			public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-				if(isTech) {
+				if (isTech) {
 					count++;
 				}
-				if("Tech".equals(qName)) {
+				if ("Tech".equals(qName)) {
 					isTech = true;
 				}
 			}
 
 			public void endElement(String uri, String localName, String qName) throws SAXException {
-				if("Tech".equals(qName)) {
+				if ("Tech".equals(qName)) {
 					isTech = false;
 				}
 			}
 
 			public void characters(char[] ch, int start, int length) throws SAXException {
-				if(count == 3 && isTech) {
-					System.out.println(new String (ch,start,length));
+				if (count == 3 && isTech) {
+					System.out.println(new String(ch, start, length));
 				}
 			}
 

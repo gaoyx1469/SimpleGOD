@@ -12,9 +12,9 @@ public class WaitAndNotifyImpl implements Runnable {
 
 	@Override
 	public void run() {
-		while(true) {
-			synchronized(wd) {
-				if(!wd.isFlag()) {
+		while (true) {
+			synchronized (wd) {
+				if (!wd.isFlag()) {
 					try {
 						wd.wait();
 					} catch (InterruptedException e) {
@@ -26,7 +26,7 @@ public class WaitAndNotifyImpl implements Runnable {
 				System.out.println(wd.toString());
 			}
 		}
-		
+
 	}
 
 }

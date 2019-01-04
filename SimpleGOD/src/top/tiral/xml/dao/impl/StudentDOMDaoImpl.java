@@ -19,8 +19,11 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 
 	private final String url = "WebContent/WEB-INF/example/XMLExampleStu.xml";
 
-	/* (non-Javadoc)
-	 * @see top.tiral.xml.dao.StudentXMLDao#creatStudent(top.tiral.xml.domain.Student)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * top.tiral.xml.dao.StudentXMLDao#creatStudent(top.tiral.xml.domain.Student)
 	 */
 	@Override
 	public boolean creatStudent(Student student) {
@@ -59,7 +62,9 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see top.tiral.xml.dao.StudentXMLDao#deleteStudent(java.lang.String)
 	 */
 	@Override
@@ -90,7 +95,9 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see top.tiral.xml.dao.StudentXMLDao#findStudent(java.lang.String)
 	 */
 	@Override

@@ -17,6 +17,7 @@ import org.w3c.dom.NodeList;
 
 /**
  * 此类演示DOM方式对XML文件的直接增删改查操作
+ * 
  * @author 高宇翔
  *
  */
@@ -126,13 +127,13 @@ public class JaxpDomDemo {
 	// 增、删、改、查：操作XML文件属性
 	// Tech元素的属性name的获取
 	private static void test7(Document document) throws Exception {
-		//获取元素节点
+		// 获取元素节点
 		Node n = document.getElementsByTagName("Tech").item(0);
-		//强转为Element,因为Element中才有获取单个属性的方法
+		// 强转为Element,因为Element中才有获取单个属性的方法
 		Element e = (Element) n;
-		//获取元素
+		// 获取元素
 		String s = e.getAttribute("name");
-		
+
 		System.out.println(s);
 	}
 

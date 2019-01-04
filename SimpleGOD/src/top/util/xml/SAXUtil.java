@@ -19,11 +19,11 @@ public class SAXUtil {
 	 * @param ch
 	 * @throws Exception
 	 */
-	public static void getXMLReader(String url,ContentHandler ch) throws Exception{
-		
+	public static void getXMLReader(String url, ContentHandler ch) throws Exception {
+
 		XMLReader reader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
 		reader.setContentHandler(ch);
 		reader.parse(url);
 	}
-	
+
 }

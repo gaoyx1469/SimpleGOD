@@ -11,13 +11,15 @@ import org.w3c.dom.Document;
 
 /**
  * Document工具类，DOM方式操作XML
+ * 
  * @author 高宇翔
  *
  */
 public class DocumentUtil {
-	
+
 	/**
 	 * 根据URL获取XML的Document对象
+	 * 
 	 * @param url
 	 * @return Document对象
 	 * @throws Exception

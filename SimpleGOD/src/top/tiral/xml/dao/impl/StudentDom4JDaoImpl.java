@@ -17,7 +17,7 @@ import top.util.xml.Dom4JUtil;
  * @author 高宇翔
  *
  */
-public class StudentDom4JDaoImpl implements StudentXMLDao{
+public class StudentDom4JDaoImpl implements StudentXMLDao {
 
 	private final String url = "WebContent/WEB-INF/example/XMLExampleStu.xml";
 
@@ -32,20 +32,20 @@ public class StudentDom4JDaoImpl implements StudentXMLDao{
 		boolean result = false;
 
 		try {
-			//获取document和root
+			// 获取document和root
 			Document document = Dom4JUtil.getDocument(url);
 			Element root = document.getRootElement();
 
-			//新建student元素
+			// 新建student元素
 			Element stuE = root.addElement("student").addAttribute("examId", student.getExamId()).addAttribute("id",
 					student.getId());
 
-			//为student元素新建子元素
+			// 为student元素新建子元素
 			stuE.addElement("name").setText(student.getName());
 			stuE.addElement("city").setText(student.getCity());
 			stuE.addElement("grade").setText(String.valueOf(student.getGrade()));
 
-			//写回XML
+			// 写回XML
 			Dom4JUtil.write2FileGBK(document, url);
 
 			result = true;
@@ -69,30 +69,20 @@ public class StudentDom4JDaoImpl implements StudentXMLDao{
 		boolean result = false;
 
 		try {
-			//得到document
+			// 得到document
 			Document document = Dom4JUtil.getDocument(url);
 
-			//原版
+			// 原版
 			/*
-			//得到root
-			Element root = document.getRootElement();
-			//得到全部student元素
-			List<Element> stus = root.elements();
-			//遍历student元素
-			for (Element stu : stus) {
-				//找到要删除的student元素
-				if ((stu.element("name").getText()).equals(name)) {
-					//删除元素
-					root.remove(stu);
-					result = true;
-					break;
-				}
-			}
-			*/
-			//Xpath版
+			 * //得到root Element root = document.getRootElement(); //得到全部student元素
+			 * List<Element> stus = root.elements(); //遍历student元素 for (Element stu : stus)
+			 * { //找到要删除的student元素 if ((stu.element("name").getText()).equals(name)) {
+			 * //删除元素 root.remove(stu); result = true; break; } }
+			 */
+			// Xpath版
 			List<Node> nodes = document.selectNodes("//student");
-			for(Node n : nodes) {
-				if(n.getText().equals(name)) {
+			for (Node n : nodes) {
+				if (n.getText().equals(name)) {
 					n.getParent().getParent().remove(n.getParent());
 					result = true;
 					break;
@@ -119,27 +109,21 @@ public class StudentDom4JDaoImpl implements StudentXMLDao{
 		Student student = null;
 		try {
 			Document document = Dom4JUtil.getDocument(url);
-			
-			//原版
-			/*
-			Element root = document.getRootElement();
 
-			List<Element> stus = root.elements();
-			for (Element stu : stus) {
-				if (stu.attributeValue("examId").equals(examId)) {
-					student = new Student();
-					student.setExamId(examId);
-					student.setId(stu.attributeValue("id"));
-					student.setName(stu.elementText("name"));
-					student.setCity(stu.elementText("city"));
-					student.setGrade(Float.parseFloat(stu.elementText("grade")));
-					break;
-				}
-			}
-			*/
-			//Xpath版
-			Node node = document.selectSingleNode("//student[@examId='"+examId+"']");
-			if(node != null) {
+			// 原版
+			/*
+			 * Element root = document.getRootElement();
+			 * 
+			 * List<Element> stus = root.elements(); for (Element stu : stus) { if
+			 * (stu.attributeValue("examId").equals(examId)) { student = new Student();
+			 * student.setExamId(examId); student.setId(stu.attributeValue("id"));
+			 * student.setName(stu.elementText("name"));
+			 * student.setCity(stu.elementText("city"));
+			 * student.setGrade(Float.parseFloat(stu.elementText("grade"))); break; } }
+			 */
+			// Xpath版
+			Node node = document.selectSingleNode("//student[@examId='" + examId + "']");
+			if (node != null) {
 				Element element = (Element) node;
 				student = new Student();
 				student.setExamId(examId);
@@ -148,7 +132,7 @@ public class StudentDom4JDaoImpl implements StudentXMLDao{
 				student.setCity(element.elementText("city"));
 				student.setGrade(Float.parseFloat(element.elementText("grade")));
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

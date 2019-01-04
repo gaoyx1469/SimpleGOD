@@ -1,6 +1,7 @@
 package top.tiral.xml.domain;
 
 public class Student {
+	
 	private String id;
 	private String examId;
 	private String name;

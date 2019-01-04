@@ -18,29 +18,29 @@ import java.net.Socket;
 public class TCPSendDemo {
 
 	public static void main(String[] args) throws IOException {
-		//创建发送端Socket对象
-		Socket sendSocket = new Socket("172.20.72.221",10010);
-		//创建写入数据
+		// 创建发送端Socket对象
+		Socket sendSocket = new Socket("172.20.72.221", 10010);
+		// 创建写入数据
 		String input = "TCP test";
-		//获取输出流
+		// 获取输出流
 		OutputStream os = sendSocket.getOutputStream();
-		//写数据
+		// 写数据
 		os.write(input.getBytes());
-		//告诉服务器写入完毕
+		// 告诉服务器写入完毕
 		sendSocket.shutdownOutput();
-		
-		//获取输入流
+
+		// 获取输入流
 		InputStream is = sendSocket.getInputStream();
-		//读取数据
+		// 读取数据
 		byte[] bs = new byte[1024];
-		int length = is.read(bs);//读取数据，如服务端不反馈，则一直处于阻塞状态
+		int length = is.read(bs);// 读取数据，如服务端不反馈，则一直处于阻塞状态
 		String output = new String(bs);
-		//输出数据
+		// 输出数据
 		System.out.println(output);
-		
-		//释放资源
+
+		// 释放资源
 		sendSocket.close();
-		
+
 	}
 
 }
