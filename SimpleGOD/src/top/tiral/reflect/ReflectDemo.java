@@ -30,6 +30,9 @@ public class ReflectDemo {
 		// 获取字节码文件对象
 		String className = "top.tiral.reflect.GameEntity";
 		Class c = getClassN(className);
+		
+		//获取默认构造方法构造对象
+		c.newInstance();
 
 		// 获取公共构造方法
 		Constructor[] cons = c.getConstructors();
