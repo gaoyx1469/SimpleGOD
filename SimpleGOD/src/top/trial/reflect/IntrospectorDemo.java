@@ -18,8 +18,8 @@ import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 import org.junit.Test;
 
-import top.trail.demo.entity.GameEntity;
-import top.trail.demo.entity.PlayerEntity;
+import top.trial.demo.entity.GameEntity;
+import top.trial.demo.entity.PlayerEntity;
 
 /**
  * ƒ⁄ °≤‚ ‘¿‡

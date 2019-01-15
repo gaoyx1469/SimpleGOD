@@ -1,4 +1,4 @@
-package top.trail.demo.entity;
+package top.trial.demo.entity;
 
 public class GameEntity {
 

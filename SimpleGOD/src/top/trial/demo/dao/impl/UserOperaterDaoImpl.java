@@ -1,7 +1,7 @@
 package top.trial.demo.dao.impl;
 
-import top.trail.demo.entity.UserDomain;
 import top.trial.demo.dao.UserOperaterDao;
+import top.trial.demo.entity.UserDomain;
 
 public class UserOperaterDaoImpl implements UserOperaterDao {
 

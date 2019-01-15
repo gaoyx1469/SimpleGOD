@@ -4,11 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import org.junit.Test;
+
 import top.trial.xml.dao.impl.StudentDom4JDaoImpl;
 import top.trial.xml.domain.Student;
 
 public class Dom4JDemoPlus {
-	public static void main(String[] args) {
+	
+	@Test
+	public void dom4JDemoTest() {
 		StudentDom4JDaoImpl studentDao = new StudentDom4JDaoImpl();
 
 		// Ôö

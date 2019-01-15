@@ -4,7 +4,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import top.trail.demo.entity.GameEntity;
+import org.junit.Test;
+
+import top.trial.demo.entity.GameEntity;
 
 /**
  * 
@@ -25,10 +27,11 @@ import top.trail.demo.entity.GameEntity;
  */
 public class ReflectDemo {
 
-	public static void main(String[] args) throws Exception {
+	@Test
+	public void reflectTest() throws Exception {
 
 		// 获取字节码文件对象
-		String className = "top.tiral.reflect.GameEntity";
+		String className = "top.trial.demo.entity.GameEntity";
 		Class c = getClassN(className);
 		
 		//获取默认构造方法构造对象

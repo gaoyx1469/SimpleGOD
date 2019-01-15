@@ -10,6 +10,7 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -23,7 +24,8 @@ import org.w3c.dom.NodeList;
  */
 public class JaxpDomDemo {
 
-	public static void main(String[] args) throws Exception {
+	@Test
+	public void jaxpDomTest() throws Exception {
 		// 得到解析工厂DocumentBuilderFactory
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		// 得到解析器DocumentBuilder

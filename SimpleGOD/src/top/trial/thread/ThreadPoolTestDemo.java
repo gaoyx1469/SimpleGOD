@@ -5,9 +5,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import org.junit.Test;
+
 public class ThreadPoolTestDemo {
 
-	public static void main(String[] args) throws InterruptedException, ExecutionException {
+	@Test
+	public void threadPoolTest() throws InterruptedException, ExecutionException {
 
 		// test1();
 

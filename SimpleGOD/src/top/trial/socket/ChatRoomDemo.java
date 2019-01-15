@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.SocketException;
 
+import org.junit.Test;
+
 /**
  * 多线程模拟聊天室Demo
  * 
@@ -11,7 +13,9 @@ import java.net.SocketException;
  *
  */
 public class ChatRoomDemo {
-	public static void main(String[] args) throws IOException {
+
+	@Test
+	public void chatRoomTest() throws IOException {
 
 		// 创建发送Socket
 		DatagramSocket dSend = new DatagramSocket();

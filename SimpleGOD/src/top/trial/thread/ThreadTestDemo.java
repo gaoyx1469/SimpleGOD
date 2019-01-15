@@ -1,5 +1,7 @@
 package top.trial.thread;
 
+import org.junit.Test;
+
 import top.trial.xml.domain.WorkerDomain;
 
 /**
@@ -10,7 +12,8 @@ import top.trial.xml.domain.WorkerDomain;
  */
 public class ThreadTestDemo {
 
-	public static void main(String[] args) {
+	@Test
+	public void threadTest() {
 
 		// test1();
 		// test2();

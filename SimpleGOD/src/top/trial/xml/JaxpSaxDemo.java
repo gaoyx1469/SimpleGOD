@@ -6,6 +6,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.junit.Test;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
@@ -21,8 +22,9 @@ import top.util.xml.SAXUtil;
  *
  */
 public class JaxpSaxDemo {
-
-	public static void main(String[] args) throws Exception {
+	
+	@Test
+	public void jaxpSaxTest() throws Exception {
 		// È«¾Ö¶ÁÈ¡
 		// test1();
 
