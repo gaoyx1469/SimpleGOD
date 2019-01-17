@@ -11,6 +11,15 @@
     <servlet-name>GenericServletImpl</servlet-name>
     <servlet-class>top.trial.servlet.GenericServletImpl</servlet-class>
   </servlet>
+  <servlet>
+    <description>演示中文输出</description>
+    <servlet-name>SysoChineseServletDemo</servlet-name>
+    <servlet-class>top.trial.encode.SysoChineseServletDemo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SysoChineseServletDemo</servlet-name>
+    <url-pattern>/SysoChineseServletDemo</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GenericServletImpl</servlet-name>
     <url-pattern>/GenericServletImpl</url-pattern>
