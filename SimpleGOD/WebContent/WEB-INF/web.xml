@@ -16,6 +16,15 @@
     <servlet-name>SysoChineseServletDemo</servlet-name>
     <servlet-class>top.trial.encode.SysoChineseServletDemo</servlet-class>
   </servlet>
+  <servlet>
+    <description>CAPTCHA演示</description>
+    <servlet-name>CAPTCHAServlet</servlet-name>
+    <servlet-class>top.trial.servlet.CAPTCHAServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CAPTCHAServlet</servlet-name>
+    <url-pattern>/CAPTCHAServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SysoChineseServletDemo</servlet-name>
     <url-pattern>/SysoChineseServletDemo</url-pattern>
