@@ -29,7 +29,7 @@ import top.trial.demo.entity.PlayerEntity;
  */
 public class IntrospectorDemo {
 
-	// 测试Introspector类的方法
+	// 测试Introspector类的方法，获取Bean类中的属性数量和属性名
 	@Test
 	public void test1() throws Exception {
 
@@ -46,7 +46,7 @@ public class IntrospectorDemo {
 		}
 	}
 
-	// 测试PropertyDescriptor类的方法
+	// 测试PropertyDescriptor类的方法，具体实现使用PropertyDescriptor设置和读取实例对象的属性值
 	@Test
 	public void test2() throws Exception {
 

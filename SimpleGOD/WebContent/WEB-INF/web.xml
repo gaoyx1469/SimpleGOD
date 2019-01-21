@@ -23,19 +23,19 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CAPTCHAServlet</servlet-name>
-    <url-pattern>/CAPTCHAServlet</url-pattern>
+    <url-pattern>/servlet/CAPTCHAServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SysoChineseServletDemo</servlet-name>
-    <url-pattern>/SysoChineseServletDemo</url-pattern>
+    <url-pattern>/servlet/SysoChineseServletDemo</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GenericServletImpl</servlet-name>
-    <url-pattern>/GenericServletImpl</url-pattern>
+    <url-pattern>/servlet/GenericServletImpl</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GetPropertiesServlet</servlet-name>
-    <url-pattern>/GetPropertiesServlet</url-pattern>
+    <url-pattern>/servlet/GetPropertiesServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

@@ -43,7 +43,7 @@ public class SysoChineseServletDemo extends HttpServlet {
 	 */
 	private void test1(HttpServletRequest request, HttpServletResponse response, String s) throws IOException {
 
-		// 输出中文字符会默认ISO-8859-1编码,改为GBK本地编码
+		// 输出中文字符会默认ISO-8859-1编码,改为GBK本地编码，即write方法以指定的编码方式编码字符
 		response.setCharacterEncoding("GBK");
 		// 获得字符输出流
 		PrintWriter out = response.getWriter();
