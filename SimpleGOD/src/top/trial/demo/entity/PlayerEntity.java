@@ -1,5 +1,6 @@
 package top.trial.demo.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * @author ¸ßÓîÏè
  *
  */
-public class PlayerEntity {
+public class PlayerEntity implements Serializable {
 
 	private String name;
 	private int age;
