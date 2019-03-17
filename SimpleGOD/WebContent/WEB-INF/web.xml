@@ -25,6 +25,12 @@
   	<servlet-name>introduction</servlet-name>
   	<jsp-file>/JSP/trial/introduction.jsp</jsp-file>
   </servlet>
+  <jsp-config>
+  	<taglib>
+  		<taglib-uri>http://www.simpleGOD.com/md5</taglib-uri>
+  		<taglib-location>/WEB-INF/tld/MD5Util.tld</taglib-location>
+  	</taglib>
+  </jsp-config>
   <servlet-mapping>
   	<servlet-name>introduction</servlet-name>
   	<url-pattern>/introduction.html</url-pattern>
