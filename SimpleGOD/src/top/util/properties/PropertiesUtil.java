@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 public class PropertiesUtil {
 
 	/**
-	 * 传入URI，获得ResourceBundle;URI以classespath为根目录，以/或.进行目录结构分隔皆可
+	 * 传入URI，获得ResourceBundle;URI以classespath为根目录，以/或.进行目录结构分隔皆可，不需要跟扩展名
 	 * 
 	 * @param uri
 	 * @return
@@ -24,7 +24,7 @@ public class PropertiesUtil {
 	}
 
 	/**
-	 * 传入URI和属性名，获得属性值;URI以classespath为根目录，以/或.进行目录结构分隔皆可
+	 * 传入URI和属性名，获得属性值;URI以classespath为根目录，以/或.进行目录结构分隔皆可，不需要跟扩展名
 	 * 
 	 * @param uri
 	 * @param name
@@ -35,7 +35,7 @@ public class PropertiesUtil {
 	}
 
 	/**
-	 * 传入URI，获得Properties;URI以classespath为根目录，以/进行目录结构分隔皆可
+	 * 传入URI，获得Properties;URI以classespath为根目录，以/进行目录结构分隔皆可，需要跟扩展名
 	 * 
 	 * @param uri
 	 * @return
@@ -58,7 +58,7 @@ public class PropertiesUtil {
 	}
 
 	/**
-	 * 传入URI和属性名，获得属性值;URI以classespath为根目录，以/进行目录结构分隔皆可
+	 * 传入URI和属性名，获得属性值;URI以classespath为根目录，以/进行目录结构分隔皆可，需要跟扩展名
 	 * 
 	 * @param uri
 	 * @param name
