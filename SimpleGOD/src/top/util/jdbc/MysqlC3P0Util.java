@@ -1,0 +1,63 @@
+package top.util.jdbc;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+public class MysqlC3P0Util {
+	
+	//默认取classpath下的c3p0-config.xml中的配置或classpath下的c3p0.properties中的配置
+	static ComboPooledDataSource cpds = new ComboPooledDataSource("intergalactoApp");
+
+	/**
+	 * 获取连接
+	 * 
+	 * @return
+	 */
+	public static Connection getConnection() {
+		try {
+			return cpds.getConnection();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 释放资源
+	 * 
+	 * @param rs
+	 * @param stmt
+	 * @param conn
+	 */
+	public static void release(ResultSet rs, Statement stmt, Connection conn) {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			rs = null;
+		}
+		if (stmt != null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			stmt = null;
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			conn = null;
+		}
+	}
+}
