@@ -9,11 +9,24 @@ import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+/**
+ * 引用C3P0数据库连接池，MysqlJDBCUtil升级版
+ * @author 高宇翔
+ *
+ */
 public class MysqlC3P0Util {
 	
 	//默认取classpath下的c3p0-config.xml中的配置或classpath下的c3p0.properties中的配置
 	static ComboPooledDataSource cpds = new ComboPooledDataSource("intergalactoApp");
 
+	/**
+	 * 获取数据源
+	 * @return
+	 */
+	public static DataSource getDataSource() {
+		return cpds;
+	}
+	
 	/**
 	 * 获取连接
 	 * 

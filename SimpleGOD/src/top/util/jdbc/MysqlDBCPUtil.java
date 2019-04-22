@@ -20,14 +20,20 @@ public class MysqlDBCPUtil {
 	private static DataSource ds = null;
 	
 	static {
-		//数据源工厂
-		BasicDataSourceFactory bdsf = new BasicDataSourceFactory();
 		try {
 			//数据源工厂根据properties文件创建数据源
-			ds = bdsf.createDataSource(PropertiesUtil.getPropertiesByClassloader("dbcpconfig.properties"));
+			ds = BasicDataSourceFactory.createDataSource(PropertiesUtil.getPropertiesByClassloader("dbcpconfig.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * 获取数据源
+	 * @return
+	 */
+	public static DataSource getDataSource() {
+		return ds;
 	}
 	
 	/**
@@ -44,7 +50,7 @@ public class MysqlDBCPUtil {
 	
 	
 	/**
-	 * 释放资源
+	 * 释放资源，使用DBUtils框架时已经自动释放资源，不需调用此方法
 	 * @param rs
 	 * @param stmt
 	 * @param conn
