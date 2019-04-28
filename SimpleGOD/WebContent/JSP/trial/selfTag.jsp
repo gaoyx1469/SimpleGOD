@@ -1,5 +1,6 @@
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.simpleGOD.com/selfTag" prefix="selfTag" %>
+<%@ taglib uri="http://www.simpleGOD.com/selfSimpleTag" prefix="selfSimpleTag" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +13,12 @@
 		String remoteIp = request.getRemoteAddr();
 		out.write(remoteIp);
 	%>
-	使用标签版：
+	<br/>
+	使用标签版客户机IP地址：
 	<selfTag:ShowRemoteIp/>
+	<br/>
+	使用简单标签版客户机IP地址：
+	<selfSimpleTag:ShowRemoteIpS/>
+	<br/>
 </body>
 </html>

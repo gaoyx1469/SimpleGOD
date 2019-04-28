@@ -3,6 +3,7 @@ package top.trial.test;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Vector;
@@ -14,18 +15,18 @@ public class TestDemo1 {
 
 	@Test
 	public void test1() {
-		String s = "000";
-		StringBuffer sb = new StringBuffer(s);
-		StringBuilder sbs = new StringBuilder(s);
-		s = null;
-		sbs.append(s);
-		System.out.println(sbs);
-		System.out.println(s);
-		
-		Vector v  = new Vector();
-		Hashtable ht = new Hashtable();
-		HashMap hm = new HashMap();
-		ConcurrentHashMap chm = new ConcurrentHashMap();
+		Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
+		System.out.println(sdf.format(d));
+		String s = "12345678901234567890123456789012";
+		System.out.println(s.substring(24));
+	}
+	
+	@Test
+	public void test2() {
+		String a = "";
+		String b = "a";
+		System.out.println(a.contains(b));
 	}
 
 }
