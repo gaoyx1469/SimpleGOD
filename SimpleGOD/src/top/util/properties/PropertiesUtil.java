@@ -2,6 +2,7 @@ package top.util.properties;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
@@ -34,6 +35,29 @@ public class PropertiesUtil {
 		return ResourceBundle.getBundle(uri).getString(name);
 	}
 
+	/**
+	 * 传入URI，获得ResourceBundle;URI以classespath为根目录，以/或.进行目录结构分隔皆可，不需要跟扩展名
+	 * 
+	 * @param uri
+	 * @param locale	Locale可以使用类的常量，以实现国际化。WEB环境下，可以取request请求的getLocale方法获取。
+	 * @return
+	 */
+	public static ResourceBundle getPropertiesResourceBundleByLocale(String uri, Locale locale) {
+		return ResourceBundle.getBundle(uri, locale);
+	}
+
+	/**
+	 * 传入URI和属性名，获得属性值;URI以classespath为根目录，以/或.进行目录结构分隔皆可，不需要跟扩展名
+	 * 
+	 * @param uri
+	 * @param name
+	 * @param locale	Locale可以使用类的常量，以实现国际化。WEB环境下，可以取request请求的getLocale方法获取。
+	 * @return
+	 */
+	public static String getPropertiesValueByLocale(String uri, String name, Locale locale) {
+		return ResourceBundle.getBundle(uri, locale).getString(name);
+	}
+	
 	/**
 	 * 传入URI，获得Properties;URI以classespath为根目录，以/进行目录结构分隔皆可，需要跟扩展名
 	 * 
