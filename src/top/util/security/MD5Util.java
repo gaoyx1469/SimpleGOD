@@ -1,9 +1,7 @@
 package top.util.security;
 
 import java.security.MessageDigest;
-
-import sun.misc.BASE64Encoder;
-
+import java.util.Base64;
 /**
  * MD5工具类，生成MD5码值
  * 
@@ -28,8 +26,7 @@ public class MD5Util {
 			byte b[] = md.digest(message.getBytes());
 
 			// 采用BASE64编码变换字节序列为明文，原理是把3个字节转换为4个字节
-			BASE64Encoder base64 = new BASE64Encoder();
-			return base64.encode(b);
+			return Base64.getEncoder().encodeToString(b);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
