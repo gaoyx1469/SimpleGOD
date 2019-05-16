@@ -11,6 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.junit.Test;
 
+import top.util.security.Base64Util;
+
 public class TestDemo1 {
 
 	@Test
@@ -27,6 +29,14 @@ public class TestDemo1 {
 		String a = "";
 		String b = "a";
 		System.out.println(a.contains(b));
+	}
+	
+	@Test
+	public void test3() {
+		String a = "ÖÐÎÄ";
+		System.out.println(a);
+		String str = Base64Util.base64Encoding(a);
+		System.out.println(Base64Util.base64Decoding(str));
 	}
 
 }
