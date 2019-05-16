@@ -2,8 +2,9 @@ package top.util.security;
 
 import java.security.MessageDigest;
 import java.util.Base64;
+
 /**
- * MD5工具类，生成MD5码值
+ * MD5工具类，生成MD5码值,并Base64编码
  * 
  * @author 高宇翔
  *
