@@ -42,8 +42,8 @@ public class ChineseEncodingFilter implements Filter {
 		response.setContentType("text/html;charset=" + encoding);
 		
 		// 若为GET请求方式，需要使用包装设计模式重写getParameter方法，因为get方法默认使用ISO-8859-1解码方式传送参数
-		// 不清楚为啥get方式也是UTF-8解码，这个不用了就
-		// ChineseEncodingServletRequest crequest = new ChineseEncodingServletRequest(request);
+		// 由于在JSP页面配置了pageEncoding="UTF-8"，get方式也是UTF-8解码，这个不用了就
+		//ChineseEncodingServletRequest crequest = new ChineseEncodingServletRequest(request);
 		
 		chain.doFilter(request, response);
 	}
