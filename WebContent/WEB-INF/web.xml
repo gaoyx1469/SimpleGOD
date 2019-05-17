@@ -95,13 +95,25 @@
     <filter-name>InnerDemoFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping> -->
-   <filter>
+  <filter>
     <filter-name>AutoLoginFilter</filter-name>
     <filter-class>top.trial.servlet.filter.AutoLoginFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>AutoLoginFilter</filter-name>
     <url-pattern>/JSP/autoLogin/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>ChineseEncodingFilter</filter-name>
+    <filter-class>top.trial.servlet.filter.ChineseEncodingFilter</filter-class>
+    <init-param>
+    	<param-name>encoding</param-name>
+    	<param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>ChineseEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
