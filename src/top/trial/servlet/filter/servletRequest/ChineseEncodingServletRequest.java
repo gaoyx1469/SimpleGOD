@@ -26,16 +26,13 @@ public class ChineseEncodingServletRequest extends HttpServletRequestWrapper {
 			return param;
 
 		if ("GET".equalsIgnoreCase(super.getMethod())) {// GET请求方式
-			System.out.println(param);
 			try {
 				param = new String(param.getBytes(StandardCharsets.ISO_8859_1), super.getCharacterEncoding());
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
-			System.out.println(param);
 		}
 
-		System.out.println("crequest返回值-->"+param);
 		return param;
 	}
 

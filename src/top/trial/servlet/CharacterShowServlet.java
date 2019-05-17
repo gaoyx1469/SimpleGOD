@@ -17,9 +17,7 @@ public class CharacterShowServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pri = request.getParameter("value");
-		System.out.println("Servlet -->"+pri);
-		response.getWriter().write(pri);
+		response.getWriter().write(request.getParameter("value"));
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
