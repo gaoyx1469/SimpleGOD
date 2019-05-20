@@ -10,6 +10,7 @@
 		<input type="text" name="test">
 		<input type="file" name="f1">
 		<input type="file" name="f2">
+		<input type="submit" value="提交">
 	</form>
 </body>
 </html>
