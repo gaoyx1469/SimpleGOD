@@ -30,6 +30,7 @@ public class FormDataInsertServlet extends HttpServlet {
 		super();
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// ´´½¨JavaBean
@@ -54,6 +55,7 @@ public class FormDataInsertServlet extends HttpServlet {
 		System.out.println(ue.toString());
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

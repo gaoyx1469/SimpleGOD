@@ -2,8 +2,6 @@ package top.trial.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.UUID;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +20,7 @@ public class SessionGetDemoServlet extends HttpServlet {
     }
 
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String myValue = (String) session.getAttribute("myKey");
@@ -31,6 +30,7 @@ public class SessionGetDemoServlet extends HttpServlet {
 	}
 
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

@@ -19,6 +19,7 @@ public class SessionSetDemoServlet extends HttpServlet {
         super();
     }
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String myValue = request.getParameter("myValue");
 		HttpSession session = request.getSession();
@@ -28,6 +29,7 @@ public class SessionSetDemoServlet extends HttpServlet {
 		pw.write("<a href='/SimpleGOD/SessionGetDemoServlet'>去看看value能不能拿到</a>");
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

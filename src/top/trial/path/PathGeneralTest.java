@@ -1,7 +1,5 @@
 package top.trial.path;
 
-import java.io.InputStream;
-
 import org.junit.Test;
 
 import top.util.properties.PropertiesUtil;

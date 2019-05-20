@@ -1,8 +1,6 @@
 package top.trial.servlet.filter;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -11,8 +9,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import top.trial.servlet.filter.servletRequest.ChineseEncodingServletRequest;
 
 public class ChineseEncodingFilter implements Filter {
 

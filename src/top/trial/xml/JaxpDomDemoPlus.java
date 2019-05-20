@@ -3,8 +3,6 @@ package top.trial.xml;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
-
 import org.junit.Test;
 
 import top.trial.xml.dao.StudentXMLDao;

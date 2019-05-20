@@ -25,6 +25,7 @@ public class HttpServletRequestDemo extends HttpServlet {
 		super();
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 请求的URL，包括协议、IP、端口、URI
@@ -83,6 +84,7 @@ public class HttpServletRequestDemo extends HttpServlet {
 
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

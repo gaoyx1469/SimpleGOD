@@ -41,26 +41,32 @@ public class JaxpSaxDemo {
 			boolean isTech = false;
 			int count = 0;
 
+			@Override
 			public void setDocumentLocator(Locator locator) {
 
 			}
 
+			@Override
 			public void startDocument() throws SAXException {
 
 			}
 
+			@Override
 			public void endDocument() throws SAXException {
 
 			}
 
+			@Override
 			public void startPrefixMapping(String prefix, String uri) throws SAXException {
 
 			}
 
+			@Override
 			public void endPrefixMapping(String prefix) throws SAXException {
 
 			}
 
+			@Override
 			public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
 				if (isTech) {
 					count++;
@@ -70,26 +76,31 @@ public class JaxpSaxDemo {
 				}
 			}
 
+			@Override
 			public void endElement(String uri, String localName, String qName) throws SAXException {
 				if ("Tech".equals(qName)) {
 					isTech = false;
 				}
 			}
 
+			@Override
 			public void characters(char[] ch, int start, int length) throws SAXException {
 				if (count == 3 && isTech) {
 					System.out.println(new String(ch, start, length));
 				}
 			}
 
+			@Override
 			public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
 
 			}
 
+			@Override
 			public void processingInstruction(String target, String data) throws SAXException {
 
 			}
 
+			@Override
 			public void skippedEntity(String name) throws SAXException {
 
 			}
@@ -114,51 +125,62 @@ public class JaxpSaxDemo {
 
 class MyContentHandler implements ContentHandler {
 
+	@Override
 	public void setDocumentLocator(Locator locator) {
 
 	}
 
 	// 解析到文档开始时调用
+	@Override
 	public void startDocument() throws SAXException {
 		System.out.println("文档解析开始");
 	}
 
 	// 解析到文档结束时调用
+	@Override
 	public void endDocument() throws SAXException {
 		System.out.println("文档解析结束");
 	}
 
+	@Override
 	public void startPrefixMapping(String prefix, String uri) throws SAXException {
 
 	}
 
+	@Override
 	public void endPrefixMapping(String prefix) throws SAXException {
 
 	}
 
 	// 解析到元素开始时调用
+	@Override
 	public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
 		System.out.println("解析到元素：" + qName);
 	}
 
 	// 解析到元素结束时调用
+	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		System.out.println("解析元素：" + qName + "结束");
 	}
 
 	// 解析到文本内容时调用
+	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
 		System.out.println("文本內容：" + new String(ch, start, length));
 	}
 
+	@Override
 	public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
 
 	}
 
+	@Override
 	public void processingInstruction(String target, String data) throws SAXException {
 
 	}
 
+	@Override
 	public void skippedEntity(String name) throws SAXException {
 
 	}

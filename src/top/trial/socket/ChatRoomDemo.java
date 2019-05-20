@@ -2,8 +2,6 @@ package top.trial.socket;
 
 import java.io.IOException;
 import java.net.DatagramSocket;
-import java.net.SocketException;
-
 import org.junit.Test;
 
 /**

@@ -20,6 +20,7 @@ public class ShowBookTableServlet extends HttpServlet {
 		super();
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -33,6 +34,7 @@ public class ShowBookTableServlet extends HttpServlet {
 		request.getRequestDispatcher("/JSP/trial/showBookTable.jsp").forward(request, response);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

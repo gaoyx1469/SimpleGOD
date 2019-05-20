@@ -19,7 +19,6 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.junit.Test;
 
-import top.trial.demo.entity.LobTestEntity;
 import top.trial.demo.entity.UserTestEntity;
 import top.util.jdbc.MysqlDBCPUtil;
 
