@@ -31,5 +31,15 @@ public class TestDemo1 {
 		String str = Base64Util.base64Encoding(a);
 		System.out.println(Base64Util.base64Decoding(str));
 	}
+	
+	@Test
+	public void test4() {
+		String a = "abc";
+		String b = "cba";
+		System.out.println(Base64Util.base64Encoding(a));
+		System.out.println(Base64Util.base64Encoding(b));
+		String c = "DMCowAB3dxtz_+VcxjEwFA--";
+		System.out.println(Base64Util.base64Decoding(c));
+	}
 
 }
