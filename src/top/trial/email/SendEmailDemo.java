@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class sendEmailDemo {
+public class SendEmailDemo {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		Socket socket = new Socket("smtp.163.com", 25);
