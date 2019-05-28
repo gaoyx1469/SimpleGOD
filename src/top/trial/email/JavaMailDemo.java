@@ -85,7 +85,7 @@ public class JavaMailDemo {
 
 		// 附件部分
 		MimeBodyPart attPart = new MimeBodyPart();
-		dh = new DataHandler(new FileDataSource("C:\\Users\\高宇翔\\Desktop\\yusys\\李鹏博3月电子发票及导出PDF.rar"));// 借助JAF框架，读取ZIP，不需要再设置MIME类型了
+		dh = new DataHandler(new FileDataSource("C:\\Users\\admin\\Desktop\\sss\\导出PDF.rar"));// 借助JAF框架，读取ZIP，不需要再设置MIME类型了
 		String fileName = dh.getName();
 		attPart.setDataHandler(dh);
 		attPart.setFileName(fileName);// 手工设置附件名，否则可能乱码或不显示，如还乱码，则将fileName换为MimeUtility.encodeText(fileName)
