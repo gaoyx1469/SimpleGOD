@@ -9,7 +9,11 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * ×Ö·û¹ýÂËÆ÷
+ * @author Gaoyx
+ *
+ */
 public class ChineseEncodingFilter implements Filter {
 
 	private FilterConfig filterConfig;

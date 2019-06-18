@@ -15,7 +15,11 @@ import top.trial.demo.db.UserDB;
 import top.trial.demo.entity.UserLoginEntity;
 import top.util.security.Base64Util;
 import top.util.security.MD5Util;
-
+/**
+ * ×Ô¶¯µÇÂ¼¹ýÂËÆ÷
+ * @author Gaoyx
+ *
+ */
 public class AutoLoginFilter implements Filter {
 
 	@Override
