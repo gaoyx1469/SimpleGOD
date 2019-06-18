@@ -3,7 +3,7 @@ package top.trial.demo.entity;
 /**
  * Í¼ÊéJavaBean
  * 
- * @author ¸ßÓîÏè
+ * @author Gaoyx
  *
  */
 public class BookEntity {

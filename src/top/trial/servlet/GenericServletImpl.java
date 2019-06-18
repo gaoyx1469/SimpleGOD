@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 /**
  * Servlet入门，演示GenericServlet使用，使用时配置web.xml，或者使用注解
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class GenericServletImpl extends GenericServlet {

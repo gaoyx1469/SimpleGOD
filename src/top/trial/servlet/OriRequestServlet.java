@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 请求转发演示，此类为源组件，请求后转发到GoalRequestServlet
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 @WebServlet("/OriRequestServlet")

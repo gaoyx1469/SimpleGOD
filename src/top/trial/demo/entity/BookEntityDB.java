@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 数据库模拟类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class BookEntityDB {

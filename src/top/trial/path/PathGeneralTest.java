@@ -6,7 +6,7 @@ import top.util.properties.PropertiesUtil;
 
 /**
  * 一网打尽全部文件读取，通用版
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class PathGeneralTest {

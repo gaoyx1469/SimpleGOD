@@ -5,7 +5,7 @@ import top.trial.demo.entity.UserDomain;
 /**
  * 此类作为一个Demo接口，为各个trial提供接口引用实例
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public interface UserOperaterDao {

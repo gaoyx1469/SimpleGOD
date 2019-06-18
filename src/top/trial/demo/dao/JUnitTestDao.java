@@ -3,7 +3,7 @@ package top.trial.demo.dao;
 /**
  * 单元测试演示DAO
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public interface JUnitTestDao {

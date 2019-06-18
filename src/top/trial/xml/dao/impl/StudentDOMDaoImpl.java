@@ -12,7 +12,7 @@ import top.util.xml.DocumentUtil;
 /**
  * Student 操作实现类（DOM方式）
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class StudentDOMDaoImpl implements StudentXMLDao {

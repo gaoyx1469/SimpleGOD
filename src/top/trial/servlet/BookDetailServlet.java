@@ -17,7 +17,7 @@ import top.trial.demo.entity.BookEntityDB;
 /**
  * 展示书籍详情 记录浏览历史（写入cookie）
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 

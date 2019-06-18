@@ -3,7 +3,7 @@ package top.trial.thread;
 /**
  * 死锁问题示例类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class DieLockRunnableImpl implements Runnable {

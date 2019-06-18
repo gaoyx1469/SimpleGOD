@@ -18,7 +18,7 @@ import top.util.xml.SAXUtil;
 /**
  * 此类演示SAX方式对XML文件的查询操作
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class JaxpSaxDemo {

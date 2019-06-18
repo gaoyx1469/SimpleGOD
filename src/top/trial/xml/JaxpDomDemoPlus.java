@@ -12,7 +12,7 @@ import top.trial.xml.domain.Student;
 /**
  * 此类演示对XML文件的实用级示例操作
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class JaxpDomDemoPlus {

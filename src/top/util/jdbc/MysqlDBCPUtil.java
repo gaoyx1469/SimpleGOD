@@ -13,7 +13,7 @@ import top.util.properties.PropertiesUtil;
 
 /**
  * 引用DBCP数据库连接池，MysqlJDBCUtil升级版
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class MysqlDBCPUtil {

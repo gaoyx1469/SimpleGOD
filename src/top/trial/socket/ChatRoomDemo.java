@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * 多线程模拟聊天室Demo
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class ChatRoomDemo {

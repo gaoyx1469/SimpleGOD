@@ -19,7 +19,7 @@ import top.trial.demo.entity.UserEntity;
 /**
  * 此类演示html表单数据输入后通过BeanUtils存入JavaBean中
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 @WebServlet("/FormDataInsertServlet")

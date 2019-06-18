@@ -4,7 +4,7 @@ import java.util.Base64;
 
 /**
  * Base64¹¤¾ßÏä
- * @author ¸ßÓîÏè
+ * @author Gaoyx
  *
  */
 public class Base64Util {

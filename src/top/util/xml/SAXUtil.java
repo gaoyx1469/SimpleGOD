@@ -8,7 +8,7 @@ import org.xml.sax.XMLReader;
 /**
  * SAX方式操作XML工具类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class SAXUtil {

@@ -19,7 +19,7 @@ import top.util.xml.Dom4JUtil;
 /**
  * Dom4J≤‚ ‘Demo¿‡
  * 
- * @author ∏ﬂ”ÓœË
+ * @author Gaoyx
  *
  */
 public class Dom4JDemo {

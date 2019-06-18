@@ -41,6 +41,25 @@
 			}
 		}
 	}
+	function cliXml() {
+		//点击了按钮
+		//获取XMLHttpRequest对象
+		var xmlHttp = getXMLHttpRequest();
+		//调用open方法
+		xmlHttp.open("POST", "http://localhost:8080/SimpleGOD/AjaxXMLDemoServlet", true);
+		//指定Content-Type
+		xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		//调用send方法
+		xmlHttp.send("username=小李子&psw=asdf");
+		//得到返回并展示
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+				var msg = xmlHttp.responseText;
+				var i = document.getElementById("i");
+				i.innerHTML = msg;
+			}
+		}
+	}
 	function getXMLHttpRequest() {
 		try {
 			return new XMLHttpRequest();
@@ -59,9 +78,11 @@
 </script>
 </head>
 <body>
-	<input type="button" onclick="cliGet();" value="点我呀">
+	<input type="button" onclick="cliGet();" value="GET方式AJAX文本数据">
 	<h2 id="h"></h2>
-	<input type="button" onclick="cliPost();" value="再点一个">
+	<input type="button" onclick="cliPost();" value="POST方式AJAX文本数据">
 	<h2 id="i"></h2>
+	<input type="button" onclick="cliXml();" value="POST方式AJAX XML数据">
+	<h2 id="j"></h2>
 </body>
 </html>

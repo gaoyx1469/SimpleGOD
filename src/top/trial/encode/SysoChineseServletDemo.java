@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 演示中文字符输出
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class SysoChineseServletDemo extends HttpServlet {

@@ -12,7 +12,7 @@ import org.w3c.dom.Document;
 /**
  * Document工具类，DOM方式操作XML
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class DocumentUtil {

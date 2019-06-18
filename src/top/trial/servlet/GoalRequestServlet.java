@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 请求转发演示，此类为目标组件
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 @WebServlet("/GoalRequestServlet")

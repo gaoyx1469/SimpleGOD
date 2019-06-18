@@ -3,7 +3,7 @@ package top.trial.thread;
 /**
  * 卖票问题实现举例
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class TicketRunnableImpl implements Runnable {

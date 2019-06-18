@@ -23,7 +23,7 @@ import top.trial.demo.entity.PlayerEntity;
 /**
  * 内省测试类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class IntrospectorDemo {

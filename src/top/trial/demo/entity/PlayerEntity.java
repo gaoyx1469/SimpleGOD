@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * 用户实体类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class PlayerEntity implements Serializable {

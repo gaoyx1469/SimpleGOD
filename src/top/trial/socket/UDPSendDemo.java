@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 
 /**
  * UDP协议发送数据
- * @author 高宇翔
+ * @author Gaoyx
  * 
  * 1、创建发送端Socket对象DatagramSocket
  * 2、创建数据，打包

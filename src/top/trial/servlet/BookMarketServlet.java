@@ -18,7 +18,7 @@ import top.trial.demo.entity.BookEntityDB;
 /**
  * 展示所有书籍列表 展示用户浏览历史（读取cookie）
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 @WebServlet("/BookMarketServlet")

@@ -11,7 +11,7 @@ import top.trial.demo.dao.impl.UserOperaterDaoImpl;
 /**
  * 动态代理示例代码
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class ProxyDemo {

@@ -14,7 +14,7 @@ import java.net.Socket;
  * 3.获取输入流，读取数据，显示在控制台
  * 4.释放资源
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class TCPReceiveDemo {

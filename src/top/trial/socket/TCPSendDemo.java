@@ -12,7 +12,7 @@ import java.net.Socket;
  * 3.释放资源
  * 
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class TCPSendDemo {

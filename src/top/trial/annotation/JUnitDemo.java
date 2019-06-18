@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 /**
  * 单元测试主类，遍历要单元测试的类的成员方法，找出有单元测试注解的方法，利用反射执行方法并计算执行时间，给出反馈。
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class JUnitDemo {

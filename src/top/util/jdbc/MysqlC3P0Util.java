@@ -11,7 +11,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
  * 引用C3P0数据库连接池，MysqlJDBCUtil升级版
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class MysqlC3P0Util {

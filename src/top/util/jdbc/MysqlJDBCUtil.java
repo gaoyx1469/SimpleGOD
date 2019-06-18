@@ -13,7 +13,7 @@ import top.util.properties.PropertiesUtil;
 /**
  * Mysql--JDBC工具类 依赖properties工具类 方法： 1.获取连接 2.释放资源
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class MysqlJDBCUtil {

@@ -13,7 +13,7 @@ import org.dom4j.io.XMLWriter;
 /**
  * Dom4J工具类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class Dom4JUtil {

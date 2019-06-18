@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 输出CAPTCHA随机图片验证码
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class CAPTCHAServlet extends HttpServlet {

@@ -6,7 +6,7 @@ import java.util.Base64;
 /**
  * MD5工具类，生成MD5码值,并Base64编码
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class MD5Util {

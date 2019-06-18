@@ -7,7 +7,7 @@ import top.trial.xml.domain.WorkerDomain;
 /**
  * 线程简单演示操作类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class ThreadTestDemo {

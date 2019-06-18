@@ -13,7 +13,7 @@ import top.util.xml.Dom4JUtil;
 /**
  * Student 操作实现类（Dom4j方式）
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class StudentDom4JDaoImpl implements StudentXMLDao {

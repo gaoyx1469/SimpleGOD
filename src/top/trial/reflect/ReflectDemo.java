@@ -10,7 +10,7 @@ import top.trial.demo.entity.GameEntity;
 
 /**
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  * 反射是指通过class文件对象，使用该文件中的变量和方法
  * 

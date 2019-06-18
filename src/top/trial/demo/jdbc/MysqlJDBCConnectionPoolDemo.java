@@ -11,7 +11,7 @@ import top.util.properties.PropertiesUtil;
 
 /**
  * 模拟简单数据库连接池
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class MysqlJDBCConnectionPoolDemo {

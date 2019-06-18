@@ -11,7 +11,7 @@ import com.mysql.cj.jdbc.Driver;
 
 /**
  * 
- * @author ∏ﬂ”ÓœË
+ * @author Gaoyx
  *
  */
 public class MysqlJDBCTest {

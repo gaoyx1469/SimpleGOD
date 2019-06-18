@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 演示输出HttpServletRequest对象中的各种信息
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 @WebServlet("/HttpServletRequestDemo")

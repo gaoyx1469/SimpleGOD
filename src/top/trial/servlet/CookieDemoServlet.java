@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 记住用户最后一次访问时间lastAccessTime
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 @WebServlet("/CookieDemoServlet")

@@ -7,7 +7,7 @@ import java.net.InetAddress;
 
 /**
  * UDP协议接受数据
- * @author 高宇翔
+ * @author Gaoyx
  *
  * 1、创建接收端Socket对象DatagramSocket
  * 2、创建数据接收包DatagramPacket

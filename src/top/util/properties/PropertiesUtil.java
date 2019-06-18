@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 /**
  * properties文件操作工具类
  * 
- * @author 高宇翔
+ * @author Gaoyx
  *
  */
 public class PropertiesUtil {
