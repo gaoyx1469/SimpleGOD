@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provinces>
+	<province name="山东">
+		<city name="QingDao">青岛</city>
+		<city name="YanTai">烟台</city>
+		<city name="WeiHai">威海</city>
+		<city name="JiNan">济南</city>
+		<city name="HeZe">菏泽</city>
+		<city name="DeZhou">德州</city>
+		<city name="BinZhou">滨州</city>
+	</province>
+	<province name="广东">
+		<city name="GuangZhou">广州</city>
+		<city name="ShenZhen">深圳</city>
+		<city name="ZhouShan">中山</city>
+		<city name="DongGuan">东莞</city>
+		<city name="ShunDe">顺德</city>
+	</province>
+</provinces>
