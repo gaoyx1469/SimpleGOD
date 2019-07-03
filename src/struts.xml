@@ -6,6 +6,9 @@
 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.action.extension" value="action,,do,go"></constant>
 	<package name="strutsDemo" namespace="/strutsDemo" extends="struts-default">
+		<global-results>
+			<result name="error">/JSP/struts/success.jsp</result>
+		</global-results>
 		<action name="demo1" class="top.trial.struts.StrutsHelloWorld" method="sayHello">
 			<result name="success">/JSP/struts/success.jsp</result>
 		</action>
