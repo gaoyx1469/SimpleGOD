@@ -12,6 +12,10 @@
 		<action name="demo1" class="top.trial.struts.StrutsHelloWorld" method="sayHello">
 			<result name="success">/JSP/struts/success.jsp</result>
 		</action>
+		<action name="strutsConversionAction" class="top.trial.struts.StrutsConversionAction" method="show">
+			<result name="success">/JSP/struts/success.jsp</result>
+			<result name="input">/JSP/struts/input.jsp</result>
+		</action>
 	</package>
 	<package name="strutsDemo1" namespace="/strutsDemo1" extends="struts-default">
 		<action name="demo2">
