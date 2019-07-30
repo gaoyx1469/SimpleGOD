@@ -13,7 +13,12 @@
 
 		<!-- url -->
 		<property name="connection.url">
-			jdbc:mysql://localhost:3306/simplegod
+			jdbc:mysql://localhost:3306/simplegod?serverTimezone=UTC
+		</property>
+		
+		<!-- 数据库方言 不添加可能报错 -->
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLInnoDBDialect
 		</property>
 
 		<!-- 作用：根据持久化类和映射文件生成表，码值可以是 validate create-drop create update -->
@@ -23,7 +28,7 @@
 		<property name="show_sql">true</property>
 		
 		<!--配置POJO对应的配置文件-->
-		<mapping resource="top.trial.hibernate.GameEntity.hbm.xml" />
+		<mapping resource="top/trial/hibernate/GameEntity.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>

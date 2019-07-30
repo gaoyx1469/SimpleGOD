@@ -3,7 +3,7 @@ package top.trial.hibernate;
 import java.io.Serializable;
 
 public class GameEntity implements Serializable {
-	private String gid;
+	private Integer gid;
 	private String gameName;
 	private String gameDescribe;
 
@@ -13,14 +13,13 @@ public class GameEntity implements Serializable {
 	}
 
 	public GameEntity() {
-
 	}
 
-	public String getGid() {
+	public Integer getGid() {
 		return gid;
 	}
 
-	public void setGid(String gid) {
+	public void setGid(Integer gid) {
 		this.gid = gid;
 	}
 
