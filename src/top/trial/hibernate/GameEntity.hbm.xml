@@ -2,13 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<!-- 用来描述一个持久化类 name 类的全名 table 可以不写 默认值和类名一样 catalog 数据库的名称 一般不写 -->
+	<!-- 用来描述一个持久化类 name 类的全名 	table表名可以不写 默认值和类名一样 catalog 数据库的名称 一般不写 -->
 	<class name="top.trial.hibernate.GameEntity" table="SG_GAME_INFO">
 
 		<!-- 标示属性 和数据库中的主键对应 name 属性的名称 column 列的名称 -->
 		<id name="gid" column="SGI_ID" length="200" type="java.lang.Integer">
 
-			<!-- 主键的产生器 就该告诉hibernate容器用什么样的方式产生主键 identity[mysql 自增] sequence[oracle序列]-->
+			<!-- 主键的产生器 就该告诉hibernate容器用什么样的方式产生主键 identity[mysql 自增] sequence[oracle序列] 具体参见5_其它注意点2-->
 			<generator class="increment"/>
 		</id>
 
