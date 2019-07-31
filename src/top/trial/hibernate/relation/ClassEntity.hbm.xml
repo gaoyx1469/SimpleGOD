@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="top.trial.hibernate.relation.ClassEntity" table="SG_CLASS_INF">
+		<id name="cid" column="SCI_ID" length="10" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<property name="cname" column="SCI_NAME" length="20" type="string"></property>
+		<property name="cdesc" column="SCI_DESCRIBE" length="100" type="string"></property>
+		<set name="cstus" cascade="save-update" inverse="true">
+			<!-- key是用来描述外键,column填表中外键字段名-->
+			<key>
+				<column name="SSI_CID"></column>
+			</key>
+			<one-to-many class="top.trial.hibernate.relation.StudentEntity" />
+		</set>
+	</class>
+</hibernate-mapping>

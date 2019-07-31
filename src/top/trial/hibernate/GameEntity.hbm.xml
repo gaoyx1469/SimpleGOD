@@ -6,7 +6,7 @@
 	<class name="top.trial.hibernate.GameEntity" table="SG_GAME_INFO">
 
 		<!-- 标示属性 和数据库中的主键对应 name 属性的名称 column 列的名称 -->
-		<id name="gid" column="SGI_ID" length="200" type="java.lang.Integer">
+		<id name="gid" column="SGI_ID" length="10" type="java.lang.Integer">
 
 			<!-- 主键的产生器 就该告诉hibernate容器用什么样的方式产生主键 identity[mysql 自增] sequence[oracle序列] 具体参见5_其它注意点2-->
 			<generator class="increment"/>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="top.trial.hibernate.relation.StudentEntity" table="SG_STUDENT_INF">
+		<id name="sid" column="SSI_ID" length="30" type="java.lang.Long">
+			<generator class="increment"/>
+		</id>
+		<property name="sname" column="SSI_NAME" length="20" type="string"></property>
+		<property name="sage" column="SSI_AGE" length="10" type="java.lang.Integer"></property>
+		<property name="sgender" column="SSI_GENDER" length="20" type="string"></property>
+	</class>
+</hibernate-mapping>
