@@ -3,6 +3,12 @@ package top.trial.hibernate.relation;
 import java.io.Serializable;
 import java.util.Set;
 
+/**
+ * 班级实体，作为hibernate一对多测试的“一”的一方
+ * 
+ * @author Gaoyx
+ *
+ */
 public class ClassEntity implements Serializable {
 	private Integer cid;
 	private String cname;

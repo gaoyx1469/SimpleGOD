@@ -2,6 +2,12 @@ package top.trial.hibernate.relation;
 
 import java.io.Serializable;
 
+/**
+ * 学生实体，作为hibernate一对多测试的“多”的一方
+ * 
+ * @author Gaoyx
+ *
+ */
 public class StudentEntity implements Serializable {
 	private Long sid;
 	private String sname;

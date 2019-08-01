@@ -31,5 +31,7 @@
 		<mapping resource="top/trial/hibernate/GameEntity.hbm.xml" />
 		<mapping resource="top/trial/hibernate/relation/ClassEntity.hbm.xml" />
 		<mapping resource="top/trial/hibernate/relation/StudentEntity.hbm.xml" />
+		<mapping resource="top/trial/hibernate/relation/AppEntity.hbm.xml" />
+		<mapping resource="top/trial/hibernate/relation/UserEntity.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
