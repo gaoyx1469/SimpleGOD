@@ -13,6 +13,8 @@ public class HibernateTestBaseUtil {
 	public static SessionFactory sessionFactory;
 	static {
 		Configuration config = new Configuration();
+		// 带参的configure(String url)方法可以放置hibernate.cfg.xml的url，以classpath为根目录，/分隔。
+		// 声明静态参数后，子类通过静态代码块注入url值
 		config.configure();
 		sessionFactory = config.buildSessionFactory();
 	}
