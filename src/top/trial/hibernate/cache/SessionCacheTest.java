@@ -7,6 +7,12 @@ import org.junit.Test;
 import top.trial.hibernate.GameEntity;
 import top.trial.hibernate.HibernateTestBaseUtil;
 
+/**
+ * 该类为一级缓存的测试类
+ * 
+ * @author Gaoyx1469
+ *
+ */
 public class SessionCacheTest extends HibernateTestBaseUtil {
 
 	/**

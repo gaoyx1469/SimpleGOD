@@ -26,9 +26,23 @@
 
 		<!-- 显示hibernate内部生成的sql语句 -->
 		<property name="show_sql">true</property>
+		<!-- 格式化显示hibernate内部生成的sql语句 
+		<property name="format_sql">true</property>
+		-->
 		
 		<!-- 允许使用线程session -->
 		<property name="current_session_context_class">thread</property>
+		
+		<!-- 允许使用二级缓存 
+		<property name="cache.use_second_level_cache">true</property> -->
+		<!-- 使用二级缓存提供商 
+		<property name="cache.provider_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</property> -->
+		<!-- 选择二级缓存准入实体class，可选择在映射文件中配置
+		<class-cache usage="read-write" class="top.trial.hibernate.GameEntity"/>
+		-->
+		
+		<!-- 允许使用查询缓存 
+		<property name="cache.use_query_cache">true</property> -->
 		
 		<!--配置POJO对应的配置文件-->
 		<mapping resource="top/trial/hibernate/GameEntity.hbm.xml" />
