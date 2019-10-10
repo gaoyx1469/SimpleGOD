@@ -21,12 +21,12 @@ public class QueryCacheQuery extends HibernateTestBaseUtil {
 	public void testQueryCache() {
 		Session session = sessionFactory.openSession();
 
-		Query query = session.createQuery("from SG_GAME_INFO");
+		Query query = session.createQuery("from GameEntity");
 		query.setCacheable(true);
 		List<GameEntity> list = query.list();
 
 		// 第二次查询相同语句，没有发出SQL语句
-		query = session.createQuery("from SG_GAME_INFO");
+		query = session.createQuery("from GameEntity");
 		query.setCacheable(true);
 		list = query.list();
 
