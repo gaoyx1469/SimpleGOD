@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="firstBean" class="top.trial.spring.SpringBean"
+		lazy-init="default" scope="singleton"></bean>
+	<alias name="firstBean" alias="what" />
+	<bean id="ditest" class="top.trial.spring.SpringDIBean">
+		<constructor-arg name="id" value="244466666"></constructor-arg>
+		<constructor-arg name="name" value="WIFI密码"></constructor-arg>
+		<constructor-arg name="date" ref="now"></constructor-arg>
+	</bean>
+	<bean id="now" class="java.util.Date"></bean>
+	<bean id="ditestnew" class="top.trial.spring.SpringDIBean">
+		<constructor-arg name="id" value="114"></constructor-arg>
+		<property name="name" value="啥？"></property>
+		<property name="date" ref="now"></property>
+	</bean>
+</beans>
