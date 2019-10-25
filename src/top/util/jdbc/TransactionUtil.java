@@ -64,7 +64,6 @@ public class TransactionUtil {
 				conn = getConnection();
 			}
 			conn.rollback();
-			;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
