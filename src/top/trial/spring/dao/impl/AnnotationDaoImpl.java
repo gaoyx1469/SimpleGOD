@@ -1,6 +1,5 @@
 package top.trial.spring.dao.impl;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import top.trial.spring.dao.AnnotationDao;
