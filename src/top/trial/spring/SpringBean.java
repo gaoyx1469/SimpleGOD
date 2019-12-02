@@ -10,11 +10,11 @@ public class SpringBean {
 
 	private String beanname;
 
-	public void SpringBean() {
+	public SpringBean() {
 
 	}
 
-	public void SpringBean(String beanname) {
+	public SpringBean(String beanname) {
 		this.beanname = beanname;
 	}
 

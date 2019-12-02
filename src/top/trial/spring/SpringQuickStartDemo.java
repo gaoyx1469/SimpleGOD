@@ -12,7 +12,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SpringQuickStartDemo {
 
 	public static void main(String[] args) {
+		// 读取spring主配置文件
 		ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+		// 上送对象类型可不用强转
 		// SpringBean sb = (SpringBean)ac.getBean("what");
 		SpringBean sb = ac.getBean("what", SpringBean.class);
 		sb.service();

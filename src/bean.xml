@@ -5,6 +5,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="firstBean" class="top.trial.spring.SpringBean"
 		lazy-init="default" scope="singleton"></bean>
+	<!-- 别名 -->
 	<alias name="firstBean" alias="what" />
 	<bean id="ditest" class="top.trial.spring.SpringDIBean">
 		<constructor-arg name="id" value="244466666"></constructor-arg>
