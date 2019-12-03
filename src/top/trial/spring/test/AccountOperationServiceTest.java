@@ -48,4 +48,9 @@ public class AccountOperationServiceTest {
 		System.out.println(beans);
 	}
 
+	@Test
+	public void testTransfer() {
+		accountOperationService.transfer(1, 2, new BigDecimal("800"));
+	}
+
 }
