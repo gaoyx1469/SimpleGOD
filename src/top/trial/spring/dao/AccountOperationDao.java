@@ -1,5 +1,7 @@
 package top.trial.spring.dao;
 
+import java.util.List;
+
 import top.trial.spring.SpringAccountBean;
 
 public interface AccountOperationDao {
@@ -10,8 +12,8 @@ public interface AccountOperationDao {
 
 	void deleteAccount(int accountId);
 
-	void getAccountById(int accountId);
+	SpringAccountBean getAccountById(int accountId);
 
-	void getAllAccounts();
+	List<SpringAccountBean> getAllAccounts();
 
 }

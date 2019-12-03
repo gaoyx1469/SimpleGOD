@@ -1,5 +1,7 @@
 package top.trial.spring;
 
+import java.math.BigDecimal;
+
 /**
  * Spring演示AOP事务的JavaBean
  * 
@@ -8,31 +10,37 @@ package top.trial.spring;
  */
 public class SpringAccountBean {
 
-	private int accountId;
-	private String accountName;
-	private int amount;
+	private int sat_id;
+	private String sat_name;
+	private BigDecimal sat_value;
 
-	public int getAccountId() {
-		return accountId;
+	public int getSat_id() {
+		return sat_id;
 	}
 
-	public void setAccountId(int accountId) {
-		this.accountId = accountId;
+	public void setSat_id(int sat_id) {
+		this.sat_id = sat_id;
 	}
 
-	public String getAccountName() {
-		return accountName;
+	public String getSat_name() {
+		return sat_name;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
+	public void setSat_name(String sat_name) {
+		this.sat_name = sat_name;
 	}
 
-	public int getAmount() {
-		return amount;
+	public BigDecimal getSat_value() {
+		return sat_value;
 	}
 
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setSat_value(BigDecimal sat_value) {
+		this.sat_value = sat_value;
 	}
+
+	@Override
+	public String toString() {
+		return "SpringAccountBean [sat_id=" + sat_id + ", sat_name=" + sat_name + ", sat_value=" + sat_value + "]";
+	}
+
 }

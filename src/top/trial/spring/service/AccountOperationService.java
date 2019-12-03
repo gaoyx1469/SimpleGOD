@@ -1,5 +1,7 @@
 package top.trial.spring.service;
 
+import java.util.List;
+
 import top.trial.spring.SpringAccountBean;
 
 public interface AccountOperationService {
@@ -10,7 +12,7 @@ public interface AccountOperationService {
 
 	void deleteAccount(int accountId);
 
-	void getAccountById(int accountId);
+	SpringAccountBean getAccountById(int accountId);
 
-	void getAllAccounts();
+	List<SpringAccountBean> getAllAccounts();
 }
