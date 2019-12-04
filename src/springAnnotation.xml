@@ -8,5 +8,21 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- 告知spring创建容器时要扫描的包 -->
-    <context:component-scan base-package="top.trial.spring"></context:component-scan>
+	<context:component-scan
+		base-package="top.trial.spring"></context:component-scan>
+
+	<!-- 配置DataSource，静态工厂方法获得
+	<bean id="dataSource" class="top.util.jdbc.MysqlC3P0Util"
+		factory-method="getDataSource">
+	</bean> 
+	-->
+	<bean id="dataSource" class="top.util.jdbc.MysqlDBCPUtil"
+		factory-method="getDataSource">
+	</bean>
+
+	<!-- 配置QueryRunner -->
+	<bean id="queryRunner"
+		class="org.apache.commons.dbutils.QueryRunner">
+		<constructor-arg name="ds" ref="dataSource"></constructor-arg>
+	</bean>
 </beans>

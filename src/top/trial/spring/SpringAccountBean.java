@@ -2,12 +2,15 @@ package top.trial.spring;
 
 import java.math.BigDecimal;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Spring演示AOP事务的JavaBean
  * 
  * @author Gaoyx
  *
  */
+@Component(value = "springAccountBean")
 public class SpringAccountBean {
 
 	private int sat_id;

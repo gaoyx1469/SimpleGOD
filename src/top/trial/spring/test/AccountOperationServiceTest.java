@@ -4,14 +4,20 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import top.trial.spring.SpringAccountBean;
 import top.trial.spring.service.AccountOperationService;
-import top.trial.spring.service.impl.AccountOperationServiceImpl;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations="classpath:springAnnotation.xml")
 public class AccountOperationServiceTest {
 
-	AccountOperationService accountOperationService = new AccountOperationServiceImpl();
+	@Autowired
+	AccountOperationService accountOperationService;
 
 	@Test
 	public void testAddAccount() {
@@ -51,6 +57,11 @@ public class AccountOperationServiceTest {
 	@Test
 	public void testTransfer() {
 		accountOperationService.transfer(1, 2, new BigDecimal("800"));
+	}
+	
+	@Test
+	public void testTransferTransaction() {
+		accountOperationService.transferTransaction(1, 2, new BigDecimal("800"));
 	}
 
 }
