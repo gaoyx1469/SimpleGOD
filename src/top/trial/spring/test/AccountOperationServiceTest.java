@@ -13,7 +13,7 @@ import top.trial.spring.SpringAccountBean;
 import top.trial.spring.service.AccountOperationService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="classpath:springAnnotation.xml")
+@ContextConfiguration(locations = "classpath:springAnnotation.xml")
 public class AccountOperationServiceTest {
 
 	@Autowired
@@ -54,11 +54,17 @@ public class AccountOperationServiceTest {
 		System.out.println(beans);
 	}
 
+	/**
+	 * 无事务版本转账模拟
+	 */
 	@Test
 	public void testTransfer() {
 		accountOperationService.transfer(1, 2, new BigDecimal("800"));
 	}
-	
+
+	/**
+	 * 有事务版本转账模拟
+	 */
 	@Test
 	public void testTransferTransaction() {
 		accountOperationService.transferTransaction(1, 2, new BigDecimal("800"));
