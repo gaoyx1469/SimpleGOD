@@ -5,6 +5,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import top.trial.spring.service.AccountOperationAopService;
 
+/**
+ * 模拟测试半注解模式下的AOP
+ * 
+ * @author Gaoyx
+ *
+ */
 public class AccountOperationServiceAopAnnotationTest {
 	public static void main(String[] args) {
 
