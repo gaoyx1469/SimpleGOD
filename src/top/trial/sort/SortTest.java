@@ -21,7 +21,9 @@ public class SortTest {
 		// InsertionSort.sortE1(nums);
 		// ShellSort.sortE1(nums);
 		// QuickSort.sortE1(nums);
-		MergeSort.sortE1(nums);
+		// MergeSort.sortE1(nums);
+		// HeapSort.sortE1(nums);
+		CountSort.sortE3(nums);
 
 		System.out.println(Arrays.toString(nums));
 	}

@@ -109,7 +109,7 @@ public class QuickSort {
 		nums[left] = pivot;
 
 		// 快排两部分数组
-		sortE2(nums, startIndex, left - 1);
-		sortE2(nums, left + 1, endIndex);
+		sortE3(nums, startIndex, left - 1);
+		sortE3(nums, left + 1, endIndex);
 	}
 }
