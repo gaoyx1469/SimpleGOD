@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÑİÊ¾ÖĞÎÄ×Ö·ûÊä³ö
+ * æ¼”ç¤ºä¸­æ–‡å­—ç¬¦è¾“å‡º
  * 
  * @author Gaoyx
  *
@@ -25,7 +25,7 @@ public class SysoChineseServletDemo extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String s = "ÖĞÎÄ×Ö·ûÊä³öÑİÊ¾";
+		String s = "ä¸­æ–‡å­—ç¬¦è¾“å‡ºæ¼”ç¤º";
 		test4(request, response, s);
 	}
 
@@ -36,7 +36,7 @@ public class SysoChineseServletDemo extends HttpServlet {
 	}
 
 	/**
-	 * ÖĞÎÄ×Ö·ûÁ÷Ä£Ê½Êä³ö,Ä¬ÈÏGBK±àÂë
+	 * ä¸­æ–‡å­—ç¬¦æµæ¨¡å¼è¾“å‡º,é»˜è®¤GBKç¼–ç 
 	 * 
 	 * @param request
 	 * @param response
@@ -45,15 +45,15 @@ public class SysoChineseServletDemo extends HttpServlet {
 	 */
 	private void test1(HttpServletRequest request, HttpServletResponse response, String s) throws IOException {
 
-		// Êä³öÖĞÎÄ×Ö·û»áÄ¬ÈÏISO-8859-1±àÂë,¸ÄÎªGBK±¾µØ±àÂë£¬¼´write·½·¨ÒÔÖ¸¶¨µÄ±àÂë·½Ê½±àÂë×Ö·û
+		// è¾“å‡ºä¸­æ–‡å­—ç¬¦ä¼šé»˜è®¤ISO-8859-1ç¼–ç ,æ”¹ä¸ºGBKæœ¬åœ°ç¼–ç ï¼Œå³writeæ–¹æ³•ä»¥æŒ‡å®šçš„ç¼–ç æ–¹å¼ç¼–ç å­—ç¬¦
 		response.setCharacterEncoding("GBK");
-		// »ñµÃ×Ö·ûÊä³öÁ÷
+		// è·å¾—å­—ç¬¦è¾“å‡ºæµ
 		PrintWriter out = response.getWriter();
 		out.write(s);
 	}
 
 	/**
-	 * ÖĞÎÄ×Ö·ûÁ÷Ä£Ê½Êä³ö£¬ÒÔUTF-8¸ñÊ½±àÂë²¢Í¨Öªä¯ÀÀÆ÷½âÎö
+	 * ä¸­æ–‡å­—ç¬¦æµæ¨¡å¼è¾“å‡ºï¼Œä»¥UTF-8æ ¼å¼ç¼–ç å¹¶é€šçŸ¥æµè§ˆå™¨è§£æ
 	 * 
 	 * @param request
 	 * @param response
@@ -62,21 +62,21 @@ public class SysoChineseServletDemo extends HttpServlet {
 	 */
 	private void test2(HttpServletRequest request, HttpServletResponse response, String s) throws IOException {
 
-		// Êä³öÖĞÎÄ×Ö·û»áÄ¬ÈÏISO-8859-1±àÂë,¸ÄÎªUTF-8±¾µØ±àÂë
+		// è¾“å‡ºä¸­æ–‡å­—ç¬¦ä¼šé»˜è®¤ISO-8859-1ç¼–ç ,æ”¹ä¸ºUTF-8æœ¬åœ°ç¼–ç 
 		// response.setCharacterEncoding("UTF-8");
-		// Í¨Öªä¯ÀÀÆ÷ÒÔUTF-8¸ñÊ½½âÎö
+		// é€šçŸ¥æµè§ˆå™¨ä»¥UTF-8æ ¼å¼è§£æ
 		// response.setHeader("Content-Type", "text/html;charset=UTF-8");
 
-		// ÔÚ×Ö·ûÁ÷ÖĞÒÔÏÂÒ»¾äµÈÍ¬ÓÚÉÏÃæÁ½¾ä
+		// åœ¨å­—ç¬¦æµä¸­ä»¥ä¸‹ä¸€å¥ç­‰åŒäºä¸Šé¢ä¸¤å¥
 		response.setContentType("text/html;charset=UTF-8");
 
-		// »ñµÃ×Ö·ûÊä³öÁ÷
+		// è·å¾—å­—ç¬¦è¾“å‡ºæµ
 		PrintWriter out = response.getWriter();
 		out.write(s);
 	}
 
 	/**
-	 * ÖĞÎÄ×Ö½ÚÁ÷Ä£Ê½Êä³ö£¬²»ÉèÖÃÈÎºÎ±àÂë¸ñÊ½£¬getBytes»áÒÔ±¾µØÂë±í£¨GBK£©½âÎö£¬Ç¡ºÃä¯ÀÀÆ÷Ò²ÒÔ±¾µØÂë±í½âÎö£¬Òò´Ë²»ÂÒÂë¡£
+	 * ä¸­æ–‡å­—èŠ‚æµæ¨¡å¼è¾“å‡ºï¼Œä¸è®¾ç½®ä»»ä½•ç¼–ç æ ¼å¼ï¼ŒgetBytesä¼šä»¥æœ¬åœ°ç è¡¨ï¼ˆGBKï¼‰è§£æï¼Œæ°å¥½æµè§ˆå™¨ä¹Ÿä»¥æœ¬åœ°ç è¡¨è§£æï¼Œå› æ­¤ä¸ä¹±ç ã€‚
 	 * 
 	 * @param request
 	 * @param response
@@ -89,7 +89,7 @@ public class SysoChineseServletDemo extends HttpServlet {
 	}
 
 	/**
-	 * ÖĞÎÄ×Ö½ÚÁ÷Ä£Ê½Êä³ö£¬ÉèÖÃ±àÂëÎªUTF-8
+	 * ä¸­æ–‡å­—èŠ‚æµæ¨¡å¼è¾“å‡ºï¼Œè®¾ç½®ç¼–ç ä¸ºUTF-8
 	 * 
 	 * @param request
 	 * @param response
@@ -100,11 +100,11 @@ public class SysoChineseServletDemo extends HttpServlet {
 		
 		OutputStream out = response.getOutputStream();
 		
-		// ·½Ê½Ò»£ºÍ¨Öªä¯ÀÀÆ÷Ê¹ÓÃUTF-8Âë±í½âÂë
+		// æ–¹å¼ä¸€ï¼šé€šçŸ¥æµè§ˆå™¨ä½¿ç”¨UTF-8ç è¡¨è§£ç 
 		// response.setHeader("Content-Type", "text/html;charset=UTF-8");
-		// ·½Ê½¶ş£ºIE¿É¿¿£¬¹È¸èä¯ÀÀÆ÷»áÖ±½Ó°Ñ±êÇ©´ò³öÀ´
+		// æ–¹å¼äºŒï¼šIEå¯é ï¼Œè°·æ­Œæµè§ˆå™¨ä¼šç›´æ¥æŠŠæ ‡ç­¾æ‰“å‡ºæ¥
 		// out.write("<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>".getBytes());
-		// ·½Ê½Èı£º
+		// æ–¹å¼ä¸‰ï¼š
 		response.setContentType("text/html;charset=UTF-8");
 		
 		out.write(s.getBytes("UTF-8"));

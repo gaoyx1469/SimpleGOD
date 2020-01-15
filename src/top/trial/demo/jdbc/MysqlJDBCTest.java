@@ -17,21 +17,21 @@ import com.mysql.cj.jdbc.Driver;
 public class MysqlJDBCTest {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws SQLException {
-		// 1.¼ÓÔØ¶ÔÓ¦Êı¾İ¿âÇı¶¯³ÌĞò²¢×¢²á
+		// 1.åŠ è½½å¯¹åº”æ•°æ®åº“é©±åŠ¨ç¨‹åºå¹¶æ³¨å†Œ
 		// DriverManager
 		DriverManager.registerDriver(new Driver());
-		// 2.»ñÈ¡ÓëÊı¾İ¿âµÄÁ¬½Ó
+		// 2.è·å–ä¸æ•°æ®åº“çš„è¿æ¥
 		// Connection
 		Connection conn = DriverManager.getConnection(
 				"jdbc:mysql://localhost:3306/simplegod?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC",
 				"root", "123456");
-		// 3.µÃµ½SQLÓï¾ä¶ÔÏó£¬·¢ËÍ¸øÊı¾İ¿â
+		// 3.å¾—åˆ°SQLè¯­å¥å¯¹è±¡ï¼Œå‘é€ç»™æ•°æ®åº“
 		// Statement
 		Statement stmt = conn.createStatement();
-		// 4.ÈçÓĞ½á¹û£¬»ñÈ¡·â×°ÁË²éÑ¯½á¹ûµÄ¶ÔÏó
+		// 4.å¦‚æœ‰ç»“æœï¼Œè·å–å°è£…äº†æŸ¥è¯¢ç»“æœçš„å¯¹è±¡
 		// ResultSet
 		ResultSet rs = stmt.executeQuery("SELECT SUI_ID,SUI_NAME,SUI_STT,SUI_CREADATE FROM SG_USER_INFO");
-		// 5.±éÀú½á¹û
+		// 5.éå†ç»“æœ
 		while (rs.next()) {
 			System.out.println("-------------");
 			System.out.println(rs.getObject(1));
@@ -39,7 +39,7 @@ public class MysqlJDBCTest {
 			System.out.println(rs.getObject(3));
 			System.out.println(((Date) rs.getObject(4)).toGMTString());
 		}
-		// 6.ÊÍ·Å×ÊÔ´
+		// 6.é‡Šæ”¾èµ„æº
 		rs.close();
 		stmt.close();
 		conn.close();

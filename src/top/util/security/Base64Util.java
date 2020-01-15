@@ -3,15 +3,15 @@ package top.util.security;
 import java.util.Base64;
 
 /**
- * Base64¹¤¾ßÏä
+ * Base64å·¥å…·ç®±
  * @author Gaoyx
  *
  */
 public class Base64Util {
 
 	/**
-	 * Base64±àÂë
-	 * @param str	´ı±àÂë×Ö·û´®
+	 * Base64ç¼–ç 
+	 * @param str	å¾…ç¼–ç å­—ç¬¦ä¸²
 	 * @return
 	 */
 	public static String base64Encoding(String str) {
@@ -19,8 +19,8 @@ public class Base64Util {
 	}
 	
 	/**
-	 * Base64½âÂë
-	 * @param str	´ı½âÂë×Ö·û´®
+	 * Base64è§£ç 
+	 * @param str	å¾…è§£ç å­—ç¬¦ä¸²
 	 * @return
 	 */
 	public static String base64Decoding(String str) {

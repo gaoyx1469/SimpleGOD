@@ -15,7 +15,7 @@ import top.trial.demo.entity.BookEntity;
 import top.trial.demo.entity.BookEntityDB;
 
 /**
- * Õ¹Ê¾Êé¼®ÏêÇé ¼ÇÂ¼ä¯ÀÀÀúÊ·£¨Ğ´Èëcookie£©
+ * å±•ç¤ºä¹¦ç±è¯¦æƒ… è®°å½•æµè§ˆå†å²ï¼ˆå†™å…¥cookieï¼‰
  * 
  * @author Gaoyx
  *
@@ -32,42 +32,42 @@ public class BookDetailServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Ê¹ÓÃUTF-8±àÂë
+		// ä½¿ç”¨UTF-8ç¼–ç 
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		// »ñÈ¡µ±Ç°Ó¦ÓÃÂ·¾¶
+		// è·å–å½“å‰åº”ç”¨è·¯å¾„
 		String path = request.getContextPath();
 		out.append("Served at: ").append(path);
 
-		// Õ¹Ê¾Êé¼®ÏêÇé
+		// å±•ç¤ºä¹¦ç±è¯¦æƒ…
 		String bookId = request.getParameter("bookId");
 		if (bookId != null && !"".equals(bookId)) {
 			BookEntity book = BookEntityDB.getBook(bookId);
-			out.write("Êé¼®Ãû³Æ£º" + book.getBookName() + "<br/>");
-			out.write("Êé¼®×÷Õß£º" + book.getBookAuther() + "<br/>");
-			out.write("Êé¼®ÃèÊö£º" + book.getDiscription() + "<br/>");
-			out.write("Êé¼®ÊÛ¼Û£º£¤" + book.getPrice() + "<br/>");
+			out.write("ä¹¦ç±åç§°ï¼š" + book.getBookName() + "<br/>");
+			out.write("ä¹¦ç±ä½œè€…ï¼š" + book.getBookAuther() + "<br/>");
+			out.write("ä¹¦ç±æè¿°ï¼š" + book.getDiscription() + "<br/>");
+			out.write("ä¹¦ç±å”®ä»·ï¼šï¿¥" + book.getPrice() + "<br/>");
 		}
 
-		out.write("<a href='" + path + "/BookMarketServlet'>·µ»Ø</a>");
+		out.write("<a href='" + path + "/BookMarketServlet'>è¿”å›</a>");
 
-		// ¼ÇÂ¼cookie
+		// è®°å½•cookie
 		Cookie[] cs = request.getCookies();
 		String bookHis = "";
 
-		// ±éÀú¿´Ö®Ç°ÊÇ·ñÓĞÃû½ĞbookHisµÄcookie
+		// éå†çœ‹ä¹‹å‰æ˜¯å¦æœ‰åå«bookHisçš„cookie
 		for (int i = 0; cs != null && i < cs.length; i++) {
 			if (Constants.BOOK_HISTORY_COOKIE.equals(cs[i].getName())) {
 				bookHis = cs[i].getValue();
 			}
 		}
 
-		// ¶¨Òåä¯ÀÀÀúÊ·ÊıÁ¿
+		// å®šä¹‰æµè§ˆå†å²æ•°é‡
 		int hisNum = 3;
 		int realNum = 0;
 
-		// Èç¹ûÓĞ£¬½âÎöÔ­cookie£¬½«ĞÂµÄä¯ÀÀÀúÊ··ÅÔÚ×îÇ°Ãæ£¬²¢È¥ÖØ
+		// å¦‚æœæœ‰ï¼Œè§£æåŸcookieï¼Œå°†æ–°çš„æµè§ˆå†å²æ”¾åœ¨æœ€å‰é¢ï¼Œå¹¶å»é‡
 		if (!"".equals(bookHis)) {
 			String[] books = bookHis.split("-");
 			bookHis = bookId;

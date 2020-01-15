@@ -6,33 +6,31 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 /**
- * UDPĞ­Òé½ÓÊÜÊı¾İ
+ * UDPåè®®æ¥å—æ•°æ®
+ * 
  * @author Gaoyx
  *
- * 1¡¢´´½¨½ÓÊÕ¶ËSocket¶ÔÏóDatagramSocket
- * 2¡¢´´½¨Êı¾İ½ÓÊÕ°üDatagramPacket
- * 3¡¢µ÷ÓÃSocket¶ÔÏó½ÓÊÕ·½·¨½ÓÊÕÊı¾İ°ü
- * 4¡¢½âÎöÊı¾İ
- * 5¡¢ÊÍ·Å×ÊÔ´
+ *         1ã€åˆ›å»ºæ¥æ”¶ç«¯Socketå¯¹è±¡DatagramSocket 2ã€åˆ›å»ºæ•°æ®æ¥æ”¶åŒ…DatagramPacket
+ *         3ã€è°ƒç”¨Socketå¯¹è±¡æ¥æ”¶æ–¹æ³•æ¥æ”¶æ•°æ®åŒ… 4ã€è§£ææ•°æ® 5ã€é‡Šæ”¾èµ„æº
  *
  */
 public class UDPReceiveDemo {
 
 	public static void main(String[] args) throws IOException {
 
-		// ´´½¨½ÓÊÕ¶ËSocket¶ÔÏóDatagramSocket
-		// ²ÎÊı¶¨Òå½ÓÊÕ¶Ë¿Ú
+		// åˆ›å»ºæ¥æ”¶ç«¯Socketå¯¹è±¡DatagramSocket
+		// å‚æ•°å®šä¹‰æ¥æ”¶ç«¯å£
 		DatagramSocket ds = new DatagramSocket(10010);
 
 		while (true) {
 			ReceiveUDPSimple(ds);
 		}
-		// ÊÍ·Å×ÊÔ´
+		// é‡Šæ”¾èµ„æº
 		// ds.close();
 	}
 
 	/**
-	 * ´´½¨Êı¾İ½ÓÊÜ°ü½ÓÊÕÊı¾İ²¢´òÓ¡
+	 * åˆ›å»ºæ•°æ®æ¥å—åŒ…æ¥æ”¶æ•°æ®å¹¶æ‰“å°
 	 * 
 	 * @param ds
 	 * @throws IOException
@@ -40,13 +38,13 @@ public class UDPReceiveDemo {
 	private static void ReceiveUDPSimple(DatagramSocket ds) throws IOException {
 		byte[] buf = new byte[1024];
 		DatagramPacket dp = new DatagramPacket(buf, buf.length);
-		// µ÷ÓÃSocket¶ÔÏó½ÓÊÕ·½·¨½ÓÊÕÊı¾İ°ü
-		System.out.println("µÈ´ı½ÓÊÕ");
+		// è°ƒç”¨Socketå¯¹è±¡æ¥æ”¶æ–¹æ³•æ¥æ”¶æ•°æ®åŒ…
+		System.out.println("ç­‰å¾…æ¥æ”¶");
 		ds.receive(dp);
-		System.out.println("½ÓÊÕ³É¹¦");
-		// ½âÎöÊı¾İ
+		System.out.println("æ¥æ”¶æˆåŠŸ");
+		// è§£ææ•°æ®
 		String data = new String(dp.getData());
-		// ·¢ËÍ¶ËĞÅÏ¢
+		// å‘é€ç«¯ä¿¡æ¯
 		InetAddress ia = dp.getAddress();
 		String ip = ia.getHostAddress();
 		String name = ia.getHostName();

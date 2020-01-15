@@ -17,37 +17,37 @@ import org.junit.Test;
 import top.util.xml.Dom4JUtil;
 
 /**
- * Dom4J²âÊÔDemoÀà
+ * Dom4Jæµ‹è¯•Demoç±»
  * 
  * @author Gaoyx
  *
  */
 public class Dom4JDemo {
 
-	// ²é£ºµÃµ½Ä³¸ö¾ßÌåµÄ½ÚµãÄÚÈİ
-	// ÈçµÃµ½PythonÔªËØµÄÄÚÈİ
+	// æŸ¥ï¼šå¾—åˆ°æŸä¸ªå…·ä½“çš„èŠ‚ç‚¹å†…å®¹
+	// å¦‚å¾—åˆ°Pythonå…ƒç´ çš„å†…å®¹
 	@Test
 	public void test1() throws Exception {
-		// µÃµ½Document¶ÔÏó
+		// å¾—åˆ°Documentå¯¹è±¡
 		SAXReader reader = new SAXReader();
 		Document document = reader.read("WebContent/WEB-INF/example/XMLExample.xml");
-		// µÃµ½¸ùÔªËØ
+		// å¾—åˆ°æ ¹å…ƒç´ 
 		Element root = document.getRootElement();
-		// µÃµ½LanguageÔªËØ
+		// å¾—åˆ°Languageå…ƒç´ 
 		List<Element> list = root.elements("Language");
 		Element element = list.get(0);
-		// µÃµ½PythonÔªËØ
+		// å¾—åˆ°Pythonå…ƒç´ 
 		List<Element> ps = element.elements("Python");
 		Element p = ps.get(0);
-		// µÃµ½ÔªËØÄÚÈİ
+		// å¾—åˆ°å…ƒç´ å†…å®¹
 		String text = p.getText();
 		Assert.assertEquals("PYTHON", text);
 	}
 
-	// XPath·½Ê½ÖØĞ´ÉÏÒ»·½·¨
+	// XPathæ–¹å¼é‡å†™ä¸Šä¸€æ–¹æ³•
 	@Test
 	public void test11() throws Exception {
-		// µÃµ½Document¶ÔÏó
+		// å¾—åˆ°Documentå¯¹è±¡
 		SAXReader reader = new SAXReader();
 		Document document = reader.read("WebContent/WEB-INF/example/XMLExample.xml");
 
@@ -57,16 +57,16 @@ public class Dom4JDemo {
 		Assert.assertEquals("PYTHON", text);
 	}
 
-	// ²é£º±éÀúËùÓĞ½Úµã
-	// ´òÓ¡ËùÓĞÔªËØÃû³Æ
+	// æŸ¥ï¼šéå†æ‰€æœ‰èŠ‚ç‚¹
+	// æ‰“å°æ‰€æœ‰å…ƒç´ åç§°
 	@Test
 	public void test2() throws Exception {
-		// µÃµ½Document¶ÔÏó
+		// å¾—åˆ°Documentå¯¹è±¡
 		SAXReader reader = new SAXReader();
 		Document document = reader.read("WebContent/WEB-INF/example/XMLExample.xml");
-		// µÃµ½¸ùÔªËØ
+		// å¾—åˆ°æ ¹å…ƒç´ 
 		Element root = document.getRootElement();
-		// ´òÓ¡ËùÓĞÔªËØÃû³Æ
+		// æ‰“å°æ‰€æœ‰å…ƒç´ åç§°
 		treeWalk(root);
 	}
 
@@ -86,54 +86,54 @@ public class Dom4JDemo {
 
 	}
 
-	// ¸Ä£ºĞŞ¸ÄÄ³¸öÔªËØ½ÚµãµÄÖ÷ÌåÄÚÈİ
-	// ½«JavaµÄÄÚÈİJAVA¸ÄÎªjava
+	// æ”¹ï¼šä¿®æ”¹æŸä¸ªå…ƒç´ èŠ‚ç‚¹çš„ä¸»ä½“å†…å®¹
+	// å°†Javaçš„å†…å®¹JAVAæ”¹ä¸ºjava
 	@Test
 	public void test3() throws Exception {
-		// µÃµ½Document¶ÔÏó
+		// å¾—åˆ°Documentå¯¹è±¡
 		SAXReader reader = new SAXReader();
 		Document document = reader.read("WebContent/WEB-INF/example/XMLExample.xml");
-		// µÃµ½¸ùÔªËØ
+		// å¾—åˆ°æ ¹å…ƒç´ 
 		Element root = document.getRootElement();
-		// µÃµ½JavaÔªËØ
+		// å¾—åˆ°Javaå…ƒç´ 
 		Element lang = root.elements().get(0);
 		Element java = lang.elements().get(0);
-		// ÉèÖÃÖ÷ÌåÄÚÈİ
+		// è®¾ç½®ä¸»ä½“å†…å®¹
 		java.setText("java");
-		// Ğ´»ØXMLÎÄµµ
+		// å†™å›XMLæ–‡æ¡£
 		Writer fw = new FileWriter("WebContent/WEB-INF/example/XMLExample.xml");
 		OutputFormat format = OutputFormat.createPrettyPrint();
-		format.setEncoding("GBK");// Ö¸¶¨±àÂë£¬UTF-8ÊÇÄ¬ÈÏ±àÂë
+		format.setEncoding("GBK");// æŒ‡å®šç¼–ç ï¼ŒUTF-8æ˜¯é»˜è®¤ç¼–ç 
 		XMLWriter writer = new XMLWriter(fw, format);
 		writer.write(document);
 		writer.close();
 
 	}
 
-	// Ôö£ºÏòÖ¸¶¨ÔªËØ½ÚµãÖĞÔö¼Ó×ÓÔªËØ½Úµã
-	// ÔÚTech½ÚµãÖĞÔö¼Ó<Î¢·şÎñ>Docker</Î¢·şÎñ>
+	// å¢ï¼šå‘æŒ‡å®šå…ƒç´ èŠ‚ç‚¹ä¸­å¢åŠ å­å…ƒç´ èŠ‚ç‚¹
+	// åœ¨TechèŠ‚ç‚¹ä¸­å¢åŠ <å¾®æœåŠ¡>Docker</å¾®æœåŠ¡>
 	@Test
 	public void test4() throws Exception {
-		// µÃµ½Document¶ÔÏó
+		// å¾—åˆ°Documentå¯¹è±¡
 		SAXReader reader = new SAXReader();
 		Document document = reader.read("WebContent/WEB-INF/example/XMLExample.xml");
-		// µÃµ½¸ùÔªËØ
+		// å¾—åˆ°æ ¹å…ƒç´ 
 		Element root = document.getRootElement();
 
 		Element tech = root.elements().get(1);
-		Element wfw = tech.addElement("Î¢·şÎñ").addText("Docker");
+		Element wfw = tech.addElement("å¾®æœåŠ¡").addText("Docker");
 
 		Writer fw = new FileWriter("WebContent/WEB-INF/example/XMLExample.xml");
 		OutputFormat format = OutputFormat.createPrettyPrint();
-		format.setEncoding("GBK");// Ö¸¶¨±àÂë£¬UTF-8ÊÇÄ¬ÈÏ±àÂë
+		format.setEncoding("GBK");// æŒ‡å®šç¼–ç ï¼ŒUTF-8æ˜¯é»˜è®¤ç¼–ç 
 		XMLWriter writer = new XMLWriter(fw, format);
 		writer.write(document);
 		writer.close();
 
 	}
 
-	// Ôö£ºÏòÖ¸¶¨ÔªËØ½ÚµãÖĞÔö¼ÓÍ¬¼¶ÔªËØ½Úµã
-	// ÔÚconcurrent½ÚµãÇ°Ôö¼Ó<Î¢·şÎñ>Docker</Î¢·şÎñ>
+	// å¢ï¼šå‘æŒ‡å®šå…ƒç´ èŠ‚ç‚¹ä¸­å¢åŠ åŒçº§å…ƒç´ èŠ‚ç‚¹
+	// åœ¨concurrentèŠ‚ç‚¹å‰å¢åŠ <å¾®æœåŠ¡>Docker</å¾®æœåŠ¡>
 	@Test
 	public void test5() throws Exception {
 		Document document = Dom4JUtil.getDocument("WebContent/WEB-INF/example/XMLExample.xml");
@@ -142,29 +142,29 @@ public class Dom4JDemo {
 		Element tech = root.elements().get(1);
 		List<Element> children = tech.elements();
 
-		Element wfw = DocumentHelper.createElement("Î¢·şÎñ");
+		Element wfw = DocumentHelper.createElement("å¾®æœåŠ¡");
 		wfw.setText("Docker");
 		children.add(2, wfw);
 
 		Dom4JUtil.write2FileGBK(document, "WebContent/WEB-INF/example/XMLExample.xml");
 	}
 
-	// É¾£ºÉ¾³ıÖ¸¶¨ÔªËØ½Úµã
-	// É¾³ı<Î¢·şÎñ>Docker</Î¢·şÎñ>
+	// åˆ ï¼šåˆ é™¤æŒ‡å®šå…ƒç´ èŠ‚ç‚¹
+	// åˆ é™¤<å¾®æœåŠ¡>Docker</å¾®æœåŠ¡>
 	@Test
 	public void test6() throws Exception {
 		Document document = Dom4JUtil.getDocument("WebContent/WEB-INF/example/XMLExample.xml");
 		Element root = document.getRootElement();
 
 		Element tech = root.elements().get(1);
-		Element wfw = tech.element("Î¢·şÎñ");
+		Element wfw = tech.element("å¾®æœåŠ¡");
 		tech.remove(wfw);
 
 		Dom4JUtil.write2FileGBK(document, "WebContent/WEB-INF/example/XMLExample.xml");
 	}
 
-	// Ôö¡¢É¾¡¢¸Ä¡¢²é£º²Ù×÷XMLÎÄ¼şÊôĞÔ
-	// TechÔªËØµÄÊôĞÔnameµÄ»ñÈ¡
+	// å¢ã€åˆ ã€æ”¹ã€æŸ¥ï¼šæ“ä½œXMLæ–‡ä»¶å±æ€§
+	// Techå…ƒç´ çš„å±æ€§nameçš„è·å–
 	@Test
 	public void test7() throws Exception {
 		Document document = Dom4JUtil.getDocument("WebContent/WEB-INF/example/XMLExample.xml");

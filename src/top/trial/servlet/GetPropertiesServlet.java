@@ -21,18 +21,18 @@ public class GetPropertiesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 取得配置文件绝对路径
+		// 鍙栧緱閰嶇疆鏂囦欢缁濆璺緞
 		String path1 = getServletContext().getRealPath("/WEB-INF/testDemo.properties");
 		String path2 = getServletContext().getRealPath("/WEB-INF/classes/rootDemo.properties");
 		String path3 = getServletContext().getRealPath("/WEB-INF/classes/top/trial/test/TestDemo.properties");
-		// 取得Properties对象
+		// 鍙栧緱Properties瀵硅薄
 		Properties p1 = new Properties();
 		p1.load(new FileInputStream(path1));
 		Properties p2 = new Properties();
 		p2.load(new FileInputStream(path2));
 		Properties p3 = new Properties();
 		p3.load(new FileInputStream(path3));
-		// 获取propertiesName的值并输出
+		// 鑾峰彇propertiesName鐨勫�煎苟杈撳嚭
 		String value1 = p1.getProperty("propertiesName") + "*******" + "\r\n";
 		String value2 = p2.getProperty("propertiesName") + "*******" + "\r\n";
 		String value3 = p3.getProperty("propertiesName") + "*******" + "\r\n";

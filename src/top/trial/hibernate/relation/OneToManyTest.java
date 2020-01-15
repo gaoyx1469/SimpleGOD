@@ -11,13 +11,13 @@ import org.hibernate.Transaction;
 import top.trial.hibernate.HibernateTestBaseUtil;
 
 /**
- * ÑİÊ¾Ò»¶Ô¶àµ¥Ïò²Ù×÷£¬ÒÔ°à¼¶ºÍÑ§ÉúÎªÀı
+ * æ¼”ç¤ºä¸€å¯¹å¤šå•å‘æ“ä½œï¼Œä»¥ç­çº§å’Œå­¦ç”Ÿä¸ºä¾‹
  *
- * 1¡¢ĞÂ½¨Ò»¸ö°à¼¶ 2¡¢ĞÂ½¨Ò»¸öÑ§Éú 3¡¢ĞÂ½¨Ò»¸ö°à¼¶µÄÊ±ºòÍ¬Ê±ĞÂ½¨Ò»¸öÑ§Éú 4¡¢ÒÑ¾­´æÔÚÒ»¸ö°à¼¶£¬ĞÂ½¨Ò»¸öÑ§Éú£¬½¨Á¢Ñ§ÉúÓë°à¼¶Ö®¼äµÄ¹ØÏµ
- * 5¡¢ÒÑ¾­´æÔÚÒ»¸öÑ§Éú£¬ĞÂ½¨Ò»¸ö°à¼¶£¬°ÑÑ§Éú¼ÓÈëµ½¸Ã°à¼¶ 6¡¢°ÑÒ»¸öÑ§Éú´ÓÒ»¸ö°à¼¶×ªÒÆµ½ÁíÒ»¸ö°à¼¶ 7¡¢½â³ıÒ»¸ö°à¼¶ºÍÒ»¸öÑ§ÉúÖ®¼äµÄ¹ØÏµ
- * 8¡¢½â³ıÒ»¸ö°à¼¶ºÍÒ»Ğ©Ñ§ÉúÖ®¼äµÄ¹ØÏµ 9¡¢½â³ı¸Ã°à¼¶ºÍËùÓĞµÄÑ§ÉúÖ®¼äµÄ¹ØÏµ 10¡¢ÒÑ¾­´æÔÚÒ»¸ö°à¼¶£¬ÒÑ¾­´æÔÚÒ»¸öÑ§Éú£¬½¨Á¢¸Ã°à¼¶Óë¸ÃÑ§ÉúÖ®¼äµÄ¹ØÏµ
- * 11¡¢ÒÑ¾­´æÔÚÒ»¸ö°à¼¶£¬ÒÑ¾­´æÔÚ¶à¸öÑ§Éú£¬½¨Á¢¶à¸öÑ§ÉúÓë°à¼¶Ö®¼äµÄ¹ØÏµ 12¡¢É¾³ıÑ§Éú 13¡¢É¾³ı°à¼¶ É¾³ı°à¼¶µÄÊ±ºòÍ¬Ê±É¾³ıÑ§Éú
- * ÔÚÉ¾³ı°à¼¶Ö®Ç°£¬½â³ı°à¼¶ºÍÑ§ÉúÖ®¼äµÄ¹ØÏµ
+ * 1ã€æ–°å»ºä¸€ä¸ªç­çº§ 2ã€æ–°å»ºä¸€ä¸ªå­¦ç”Ÿ 3ã€æ–°å»ºä¸€ä¸ªç­çº§çš„æ—¶å€™åŒæ—¶æ–°å»ºä¸€ä¸ªå­¦ç”Ÿ 4ã€å·²ç»å­˜åœ¨ä¸€ä¸ªç­çº§ï¼Œæ–°å»ºä¸€ä¸ªå­¦ç”Ÿï¼Œå»ºç«‹å­¦ç”Ÿä¸ç­çº§ä¹‹é—´çš„å…³ç³»
+ * 5ã€å·²ç»å­˜åœ¨ä¸€ä¸ªå­¦ç”Ÿï¼Œæ–°å»ºä¸€ä¸ªç­çº§ï¼ŒæŠŠå­¦ç”ŸåŠ å…¥åˆ°è¯¥ç­çº§ 6ã€æŠŠä¸€ä¸ªå­¦ç”Ÿä»ä¸€ä¸ªç­çº§è½¬ç§»åˆ°å¦ä¸€ä¸ªç­çº§ 7ã€è§£é™¤ä¸€ä¸ªç­çº§å’Œä¸€ä¸ªå­¦ç”Ÿä¹‹é—´çš„å…³ç³»
+ * 8ã€è§£é™¤ä¸€ä¸ªç­çº§å’Œä¸€äº›å­¦ç”Ÿä¹‹é—´çš„å…³ç³» 9ã€è§£é™¤è¯¥ç­çº§å’Œæ‰€æœ‰çš„å­¦ç”Ÿä¹‹é—´çš„å…³ç³» 10ã€å·²ç»å­˜åœ¨ä¸€ä¸ªç­çº§ï¼Œå·²ç»å­˜åœ¨ä¸€ä¸ªå­¦ç”Ÿï¼Œå»ºç«‹è¯¥ç­çº§ä¸è¯¥å­¦ç”Ÿä¹‹é—´çš„å…³ç³»
+ * 11ã€å·²ç»å­˜åœ¨ä¸€ä¸ªç­çº§ï¼Œå·²ç»å­˜åœ¨å¤šä¸ªå­¦ç”Ÿï¼Œå»ºç«‹å¤šä¸ªå­¦ç”Ÿä¸ç­çº§ä¹‹é—´çš„å…³ç³» 12ã€åˆ é™¤å­¦ç”Ÿ 13ã€åˆ é™¤ç­çº§ åˆ é™¤ç­çº§çš„æ—¶å€™åŒæ—¶åˆ é™¤å­¦ç”Ÿ
+ * åœ¨åˆ é™¤ç­çº§ä¹‹å‰ï¼Œè§£é™¤ç­çº§å’Œå­¦ç”Ÿä¹‹é—´çš„å…³ç³»
  * 
  * @author Gaoyx
  */
@@ -25,56 +25,56 @@ public class OneToManyTest extends HibernateTestBaseUtil {
 
 	@Test
 	public void createClass() {
-		// 1¡¢ĞÂ½¨Ò»¸ö°à¼¶
+		// 1ã€æ–°å»ºä¸€ä¸ªç­çº§
 
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-		ClassEntity classEntity = new ClassEntity("»ìºÏ°à", "È«Ãæ·¢Õ¹£¬»ìºÏÅàÑø£¡");
+		ClassEntity classEntity = new ClassEntity("æ··åˆç­", "å…¨é¢å‘å±•ï¼Œæ··åˆåŸ¹å…»ï¼");
 		session.save(classEntity);
 
 		transaction.commit();
 		session.close();
 	}
-	
+
 	@Test
 	public void createStudent() {
-		// 2¡¢ĞÂ½¨Ò»¸öÑ§Éú£¨²»½¨Á¢¹ØÁª¹ØÏµ£©
+		// 2ã€æ–°å»ºä¸€ä¸ªå­¦ç”Ÿï¼ˆä¸å»ºç«‹å…³è”å…³ç³»ï¼‰
 
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-		StudentEntity student = new StudentEntity("ï£ï£", 20, "ÄĞ");
+		StudentEntity student = new StudentEntity("é“®é“®", 20, "ç”·");
 		session.save(student);
 
 		transaction.commit();
 		session.close();
 	}
-	
+
 	@Test
 	public void createClassAndStudent() {
-		// 3¡¢ĞÂ½¨Ò»¸ö°à¼¶µÄÊ±ºòÍ¬Ê±ĞÂ½¨Ò»¸öÑ§Éú£¨¹ØÁª¹ØÏµ£©¡¾¼¶ÁªcascadeĞèÒªÅäÖÃ¡¿
+		// 3ã€æ–°å»ºä¸€ä¸ªç­çº§çš„æ—¶å€™åŒæ—¶æ–°å»ºä¸€ä¸ªå­¦ç”Ÿï¼ˆå…³è”å…³ç³»ï¼‰ã€çº§è”cascadeéœ€è¦é…ç½®ã€‘
 
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-		ClassEntity classEntity = new ClassEntity("ÊµÑé°à", "È«Ãæ·¢Õ¹£¬ÊµÑéÅàÑø£¡");
+		ClassEntity classEntity = new ClassEntity("å®éªŒç­", "å…¨é¢å‘å±•ï¼Œå®éªŒåŸ¹å…»ï¼");
 		session.save(classEntity);
-		StudentEntity student = new StudentEntity("ÂŞÂŞ", 20, "Å®");
+		StudentEntity student = new StudentEntity("ç½—ç½—", 20, "å¥³");
 		Set<StudentEntity> cstus = new HashSet(1);
 		cstus.add(student);
 		classEntity.setCstus(cstus);
-		
+
 		transaction.commit();
 		session.close();
 	}
-	
+
 	@Test
 	public void createStudentToClass() {
-		//4¡¢ÒÑ¾­´æÔÚÒ»¸ö°à¼¶£¬ĞÂ½¨Ò»¸öÑ§Éú£¬½¨Á¢Ñ§ÉúÓë°à¼¶Ö®¼äµÄ¹ØÏµ
+		// 4ã€å·²ç»å­˜åœ¨ä¸€ä¸ªç­çº§ï¼Œæ–°å»ºä¸€ä¸ªå­¦ç”Ÿï¼Œå»ºç«‹å­¦ç”Ÿä¸ç­çº§ä¹‹é—´çš„å…³ç³»
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		
+
 		transaction.commit();
 		session.close();
 	}

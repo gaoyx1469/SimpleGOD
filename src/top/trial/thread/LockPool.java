@@ -1,7 +1,7 @@
 package top.trial.thread;
 
 /**
- * 锁对象池类，仅是个demo
+ * 閿佸璞℃睜绫伙紝浠呮槸涓猟emo
  * 
  * @author Gaoyx
  *

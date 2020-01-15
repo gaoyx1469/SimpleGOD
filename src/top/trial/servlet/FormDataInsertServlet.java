@@ -17,7 +17,7 @@ import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 import top.trial.demo.entity.UserEntity;
 
 /**
- * ´ËÀàÑİÊ¾html±íµ¥Êı¾İÊäÈëºóÍ¨¹ıBeanUtils´æÈëJavaBeanÖĞ
+ * æ­¤ç±»æ¼”ç¤ºhtmlè¡¨å•æ•°æ®è¾“å…¥åé€šè¿‡BeanUtilså­˜å…¥JavaBeanä¸­
  * 
  * @author Gaoyx
  *
@@ -33,25 +33,25 @@ public class FormDataInsertServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// ´´½¨JavaBean
+		// åˆ›å»ºJavaBean
 		UserEntity ue = new UserEntity();
-		// ´´½¨Êä³öÁ÷
+		// åˆ›å»ºè¾“å‡ºæµ
 		ServletOutputStream out = response.getOutputStream();
-		// Êä³ö³õÊ¼×´Ì¬
+		// è¾“å‡ºåˆå§‹çŠ¶æ€
 		System.out.println(ue.toString());
-		// ÉèÖÃÒÔUTF-8·½Ê½½âÂëÇëÇó²ÎÊıµÄºº×Ö£¬Ö»¶ÔPOSTÇëÇó·½Ê½ÓĞĞ§
+		// è®¾ç½®ä»¥UTF-8æ–¹å¼è§£ç è¯·æ±‚å‚æ•°çš„æ±‰å­—ï¼Œåªå¯¹POSTè¯·æ±‚æ–¹å¼æœ‰æ•ˆ
 		request.setCharacterEncoding("UTF-8");
 
-		// ×¢²áDateÀàĞÍ×ª»»Æ÷
+		// æ³¨å†ŒDateç±»å‹è½¬æ¢å™¨
 		ConvertUtils.register(new DateLocaleConverter(), Date.class);
 
-		// Ê¹ÓÃpopulate·½·¨½«MapÖĞÊı¾İ²åÈëJavaBeanÖĞ
+		// ä½¿ç”¨populateæ–¹æ³•å°†Mapä¸­æ•°æ®æ’å…¥JavaBeanä¸­
 		try {
 			BeanUtils.populate(ue, request.getParameterMap());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// Êä³ö×îÖÕ×´Ì¬
+		// è¾“å‡ºæœ€ç»ˆçŠ¶æ€
 		System.out.println(ue.toString());
 	}
 

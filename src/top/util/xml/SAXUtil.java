@@ -6,14 +6,14 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.XMLReader;
 
 /**
- * SAX·½Ê½²Ù×÷XML¹¤¾ßÀà
+ * SAXæ–¹å¼æ“ä½œXMLå·¥å…·ç±»
  * 
  * @author Gaoyx
  *
  */
 public class SAXUtil {
 	/**
-	 * »ñÈ¡XMLµÄXMLReader¶ÔÏó,ÔØÈëÊÂ¼ş´¦ÀíÆ÷,´¦Àí´«ÈëµÄURL
+	 * è·å–XMLçš„XMLReaderå¯¹è±¡,è½½å…¥äº‹ä»¶å¤„ç†å™¨,å¤„ç†ä¼ å…¥çš„URL
 	 * 
 	 * @param url
 	 * @param ch

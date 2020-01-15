@@ -7,13 +7,13 @@ public class UserOperaterDaoImpl implements UserOperaterDao {
 
 	@Override
 	public boolean addUser() {
-		System.out.println("UserOperaterDaoImpl:	调用addUser()成功");
+		System.out.println("UserOperaterDaoImpl:	璋冪敤addUser()鎴愬姛");
 		return true;
 	}
 
 	@Override
 	public boolean deleteUser() {
-		System.out.println("UserOperaterDaoImpl:	调用deleteUser()成功");
+		System.out.println("UserOperaterDaoImpl:	璋冪敤deleteUser()鎴愬姛");
 		return true;
 	}
 
@@ -21,8 +21,8 @@ public class UserOperaterDaoImpl implements UserOperaterDao {
 	public UserDomain getUser() {
 		UserDomain ud = new UserDomain();
 		ud.setUserId(001);
-		ud.setUsername("演示用户一");
-		System.out.println("UserOperaterDaoImpl:	调用getUser()成功");
+		ud.setUsername("婕旂ず鐢ㄦ埛涓�");
+		System.out.println("UserOperaterDaoImpl:	璋冪敤getUser()鎴愬姛");
 		return ud;
 	}
 

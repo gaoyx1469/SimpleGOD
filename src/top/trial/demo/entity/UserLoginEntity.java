@@ -1,9 +1,9 @@
 package top.trial.demo.entity;
 
 public class UserLoginEntity {
-	private String name;// ĞÕÃû
-	private String password;// ÃÜÂë
-	private String nickname;// ±ğÃû
+	private String name;// å§“å
+	private String password;// å¯†ç 
+	private String nickname;// åˆ«å
 
 	public UserLoginEntity() {
 		super();

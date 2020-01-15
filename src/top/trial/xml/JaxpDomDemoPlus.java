@@ -10,7 +10,7 @@ import top.trial.xml.dao.impl.StudentDOMDaoImpl;
 import top.trial.xml.domain.Student;
 
 /**
- * ´ËÀàÑİÊ¾¶ÔXMLÎÄ¼şµÄÊµÓÃ¼¶Ê¾Àı²Ù×÷
+ * æ­¤ç±»æ¼”ç¤ºå¯¹XMLæ–‡ä»¶çš„å®ç”¨çº§ç¤ºä¾‹æ“ä½œ
  * 
  * @author Gaoyx
  *
@@ -21,10 +21,10 @@ public class JaxpDomDemoPlus {
 	public void jaxpDomDemoTest() {
 		StudentXMLDao studentDao = new StudentDOMDaoImpl();
 
-		// Ôö
+		// å¢
 		// addAStudent(studentDao);
 
-		// ²é
+		// æŸ¥
 		// Student student = studentDao.findStudent("120003");
 		// System.out.println(student);
 
@@ -38,7 +38,7 @@ public class JaxpDomDemoPlus {
 			throw new RuntimeException(e);
 		}
 
-		// É¾
+		// åˆ 
 		System.out.println(studentDao.deleteStudent(deleteTip));
 	}
 
@@ -48,7 +48,7 @@ public class JaxpDomDemoPlus {
 		student.setId("0003");
 		student.setExamId("120003");
 		student.setName("Candy");
-		student.setCity("Íşº£");
+		student.setCity("å¨æµ·");
 		student.setGrade(95.5f);
 
 		System.out.println(studentDao.creatStudent(student));

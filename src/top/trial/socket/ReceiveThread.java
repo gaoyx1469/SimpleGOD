@@ -27,7 +27,7 @@ public class ReceiveThread implements Runnable {
 	}
 
 	/**
-	 * ´´½¨Êı¾İ½ÓÊÜ°ü½ÓÊÕÊı¾İ²¢´òÓ¡
+	 * åˆ›å»ºæ•°æ®æ¥å—åŒ…æ¥æ”¶æ•°æ®å¹¶æ‰“å°
 	 * 
 	 * @param ds
 	 * @throws IOException
@@ -35,13 +35,13 @@ public class ReceiveThread implements Runnable {
 	private static void ReceiveUDPSimple(DatagramSocket ds) throws IOException {
 		byte[] buf = new byte[1024];
 		DatagramPacket dp = new DatagramPacket(buf, buf.length);
-		// µ÷ÓÃSocket¶ÔÏó½ÓÊÕ·½·¨½ÓÊÕÊı¾İ°ü
-		System.out.println("µÈ´ı½ÓÊÕ");
+		// è°ƒç”¨Socketå¯¹è±¡æ¥æ”¶æ–¹æ³•æ¥æ”¶æ•°æ®åŒ…
+		System.out.println("ç­‰å¾…æ¥æ”¶");
 		ds.receive(dp);
-		System.out.println("½ÓÊÕ³É¹¦");
-		// ½âÎöÊı¾İ
+		System.out.println("æ¥æ”¶æˆåŠŸ");
+		// è§£ææ•°æ®
 		String data = new String(dp.getData());
-		// ·¢ËÍ¶ËĞÅÏ¢
+		// å‘é€ç«¯ä¿¡æ¯
 		InetAddress ia = dp.getAddress();
 		String ip = ia.getHostAddress();
 		String name = ia.getHostName();

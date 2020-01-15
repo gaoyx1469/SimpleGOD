@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 import org.junit.Test;
 
 /**
- * ²âÊÔhibernateµÄCRUD
+ * æµ‹è¯•hibernateçš„CRUD
  * 
  * @author Gaoyx
  *
@@ -29,7 +29,7 @@ public class TestForHibernateCRUD extends HibernateTestBaseUtil {
 	@Test
 	public void testRA() {
 		Session session = sessionFactory.openSession();
-		// ²éÑ¯²»ĞèÒª¿ªÊ¼ÊÂÎñ
+		// æŸ¥è¯¢ä¸éœ€è¦å¼€å§‹äº‹åŠ¡
 		List<GameEntity> list = session.createQuery("from GameEntity").list();
 		for (GameEntity gameEntity : list) {
 			System.out.println(gameEntity.toString());
@@ -40,7 +40,7 @@ public class TestForHibernateCRUD extends HibernateTestBaseUtil {
 	@Test
 	public void testR() {
 		Session session = sessionFactory.openSession();
-		// ²éÑ¯²»ĞèÒª¿ªÊ¼ÊÂÎñ
+		// æŸ¥è¯¢ä¸éœ€è¦å¼€å§‹äº‹åŠ¡
 		GameEntity gameEntity = session.get(GameEntity.class, 3);
 		System.out.println(gameEntity.toString());
 		session.close();
@@ -52,7 +52,7 @@ public class TestForHibernateCRUD extends HibernateTestBaseUtil {
 		Transaction transaction = session.beginTransaction();
 
 		GameEntity gameEntity = session.get(GameEntity.class, 1);
-		// ´Ë´¦ĞèÒªÅĞ¶ÏgameEntity´æ²»´æÔÚ,ÊÇ·ñ==null
+		// æ­¤å¤„éœ€è¦åˆ¤æ–­gameEntityå­˜ä¸å­˜åœ¨,æ˜¯å¦==null
 		gameEntity.setGameName("XCOM 2");
 		session.update(gameEntity);
 
@@ -65,9 +65,9 @@ public class TestForHibernateCRUD extends HibernateTestBaseUtil {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-		// ÒÔÏÂÁ½ÖÖ·½·¨¶¼¿É£¬µÚ¶şÖÖ·½·¨²»ºÃÅĞ¶ÏÊÇ·ñ´æÔÚ£¬Ò×±¨´í£¬½¨ÒéÊ¹ÓÃµÚÒ»ÖÖ·½·¨
+		// ä»¥ä¸‹ä¸¤ç§æ–¹æ³•éƒ½å¯ï¼Œç¬¬äºŒç§æ–¹æ³•ä¸å¥½åˆ¤æ–­æ˜¯å¦å­˜åœ¨ï¼Œæ˜“æŠ¥é”™ï¼Œå»ºè®®ä½¿ç”¨ç¬¬ä¸€ç§æ–¹æ³•
 		GameEntity gameEntity = session.get(GameEntity.class, 1);
-		// ´Ë´¦ĞèÒªÅĞ¶ÏgameEntity´æ²»´æÔÚ,ÊÇ·ñ==null
+		// æ­¤å¤„éœ€è¦åˆ¤æ–­gameEntityå­˜ä¸å­˜åœ¨,æ˜¯å¦==null
 		session.delete(gameEntity);
 
 		/*

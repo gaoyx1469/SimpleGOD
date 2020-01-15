@@ -11,7 +11,7 @@ import top.trial.xml.domain.Student;
 import top.util.xml.Dom4JUtil;
 
 /**
- * Student ²Ù×÷ÊµÏÖÀà£¨Dom4j·½Ê½£©
+ * Student æ“ä½œå®ç°ç±»ï¼ˆDom4jæ–¹å¼ï¼‰
  * 
  * @author Gaoyx
  *
@@ -21,30 +21,30 @@ public class StudentDom4JDaoImpl implements StudentXMLDao {
 	private final String url = "WebContent/WEB-INF/example/XMLExampleStu.xml";
 
 	/**
-	 * Ìí¼ÓStudentµ½XMLÎÄ¼şÖĞ
+	 * æ·»åŠ Studentåˆ°XMLæ–‡ä»¶ä¸­
 	 * 
 	 * @param student
-	 * @return ³É¹¦·µ»Øtrue£»Ê§°Ü·µ»Øfalse
+	 * @return æˆåŠŸè¿”å›trueï¼›å¤±è´¥è¿”å›false
 	 */
 	@Override
 	public boolean creatStudent(Student student) {
 		boolean result = false;
 
 		try {
-			// »ñÈ¡documentºÍroot
+			// è·å–documentå’Œroot
 			Document document = Dom4JUtil.getDocument(url);
 			Element root = document.getRootElement();
 
-			// ĞÂ½¨studentÔªËØ
+			// æ–°å»ºstudentå…ƒç´ 
 			Element stuE = root.addElement("student").addAttribute("examId", student.getExamId()).addAttribute("id",
 					student.getId());
 
-			// ÎªstudentÔªËØĞÂ½¨×ÓÔªËØ
+			// ä¸ºstudentå…ƒç´ æ–°å»ºå­å…ƒç´ 
 			stuE.addElement("name").setText(student.getName());
 			stuE.addElement("city").setText(student.getCity());
 			stuE.addElement("grade").setText(String.valueOf(student.getGrade()));
 
-			// Ğ´»ØXML
+			// å†™å›XML
 			Dom4JUtil.write2FileGBK(document, url);
 
 			result = true;
@@ -58,27 +58,27 @@ public class StudentDom4JDaoImpl implements StudentXMLDao {
 	}
 
 	/**
-	 * ¸ù¾İnameÊôĞÔ£¬´ÓXMLÎÄ¼şÖĞÉ¾³ıStudent(¼ÙÉèÃ»ÓĞÖØÃû)
+	 * æ ¹æ®nameå±æ€§ï¼Œä»XMLæ–‡ä»¶ä¸­åˆ é™¤Student(å‡è®¾æ²¡æœ‰é‡å)
 	 * 
 	 * @param student
-	 * @return ³É¹¦·µ»Øtrue£»Ê§°Ü·µ»Øfalse
+	 * @return æˆåŠŸè¿”å›trueï¼›å¤±è´¥è¿”å›false
 	 */
 	@Override
 	public boolean deleteStudent(String name) {
 		boolean result = false;
 
 		try {
-			// µÃµ½document
+			// å¾—åˆ°document
 			Document document = Dom4JUtil.getDocument(url);
 
-			// Ô­°æ
+			// åŸç‰ˆ
 			/*
-			 * //µÃµ½root Element root = document.getRootElement(); //µÃµ½È«²¿studentÔªËØ
-			 * List<Element> stus = root.elements(); //±éÀústudentÔªËØ for (Element stu : stus)
-			 * { //ÕÒµ½ÒªÉ¾³ıµÄstudentÔªËØ if ((stu.element("name").getText()).equals(name)) {
-			 * //É¾³ıÔªËØ root.remove(stu); result = true; break; } }
+			 * //å¾—åˆ°root Element root = document.getRootElement(); //å¾—åˆ°å…¨éƒ¨studentå…ƒç´ 
+			 * List<Element> stus = root.elements(); //éå†studentå…ƒç´  for (Element stu : stus)
+			 * { //æ‰¾åˆ°è¦åˆ é™¤çš„studentå…ƒç´  if ((stu.element("name").getText()).equals(name)) {
+			 * //åˆ é™¤å…ƒç´  root.remove(stu); result = true; break; } }
 			 */
-			// Xpath°æ
+			// Xpathç‰ˆ
 			List<Node> nodes = document.selectNodes("//student");
 			for (Node n : nodes) {
 				if (n.getText().equals(name)) {
@@ -97,10 +97,10 @@ public class StudentDom4JDaoImpl implements StudentXMLDao {
 	}
 
 	/**
-	 * ¸ù¾İexamId²éÑ¯StudentĞÅÏ¢
+	 * æ ¹æ®examIdæŸ¥è¯¢Studentä¿¡æ¯
 	 * 
 	 * @param examId
-	 * @return ³É¹¦·µ»ØStudent£»Ê§°Ü·µ»Ønull
+	 * @return æˆåŠŸè¿”å›Studentï¼›å¤±è´¥è¿”å›null
 	 */
 	@Override
 	public Student findStudent(String examId) {
@@ -109,7 +109,7 @@ public class StudentDom4JDaoImpl implements StudentXMLDao {
 		try {
 			Document document = Dom4JUtil.getDocument(url);
 
-			// Ô­°æ
+			// åŸç‰ˆ
 			/*
 			 * Element root = document.getRootElement();
 			 * 
@@ -120,7 +120,7 @@ public class StudentDom4JDaoImpl implements StudentXMLDao {
 			 * student.setCity(stu.elementText("city"));
 			 * student.setGrade(Float.parseFloat(stu.elementText("grade"))); break; } }
 			 */
-			// Xpath°æ
+			// Xpathç‰ˆ
 			Node node = document.selectSingleNode("//student[@examId='" + examId + "']");
 			if (node != null) {
 				Element element = (Element) node;
@@ -140,11 +140,11 @@ public class StudentDom4JDaoImpl implements StudentXMLDao {
 	}
 
 	/**
-	 * ¸ù¾İidĞŞ¸ÄStudentµÄgrade
+	 * æ ¹æ®idä¿®æ”¹Studentçš„grade
 	 * 
 	 * @param id
 	 * @param grade
-	 * @return ³É¹¦·µ»Øtrue£»Ê§°Ü·µ»Øfalse
+	 * @return æˆåŠŸè¿”å›trueï¼›å¤±è´¥è¿”å›false
 	 */
 	public boolean updateGrade(String id, float grade) {
 		return false;

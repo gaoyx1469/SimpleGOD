@@ -11,7 +11,7 @@ import java.util.Properties;
 import top.util.properties.PropertiesUtil;
 
 /**
- * Mysql--JDBC¹¤¾ßÀà ÒÀÀµproperties¹¤¾ßÀà ·½·¨£º 1.»ñÈ¡Á¬½Ó 2.ÊÍ·Å×ÊÔ´
+ * Mysql--JDBCå·¥å…·ç±» ä¾èµ–propertieså·¥å…·ç±» æ–¹æ³•ï¼š 1.è·å–è¿æ¥ 2.é‡Šæ”¾èµ„æº
  * 
  * @author Gaoyx
  *
@@ -39,7 +39,7 @@ public class MysqlJDBCUtil {
 	}
 
 	/**
-	 * »ñÈ¡Á¬½Ó
+	 * è·å–è¿æ¥
 	 * @return
 	 * @throws SQLException
 	 */
@@ -48,7 +48,7 @@ public class MysqlJDBCUtil {
 	}
 
 	/**
-	 * ÊÍ·Å×ÊÔ´
+	 * é‡Šæ”¾èµ„æº
 	 * @param rs
 	 * @param stmt
 	 * @param conn

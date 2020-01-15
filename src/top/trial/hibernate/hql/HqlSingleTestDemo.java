@@ -10,7 +10,7 @@ import top.trial.hibernate.GameEntity;
 import top.trial.hibernate.HibernateTestBaseUtil;
 
 /**
- * ²âÊÔHQLÓï¾äµ¥±í²éÑ¯
+ * æµ‹è¯•HQLè¯­å¥å•è¡¨æŸ¥è¯¢
  * 
  * @author gaoyx
  *
@@ -18,12 +18,12 @@ import top.trial.hibernate.HibernateTestBaseUtil;
 public class HqlSingleTestDemo extends HibernateTestBaseUtil {
 
 	/**
-	 * ²âÊÔ from POJOÀàÃû ĞÎÊ½µÄHQL
+	 * æµ‹è¯• from POJOç±»å å½¢å¼çš„HQL
 	 */
 	@Test
 	public void singleModel1() {
 		Session session = sessionFactory.openSession();
-		// Ö±½ÓÊ¹ÓÃfrom POJOÀàÃû£¬·µ»ØPOJOÀà¶ÔÏóµÄList¼¯ºÏ
+		// ç›´æ¥ä½¿ç”¨from POJOç±»åï¼Œè¿”å›POJOç±»å¯¹è±¡çš„Listé›†åˆ
 		List<GameEntity> list = session.createQuery("from GameEntity").list();
 		for (GameEntity game : list) {
 			System.out.println(game.toString());
@@ -32,12 +32,12 @@ public class HqlSingleTestDemo extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔ select ÊôĞÔÃû from POJOÀàÃû ĞÎÊ½µÄHQL
+	 * æµ‹è¯• select å±æ€§å from POJOç±»å å½¢å¼çš„HQL
 	 */
 	@Test
 	public void singleModel2() {
 		Session session = sessionFactory.openSession();
-		// select ÊôĞÔÃû from POJOÀàÃû£¬·µ»ØÉ¸Ñ¡ÊôĞÔÊı×éµÄList¼¯ºÏ
+		// select å±æ€§å from POJOç±»åï¼Œè¿”å›ç­›é€‰å±æ€§æ•°ç»„çš„Listé›†åˆ
 		List<Object[]> list = session.createQuery("select gid, gameName from GameEntity").list();
 		for (Object[] game : list) {
 			for (Object obj : game) {
@@ -49,12 +49,12 @@ public class HqlSingleTestDemo extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔ select new POJOÀà¹¹Ôì·½·¨ from POJOÀàÃû ĞÎÊ½µÄHQL
+	 * æµ‹è¯• select new POJOç±»æ„é€ æ–¹æ³• from POJOç±»å å½¢å¼çš„HQL
 	 */
 	@Test
 	public void singleModel3() {
 		Session session = sessionFactory.openSession();
-		// select new POJOÀà¹¹Ôì·½·¨ from POJOÀàÃû£¬·µ»ØPOJOÀà¶ÔÏó£¨½ö¹¹Ôì·½·¨ÄÜ×¢ÈëµÄÊôĞÔÓĞÖµ£©µÄList¼¯ºÏ
+		// select new POJOç±»æ„é€ æ–¹æ³• from POJOç±»åï¼Œè¿”å›POJOç±»å¯¹è±¡ï¼ˆä»…æ„é€ æ–¹æ³•èƒ½æ³¨å…¥çš„å±æ€§æœ‰å€¼ï¼‰çš„Listé›†åˆ
 		List<GameEntity> list = session.createQuery("select new GameEntity(gameName,gameDescribe) from GameEntity")
 				.list();
 		for (GameEntity game : list) {
@@ -64,28 +64,28 @@ public class HqlSingleTestDemo extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔ´øwhereÌõ¼şµÄHQLÓï¾ä
+	 * æµ‹è¯•å¸¦whereæ¡ä»¶çš„HQLè¯­å¥
 	 */
 	@Test
 	public void singleModel4() {
 		Session session = sessionFactory.openSession();
 		Query query = session.createQuery("from GameEntity where gid=:gid");
 		query.setParameter("gid", 1);
-		// ´Ë´¦Èç¹ûÖ÷¼ü²»´æÔÚ£¬Ôò»á±¨´í
+		// æ­¤å¤„å¦‚æœä¸»é”®ä¸å­˜åœ¨ï¼Œåˆ™ä¼šæŠ¥é”™
 		GameEntity game = (GameEntity) query.getSingleResult();
 		System.out.println(game.toString());
 		session.close();
 	}
 
 	/**
-	 * ²âÊÔ´øwhereÌõ¼şµÄHQLÓï¾ä
+	 * æµ‹è¯•å¸¦whereæ¡ä»¶çš„HQLè¯­å¥
 	 */
 	@Test
 	public void singleModel5() {
 		Session session = sessionFactory.openSession();
 		Query query = session.createQuery("from GameEntity where gid=?0");
 		query.setParameter(0, 3);
-		// ´Ë´¦Èç¹ûÖ÷¼ü²»´æÔÚ£¬Ôò»á±¨´í
+		// æ­¤å¤„å¦‚æœä¸»é”®ä¸å­˜åœ¨ï¼Œåˆ™ä¼šæŠ¥é”™
 		GameEntity game = (GameEntity) query.getSingleResult();
 		System.out.println(game.toString());
 		session.close();

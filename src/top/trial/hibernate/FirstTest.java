@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 
 /**
- * hibernateµÚÒ»²¨²âÊÔ£¬¿ìËÙÈëÃÅ
+ * hibernateç¬¬ä¸€æ³¢æµ‹è¯•ï¼Œå¿«é€Ÿå…¥é—¨
  * 
  * @author Gaoyx
  *
@@ -15,28 +15,28 @@ import org.junit.Test;
 public class FirstTest {
 	@Test
 	public void testGameEntityInsert() {
-		// ´´½¨ÅäÖÃ¶ÔÏó
+		// åˆ›å»ºé…ç½®å¯¹è±¡
 		Configuration configuration = new Configuration();
-		// ¶ÁÈ¡ÅäÖÃ£¬¶ÁÈ¡µÄÊÇclasspath¸ùÄ¿Â¼ÏÂµÄhibernate.cfg.xml
+		// è¯»å–é…ç½®ï¼Œè¯»å–çš„æ˜¯classpathæ ¹ç›®å½•ä¸‹çš„hibernate.cfg.xml
 		configuration.configure();
-		// configuration.addResource(resourceName);Î´·ÅÖÃµ½classpath¸ùÄ¿Â¼ÏÂÊ±£¬¿ÉÊÇÊ¹ÓÃ´Ë·½·¨¼ÓÔØ
+		// configuration.addResource(resourceName);æœªæ”¾ç½®åˆ°classpathæ ¹ç›®å½•ä¸‹æ—¶ï¼Œå¯æ˜¯ä½¿ç”¨æ­¤æ–¹æ³•åŠ è½½
 
-		// Éú³ÉsessionFactory
+		// ç”ŸæˆsessionFactory
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
 
-		// Éú³Ésession
+		// ç”Ÿæˆsession
 		Session session = sessionFactory.openSession();
 
-		// ¿ªÆôÊÂÎï
+		// å¼€å¯äº‹ç‰©
 		Transaction transaction = session.beginTransaction();
 
 		// insert
-		session.save(new GameEntity("123", "Ğ´µÄÉ¶"));
+		session.save(new GameEntity("123", "å†™çš„å•¥"));
 
-		// Ìá½»ÊÂÎñ
+		// æäº¤äº‹åŠ¡
 		transaction.commit();
 
-		// ¹Ø±Õsession
+		// å…³é—­session
 		session.close();
 	}
 }

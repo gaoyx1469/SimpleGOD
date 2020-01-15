@@ -1,7 +1,7 @@
 package top.trial.test;
 
 /**
- * ¶àÌ¬ÏÂ×ÓÀàÓë¸¸ÀàµÄÒýÓÃÎÊÌâ²âÊÔ
+ * å¤šæ€ä¸‹å­ç±»ä¸Žçˆ¶ç±»çš„å¼•ç”¨é—®é¢˜æµ‹è¯•
  * 
  * @author Gaoyx
  *
@@ -9,8 +9,8 @@ package top.trial.test;
 public class PolymorphismDemo {
 	public static void main(String[] args) {
 		Child[] children = new Child[3];
-		Father[] fathers = children;// ÔËÓÃ¶àÌ¬£¬¸³Öµ¸ø¸¸ÀàÊý×é
-		//fathers[0] = new Father("Tom");// ÕâÀï»á±¨ÔËÐÐÊ±´íÎóArrayStoreException£¬±àÒëÆ÷ÈÏ¿É£¬µ«ÊÇÊµ¼ÊÊÇnew Child[3]£¬ÔËÐÐÊ±»áÓÐÎÊÌâ
+		Father[] fathers = children;// è¿ç”¨å¤šæ€ï¼Œèµ‹å€¼ç»™çˆ¶ç±»æ•°ç»„
+		//fathers[0] = new Father("Tom");// è¿™é‡Œä¼šæŠ¥è¿è¡Œæ—¶é”™è¯¯ArrayStoreExceptionï¼Œç¼–è¯‘å™¨è®¤å¯ï¼Œä½†æ˜¯å®žé™…æ˜¯new Child[3]ï¼Œè¿è¡Œæ—¶ä¼šæœ‰é—®é¢˜
 		fathers[1] = new Child("Tom", "1");
 		fathers[2] = new Child("Tom", "2");
 

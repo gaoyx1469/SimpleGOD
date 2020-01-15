@@ -3,64 +3,64 @@ package top.trial.spring.util;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
- * Ä£ÄâAOPÖĞ¶ÔserviceµÄÔöÇ¿Ö®ÈÕÖ¾²¿·Ö
+ * æ¨¡æ‹ŸAOPä¸­å¯¹serviceçš„å¢å¼ºä¹‹æ—¥å¿—éƒ¨åˆ†
  * 
  * @author Gaoyx
  *
  */
 public class Logger {
 	/**
-	 * ×÷ÎªÇ°ÖÃÍ¨Öª
+	 * ä½œä¸ºå‰ç½®é€šçŸ¥
 	 */
 	public void beginLogging() {
-		System.out.println("ÈÕÖ¾¼ÇÂ¼-beginLogging");
+		System.out.println("æ—¥å¿—è®°å½•-beginLogging");
 	}
 
 	/**
-	 * ×÷ÎªºóÖÃÍ¨Öª
+	 * ä½œä¸ºåç½®é€šçŸ¥
 	 */
 	public void endLogging() {
-		System.out.println("ÈÕÖ¾¼ÇÂ¼-endLogging");
+		System.out.println("æ—¥å¿—è®°å½•-endLogging");
 	}
 
 	/**
-	 * ×÷ÎªÒì³£Í¨Öª
+	 * ä½œä¸ºå¼‚å¸¸é€šçŸ¥
 	 */
 	public void exceptionLogging() {
-		System.out.println("ÈÕÖ¾¼ÇÂ¼-exceptionLogging");
+		System.out.println("æ—¥å¿—è®°å½•-exceptionLogging");
 	}
 
 	/**
-	 * ×÷Îª×îÖÕÍ¨Öª
+	 * ä½œä¸ºæœ€ç»ˆé€šçŸ¥
 	 */
 	public void finalLogging() {
-		System.out.println("ÈÕÖ¾¼ÇÂ¼-finalLogging");
+		System.out.println("æ—¥å¿—è®°å½•-finalLogging");
 	}
 
 	/**
-	 * ×÷Îª»·ÈÆÍ¨Öª£¬ÊÇÔÊĞí³ÌĞòÔ±¿ÉÒÔ²»Ê¹ÓÃÅäÖÃ£¬¶øÊÇÊ¹ÓÃ´úÂëµÄ·½Ê½ÎªÇĞÈëµã·½·¨Ìí¼Ó¸÷ÖÖÍ¨Öª¡£
+	 * ä½œä¸ºç¯ç»•é€šçŸ¥ï¼Œæ˜¯å…è®¸ç¨‹åºå‘˜å¯ä»¥ä¸ä½¿ç”¨é…ç½®ï¼Œè€Œæ˜¯ä½¿ç”¨ä»£ç çš„æ–¹å¼ä¸ºåˆ‡å…¥ç‚¹æ–¹æ³•æ·»åŠ å„ç§é€šçŸ¥ã€‚
 	 * 
-	 * Ê¹µÃÇĞÈëµã·½·¨²»Ö´ĞĞ£¬»·ÈÆÍ¨ÖªÔËĞĞË³ĞòÊÇÔÚÇ°ÖÃÍ¨ÖªÖ®ºó£¬Í¬Ê±»áµßµ¹×îÖÕÍ¨ÖªºÍºóÖÃÍ¨ÖªµÄË³Ğò£¬Ê¹µÃ×îÖÕÍ¨ÖªÔçÓÚºóÖÃÍ¨Öª¡£
+	 * ä½¿å¾—åˆ‡å…¥ç‚¹æ–¹æ³•ä¸æ‰§è¡Œï¼Œç¯ç»•é€šçŸ¥è¿è¡Œé¡ºåºæ˜¯åœ¨å‰ç½®é€šçŸ¥ä¹‹åï¼ŒåŒæ—¶ä¼šé¢ å€’æœ€ç»ˆé€šçŸ¥å’Œåç½®é€šçŸ¥çš„é¡ºåºï¼Œä½¿å¾—æœ€ç»ˆé€šçŸ¥æ—©äºåç½®é€šçŸ¥ã€‚
 	 * 
-	 * ÇĞÈëµã·½·¨²»Ö´ĞĞµÄ·ÖÎö£º¶¯Ì¬´úÀí´úÂëÖĞ£¬ĞèÒªÖ÷¶¯µ÷ÓÃÇĞÈëµã·½·¨
+	 * åˆ‡å…¥ç‚¹æ–¹æ³•ä¸æ‰§è¡Œçš„åˆ†æï¼šåŠ¨æ€ä»£ç†ä»£ç ä¸­ï¼Œéœ€è¦ä¸»åŠ¨è°ƒç”¨åˆ‡å…¥ç‚¹æ–¹æ³•
 	 * 
-	 * Îªµ÷ÓÃÇĞÈëµã·½·¨£¬ĞèÒªÎª»·ÈÆÍ¨Öª·½·¨Ôö¼Ó²ÎÊı£¬ÀàĞÍÎªProceedingJoinPoint
+	 * ä¸ºè°ƒç”¨åˆ‡å…¥ç‚¹æ–¹æ³•ï¼Œéœ€è¦ä¸ºç¯ç»•é€šçŸ¥æ–¹æ³•å¢åŠ å‚æ•°ï¼Œç±»å‹ä¸ºProceedingJoinPoint
 	 * 
 	 */
 	public Object aroundLogging(ProceedingJoinPoint pjp) {
 
-		System.out.println("ÈÕÖ¾¼ÇÂ¼-aroundLogging---Ç°ÖÃ");
+		System.out.println("æ—¥å¿—è®°å½•-aroundLogging---å‰ç½®");
 
 		Object rtValue = null;
 		Object[] args = pjp.getArgs();
 		try {
 			pjp.proceed(args);
-			System.out.println("ÈÕÖ¾¼ÇÂ¼-aroundLogging---ºóÖÃ");
+			System.out.println("æ—¥å¿—è®°å½•-aroundLogging---åç½®");
 		} catch (Throwable e) {
 			e.printStackTrace();
-			System.out.println("ÈÕÖ¾¼ÇÂ¼-aroundLogging---Òì³£");
+			System.out.println("æ—¥å¿—è®°å½•-aroundLogging---å¼‚å¸¸");
 		} finally {
-			System.out.println("ÈÕÖ¾¼ÇÂ¼-aroundLogging---×îÖÕ");
+			System.out.println("æ—¥å¿—è®°å½•-aroundLogging---æœ€ç»ˆ");
 		}
 		return rtValue;
 

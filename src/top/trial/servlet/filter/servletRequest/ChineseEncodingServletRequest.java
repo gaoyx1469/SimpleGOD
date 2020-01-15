@@ -25,7 +25,7 @@ public class ChineseEncodingServletRequest extends HttpServletRequestWrapper {
 		if (param == null)
 			return param;
 
-		if ("GET".equalsIgnoreCase(super.getMethod())) {// GET«Î«Û∑Ω Ω
+		if ("GET".equalsIgnoreCase(super.getMethod())) {// GETËØ∑Ê±ÇÊñπÂºè
 			try {
 				param = new String(param.getBytes(StandardCharsets.ISO_8859_1), super.getCharacterEncoding());
 			} catch (UnsupportedEncodingException e) {

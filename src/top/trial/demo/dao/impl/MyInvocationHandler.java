@@ -15,9 +15,9 @@ public class MyInvocationHandler implements InvocationHandler {
 
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println("此处调用前置方法");
+		System.out.println("姝ゅ璋冪敤鍓嶇疆鏂规硶");
 		Object result = method.invoke(uod, args);
-		System.out.println("此处调用后置方法");
+		System.out.println("姝ゅ璋冪敤鍚庣疆鏂规硶");
 		return result;
 	}
 

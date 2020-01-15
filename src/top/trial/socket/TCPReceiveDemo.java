@@ -8,11 +8,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * TCPĞ­Òé½ÓÊÕÊı¾İ
- * 1.´´½¨½ÓÊÕ¶ËSocket¶ÔÏó
- * 2.¼àÌı¿Í»§¶ËÁ¬½Ó£¬·µ»ØÒ»¸ö¶ÔÓ¦µÄSocket¶ÔÏó
- * 3.»ñÈ¡ÊäÈëÁ÷£¬¶ÁÈ¡Êı¾İ£¬ÏÔÊ¾ÔÚ¿ØÖÆÌ¨
- * 4.ÊÍ·Å×ÊÔ´
+ * TCPåè®®æ¥æ”¶æ•°æ® 1.åˆ›å»ºæ¥æ”¶ç«¯Socketå¯¹è±¡ 2.ç›‘å¬å®¢æˆ·ç«¯è¿æ¥ï¼Œè¿”å›ä¸€ä¸ªå¯¹åº”çš„Socketå¯¹è±¡ 3.è·å–è¾“å…¥æµï¼Œè¯»å–æ•°æ®ï¼Œæ˜¾ç¤ºåœ¨æ§åˆ¶å°
+ * 4.é‡Šæ”¾èµ„æº
  * 
  * @author Gaoyx
  *
@@ -21,7 +18,7 @@ public class TCPReceiveDemo {
 
 	public static void main(String[] args) throws IOException {
 
-		// ´´½¨½ÓÊÕ¶ËSocket¶ÔÏó
+		// åˆ›å»ºæ¥æ”¶ç«¯Socketå¯¹è±¡
 		ServerSocket receiveSocket = new ServerSocket(10010);
 
 		while (true) {
@@ -30,16 +27,16 @@ public class TCPReceiveDemo {
 	}
 
 	/**
-	 * ½ÓÊÕsocket
+	 * æ¥æ”¶socket
 	 * 
 	 * @param receiveSocket
 	 * @throws IOException
 	 */
 	private static void receiveMessageToConsole(ServerSocket receiveSocket) throws IOException {
-		// ¼àÌı¿Í»§¶ËÁ¬½Ó£¬·µ»ØÒ»¸ö¶ÔÓ¦µÄSocket¶ÔÏó
-		Socket sendSocket = receiveSocket.accept();// ÈçÎŞ½ÓÊÕ£¬±£³Ö×èÈû×´Ì¬
+		// ç›‘å¬å®¢æˆ·ç«¯è¿æ¥ï¼Œè¿”å›ä¸€ä¸ªå¯¹åº”çš„Socketå¯¹è±¡
+		Socket sendSocket = receiveSocket.accept();// å¦‚æ— æ¥æ”¶ï¼Œä¿æŒé˜»å¡çŠ¶æ€
 
-		// »ñÈ¡ÊäÈëÁ÷£¬¶ÁÈ¡Êı¾İ£¬ÏÔÊ¾ÔÚ¿ØÖÆÌ¨
+		// è·å–è¾“å…¥æµï¼Œè¯»å–æ•°æ®ï¼Œæ˜¾ç¤ºåœ¨æ§åˆ¶å°
 		InputStream input = sendSocket.getInputStream();
 
 		byte[] b = new byte[1024];
@@ -52,11 +49,11 @@ public class TCPReceiveDemo {
 
 		System.out.println(ip + "--" + name + ":" + str);
 
-		// Ïò¿Í»§¶Ë·´À¡ĞÅºÅ
+		// å‘å®¢æˆ·ç«¯åé¦ˆä¿¡å·
 		OutputStream output = sendSocket.getOutputStream();
-		output.write("Êı¾İ½ÓÊÕ³É¹¦".getBytes());
+		output.write("æ•°æ®æ¥æ”¶æˆåŠŸ".getBytes());
 
-		// ÊÍ·Å×ÊÔ´£¬·şÎñÆ÷¶Ë²»¹Ø
+		// é‡Šæ”¾èµ„æºï¼ŒæœåŠ¡å™¨ç«¯ä¸å…³
 		sendSocket.close();
 	}
 

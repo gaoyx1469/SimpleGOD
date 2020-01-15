@@ -10,7 +10,7 @@ import top.trial.hibernate.GameEntity;
 import top.trial.hibernate.HibernateTestBaseUtil;
 
 /**
- * 查询缓存示例，由于是基于二级缓存的，二级缓存尚未成功
+ * 鏌ヨ缂撳瓨绀轰緥锛岀敱浜庢槸鍩轰簬浜岀骇缂撳瓨鐨勶紝浜岀骇缂撳瓨灏氭湭鎴愬姛
  * 
  * @author Gaoyx1469
  *
@@ -25,7 +25,7 @@ public class QueryCacheQuery extends HibernateTestBaseUtil {
 		query.setCacheable(true);
 		List<GameEntity> list = query.list();
 
-		// 第二次查询相同语句，没有发出SQL语句
+		// 绗簩娆℃煡璇㈢浉鍚岃鍙ワ紝娌℃湁鍙戝嚭SQL璇彞
 		query = session.createQuery("from GameEntity");
 		query.setCacheable(true);
 		list = query.list();

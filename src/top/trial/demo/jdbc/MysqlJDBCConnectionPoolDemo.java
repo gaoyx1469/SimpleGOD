@@ -10,7 +10,8 @@ import java.util.Properties;
 import top.util.properties.PropertiesUtil;
 
 /**
- * Ä£Äâ¼òµ¥Êı¾İ¿âÁ¬½Ó³Ø
+ * æ¨¡æ‹Ÿç®€å•æ•°æ®åº“è¿æ¥æ± 
+ * 
  * @author Gaoyx
  *
  */
@@ -31,8 +32,8 @@ public class MysqlJDBCConnectionPoolDemo {
 			password = prop.getProperty("password");
 
 			Class.forName(driver);
-			
-			for(int i = 0;i<poolSize;i++) {
+
+			for (int i = 0; i < poolSize; i++) {
 				pool.add(DriverManager.getConnection(url, user, password));
 			}
 		} catch (IOException e) {
@@ -45,19 +46,21 @@ public class MysqlJDBCConnectionPoolDemo {
 	}
 
 	/**
-	 * »ñÈ¡Á¬½Ó,Ê¹ÓÃsynchronized±£Ö¤Ïß³Ì°²È«
+	 * è·å–è¿æ¥,ä½¿ç”¨synchronizedä¿è¯çº¿ç¨‹å®‰å…¨
+	 * 
 	 * @return
 	 * @throws SQLException
 	 */
-	public static synchronized Connection getConnection(){
-		if(!pool.isEmpty()) {
+	public static synchronized Connection getConnection() {
+		if (!pool.isEmpty()) {
 			return pool.remove();
 		}
 		return null;
 	}
 
 	/**
-	 * ÊÍ·Å×ÊÔ´
+	 * é‡Šæ”¾èµ„æº
+	 * 
 	 * @param conn
 	 */
 	public static void release(Connection conn) {

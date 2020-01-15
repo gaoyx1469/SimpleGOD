@@ -15,8 +15,10 @@ import top.trial.demo.db.UserDB;
 import top.trial.demo.entity.UserLoginEntity;
 import top.util.security.Base64Util;
 import top.util.security.MD5Util;
+
 /**
- * ×Ô¶¯µÇÂ¼¹ýÂËÆ÷
+ * è‡ªåŠ¨ç™»å½•è¿‡æ»¤å™¨
+ * 
  * @author Gaoyx
  *
  */
@@ -25,15 +27,15 @@ public class AutoLoginFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		// ¶ÁÈ¡session£¬ÓÐuser£¬·ÅÐÐ
+		// è¯»å–sessionï¼Œæœ‰userï¼Œæ”¾è¡Œ
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		if(req.getSession().getAttribute("user") == null){
-			System.out.println("³¢ÊÔ×Ô¶¯µÇÂ¼");
-			// ÎÞuser£¬¶ÁÈ¡cookie
+		if (req.getSession().getAttribute("user") == null) {
+			System.out.println("å°è¯•è‡ªåŠ¨ç™»å½•");
+			// æ— userï¼Œè¯»å–cookie
 			Cookie cookie = null;
 			Cookie[] cookies = req.getCookies();
-			if(cookies != null && cookies.length>0) {
+			if (cookies != null && cookies.length > 0) {
 				for (int i = 0; i < cookies.length; i++) {
 					if ("autoLogin".equals(cookies[i].getName())) {
 						cookie = cookies[i];
@@ -41,13 +43,13 @@ public class AutoLoginFilter implements Filter {
 					}
 				}
 			}
-			// ÓÐcookieÇÒÓÃ»§ÃûºÍ¼ÓÃÜµÄÃÜÂëÑéÖ¤ÎÞÎó£¬ÄÃµ½userÇÒ·Åsession
-			if(cookie != null) {
+			// æœ‰cookieä¸”ç”¨æˆ·åå’ŒåŠ å¯†çš„å¯†ç éªŒè¯æ— è¯¯ï¼Œæ‹¿åˆ°userä¸”æ”¾session
+			if (cookie != null) {
 				String username = cookie.getValue().split("_")[0];
 				String password = cookie.getValue().split("_")[1];
 				UserLoginEntity user = UserDB.findUserByName(Base64Util.base64Decoding(username));
-				if(user != null) {
-					if(password.equals(MD5Util.generateMD5(user.getPassword()))) {
+				if (user != null) {
+					if (password.equals(MD5Util.generateMD5(user.getPassword()))) {
 						req.getSession().setAttribute("user", user);
 					}
 				}

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * ÓÃ»§µØÖ·Demo¶¯×÷Àà£¬×÷ÎªÆäËü¶¯×÷ÀàµÄÊôĞÔÊ¹ÓÃ
+ * ç”¨æˆ·åœ°å€DemoåŠ¨ä½œç±»ï¼Œä½œä¸ºå…¶å®ƒåŠ¨ä½œç±»çš„å±æ€§ä½¿ç”¨
  * @author Gaoyx
  *
  */

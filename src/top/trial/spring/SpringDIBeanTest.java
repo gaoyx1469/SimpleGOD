@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * ÒÀÀµ×¢ÈëBeanµÄ²âÊÔ
+ * ä¾èµ–æ³¨å…¥Beançš„æµ‹è¯•
  * 
  * @author Gaoyx
  *
@@ -13,9 +13,9 @@ public class SpringDIBeanTest {
 
 	public static void main(String[] args) {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
-		// È«¹¹ÔìÆ÷×¢Èë
+		// å…¨æ„é€ å™¨æ³¨å…¥
 		// SpringDIBean sdib = (SpringDIBean) ac.getBean("ditest");
-		// ¹¹ÔìÆ÷Óëset·½·¨¹²Í¬×¢Èë
+		// æ„é€ å™¨ä¸setæ–¹æ³•å…±åŒæ³¨å…¥
 		SpringDIBean sdib = (SpringDIBean) ac.getBean("ditestnew");
 		System.out.println(sdib.toString());
 	}

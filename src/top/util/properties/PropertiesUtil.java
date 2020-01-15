@@ -7,7 +7,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 /**
- * propertiesÎÄ¼ş²Ù×÷¹¤¾ßÀà
+ * propertiesæ–‡ä»¶æ“ä½œå·¥å…·ç±»
  * 
  * @author Gaoyx
  *
@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 public class PropertiesUtil {
 
 	/**
-	 * ´«ÈëURI£¬»ñµÃResourceBundle;URIÒÔclassespathÎª¸ùÄ¿Â¼£¬ÒÔ/»ò.½øĞĞÄ¿Â¼½á¹¹·Ö¸ô½Ô¿É£¬²»ĞèÒª¸úÀ©Õ¹Ãû
+	 * ä¼ å…¥URIï¼Œè·å¾—ResourceBundle;URIä»¥classespathä¸ºæ ¹ç›®å½•ï¼Œä»¥/æˆ–.è¿›è¡Œç›®å½•ç»“æ„åˆ†éš”çš†å¯ï¼Œä¸éœ€è¦è·Ÿæ‰©å±•å
 	 * 
 	 * @param uri
 	 * @return
@@ -25,7 +25,7 @@ public class PropertiesUtil {
 	}
 
 	/**
-	 * ´«ÈëURIºÍÊôĞÔÃû£¬»ñµÃÊôĞÔÖµ;URIÒÔclassespathÎª¸ùÄ¿Â¼£¬ÒÔ/»ò.½øĞĞÄ¿Â¼½á¹¹·Ö¸ô½Ô¿É£¬²»ĞèÒª¸úÀ©Õ¹Ãû
+	 * ä¼ å…¥URIå’Œå±æ€§åï¼Œè·å¾—å±æ€§å€¼;URIä»¥classespathä¸ºæ ¹ç›®å½•ï¼Œä»¥/æˆ–.è¿›è¡Œç›®å½•ç»“æ„åˆ†éš”çš†å¯ï¼Œä¸éœ€è¦è·Ÿæ‰©å±•å
 	 * 
 	 * @param uri
 	 * @param name
@@ -36,10 +36,10 @@ public class PropertiesUtil {
 	}
 
 	/**
-	 * ´«ÈëURI£¬»ñµÃResourceBundle;URIÒÔclassespathÎª¸ùÄ¿Â¼£¬ÒÔ/»ò.½øĞĞÄ¿Â¼½á¹¹·Ö¸ô½Ô¿É£¬²»ĞèÒª¸úÀ©Õ¹Ãû
+	 * ä¼ å…¥URIï¼Œè·å¾—ResourceBundle;URIä»¥classespathä¸ºæ ¹ç›®å½•ï¼Œä»¥/æˆ–.è¿›è¡Œç›®å½•ç»“æ„åˆ†éš”çš†å¯ï¼Œä¸éœ€è¦è·Ÿæ‰©å±•å
 	 * 
 	 * @param uri
-	 * @param locale	Locale¿ÉÒÔÊ¹ÓÃÀàµÄ³£Á¿£¬ÒÔÊµÏÖ¹ú¼Ê»¯¡£WEB»·¾³ÏÂ£¬¿ÉÒÔÈ¡requestÇëÇóµÄgetLocale·½·¨»ñÈ¡¡£
+	 * @param locale	Localeå¯ä»¥ä½¿ç”¨ç±»çš„å¸¸é‡ï¼Œä»¥å®ç°å›½é™…åŒ–ã€‚WEBç¯å¢ƒä¸‹ï¼Œå¯ä»¥å–requestè¯·æ±‚çš„getLocaleæ–¹æ³•è·å–ã€‚
 	 * @return
 	 */
 	public static ResourceBundle getPropertiesResourceBundleByLocale(String uri, Locale locale) {
@@ -47,11 +47,11 @@ public class PropertiesUtil {
 	}
 
 	/**
-	 * ´«ÈëURIºÍÊôĞÔÃû£¬»ñµÃÊôĞÔÖµ;URIÒÔclassespathÎª¸ùÄ¿Â¼£¬ÒÔ/»ò.½øĞĞÄ¿Â¼½á¹¹·Ö¸ô½Ô¿É£¬²»ĞèÒª¸úÀ©Õ¹Ãû
+	 * ä¼ å…¥URIå’Œå±æ€§åï¼Œè·å¾—å±æ€§å€¼;URIä»¥classespathä¸ºæ ¹ç›®å½•ï¼Œä»¥/æˆ–.è¿›è¡Œç›®å½•ç»“æ„åˆ†éš”çš†å¯ï¼Œä¸éœ€è¦è·Ÿæ‰©å±•å
 	 * 
 	 * @param uri
 	 * @param name
-	 * @param locale	Locale¿ÉÒÔÊ¹ÓÃÀàµÄ³£Á¿£¬ÒÔÊµÏÖ¹ú¼Ê»¯¡£WEB»·¾³ÏÂ£¬¿ÉÒÔÈ¡requestÇëÇóµÄgetLocale·½·¨»ñÈ¡¡£
+	 * @param locale	Localeå¯ä»¥ä½¿ç”¨ç±»çš„å¸¸é‡ï¼Œä»¥å®ç°å›½é™…åŒ–ã€‚WEBç¯å¢ƒä¸‹ï¼Œå¯ä»¥å–requestè¯·æ±‚çš„getLocaleæ–¹æ³•è·å–ã€‚
 	 * @return
 	 */
 	public static String getPropertiesValueByLocale(String uri, String name, Locale locale) {
@@ -59,7 +59,7 @@ public class PropertiesUtil {
 	}
 	
 	/**
-	 * ´«ÈëURI£¬»ñµÃProperties;URIÒÔclassespathÎª¸ùÄ¿Â¼£¬²»ĞèÒÔ/¿ªÍ·£¬ÒÔ/½øĞĞÄ¿Â¼½á¹¹·Ö¸ô½Ô¿É£¬ĞèÒª¸úÀ©Õ¹Ãû
+	 * ä¼ å…¥URIï¼Œè·å¾—Properties;URIä»¥classespathä¸ºæ ¹ç›®å½•ï¼Œä¸éœ€ä»¥/å¼€å¤´ï¼Œä»¥/è¿›è¡Œç›®å½•ç»“æ„åˆ†éš”çš†å¯ï¼Œéœ€è¦è·Ÿæ‰©å±•å
 	 * 
 	 * @param uri
 	 * @return
@@ -67,22 +67,22 @@ public class PropertiesUtil {
 	 */
 	public static Properties getPropertiesByClassloader(String uri) throws IOException {
 
-		// »ñµÃÀà¼ÓÔØÆ÷
+		// è·å¾—ç±»åŠ è½½å™¨
 		ClassLoader cl = PropertiesUtil.class.getClassLoader();
 
-		// »ñµÃÅäÖÃÎÄ¼şµÄÊäÈëÁ÷
+		// è·å¾—é…ç½®æ–‡ä»¶çš„è¾“å…¥æµ
 		InputStream in = cl.getResourceAsStream(uri);
 
-		// »ñµÃProperties¶ÔÏó
+		// è·å¾—Propertieså¯¹è±¡
 		Properties props = new Properties();
 
-		// ¼ÓÔØÊäÈëÁ÷
+		// åŠ è½½è¾“å…¥æµ
 		props.load(in);
 		return props;
 	}
 
 	/**
-	 * ´«ÈëURIºÍÊôĞÔÃû£¬»ñµÃÊôĞÔÖµ;URIÒÔclassespathÎª¸ùÄ¿Â¼£¬²»ĞèÒÔ/¿ªÍ·£¬ÒÔ/½øĞĞÄ¿Â¼½á¹¹·Ö¸ô½Ô¿É£¬ĞèÒª¸úÀ©Õ¹Ãû
+	 * ä¼ å…¥URIå’Œå±æ€§åï¼Œè·å¾—å±æ€§å€¼;URIä»¥classespathä¸ºæ ¹ç›®å½•ï¼Œä¸éœ€ä»¥/å¼€å¤´ï¼Œä»¥/è¿›è¡Œç›®å½•ç»“æ„åˆ†éš”çš†å¯ï¼Œéœ€è¦è·Ÿæ‰©å±•å
 	 * 
 	 * @param uri
 	 * @param name
@@ -90,16 +90,16 @@ public class PropertiesUtil {
 	 * @throws IOException
 	 */
 	public static String getPropertiesValueByClassloader(String uri, String name) throws IOException {
-		// »ñµÃÀà¼ÓÔØÆ÷
+		// è·å¾—ç±»åŠ è½½å™¨
 		ClassLoader cl = PropertiesUtil.class.getClassLoader();
 
-		// »ñµÃÅäÖÃÎÄ¼şµÄÊäÈëÁ÷
+		// è·å¾—é…ç½®æ–‡ä»¶çš„è¾“å…¥æµ
 		InputStream in = cl.getResourceAsStream(uri);
 
-		// »ñµÃProperties¶ÔÏó
+		// è·å¾—Propertieså¯¹è±¡
 		Properties props = new Properties();
 
-		// ¼ÓÔØÊäÈëÁ÷
+		// åŠ è½½è¾“å…¥æµ
 		props.load(in);
 
 		return props.getProperty(name);

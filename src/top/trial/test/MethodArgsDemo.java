@@ -1,7 +1,7 @@
 package top.trial.test;
 
 /**
- * ²âÊÔJAVAÖĞ·½·¨²ÎÊıµÄÒıÓÃ·½Ê½
+ * æµ‹è¯•JAVAä¸­æ–¹æ³•å‚æ•°çš„å¼•ç”¨æ–¹å¼
  * 
  * @author Gaoyx
  *
@@ -13,8 +13,8 @@ public class MethodArgsDemo {
 		int a = 10;
 		int b = 20;
 
-		swap(a, b);// ¾­Àú½»»»£¬ÖµÎ´±ä
-		add(a);// ¾­Àú×ÔÔö£¬ÖµÎ´±ä
+		swap(a, b);// ç»å†äº¤æ¢ï¼Œå€¼æœªå˜
+		add(a);// ç»å†è‡ªå¢ï¼Œå€¼æœªå˜
 
 		System.out.println("a AFTER SWAP:" + a);
 		System.out.println("b AFTER SWAP:" + b);
@@ -32,19 +32,19 @@ public class MethodArgsDemo {
 		a++;
 	}
 
-	// ÑİÊ¾»ù±¾Êı¾İÀàĞÍ´«½øÀ´ºóÊµ¼Ê²¢Ã»ÓĞ¸Ä±äÔ­À´µÄÖµ
+	// æ¼”ç¤ºåŸºæœ¬æ•°æ®ç±»å‹ä¼ è¿›æ¥åå®é™…å¹¶æ²¡æœ‰æ”¹å˜åŸæ¥çš„å€¼
 	private static void swap(int a, int b) {
 		int temp = a;
 		a = b;
 		b = temp;
 	}
 
-	// ÑİÊ¾ÒıÓÃÊı¾İÀàĞÍ´«½øÀ´ºóÊµ¼Ê²¢Ã»ÓĞ¸Ä±äÔ­À´µÄÒıÓÃ
+	// æ¼”ç¤ºå¼•ç”¨æ•°æ®ç±»å‹ä¼ è¿›æ¥åå®é™…å¹¶æ²¡æœ‰æ”¹å˜åŸæ¥çš„å¼•ç”¨
 	private static void swap(Student tom, Student jack) {
 		Student temp = tom;
 		tom = jack;
 		jack = temp;
-		tom.addAge();// ÒıÓÃµÄÒÑÊÇjackµÄ¶ÔÏó£¬¸Ã¶ÔÏóage++
+		tom.addAge();// å¼•ç”¨çš„å·²æ˜¯jackçš„å¯¹è±¡ï¼Œè¯¥å¯¹è±¡age++
 	}
 
 }

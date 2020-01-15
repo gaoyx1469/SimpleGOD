@@ -4,7 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- * ¼¯³ÉÁËSessionFactoryµÄÉú³É£¬ÓÃÓÚ±»DAO»ò²âÊÔÀà¼Ì³Ğ
+ * é›†æˆäº†SessionFactoryçš„ç”Ÿæˆï¼Œç”¨äºè¢«DAOæˆ–æµ‹è¯•ç±»ç»§æ‰¿
  * 
  * @author Gaoyx
  *
@@ -13,8 +13,8 @@ public class HibernateTestBaseUtil {
 	public static SessionFactory sessionFactory;
 	static {
 		Configuration config = new Configuration();
-		// ´ø²ÎµÄconfigure(String url)·½·¨¿ÉÒÔ·ÅÖÃhibernate.cfg.xmlµÄurl£¬ÒÔclasspathÎª¸ùÄ¿Â¼£¬/·Ö¸ô¡£
-		// ÉùÃ÷¾²Ì¬²ÎÊıºó£¬×ÓÀàÍ¨¹ı¾²Ì¬´úÂë¿é×¢ÈëurlÖµ
+		// å¸¦å‚çš„configure(String url)æ–¹æ³•å¯ä»¥æ”¾ç½®hibernate.cfg.xmlçš„urlï¼Œä»¥classpathä¸ºæ ¹ç›®å½•ï¼Œ/åˆ†éš”ã€‚
+		// å£°æ˜é™æ€å‚æ•°åï¼Œå­ç±»é€šè¿‡é™æ€ä»£ç å—æ³¨å…¥urlå€¼
 		config.configure();
 		sessionFactory = config.buildSessionFactory();
 	}

@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.util.Base64;
 
 /**
- * MD5¹¤¾ßÀà£¬Éú³ÉMD5ÂëÖµ,²¢Base64±àÂë
+ * MD5å·¥å…·ç±»ï¼Œç”ŸæˆMD5ç å€¼,å¹¶Base64ç¼–ç 
  * 
  * @author Gaoyx
  *
@@ -12,7 +12,7 @@ import java.util.Base64;
 public class MD5Util {
 
 	/**
-	 * ¸ù¾İ´«Èë×Ö·û´®£¬Ê¹ÓÃMD5Ëã·¨µÃµ½128Î»É¢ÁĞÖµ£¬Êä³öÆäBASE64±àÂë
+	 * æ ¹æ®ä¼ å…¥å­—ç¬¦ä¸²ï¼Œä½¿ç”¨MD5ç®—æ³•å¾—åˆ°128ä½æ•£åˆ—å€¼ï¼Œè¾“å‡ºå…¶BASE64ç¼–ç 
 	 * 
 	 * @param message
 	 * @return
@@ -20,13 +20,13 @@ public class MD5Util {
 	public static String generateMD5(String message) {
 		try {
 
-			// Ñ¡Ôñmd5Ëã·¨
+			// é€‰æ‹©md5ç®—æ³•
 			MessageDigest md = MessageDigest.getInstance("md5");
 
-			// Éú³É¶ş½øÖÆ´®
+			// ç”ŸæˆäºŒè¿›åˆ¶ä¸²
 			byte b[] = md.digest(message.getBytes());
 
-			// ²ÉÓÃBASE64±àÂë±ä»»×Ö½ÚĞòÁĞÎªÃ÷ÎÄ£¬Ô­ÀíÊÇ°Ñ3¸ö×Ö½Ú×ª»»Îª4¸ö×Ö½Ú
+			// é‡‡ç”¨BASE64ç¼–ç å˜æ¢å­—èŠ‚åºåˆ—ä¸ºæ˜æ–‡ï¼ŒåŸç†æ˜¯æŠŠ3ä¸ªå­—èŠ‚è½¬æ¢ä¸º4ä¸ªå­—èŠ‚
 			return Base64.getEncoder().encodeToString(b);
 		} catch (Exception e) {
 			throw new RuntimeException(e);

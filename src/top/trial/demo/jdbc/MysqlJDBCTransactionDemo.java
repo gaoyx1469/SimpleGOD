@@ -20,31 +20,31 @@ public class MysqlJDBCTransactionDemo {
 		Savepoint sp = null;
 		try {
 			conn = MysqlJDBCUtil.getConnection();
-			//conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);//ÉèÖÃÊÂÎñ¸ôÀë¼¶±ğ
+			//conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);//è®¾ç½®äº‹åŠ¡éš”ç¦»çº§åˆ«
 			
-			//ÉèÖÃ¿ªÆôÊÂÎñ
+			//è®¾ç½®å¼€å¯äº‹åŠ¡
 			conn.setAutoCommit(false);
 			
-			//µÚÒ»¶ÎÊÂÎñ
+			//ç¬¬ä¸€æ®µäº‹åŠ¡
 			ps = conn.prepareStatement("XXX");
 			ps.executeUpdate();
 			
-			//ÉèÖÃ»ØÍËµã
+			//è®¾ç½®å›é€€ç‚¹
 			sp = conn.setSavepoint("first savepoint");
 			
-			//µÚ¶ş¶ÎÊÂÎñ
+			//ç¬¬äºŒæ®µäº‹åŠ¡
 			ps = conn.prepareStatement("XXX");
 			ps.executeUpdate();
 		}catch(Exception e) {
 			try {
-				//±¨´í£¬»ØÍËµ½savepoint
+				//æŠ¥é”™ï¼Œå›é€€åˆ°savepoint
 				conn.rollback(sp);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
 		}finally {
 			try {
-				//²»±¨´í£¬Ìá½»ÊÂÎñ
+				//ä¸æŠ¥é”™ï¼Œæäº¤äº‹åŠ¡
 				conn.commit();
 			} catch (SQLException e) {
 				e.printStackTrace();

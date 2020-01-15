@@ -72,7 +72,7 @@ public class MysqlJDBCUnitTest {
 			String sql = "INSERT INTO SG_USER_INFO (SUI_ID,SUI_NAME,SUI_MOBILE,SUI_AGE,SUI_STT,SUI_CREADATE) VALUES (?,?,?,?,?,?)";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, "1000000021");
-			stmt.setString(2, "²âÊÔ");
+			stmt.setString(2, "æµ‹è¯•");
 			stmt.setString(3, "17712345678");
 			stmt.setInt(4, 20);
 			stmt.setString(5, "1");

@@ -6,7 +6,7 @@ import java.util.Date;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 测试表单数据的获取Action
+ * 娴嬭瘯琛ㄥ崟鏁版嵁鐨勮幏鍙朅ction
  * @author Gaoyx
  *
  */

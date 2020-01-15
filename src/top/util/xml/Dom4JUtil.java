@@ -11,7 +11,7 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 /**
- * Dom4J¹¤¾ßÀà
+ * Dom4Jå·¥å…·ç±»
  * 
  * @author Gaoyx
  *
@@ -19,7 +19,7 @@ import org.dom4j.io.XMLWriter;
 public class Dom4JUtil {
 
 	/**
-	 * DOM4J»ñÈ¡XMLµÄDocumentÔªËØ
+	 * DOM4Jè·å–XMLçš„Documentå…ƒç´ 
 	 * 
 	 * @param url
 	 * @return
@@ -30,7 +30,7 @@ public class Dom4JUtil {
 	}
 
 	/**
-	 * DOM4J»ñÈ¡XML¸ùÔªËØ
+	 * DOM4Jè·å–XMLæ ¹å…ƒç´ 
 	 * 
 	 * @param url
 	 * @return
@@ -41,7 +41,7 @@ public class Dom4JUtil {
 	}
 
 	/**
-	 * Ê¹ÓÃÖ¸¶¨±àÂë½«DocumentĞ´»ØXMLÎÄ¼ş
+	 * ä½¿ç”¨æŒ‡å®šç¼–ç å°†Documentå†™å›XMLæ–‡ä»¶
 	 * 
 	 * @param document
 	 * @param url
@@ -58,7 +58,7 @@ public class Dom4JUtil {
 	}
 
 	/**
-	 * Ê¹ÓÃGBK±àÂë½«DocumentĞ´»ØXMLÎÄ¼ş
+	 * ä½¿ç”¨GBKç¼–ç å°†Documentå†™å›XMLæ–‡ä»¶
 	 * 
 	 * @param document
 	 * @param url
@@ -69,7 +69,7 @@ public class Dom4JUtil {
 	}
 
 	/**
-	 * Ê¹ÓÃUTF-8±àÂë½«DocumentĞ´»ØXMLÎÄ¼ş
+	 * ä½¿ç”¨UTF-8ç¼–ç å°†Documentå†™å›XMLæ–‡ä»¶
 	 * 
 	 * @param document
 	 * @param url

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÇëÇó×ª·¢ÑİÊ¾£¬´ËÀàÎªÔ´×é¼ş£¬ÇëÇóºó×ª·¢µ½GoalRequestServlet
+ * è¯·æ±‚è½¬å‘æ¼”ç¤ºï¼Œæ­¤ç±»ä¸ºæºç»„ä»¶ï¼Œè¯·æ±‚åè½¬å‘åˆ°GoalRequestServlet
  * 
  * @author Gaoyx
  *
@@ -27,27 +27,27 @@ public class OriRequestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// ÏÂÃæÕâ¾ä»°ÓĞÓÃ£¬ÄÜÆğ×÷ÓÃ£¬ÒòÎªÇëÇó×ª·¢Ê±ÏìÓ¦Í·²»Çå¿Õ
+		// ä¸‹é¢è¿™å¥è¯æœ‰ç”¨ï¼Œèƒ½èµ·ä½œç”¨ï¼Œå› ä¸ºè¯·æ±‚è½¬å‘æ—¶å“åº”å¤´ä¸æ¸…ç©º
 		response.setContentType("text/html;charset=UTF-8");
-		// ÍùServletRequestÓòÖĞ·ÅÖµ
-		request.setAttribute("key", "Öµ-value");
+		// å¾€ServletRequeståŸŸä¸­æ”¾å€¼
+		request.setAttribute("key", "å€¼-value");
 
-		// ÏÂÃæÕâ¾ä»°Ä¾ÓĞÊä³ö£¬ÒòÎªÇëÇó×ª·¢Ê±ÏìÓ¦ÌåÇå¿ÕÁË
-		response.getWriter().write("×ª·¢Ç°²ÎÊı");
-		System.out.println("×ª·¢Ç°²ÎÊı");
+		// ä¸‹é¢è¿™å¥è¯æœ¨æœ‰è¾“å‡ºï¼Œå› ä¸ºè¯·æ±‚è½¬å‘æ—¶å“åº”ä½“æ¸…ç©ºäº†
+		response.getWriter().write("è½¬å‘å‰å‚æ•°");
+		System.out.println("è½¬å‘å‰å‚æ•°");
 
-		// ÇëÇó×ª·¢
+		// è¯·æ±‚è½¬å‘
 		RequestDispatcher rd = request.getRequestDispatcher("/GoalRequestServlet");
 
-		// ÁíÒ»ÖÖµÃµ½RequestDispatcherµÄ·½Ê½
+		// å¦ä¸€ç§å¾—åˆ°RequestDispatcherçš„æ–¹å¼
 		// rd = getServletContext().getRequestDispatcher("/GoalRequestServlet");
 
-		// ×ª·¢
+		// è½¬å‘
 		rd.forward(request, response);
 
-		// ÏÂÃæÕâ¾ä»°Ä¾ÓĞÊä³ö£¬ÒòÎªÇëÇóÒÑ¾­×ª·¢ÁË£¬ºóÃæĞ´µÄ¶¼Ö´ĞĞ£¬µ«ÊÇresponseÒÑ¾­°ü×°ºÃÁË£¬²»»áÔÙ¶¯ÁË
-		response.getWriter().write("×ª·¢ºó²ÎÊı");
-		System.out.println("×ª·¢ºó²ÎÊı");
+		// ä¸‹é¢è¿™å¥è¯æœ¨æœ‰è¾“å‡ºï¼Œå› ä¸ºè¯·æ±‚å·²ç»è½¬å‘äº†ï¼Œåé¢å†™çš„éƒ½æ‰§è¡Œï¼Œä½†æ˜¯responseå·²ç»åŒ…è£…å¥½äº†ï¼Œä¸ä¼šå†åŠ¨äº†
+		response.getWriter().write("è½¬å‘åå‚æ•°");
+		System.out.println("è½¬å‘åå‚æ•°");
 	}
 
 	@Override

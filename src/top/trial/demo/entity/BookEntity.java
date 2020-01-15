@@ -1,7 +1,7 @@
 package top.trial.demo.entity;
 
 /**
- * Í¼ÊéJavaBean
+ * å›¾ä¹¦JavaBean
  * 
  * @author Gaoyx
  *

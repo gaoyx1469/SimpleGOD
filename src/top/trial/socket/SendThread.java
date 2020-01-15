@@ -31,7 +31,7 @@ public class SendThread implements Runnable {
 	}
 
 	/**
-	 * UDPĞ­Òé·¢ËÍÊı¾İ
+	 * UDPåè®®å‘é€æ•°æ®
 	 * 
 	 * @param msg
 	 * @throws SocketException
@@ -41,14 +41,14 @@ public class SendThread implements Runnable {
 	private static void SendUDPSimple(String msg, DatagramSocket ds)
 			throws SocketException, UnknownHostException, IOException {
 
-		// ´´½¨Êı¾İ£¬´ò°ü
+		// åˆ›å»ºæ•°æ®ï¼Œæ‰“åŒ…
 		byte[] buf = msg.getBytes();
-		// Ä¿±êIPºÍÄ¿±ê¶Ë¿Ú
+		// ç›®æ ‡IPå’Œç›®æ ‡ç«¯å£
 		DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName("172.20.72.221"), 12306);
-		// µ÷ÓÃSocket¶ÔÏó·¢ËÍ·½·¨·¢ËÍ
+		// è°ƒç”¨Socketå¯¹è±¡å‘é€æ–¹æ³•å‘é€
 		ds.send(dp);
 
-		System.out.println("·¢ËÍ³É¹¦");
+		System.out.println("å‘é€æˆåŠŸ");
 	}
 
 }

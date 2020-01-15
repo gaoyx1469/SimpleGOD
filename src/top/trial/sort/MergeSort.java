@@ -1,7 +1,7 @@
 package top.trial.sort;
 
 /**
- * ¹é²¢ÅÅĞò´úÂëÊµÏÖ
+ * å½’å¹¶æ’åºä»£ç å®ç°
  * 
  * @author gaoyx
  *
@@ -9,7 +9,7 @@ package top.trial.sort;
 public class MergeSort {
 
 	/**
-	 * µÚÒ»°æ¹é²¢ÅÅĞò£¬Î´ÓÅ»¯
+	 * ç¬¬ä¸€ç‰ˆå½’å¹¶æ’åºï¼Œæœªä¼˜åŒ–
 	 * 
 	 * @param nums
 	 */
@@ -18,12 +18,12 @@ public class MergeSort {
 		if (len <= 1) {
 			return;
 		}
-		// ¹é²¢ÅÅĞò±¾Ìå
+		// å½’å¹¶æ’åºæœ¬ä½“
 		sortE2(nums, 0, len - 1);
 	}
 
 	/**
-	 * ¹é²¢ÅÅĞò±¾Ìå£¬Î´ÓÅ»¯°æ
+	 * å½’å¹¶æ’åºæœ¬ä½“ï¼Œæœªä¼˜åŒ–ç‰ˆ
 	 * 
 	 * @param nums
 	 * @param startIndex
@@ -31,14 +31,14 @@ public class MergeSort {
 	 */
 	private static void sortE2(int[] nums, int startIndex, int endIndex) {
 
-		// ÅĞ¶ÏÊÇ·ñĞèÒª¹é²¢
+		// åˆ¤æ–­æ˜¯å¦éœ€è¦å½’å¹¶
 		if (startIndex >= endIndex) {
 			return;
 		}
 
 		int mid = (startIndex + endIndex) / 2;
 
-		// ½«Á½±ßÅÅĞòÍê³É
+		// å°†ä¸¤è¾¹æ’åºå®Œæˆ
 		sortE2(nums, startIndex, mid);
 		sortE2(nums, mid + 1, endIndex);
 
@@ -46,21 +46,21 @@ public class MergeSort {
 		int p1 = startIndex;
 		int p2 = mid + 1;
 		int p = 0;
-		// Á½±ß°´Ë³ĞòÌîÈëÁÙÊ±Êı×é
+		// ä¸¤è¾¹æŒ‰é¡ºåºå¡«å…¥ä¸´æ—¶æ•°ç»„
 		while (p1 <= mid && p2 <= endIndex) {
 			if (nums[p1] <= nums[p2])
 				tempArray[p++] = nums[p1++];
 			else
 				tempArray[p++] = nums[p2++];
 		}
-		// Ê£ÓàÔªËØÌîÈëÁÙÊ±Êı×é
+		// å‰©ä½™å…ƒç´ å¡«å…¥ä¸´æ—¶æ•°ç»„
 		while (p1 <= mid) {
 			tempArray[p++] = nums[p1++];
 		}
 		while (p2 <= endIndex) {
 			tempArray[p++] = nums[p2++];
 		}
-		// ÁÙÊ±Êı×éÊı¾İÌî»Ø
+		// ä¸´æ—¶æ•°ç»„æ•°æ®å¡«å›
 		for (int i = 0; i < endIndex - startIndex + 1; i++) {
 			nums[startIndex + i] = tempArray[i];
 		}

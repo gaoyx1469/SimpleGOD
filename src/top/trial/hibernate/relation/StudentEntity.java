@@ -3,7 +3,7 @@ package top.trial.hibernate.relation;
 import java.io.Serializable;
 
 /**
- * Ñ§ÉúÊµÌå£¬×÷ÎªhibernateÒ»¶Ô¶à²âÊÔµÄ¡°¶à¡±µÄÒ»·½
+ * å­¦ç”Ÿå®ä½“ï¼Œä½œä¸ºhibernateä¸€å¯¹å¤šæµ‹è¯•çš„â€œå¤šâ€çš„ä¸€æ–¹
  * 
  * @author Gaoyx
  *

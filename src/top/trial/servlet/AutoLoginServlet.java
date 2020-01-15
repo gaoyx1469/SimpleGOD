@@ -30,15 +30,16 @@ public class AutoLoginServlet extends HttpServlet {
 
 		UserLoginEntity user = UserDB.findUserByNameAndPsw(username, password);
 
-		if (user != null) {// µÇÂ¼³É¹¦
-			request.getSession().setAttribute("user", user);// userĞÅÏ¢´æSession
+		if (user != null) {// ç™»å½•æˆåŠŸ
+			request.getSession().setAttribute("user", user);// userä¿¡æ¯å­˜Session
 			String autoLoginFlag = request.getParameter("autoLoginFlag");
-			if (autoLoginFlag != null) {// ×Ô¶¯µÇÂ¼¹´Ñ¡
-				//cookieÖĞ²»ÄÜ´æÖĞÎÄ£¬Òò´ËÓÃ»§Ãûbase64±àÂë£¬ÃÜÂëÊ¹ÓÃMD5¼ÓÃÜºóbase64±àÂë
-				Cookie cookie = new Cookie("autoLogin", Base64Util.base64Encoding(username) + "_" + MD5Util.generateMD5(password));
-				cookie.setMaxAge(Integer.MAX_VALUE);// ÓĞĞ§ÆÚ
-				cookie.setPath(request.getContextPath());// ÓĞĞ§Path
-				response.addCookie(cookie);// ·µ»Øcookie
+			if (autoLoginFlag != null) {// è‡ªåŠ¨ç™»å½•å‹¾é€‰
+				// cookieä¸­ä¸èƒ½å­˜ä¸­æ–‡ï¼Œå› æ­¤ç”¨æˆ·åbase64ç¼–ç ï¼Œå¯†ç ä½¿ç”¨MD5åŠ å¯†åbase64ç¼–ç 
+				Cookie cookie = new Cookie("autoLogin",
+						Base64Util.base64Encoding(username) + "_" + MD5Util.generateMD5(password));
+				cookie.setMaxAge(Integer.MAX_VALUE);// æœ‰æ•ˆæœŸ
+				cookie.setPath(request.getContextPath());// æœ‰æ•ˆPath
+				response.addCookie(cookie);// è¿”å›cookie
 			}
 		}
 		response.sendRedirect(request.getContextPath() + "/JSP/autoLogin/autoMain.jsp");

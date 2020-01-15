@@ -6,18 +6,18 @@ public class AccountOperationAopServiceImpl implements AccountOperationAopServic
 
 	@Override
 	public void saveAccount() {
-		System.out.println("保存账户");
+		System.out.println("淇濆瓨璐︽埛");
 	}
 
 	@Override
 	public void updateAccount(int id) {
 		int i = 1 / 0;
-		System.out.println("更新账户-" + id);
+		System.out.println("鏇存柊璐︽埛-" + id);
 	}
 
 	@Override
 	public int deleteAccount(int id) {
-		System.out.println("删除账户-" + id);
+		System.out.println("鍒犻櫎璐︽埛-" + id);
 		return id;
 	}
 

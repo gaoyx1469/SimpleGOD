@@ -5,7 +5,7 @@ import java.net.DatagramSocket;
 import org.junit.Test;
 
 /**
- * 多线程模拟聊天室Demo
+ * 澶氱嚎绋嬫ā鎷熻亰澶╁Demo
  * 
  * @author Gaoyx
  *
@@ -15,9 +15,9 @@ public class ChatRoomDemo {
 	@Test
 	public void chatRoomTest() throws IOException {
 
-		// 创建发送Socket
+		// 鍒涘缓鍙戦�丼ocket
 		DatagramSocket dSend = new DatagramSocket();
-		// 创建接收Socket
+		// 鍒涘缓鎺ユ敹Socket
 		DatagramSocket dReceive = new DatagramSocket(12306);
 
 		SendThread sendThread = new SendThread(dSend);

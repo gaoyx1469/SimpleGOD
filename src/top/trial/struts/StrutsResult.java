@@ -1,7 +1,7 @@
 package top.trial.struts;
 
 /**
- * StrutsResult½Ó¿ÚÓÃÓÚ¶¨ÒåstrutsµÄresult±êÇ©ÖĞ¸÷ÖÖ³£Á¿
+ * StrutsResultæ¥å£ç”¨äºå®šä¹‰strutsçš„resultæ ‡ç­¾ä¸­å„ç§å¸¸é‡
  * @author Gaoyx
  *
  */

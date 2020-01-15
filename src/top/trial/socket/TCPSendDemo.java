@@ -6,10 +6,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * TCPĞ­Òé·¢ËÍÊı¾İ
- * 1.´´½¨·¢ËÍ¶ËSocket¶ÔÏó
- * 2.»ñÈ¡Êä³öÁ÷
- * 3.ÊÍ·Å×ÊÔ´
+ * TCPåè®®å‘é€æ•°æ® 1.åˆ›å»ºå‘é€ç«¯Socketå¯¹è±¡ 2.è·å–è¾“å‡ºæµ 3.é‡Šæ”¾èµ„æº
  * 
  * 
  * @author Gaoyx
@@ -18,27 +15,27 @@ import java.net.Socket;
 public class TCPSendDemo {
 
 	public static void main(String[] args) throws IOException {
-		// ´´½¨·¢ËÍ¶ËSocket¶ÔÏó
+		// åˆ›å»ºå‘é€ç«¯Socketå¯¹è±¡
 		Socket sendSocket = new Socket("172.20.72.221", 10010);
-		// ´´½¨Ğ´ÈëÊı¾İ
+		// åˆ›å»ºå†™å…¥æ•°æ®
 		String input = "TCP test";
-		// »ñÈ¡Êä³öÁ÷
+		// è·å–è¾“å‡ºæµ
 		OutputStream os = sendSocket.getOutputStream();
-		// Ğ´Êı¾İ
+		// å†™æ•°æ®
 		os.write(input.getBytes());
-		// ¸æËß·şÎñÆ÷Ğ´ÈëÍê±Ï
+		// å‘Šè¯‰æœåŠ¡å™¨å†™å…¥å®Œæ¯•
 		sendSocket.shutdownOutput();
 
-		// »ñÈ¡ÊäÈëÁ÷
+		// è·å–è¾“å…¥æµ
 		InputStream is = sendSocket.getInputStream();
-		// ¶ÁÈ¡Êı¾İ
+		// è¯»å–æ•°æ®
 		byte[] bs = new byte[1024];
-		int length = is.read(bs);// ¶ÁÈ¡Êı¾İ£¬Èç·şÎñ¶Ë²»·´À¡£¬ÔòÒ»Ö±´¦ÓÚ×èÈû×´Ì¬
+		int length = is.read(bs);// è¯»å–æ•°æ®ï¼Œå¦‚æœåŠ¡ç«¯ä¸åé¦ˆï¼Œåˆ™ä¸€ç›´å¤„äºé˜»å¡çŠ¶æ€
 		String output = new String(bs);
-		// Êä³öÊı¾İ
+		// è¾“å‡ºæ•°æ®
 		System.out.println(output);
 
-		// ÊÍ·Å×ÊÔ´
+		// é‡Šæ”¾èµ„æº
 		sendSocket.close();
 
 	}

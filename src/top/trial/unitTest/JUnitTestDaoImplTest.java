@@ -12,39 +12,39 @@ public class JUnitTestDaoImplTest {
 
 	static JUnitTestDao testDao = null;
 
-	// ³õÊ¼»¯
+	// åˆå§‹åŒ–
 	@BeforeClass
 	public static void initDao() {
 		testDao = new JUnitTestDaoImpl();
 	}
 
-	// Ïú»Ù
+	// é”€æ¯
 	@AfterClass
 	public static void distoryDao() {
 		testDao = null;
 	}
 
 	/*
-	 * //Ã¿¸ö²âÊÔ·½·¨µ÷ÓÃÇ°Ö´ĞĞ
+	 * //æ¯ä¸ªæµ‹è¯•æ–¹æ³•è°ƒç”¨å‰æ‰§è¡Œ
 	 * 
 	 * @Before public void initMethod() { testDao = new JUnitTestDaoImpl(); }
 	 * 
-	 * //Ã¿¸ö²âÊÔ·½·¨µ÷ÓÃºóÖ´ĞĞ
+	 * //æ¯ä¸ªæµ‹è¯•æ–¹æ³•è°ƒç”¨åæ‰§è¡Œ
 	 * 
 	 * @After public void distoryMethod() { testDao = null; }
 	 */
 
 	/**
-	 * ÆÚÍûÊÇ½á¹ûÕıÈ·£¬Ğ§ÂÊÓĞ±£Ö¤
+	 * æœŸæœ›æ˜¯ç»“æœæ­£ç¡®ï¼Œæ•ˆç‡æœ‰ä¿è¯
 	 */
-	@Test(timeout = 10) // µ¥Î»ÊÇºÁÃë
+	@Test(timeout = 10) // å•ä½æ˜¯æ¯«ç§’
 	public void testSum() {
 		int sunNum = testDao.sum(1, 2);
 		Assert.assertEquals(3, sunNum);
 	}
 
 	/**
-	 * ÆÚÍûÊÇÅ×³öArithmeticExceptionÒì³£
+	 * æœŸæœ›æ˜¯æŠ›å‡ºArithmeticExceptionå¼‚å¸¸
 	 */
 	@Test(expected = ArithmeticException.class)
 	public void testDivide() {

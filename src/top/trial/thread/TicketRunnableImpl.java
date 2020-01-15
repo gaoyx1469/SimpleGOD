@@ -1,7 +1,7 @@
 package top.trial.thread;
 
 /**
- * ÂôÆ±ÎÊÌâÊµÏÖ¾ÙÀý
+ * å–ç¥¨é—®é¢˜å®žçŽ°ä¸¾ä¾‹
  * 
  * @author Gaoyx
  *
@@ -10,14 +10,14 @@ public class TicketRunnableImpl implements Runnable {
 
 	private int ticketNum = 100;
 
-	// Ëø¶ÔÏó
+	// é”å¯¹è±¡
 	private Object obj = new Object();
 
 	@Override
 	public void run() {
 
-		// ¼ÓËø£¬Ò²¿ÉÒÔÌáÈ¡³öÒ»¸ö·½·¨£¬È»ºóÊ¹ÓÃsynchronizedÐÞÊÎ
-		// Ò²¿ÉÒÔÊ¹ÓÃLock½Ó¿ÚµÄlockºÍunlock·½·¨Î§ÈÆ
+		// åŠ é”ï¼Œä¹Ÿå¯ä»¥æå–å‡ºä¸€ä¸ªæ–¹æ³•ï¼Œç„¶åŽä½¿ç”¨synchronizedä¿®é¥°
+		// ä¹Ÿå¯ä»¥ä½¿ç”¨LockæŽ¥å£çš„lockå’Œunlockæ–¹æ³•å›´ç»•
 		synchronized (obj) {
 			while (ticketNum > 0) {
 				System.out.println(Thread.currentThread().getName() + ":" + ticketNum);

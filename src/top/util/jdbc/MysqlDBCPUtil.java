@@ -12,7 +12,7 @@ import org.apache.commons.dbcp2.BasicDataSourceFactory;
 import top.util.properties.PropertiesUtil;
 
 /**
- * ÒıÓÃDBCPÊı¾İ¿âÁ¬½Ó³Ø£¬MysqlJDBCUtilÉı¼¶°æ
+ * å¼•ç”¨DBCPæ•°æ®åº“è¿æ¥æ± ï¼ŒMysqlJDBCUtilå‡çº§ç‰ˆ
  * @author Gaoyx
  *
  */
@@ -21,7 +21,7 @@ public class MysqlDBCPUtil {
 	
 	static {
 		try {
-			//Êı¾İÔ´¹¤³§¸ù¾İpropertiesÎÄ¼ş´´½¨Êı¾İÔ´
+			//æ•°æ®æºå·¥å‚æ ¹æ®propertiesæ–‡ä»¶åˆ›å»ºæ•°æ®æº
 			ds = BasicDataSourceFactory.createDataSource(PropertiesUtil.getPropertiesByClassloader("dbcpconfig.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -29,7 +29,7 @@ public class MysqlDBCPUtil {
 	}
 	
 	/**
-	 * »ñÈ¡Êı¾İÔ´
+	 * è·å–æ•°æ®æº
 	 * @return
 	 */
 	public static DataSource getDataSource() {
@@ -37,7 +37,7 @@ public class MysqlDBCPUtil {
 	}
 	
 	/**
-	 * »ñÈ¡Á¬½Ó
+	 * è·å–è¿æ¥
 	 * @return
 	 */
 	public static Connection getConnection() {
@@ -50,7 +50,7 @@ public class MysqlDBCPUtil {
 	
 	
 	/**
-	 * ÊÍ·Å×ÊÔ´£¬Ê¹ÓÃDBUtils¿ò¼ÜÊ±ÒÑ¾­×Ô¶¯ÊÍ·Å×ÊÔ´£¬²»Ğèµ÷ÓÃ´Ë·½·¨
+	 * é‡Šæ”¾èµ„æºï¼Œä½¿ç”¨DBUtilsæ¡†æ¶æ—¶å·²ç»è‡ªåŠ¨é‡Šæ”¾èµ„æºï¼Œä¸éœ€è°ƒç”¨æ­¤æ–¹æ³•
 	 * @param rs
 	 * @param stmt
 	 * @param conn

@@ -16,7 +16,7 @@ import org.xml.sax.XMLReader;
 import top.util.xml.SAXUtil;
 
 /**
- * ´ËÀàÑİÊ¾SAX·½Ê½¶ÔXMLÎÄ¼şµÄ²éÑ¯²Ù×÷
+ * æ­¤ç±»æ¼”ç¤ºSAXæ–¹å¼å¯¹XMLæ–‡ä»¶çš„æŸ¥è¯¢æ“ä½œ
  * 
  * @author Gaoyx
  *
@@ -25,10 +25,10 @@ public class JaxpSaxDemo {
 	
 	@Test
 	public void jaxpSaxTest() throws Exception {
-		// È«¾Ö¶ÁÈ¡
+		// å…¨å±€è¯»å–
 		// test1();
 
-		// ¶ÁÈ¡µÚÈı¸ö¼¼ÊõÄÚÈİ¡°²¢·¢¡±
+		// è¯»å–ç¬¬ä¸‰ä¸ªæŠ€æœ¯å†…å®¹â€œå¹¶å‘â€
 		test2();
 	}
 
@@ -109,15 +109,15 @@ public class JaxpSaxDemo {
 	}
 
 	private static void test1() throws ParserConfigurationException, SAXException, IOException {
-		// µÃµ½½âÎöÆ÷¹¤³§SAXParserFactory
+		// å¾—åˆ°è§£æå™¨å·¥å‚SAXParserFactory
 		SAXParserFactory factory = SAXParserFactory.newInstance();
-		// µÃµ½½âÎöÆ÷SAXParser
+		// å¾—åˆ°è§£æå™¨SAXParser
 		SAXParser parser = factory.newSAXParser();
-		// µÃµ½XML¶ÁÈ¡Æ÷£ºXMLReader
+		// å¾—åˆ°XMLè¯»å–å™¨ï¼šXMLReader
 		XMLReader reader = parser.getXMLReader();
-		// ×¢²áÄÚÈİ´¦ÀíÆ÷£ºContentHandler
+		// æ³¨å†Œå†…å®¹å¤„ç†å™¨ï¼šContentHandler
 		reader.setContentHandler(new MyContentHandler());
-		// ¶ÁÈ¡XMLÎÄµµ
+		// è¯»å–XMLæ–‡æ¡£
 		reader.parse("WebContent/WEB-INF/example/XMLExample.xml");
 	}
 
@@ -130,16 +130,16 @@ class MyContentHandler implements ContentHandler {
 
 	}
 
-	// ½âÎöµ½ÎÄµµ¿ªÊ¼Ê±µ÷ÓÃ
+	// è§£æåˆ°æ–‡æ¡£å¼€å§‹æ—¶è°ƒç”¨
 	@Override
 	public void startDocument() throws SAXException {
-		System.out.println("ÎÄµµ½âÎö¿ªÊ¼");
+		System.out.println("æ–‡æ¡£è§£æå¼€å§‹");
 	}
 
-	// ½âÎöµ½ÎÄµµ½áÊøÊ±µ÷ÓÃ
+	// è§£æåˆ°æ–‡æ¡£ç»“æŸæ—¶è°ƒç”¨
 	@Override
 	public void endDocument() throws SAXException {
-		System.out.println("ÎÄµµ½âÎö½áÊø");
+		System.out.println("æ–‡æ¡£è§£æç»“æŸ");
 	}
 
 	@Override
@@ -152,22 +152,22 @@ class MyContentHandler implements ContentHandler {
 
 	}
 
-	// ½âÎöµ½ÔªËØ¿ªÊ¼Ê±µ÷ÓÃ
+	// è§£æåˆ°å…ƒç´ å¼€å§‹æ—¶è°ƒç”¨
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-		System.out.println("½âÎöµ½ÔªËØ£º" + qName);
+		System.out.println("è§£æåˆ°å…ƒç´ ï¼š" + qName);
 	}
 
-	// ½âÎöµ½ÔªËØ½áÊøÊ±µ÷ÓÃ
+	// è§£æåˆ°å…ƒç´ ç»“æŸæ—¶è°ƒç”¨
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
-		System.out.println("½âÎöÔªËØ£º" + qName + "½áÊø");
+		System.out.println("è§£æå…ƒç´ ï¼š" + qName + "ç»“æŸ");
 	}
 
-	// ½âÎöµ½ÎÄ±¾ÄÚÈİÊ±µ÷ÓÃ
+	// è§£æåˆ°æ–‡æœ¬å†…å®¹æ—¶è°ƒç”¨
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		System.out.println("ÎÄ±¾ƒÈÈİ£º" + new String(ch, start, length));
+		System.out.println("æ–‡æœ¬å…§å®¹ï¼š" + new String(ch, start, length));
 	}
 
 	@Override

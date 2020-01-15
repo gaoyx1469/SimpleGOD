@@ -17,7 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * ´ËÀàÑİÊ¾DOM·½Ê½¶ÔXMLÎÄ¼şµÄÖ±½ÓÔöÉ¾¸Ä²é²Ù×÷
+ * æ­¤ç±»æ¼”ç¤ºDOMæ–¹å¼å¯¹XMLæ–‡ä»¶çš„ç›´æ¥å¢åˆ æ”¹æŸ¥æ“ä½œ
  * 
  * @author Gaoyx
  *
@@ -26,11 +26,11 @@ public class JaxpDomDemo {
 
 	@Test
 	public void jaxpDomTest() throws Exception {
-		// µÃµ½½âÎö¹¤³§DocumentBuilderFactory
+		// å¾—åˆ°è§£æå·¥å‚DocumentBuilderFactory
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		// µÃµ½½âÎöÆ÷DocumentBuilder
+		// å¾—åˆ°è§£æå™¨DocumentBuilder
 		DocumentBuilder db = dbFactory.newDocumentBuilder();
-		// ½âÎöÖ¸¶¨µÄXMLÎÄµµ£¬µÃµ½´ú±íÄÚ´æDOMÊ÷µÄdocument¶ÔÏó
+		// è§£ææŒ‡å®šçš„XMLæ–‡æ¡£ï¼Œå¾—åˆ°ä»£è¡¨å†…å­˜DOMæ ‘çš„documentå¯¹è±¡
 		Document document = db.parse("WebContent/WEB-INF/example/XMLExample.xml");
 
 		// test1(document);
@@ -42,29 +42,29 @@ public class JaxpDomDemo {
 		test7(document);
 	}
 
-	// ²é£ºµÃµ½Ä³¸ö¾ßÌåµÄ½ÚµãÄÚÈİ
-	// ÈçµÃµ½PythonÔªËØµÄÄÚÈİ
+	// æŸ¥ï¼šå¾—åˆ°æŸä¸ªå…·ä½“çš„èŠ‚ç‚¹å†…å®¹
+	// å¦‚å¾—åˆ°Pythonå…ƒç´ çš„å†…å®¹
 	private static void test1(Document document) {
-		// ¸ù¾İ±êÇ©ÃûPython»ñÈ¡ËùÓĞµÄPythonÔªËØ
+		// æ ¹æ®æ ‡ç­¾åPythonè·å–æ‰€æœ‰çš„Pythonå…ƒç´ 
 		NodeList nl = document.getElementsByTagName("Python");
-		// °´ÕÕË÷ÒıÈ¡µÚÒ»¸ö
+		// æŒ‰ç…§ç´¢å¼•å–ç¬¬ä¸€ä¸ª
 		Node n = nl.item(0);
-		// ´òÓ¡ÔªËØÄÚÈİ
+		// æ‰“å°å…ƒç´ å†…å®¹
 		String text = n.getTextContent();
 		System.out.println(text);
 	}
 
-	// ²é£º±éÀúËùÓĞ½Úµã
-	// ´òÓ¡ËùÓĞÔªËØÃû³Æ
+	// æŸ¥ï¼šéå†æ‰€æœ‰èŠ‚ç‚¹
+	// æ‰“å°æ‰€æœ‰å…ƒç´ åç§°
 	private static void test2(Node node) {
-		// ÅĞ¶Ïµ±Ç°½ÚµãÊÇ·ñÊÇÔªËØ
+		// åˆ¤æ–­å½“å‰èŠ‚ç‚¹æ˜¯å¦æ˜¯å…ƒç´ 
 		short type = node.getNodeType();
-		// Èç¹ûÊÇ£¬´òÓ¡Ãû³Æ
+		// å¦‚æœæ˜¯ï¼Œæ‰“å°åç§°
 		if (type == Node.ELEMENT_NODE) {
 			System.out.println(node.getNodeName());
 		}
-		// Èç¹û²»ÊÇ£¬Ìø¹ı
-		// ±éÀúËûµÄº¢×Ó
+		// å¦‚æœä¸æ˜¯ï¼Œè·³è¿‡
+		// éå†ä»–çš„å­©å­
 		NodeList nl = node.getChildNodes();
 		int l = nl.getLength();
 		for (int i = 0; i < l; i++) {
@@ -73,67 +73,67 @@ public class JaxpDomDemo {
 		}
 	}
 
-	// ¸Ä£ºĞŞ¸ÄÄ³¸öÔªËØ½ÚµãµÄÖ÷ÌåÄÚÈİ
+	// æ”¹ï¼šä¿®æ”¹æŸä¸ªå…ƒç´ èŠ‚ç‚¹çš„ä¸»ä½“å†…å®¹
 	private static void test3(Document document) throws Exception {
-		// ÕÒµ½¸Ã½Úµã
+		// æ‰¾åˆ°è¯¥èŠ‚ç‚¹
 		NodeList nl = document.getElementsByTagName("C");
 		Node n = nl.item(0);
-		// ÉèÖÃÖ÷ÌåÄÚÈİ
-		n.setTextContent("CÓïÑÔ");
-		// °ÑÄÚ´æÖĞµÄDcoumentÊ÷Ğ´»ØXMLÎÄ¼şÖĞ
+		// è®¾ç½®ä¸»ä½“å†…å®¹
+		n.setTextContent("Cè¯­è¨€");
+		// æŠŠå†…å­˜ä¸­çš„Dcoumentæ ‘å†™å›XMLæ–‡ä»¶ä¸­
 		transToXml(document);
 	}
 
-	// Ôö£ºÏòÖ¸¶¨ÔªËØ½ÚµãÖĞÔö¼Ó×ÓÔªËØ½Úµã
-	// ÔÚTech½ÚµãÖĞÔö¼Ó<Î¢·şÎñ>Docker</Î¢·şÎñ>
+	// å¢ï¼šå‘æŒ‡å®šå…ƒç´ èŠ‚ç‚¹ä¸­å¢åŠ å­å…ƒç´ èŠ‚ç‚¹
+	// åœ¨TechèŠ‚ç‚¹ä¸­å¢åŠ <å¾®æœåŠ¡>Docker</å¾®æœåŠ¡>
 	private static void test4(Document document) throws Exception {
-		// ¸¸½Úµã
+		// çˆ¶èŠ‚ç‚¹
 		NodeList nl = document.getElementsByTagName("Tech");
 		Node n = nl.item(0);
-		// ĞÂ½¨ÔªËØ
-		Element el = document.createElement("Î¢·şÎñ");
+		// æ–°å»ºå…ƒç´ 
+		Element el = document.createElement("å¾®æœåŠ¡");
 		el.setTextContent("Docker");
-		// ÔÚ¸¸½ÚµãÏÂÔö¼ÓĞÂ½¨×ÓÔªËØ
+		// åœ¨çˆ¶èŠ‚ç‚¹ä¸‹å¢åŠ æ–°å»ºå­å…ƒç´ 
 		n.appendChild(el);
-		// °ÑÄÚ´æÖĞµÄDcoumentÊ÷Ğ´»ØXMLÎÄ¼şÖĞ
+		// æŠŠå†…å­˜ä¸­çš„Dcoumentæ ‘å†™å›XMLæ–‡ä»¶ä¸­
 		transToXml(document);
 	}
 
-	// Ôö£ºÏòÖ¸¶¨ÔªËØ½ÚµãÖĞÔö¼ÓÍ¬¼¶ÔªËØ½Úµã
-	// ÔÚconcurrent½ÚµãÇ°Ôö¼Ó<Î¢·şÎñ>Docker</Î¢·şÎñ>
+	// å¢ï¼šå‘æŒ‡å®šå…ƒç´ èŠ‚ç‚¹ä¸­å¢åŠ åŒçº§å…ƒç´ èŠ‚ç‚¹
+	// åœ¨concurrentèŠ‚ç‚¹å‰å¢åŠ <å¾®æœåŠ¡>Docker</å¾®æœåŠ¡>
 	private static void test5(Document document) throws Exception {
-		// ²Î¿¼×Ó½Úµã
+		// å‚è€ƒå­èŠ‚ç‚¹
 		NodeList nl = document.getElementsByTagName("concurrent");
 		Node n = nl.item(0);
-		// ĞÂ½¨ÔªËØ
-		Element el = document.createElement("Î¢·şÎñ");
+		// æ–°å»ºå…ƒç´ 
+		Element el = document.createElement("å¾®æœåŠ¡");
 		el.setTextContent("Docker");
-		// ÔÚ¸¸½ÚµãÏÂÔö¼ÓĞÂ½¨×ÓÔªËØ
+		// åœ¨çˆ¶èŠ‚ç‚¹ä¸‹å¢åŠ æ–°å»ºå­å…ƒç´ 
 		n.getParentNode().insertBefore(el, n);
-		// °ÑÄÚ´æÖĞµÄDcoumentÊ÷Ğ´»ØXMLÎÄ¼şÖĞ
+		// æŠŠå†…å­˜ä¸­çš„Dcoumentæ ‘å†™å›XMLæ–‡ä»¶ä¸­
 		transToXml(document);
 	}
 
-	// É¾£ºÉ¾³ıÖ¸¶¨ÔªËØ½Úµã
-	// É¾³ı<Î¢·şÎñ>Docker</Î¢·şÎñ>
+	// åˆ ï¼šåˆ é™¤æŒ‡å®šå…ƒç´ èŠ‚ç‚¹
+	// åˆ é™¤<å¾®æœåŠ¡>Docker</å¾®æœåŠ¡>
 	private static void test6(Document document) throws Exception {
-		// ÕÒµ½¸Ã½Úµã
-		Node n = document.getElementsByTagName("Î¢·şÎñ").item(0);
-		// É¾³ı
+		// æ‰¾åˆ°è¯¥èŠ‚ç‚¹
+		Node n = document.getElementsByTagName("å¾®æœåŠ¡").item(0);
+		// åˆ é™¤
 		n.getParentNode().removeChild(n);
-		// °ÑÄÚ´æÖĞµÄDcoumentÊ÷Ğ´»ØXMLÎÄ¼şÖĞ
+		// æŠŠå†…å­˜ä¸­çš„Dcoumentæ ‘å†™å›XMLæ–‡ä»¶ä¸­
 		transToXml(document);
 
 	}
 
-	// Ôö¡¢É¾¡¢¸Ä¡¢²é£º²Ù×÷XMLÎÄ¼şÊôĞÔ
-	// TechÔªËØµÄÊôĞÔnameµÄ»ñÈ¡
+	// å¢ã€åˆ ã€æ”¹ã€æŸ¥ï¼šæ“ä½œXMLæ–‡ä»¶å±æ€§
+	// Techå…ƒç´ çš„å±æ€§nameçš„è·å–
 	private static void test7(Document document) throws Exception {
-		// »ñÈ¡ÔªËØ½Úµã
+		// è·å–å…ƒç´ èŠ‚ç‚¹
 		Node n = document.getElementsByTagName("Tech").item(0);
-		// Ç¿×ªÎªElement,ÒòÎªElementÖĞ²ÅÓĞ»ñÈ¡µ¥¸öÊôĞÔµÄ·½·¨
+		// å¼ºè½¬ä¸ºElement,å› ä¸ºElementä¸­æ‰æœ‰è·å–å•ä¸ªå±æ€§çš„æ–¹æ³•
 		Element e = (Element) n;
-		// »ñÈ¡ÔªËØ
+		// è·å–å…ƒç´ 
 		String s = e.getAttribute("name");
 
 		System.out.println(s);
@@ -141,11 +141,11 @@ public class JaxpDomDemo {
 
 	private static void transToXml(Document document)
 			throws TransformerFactoryConfigurationError, TransformerConfigurationException, TransformerException {
-		// »ñµÃ×ª»»¹¤³§Àà
+		// è·å¾—è½¬æ¢å·¥å‚ç±»
 		TransformerFactory fac = TransformerFactory.newInstance();
-		// »ñµÃ×ª»»Àà
+		// è·å¾—è½¬æ¢ç±»
 		Transformer tran = fac.newTransformer();
-		// Ö´ĞĞ×ª»»·½·¨
+		// æ‰§è¡Œè½¬æ¢æ–¹æ³•
 		tran.transform(new DOMSource(document), new StreamResult("WebContent/WEB-INF/example/XMLExample.xml"));
 	}
 }

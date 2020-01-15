@@ -7,7 +7,7 @@ import top.trial.hibernate.GameEntity;
 import top.trial.hibernate.HibernateTestBaseUtil;
 
 /**
- * ¸ÃÀàÎª¶ş¼¶»º´æµÄ²âÊÔÀà
+ * è¯¥ç±»ä¸ºäºŒçº§ç¼“å­˜çš„æµ‹è¯•ç±»
  * 
  * @author Gaoyx1469
  *
@@ -15,23 +15,23 @@ import top.trial.hibernate.HibernateTestBaseUtil;
 public class SecondLevelCacheTest extends HibernateTestBaseUtil {
 
 	/**
-	 * ¶ş¼¶»º´æ¹©Ó¦ÉÌÃ»ÓĞÕÒ¶Ô£¬Ä¿Ç°Î´Íê´ıĞø
+	 * äºŒçº§ç¼“å­˜ä¾›åº”å•†æ²¡æœ‰æ‰¾å¯¹ï¼Œç›®å‰æœªå®Œå¾…ç»­
 	 */
 	@Test
 	public void testGetMethod() {
-		// ´Ë´¦Ê¹ÓÃopenSession¶ø²»ÊÇgetCurrentSession£¬Ä¿µÄÊÇ²»¿ªÆôÊµÎñ£¬Ïû³ıÒ»¼¶»º´æÓ°Ïì£¬×¨×¢ÓÚ¶ş¼¶»º´æµÄ²âÊÔ
+		// æ­¤å¤„ä½¿ç”¨openSessionè€Œä¸æ˜¯getCurrentSessionï¼Œç›®çš„æ˜¯ä¸å¼€å¯å®åŠ¡ï¼Œæ¶ˆé™¤ä¸€çº§ç¼“å­˜å½±å“ï¼Œä¸“æ³¨äºäºŒçº§ç¼“å­˜çš„æµ‹è¯•
 		Session session = sessionFactory.openSession();
 
-		// ´Ë´¦µÚÒ»´Îget£¬·Åµ½ÁË»º´æÖĞ
+		// æ­¤å¤„ç¬¬ä¸€æ¬¡getï¼Œæ”¾åˆ°äº†ç¼“å­˜ä¸­
 		GameEntity game = session.get(GameEntity.class, 3);
 
-		// ¹Ø±Õsession£¬Çå³ıÒ»¼¶»º´æÓ°Ïì
+		// å…³é—­sessionï¼Œæ¸…é™¤ä¸€çº§ç¼“å­˜å½±å“
 		session.close();
 
-		// ÔÙ´Î¿ªÆôsession
+		// å†æ¬¡å¼€å¯session
 		session = sessionFactory.openSession();
 
-		// ´Ë´¦Èç¹ûÃ»ÓĞ·¢³ö²éÑ¯SQL£¬Ôò±íÃ÷ÊÇ´Ó¶ş¼¶»º´æÖĞÈ¡³öµÄ
+		// æ­¤å¤„å¦‚æœæ²¡æœ‰å‘å‡ºæŸ¥è¯¢SQLï¼Œåˆ™è¡¨æ˜æ˜¯ä»äºŒçº§ç¼“å­˜ä¸­å–å‡ºçš„
 		GameEntity game2 = session.get(GameEntity.class, 3);
 
 		session.close();

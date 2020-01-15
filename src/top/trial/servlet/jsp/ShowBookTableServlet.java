@@ -24,13 +24,13 @@ public class ShowBookTableServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
-		// 获取图书列表
+		// 鑾峰彇鍥句功鍒楄〃
 		Map<String, BookEntity> books = BookEntityDB.getAllBooks();
 
-		// 将MAP放到request域中
+		// 灏哅AP鏀惧埌request鍩熶腑
 		request.setAttribute("books", books);
 
-		// 请求转发到showBookTable.jsp
+		// 璇锋眰杞彂鍒皊howBookTable.jsp
 		request.getRequestDispatcher("/JSP/trial/showBookTable.jsp").forward(request, response);
 	}
 

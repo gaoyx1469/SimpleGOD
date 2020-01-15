@@ -1,7 +1,7 @@
 package top.trial.spring.dao;
 
 /**
- * spring×¢½âÑİÊ¾dao²ã½Ó¿Ú
+ * springæ³¨è§£æ¼”ç¤ºdaoå±‚æ¥å£
  * 
  * @author Gaoyx
  *

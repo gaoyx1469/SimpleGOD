@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÑİÊ¾Êä³öHttpServletRequest¶ÔÏóÖĞµÄ¸÷ÖÖĞÅÏ¢
+ * æ¼”ç¤ºè¾“å‡ºHttpServletRequestå¯¹è±¡ä¸­çš„å„ç§ä¿¡æ¯
  * 
  * @author Gaoyx
  *
@@ -28,24 +28,24 @@ public class HttpServletRequestDemo extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// ÇëÇóµÄURL£¬°üÀ¨Ğ­Òé¡¢IP¡¢¶Ë¿Ú¡¢URI
+		// è¯·æ±‚çš„URLï¼ŒåŒ…æ‹¬åè®®ã€IPã€ç«¯å£ã€URI
 		String requestURL = request.getRequestURL().toString();
-		// ÇëÇóµÄ×ÊÔ´µØÖ·
+		// è¯·æ±‚çš„èµ„æºåœ°å€
 		String requestURI = request.getRequestURI();
-		// ÇëÇóµÄ²ÎÊı
+		// è¯·æ±‚çš„å‚æ•°
 		String requestQS = request.getQueryString();
-		// ÇëÇó·½µÄIP
+		// è¯·æ±‚æ–¹çš„IP
 		String remoteAddr = request.getRemoteAddr();
-		// ÇëÇó·½µÄ¶Ë¿ÚºÅ
+		// è¯·æ±‚æ–¹çš„ç«¯å£å·
 		int remotePort = request.getRemotePort();
-		// ÇëÇóµÄ·½·¨
+		// è¯·æ±‚çš„æ–¹æ³•
 		String method = request.getMethod();
 
 		// -----------------------------------------------------------------
 
-		// »ñÈ¡Ö¸¶¨µÄÍ·
+		// è·å–æŒ‡å®šçš„å¤´
 		String header = request.getHeader("Accept-Encoding");
-		// »ñÈ¡È«²¿Í·
+		// è·å–å…¨éƒ¨å¤´
 		ArrayList<String> headersList = new ArrayList();
 		Enumeration<String> headers = request.getHeaderNames();
 		while (headers.hasMoreElements()) {
@@ -58,9 +58,9 @@ public class HttpServletRequestDemo extends HttpServlet {
 
 		// -----------------------------------------------------------------
 
-		// ÕâÊÇÈ¡µÃÇëÇó²ÎÊıkeyÎªnameµÄvalue£¬ÖØÃûµÄÖ»ÄÜÈ¡µÚÒ»¸ö
+		// è¿™æ˜¯å–å¾—è¯·æ±‚å‚æ•°keyä¸ºnameçš„valueï¼Œé‡åçš„åªèƒ½å–ç¬¬ä¸€ä¸ª
 		request.getParameter("name");
-		// ÕâÊÇÈ¡µÃÇëÇó²ÎÊıkeyÎªnameµÄvalue£¬ÖØÃûµÄ¶¼ÄÜÄÃµ½
+		// è¿™æ˜¯å–å¾—è¯·æ±‚å‚æ•°keyä¸ºnameçš„valueï¼Œé‡åçš„éƒ½èƒ½æ‹¿åˆ°
 		request.getParameterValues("name");
 		//
 		request.getParameterNames();

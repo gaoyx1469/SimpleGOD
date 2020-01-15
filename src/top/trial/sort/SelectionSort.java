@@ -1,7 +1,7 @@
 package top.trial.sort;
 
 /**
- * Ñ¡ÔñÅÅĞò´úÂëÊµÏÖ
+ * é€‰æ‹©æ’åºä»£ç å®ç°
  * 
  * @author gaoyx
  *
@@ -9,7 +9,7 @@ package top.trial.sort;
 public class SelectionSort {
 
 	/**
-	 * µÚÒ»°æÑ¡ÔñÅÅĞò£¬Î´ÓÅ»¯
+	 * ç¬¬ä¸€ç‰ˆé€‰æ‹©æ’åºï¼Œæœªä¼˜åŒ–
 	 * 
 	 * @param nums
 	 */
@@ -18,14 +18,14 @@ public class SelectionSort {
 		if (len <= 1)
 			return;
 		for (int i = 0; i < len - 1; i++) {
-			// Ñ¡³öiµ½len-1ÖĞµÄ×îĞ¡ÔªËØ
+			// é€‰å‡ºiåˆ°len-1ä¸­çš„æœ€å°å…ƒç´ 
 			int minIndex = i;
 			for (int j = i + 1; j < len; j++) {
 				if (nums[minIndex] > nums[j]) {
 					minIndex = j;
 				}
 			}
-			// ×îĞ¡ÔªËØÓëi½»»»
+			// æœ€å°å…ƒç´ ä¸iäº¤æ¢
 			int temp = nums[i];
 			nums[i] = nums[minIndex];
 			nums[minIndex] = temp;

@@ -13,8 +13,8 @@ public class SendEmailDemo {
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		Socket socket = new Socket("smtp.163.com", 25);
 		InputStream in = socket.getInputStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));// ½ÓÊÕ·şÎñÆ÷µÄ·´À¡ĞÅÏ¢
-		OutputStream out = socket.getOutputStream();// Ïò·şÎñÆ÷·¢ËÍĞÅÏ¢
+		BufferedReader br = new BufferedReader(new InputStreamReader(in));// æ¥æ”¶æœåŠ¡å™¨çš„åé¦ˆä¿¡æ¯
+		OutputStream out = socket.getOutputStream();// å‘æœåŠ¡å™¨å‘é€ä¿¡æ¯
 		out.write("ehlo gaoyx\r\n".getBytes());
 		System.out.println(br.readLine());
 		System.out.println(br.readLine());
@@ -27,22 +27,22 @@ public class SendEmailDemo {
 
 		out.write("auth login\r\n".getBytes());
 		System.out.println(br.readLine());
-		out.write("Z2FveXgxNDY5\r\n".getBytes());// Base64±àÂëµÄÓÃ»§Ãû
+		out.write("Z2FveXgxNDY5\r\n".getBytes());// Base64ç¼–ç çš„ç”¨æˆ·å
 		System.out.println(br.readLine());
-		out.write("Z2FvMTQxNTkyNg==\r\n".getBytes());// Base64±àÂëµÄÃÜÂë
+		out.write("Z2FvMTQxNTkyNg==\r\n".getBytes());// Base64ç¼–ç çš„å¯†ç 
 		System.out.println(br.readLine());
-		out.write("mail from:<xxxx@163.com>\r\n".getBytes());// ´Ë´¦ÓÊÏäĞèÎªµÇÂ¼µÄÓÊÏä
+		out.write("mail from:<xxxx@163.com>\r\n".getBytes());// æ­¤å¤„é‚®ç®±éœ€ä¸ºç™»å½•çš„é‚®ç®±
 		System.out.println(br.readLine());
 		out.write("rcpt to:<xxxx@126.com>\r\n".getBytes());
 		System.out.println(br.readLine());
 		out.write("data\r\n".getBytes());
 		System.out.println(br.readLine());
-		out.write("from:xxxx@163.com\r\n".getBytes());// ´Ë´¦Èç¹ûÓëmail from:²»Ò»ÖÂ£¬¿ÉÄÜ±¨554£¬µ±×÷À¬»øÓÊ¼ş·¢ËÍÊ§°Ü
+		out.write("from:xxxx@163.com\r\n".getBytes());// æ­¤å¤„å¦‚æœä¸mail from:ä¸ä¸€è‡´ï¼Œå¯èƒ½æŠ¥554ï¼Œå½“ä½œåƒåœ¾é‚®ä»¶å‘é€å¤±è´¥
 		out.write("to:xxxx@126.com\r\n".getBytes());
-		out.write("cc:yyyy@126.com\r\n".getBytes());// ³­ËÍ
-		out.write("subject:Ã»É¶Ö÷Ìâ\r\n".getBytes());
+		out.write("cc:yyyy@126.com\r\n".getBytes());// æŠ„é€
+		out.write("subject:æ²¡å•¥ä¸»é¢˜\r\n".getBytes());
 		out.write("\r\n".getBytes());
-		out.write("ÕâÊÇÕıÎÄ\r\n".getBytes());
+		out.write("è¿™æ˜¯æ­£æ–‡\r\n".getBytes());
 		out.write(".\r\n".getBytes());
 		System.out.println(br.readLine());
 		socket.close();// quit

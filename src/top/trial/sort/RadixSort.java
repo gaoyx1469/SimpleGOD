@@ -1,7 +1,7 @@
 package top.trial.sort;
 
 /**
- * »ùÊıÅÅĞò´úÂëÊµÏÖ
+ * åŸºæ•°æ’åºä»£ç å®ç°
  * 
  * @author Gaoyx
  *
@@ -11,7 +11,7 @@ public class RadixSort {
 	public static final int ASCII_RANGE = 128;
 
 	/**
-	 * »ùÊıÅÅĞòÎ´ÓÅ»¯´úÂë
+	 * åŸºæ•°æ’åºæœªä¼˜åŒ–ä»£ç 
 	 * 
 	 * @param arrays
 	 */
@@ -22,7 +22,7 @@ public class RadixSort {
 			return;
 		}
 
-		// µÃµ½×î´ó³¤¶È
+		// å¾—åˆ°æœ€å¤§é•¿åº¦
 		int maxLength = arrays[0].length();
 		for (int i = 1; i < len; i++) {
 			if (arrays[i].length() > maxLength)
@@ -30,20 +30,20 @@ public class RadixSort {
 		}
 
 		String[] sortedArray = new String[len];
-		// ´Ó×îĞ¡Î»¿ªÊ¼Ñ­»·±È½Ï
+		// ä»æœ€å°ä½å¼€å§‹å¾ªç¯æ¯”è¾ƒ
 		for (int i = maxLength - 1; i >= 0; i--) {
 
-			// ÒÔÏÂÎª¼ÆÊıÅÅĞòÄÚÈİ£¬ÎÈ¶¨ÅÅĞò°æ
+			// ä»¥ä¸‹ä¸ºè®¡æ•°æ’åºå†…å®¹ï¼Œç¨³å®šæ’åºç‰ˆ
 			int[] countArray = new int[ASCII_RANGE];
 
 			for (int j = 0; j < len; j++)
 				countArray[getCharIndex(arrays[j], i)]++;
 
-			// ½øÒ»²½ÓÅ»¯countArray
+			// è¿›ä¸€æ­¥ä¼˜åŒ–countArray
 			for (int j = 1; j < ASCII_RANGE; j++)
 				countArray[j] = countArray[j] + countArray[j - 1];
 
-			// µ¹Ğò±éÀúÔ­Ê¼Êı×é£¬²åÈëĞÂÊı×éµÄÕıÈ·Î»ÖÃ
+			// å€’åºéå†åŸå§‹æ•°ç»„ï¼Œæ’å…¥æ–°æ•°ç»„çš„æ­£ç¡®ä½ç½®
 			for (int j = len - 1; j >= 0; j--) {
 				sortedArray[countArray[getCharIndex(arrays[j], i)] - 1] = arrays[j];
 				countArray[getCharIndex(arrays[j], i)]--;

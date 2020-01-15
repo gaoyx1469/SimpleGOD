@@ -1,7 +1,7 @@
 package top.trial.sort;
 
 /**
- * ¿ìËÙÅÅĞò´úÂëÊµÏÖ
+ * å¿«é€Ÿæ’åºä»£ç å®ç°
  * 
  * @author gaoyx
  *
@@ -9,7 +9,7 @@ package top.trial.sort;
 public class QuickSort {
 
 	/**
-	 * µÚÒ»°æ¿ìÅÅ£¬»ù×¼ÔªËØÊ¹ÓÃµÚÒ»¸öÔªËØ£¬ÒÆ¶¯·½Ê½ÎªÍÚ¿Ó·¨/Ö¸Õë½»»»·¨£¬Î´ÓÅ»¯
+	 * ç¬¬ä¸€ç‰ˆå¿«æ’ï¼ŒåŸºå‡†å…ƒç´ ä½¿ç”¨ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œç§»åŠ¨æ–¹å¼ä¸ºæŒ–å‘æ³•/æŒ‡é’ˆäº¤æ¢æ³•ï¼Œæœªä¼˜åŒ–
 	 * 
 	 * @param nums
 	 */
@@ -19,15 +19,15 @@ public class QuickSort {
 			return;
 		}
 
-		// ÍÚ¿Ó·¨¿ìÅÅ±¾Ìå
+		// æŒ–å‘æ³•å¿«æ’æœ¬ä½“
 		// sortE2(nums, 0, len - 1);
 
-		// Ö¸Õë½»»»·¨¿ìÅÅ±¾Ìå
+		// æŒ‡é’ˆäº¤æ¢æ³•å¿«æ’æœ¬ä½“
 		sortE3(nums, 0, len - 1);
 	}
 
 	/**
-	 * ÍÚ¿Ó·¨¿ìÅÅ±¾Ìå
+	 * æŒ–å‘æ³•å¿«æ’æœ¬ä½“
 	 * 
 	 * @param nums
 	 * @param startIndex
@@ -35,15 +35,15 @@ public class QuickSort {
 	 */
 	private static void sortE2(int[] nums, int startIndex, int endIndex) {
 
-		// ÅĞ¶ÏÊÇ·ñĞèÒª¿ìÅÅ
+		// åˆ¤æ–­æ˜¯å¦éœ€è¦å¿«æ’
 		if (startIndex >= endIndex) {
 			return;
 		}
 
-		// È¡µÃ»ù×¼ÔªËØ
+		// å–å¾—åŸºå‡†å…ƒç´ 
 		int pivot = nums[startIndex];
-		// ÒÆ¶¯£¬½«»ù×¼ÔªËØ·ÅÖÃµ½ºÏÊÊÎ»ÖÃ²¢ÄÃµ½»ù×¼ÔªËØÎ»ÖÃË÷Òı£¬´Ó¶ø·Ö³ÉÁ½¸öÊı×é
-		int index = startIndex;// ¿ÓÎ»
+		// ç§»åŠ¨ï¼Œå°†åŸºå‡†å…ƒç´ æ”¾ç½®åˆ°åˆé€‚ä½ç½®å¹¶æ‹¿åˆ°åŸºå‡†å…ƒç´ ä½ç½®ç´¢å¼•ï¼Œä»è€Œåˆ†æˆä¸¤ä¸ªæ•°ç»„
+		int index = startIndex;// å‘ä½
 		int left = startIndex;
 		int right = endIndex;
 		while (left <= right) {
@@ -67,27 +67,27 @@ public class QuickSort {
 			}
 		}
 		nums[index] = pivot;
-		// ¿ìÅÅÁ½²¿·ÖÊı×é
+		// å¿«æ’ä¸¤éƒ¨åˆ†æ•°ç»„
 		sortE2(nums, startIndex, index - 1);
 		sortE2(nums, index + 1, endIndex);
 	}
 
 	/**
-	 * Ö¸Õë½»»»·¨¿ìÅÅ±¾Ìå
+	 * æŒ‡é’ˆäº¤æ¢æ³•å¿«æ’æœ¬ä½“
 	 * 
 	 * @param nums
 	 * @param startIndex
 	 * @param endIndex
 	 */
 	private static void sortE3(int[] nums, int startIndex, int endIndex) {
-		// ÅĞ¶ÏÊÇ·ñĞèÒª¿ìÅÅ
+		// åˆ¤æ–­æ˜¯å¦éœ€è¦å¿«æ’
 		if (startIndex >= endIndex) {
 			return;
 		}
 
-		// È¡µÃ»ù×¼ÔªËØ
+		// å–å¾—åŸºå‡†å…ƒç´ 
 		int pivot = nums[startIndex];
-		// ÒÆ¶¯£¬½«»ù×¼ÔªËØ·ÅÖÃµ½ºÏÊÊÎ»ÖÃ²¢ÄÃµ½»ù×¼ÔªËØÎ»ÖÃË÷Òı£¬´Ó¶ø·Ö³ÉÁ½¸öÊı×é
+		// ç§»åŠ¨ï¼Œå°†åŸºå‡†å…ƒç´ æ”¾ç½®åˆ°åˆé€‚ä½ç½®å¹¶æ‹¿åˆ°åŸºå‡†å…ƒç´ ä½ç½®ç´¢å¼•ï¼Œä»è€Œåˆ†æˆä¸¤ä¸ªæ•°ç»„
 		int left = startIndex;
 		int right = endIndex;
 		while (left != right) {
@@ -108,7 +108,7 @@ public class QuickSort {
 		nums[startIndex] = nums[left];
 		nums[left] = pivot;
 
-		// ¿ìÅÅÁ½²¿·ÖÊı×é
+		// å¿«æ’ä¸¤éƒ¨åˆ†æ•°ç»„
 		sortE3(nums, startIndex, left - 1);
 		sortE3(nums, left + 1, endIndex);
 	}

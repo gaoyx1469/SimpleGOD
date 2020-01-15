@@ -9,23 +9,23 @@ import javax.sql.DataSource;
 import top.util.mydbutil.result.ResultSetHandler;
 
 /**
- * Êı¾İ¿â²Ù×÷¹¤¾ßÀà
+ * æ•°æ®åº“æ“ä½œå·¥å…·ç±»
  * @author Gaoyx
  *
  */
 public class MyDBUtil {
-	//Êı¾İÔ´
+	//æ•°æ®æº
 	private DataSource dataSource;
 
-	//Êı¾İÔ´×¢Èë
+	//æ•°æ®æºæ³¨å…¥
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
 	
-	//ÊÇ·ñÊ¹connectionÓëÏß³Ì°ó¶¨
+	//æ˜¯å¦ä½¿connectionä¸çº¿ç¨‹ç»‘å®š
 	private Boolean useCurrentConnection = false;
 
-	//ÊÇ·ñÊ¹connectionÓëÏß³Ì°ó¶¨×¢Èë
+	//æ˜¯å¦ä½¿connectionä¸çº¿ç¨‹ç»‘å®šæ³¨å…¥
 	public void setUseCurrentConnection(Boolean useCurrentConnection) {
 		this.useCurrentConnection = useCurrentConnection;
 	}
@@ -63,10 +63,10 @@ public class MyDBUtil {
 			int count = pmd.getParameterCount();
 			if(count > 0) {
 				if(params == null) {
-					throw new IllegalArgumentException("Î´´«Èë²ÎÊı");
+					throw new IllegalArgumentException("æœªä¼ å…¥å‚æ•°");
 				}
 				if(count != params.length) {
-					throw new IllegalArgumentException("´«Èë²ÎÊı¸öÊı²»¶Ô");
+					throw new IllegalArgumentException("ä¼ å…¥å‚æ•°ä¸ªæ•°ä¸å¯¹");
 				}
 				for(int i = 0; i< count;i++) {
 					ps.setObject(i+1, params[i]);

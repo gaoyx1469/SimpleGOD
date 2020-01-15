@@ -3,7 +3,7 @@ package top.trial.hibernate.relation;
 import java.util.Set;
 
 /**
- * APPÊµÌå£¬×÷Îªhibernate¶à¶Ô¶à¹ØÏµ²âÊÔµÄÒ»·½
+ * APPå®žä½“ï¼Œä½œä¸ºhibernateå¤šå¯¹å¤šå…³ç³»æµ‹è¯•çš„ä¸€æ–¹
  * 
  * @author Gaoyx
  *

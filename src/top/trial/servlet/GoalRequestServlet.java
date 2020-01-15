@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÇëÇó×ª·¢ÑİÊ¾£¬´ËÀàÎªÄ¿±ê×é¼ş
+ * è¯·æ±‚è½¬å‘æ¼”ç¤ºï¼Œæ­¤ç±»ä¸ºç›®æ ‡ç»„ä»¶
  * 
  * @author Gaoyx
  *
@@ -25,7 +25,7 @@ public class GoalRequestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// »ñÈ¡Ô´×é¼ş·ÅÈëServletRequestÓòÖĞµÄÖµ²¢ÔÚÒ³ÃæÊä³ö
+		// è·å–æºç»„ä»¶æ”¾å…¥ServletRequeståŸŸä¸­çš„å€¼å¹¶åœ¨é¡µé¢è¾“å‡º
 		String value = (String) request.getAttribute("key");
 		response.getWriter().write(value);
 	}

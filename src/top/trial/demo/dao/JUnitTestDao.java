@@ -1,7 +1,7 @@
 package top.trial.demo.dao;
 
 /**
- * µ¥Ôª²âÊÔÑİÊ¾DAO
+ * å•å…ƒæµ‹è¯•æ¼”ç¤ºDAO
  * 
  * @author Gaoyx
  *

@@ -1,7 +1,7 @@
 package top.trial.spring;
 
 /**
- * Spring IoC ÑÝÊ¾Bean
+ * Spring IoC æ¼”ç¤ºBean
  * 
  * @author gaoyx
  *

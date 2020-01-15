@@ -10,27 +10,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet("/SessionSetDemoServlet")
 public class SessionSetDemoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public SessionSetDemoServlet() {
-        super();
-    }
-	
+
+	public SessionSetDemoServlet() {
+		super();
+	}
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String myValue = request.getParameter("myValue");
 		HttpSession session = request.getSession();
 		session.setAttribute("myKey", myValue);
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter pw = response.getWriter();
-		pw.write("<a href='/SimpleGOD/SessionGetDemoServlet'>È¥¿´¿´valueÄÜ²»ÄÜÄÃµ½</a>");
+		pw.write("<a href='/SimpleGOD/SessionGetDemoServlet'>å»çœ‹çœ‹valueèƒ½ä¸èƒ½æ‹¿åˆ°</a>");
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

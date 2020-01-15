@@ -3,7 +3,7 @@ package top.trial.sort;
 import java.util.Arrays;
 
 /**
- * ¶ÑÅÅĞò´úÂëÊµÏÖ
+ * å †æ’åºä»£ç å®ç°
  * 
  * @author Gaoyx
  *
@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class HeapSort {
 
 	/**
-	 * µÚÒ»°æ¶ÑÅÅĞò£¬Î´ÓÅ»¯
+	 * ç¬¬ä¸€ç‰ˆå †æ’åºï¼Œæœªä¼˜åŒ–
 	 * 
 	 * @param nums
 	 */
@@ -21,16 +21,16 @@ public class HeapSort {
 			return;
 		}
 
-		// ¹¹Ôì×î´ó¶ş²æ¶Ñ
+		// æ„é€ æœ€å¤§äºŒå‰å †
 		for (int i = len / 2 - 1; i >= 0; i--) {
 			adjustLocation(nums, i, len);
 		}
-		System.out.println("¶ş²æ¶Ñ¹¹ÔìÍê±Ï£º" + Arrays.toString(nums));
+		System.out.println("äºŒå‰å †æ„é€ å®Œæ¯•ï¼š" + Arrays.toString(nums));
 
-		// ÅÅĞò
+		// æ’åº
 		for (int i = len - 1; i >= 0; i--) {
-			// ¶Ñ¶¥Îª¶ş²æ¶Ñ×î´óÖµ£¬£¨Î´ÅÅĞòÊı×é×î´óÖµ£©
-			// ×îºóÒ»¸öÔªËØÓë¶Ñ¶¥½»»»
+			// å †é¡¶ä¸ºäºŒå‰å †æœ€å¤§å€¼ï¼Œï¼ˆæœªæ’åºæ•°ç»„æœ€å¤§å€¼ï¼‰
+			// æœ€åä¸€ä¸ªå…ƒç´ ä¸å †é¡¶äº¤æ¢
 			int temp = nums[i];
 			nums[i] = nums[0];
 			nums[0] = temp;
@@ -40,37 +40,37 @@ public class HeapSort {
 	}
 
 	/**
-	 * µ÷Õû·ÇÒ¶×Ó½áµãÎ»ÖÃ£¬Ğ¡µÄ¸¸½áµãÏÂ³Á£¬½Ï´ó×Ó½áµãÉÏ¸¡
+	 * è°ƒæ•´éå¶å­ç»“ç‚¹ä½ç½®ï¼Œå°çš„çˆ¶ç»“ç‚¹ä¸‹æ²‰ï¼Œè¾ƒå¤§å­ç»“ç‚¹ä¸Šæµ®
 	 * 
 	 * @param nums
-	 *            ´ıÅÅĞòÊı×é
+	 *            å¾…æ’åºæ•°ç»„
 	 * @param index
-	 *            ĞèÒªÏÂ³ÁµÄÔªËØË÷Òı
+	 *            éœ€è¦ä¸‹æ²‰çš„å…ƒç´ ç´¢å¼•
 	 * @param len
-	 *            Êı×é´ıÅÅĞòÔªËØ¸öÊı
+	 *            æ•°ç»„å¾…æ’åºå…ƒç´ ä¸ªæ•°
 	 */
 	private static void adjustLocation(int[] nums, int index, int len) {
-		int temp = nums[index];// Òªµ÷ÕûµÄ½áµãµÄÖµ
-		int childIndex = index * 2 + 1;// ×ó×Ó½áµãµÄË÷Òı
-		while (childIndex < len) {// Ò»Ö±ÏÂ³Á£¬Ö±ÖÁtemp´óÓÚÈ«²¿×Ó½áµã»òÒÑ³ÉÎªÒ¶×Ó½áµã£¬´Ë´¦ÅĞ¶ÏÊÇ·ñÊÇÒ¶×Ó½Úµã
+		int temp = nums[index];// è¦è°ƒæ•´çš„ç»“ç‚¹çš„å€¼
+		int childIndex = index * 2 + 1;// å·¦å­ç»“ç‚¹çš„ç´¢å¼•
+		while (childIndex < len) {// ä¸€ç›´ä¸‹æ²‰ï¼Œç›´è‡³tempå¤§äºå…¨éƒ¨å­ç»“ç‚¹æˆ–å·²æˆä¸ºå¶å­ç»“ç‚¹ï¼Œæ­¤å¤„åˆ¤æ–­æ˜¯å¦æ˜¯å¶å­èŠ‚ç‚¹
 
-			// ¿´ÓĞÃ»ÓĞÓÒº¢×Ó£¬ÕÒµ½º¢×ÓÖĞ½Ï´óµÄÒ»¸ö
-			// ¾ßÌå·½Ê½ÊÇÓĞÓÒº¢×ÓÇÒÓÒº¢×Ó´óÓÚ×óº¢×Ó£¬Ôò¶¨Î»µ½×óº¢×Ó
+			// çœ‹æœ‰æ²¡æœ‰å³å­©å­ï¼Œæ‰¾åˆ°å­©å­ä¸­è¾ƒå¤§çš„ä¸€ä¸ª
+			// å…·ä½“æ–¹å¼æ˜¯æœ‰å³å­©å­ä¸”å³å­©å­å¤§äºå·¦å­©å­ï¼Œåˆ™å®šä½åˆ°å·¦å­©å­
 			if (childIndex + 1 < len && nums[childIndex] < nums[childIndex + 1]) {
 				childIndex++;
 			}
 
-			// Èç¹ûtemp´óÓÚ½Ï´ó×Ó½áµã£¬½áÊøÑ­»·£¬²»ĞèÒª¼ÌĞøÏÂ³Á
+			// å¦‚æœtempå¤§äºè¾ƒå¤§å­ç»“ç‚¹ï¼Œç»“æŸå¾ªç¯ï¼Œä¸éœ€è¦ç»§ç»­ä¸‹æ²‰
 			if (temp >= nums[childIndex])
 				break;
 
-			// ¼ÌĞøÏÂ³Á
+			// ç»§ç»­ä¸‹æ²‰
 			nums[index] = nums[childIndex];
 			index = childIndex;
 			childIndex = childIndex * 2 + 1;
 		}
 
-		// ½áÊøÏÂ³Áºó£¬index¾ÍÊÇÏÂ³ÁÎ»ÖÃ
+		// ç»“æŸä¸‹æ²‰åï¼Œindexå°±æ˜¯ä¸‹æ²‰ä½ç½®
 		nums[index] = temp;
 	}
 }

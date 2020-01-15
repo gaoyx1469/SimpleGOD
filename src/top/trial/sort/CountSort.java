@@ -1,14 +1,14 @@
 package top.trial.sort;
 
 /**
- * ¼ÆÊıÅÅĞò´úÂëÊµÏÖ
+ * è®¡æ•°æ’åºä»£ç å®ç°
  * 
  * @author Gaoyx
  *
  */
 public class CountSort {
 	/**
-	 * ¼ÆÊıÅÅĞòÎ´ÓÅ»¯°æ£¬½öÄÜÅÅĞòÕıÕûÊıÊı×é
+	 * è®¡æ•°æ’åºæœªä¼˜åŒ–ç‰ˆï¼Œä»…èƒ½æ’åºæ­£æ•´æ•°æ•°ç»„
 	 * 
 	 * @param nums
 	 */
@@ -18,7 +18,7 @@ public class CountSort {
 			return;
 		}
 		int max = nums[0];
-		// ÕÒµ½×î´óÖµ
+		// æ‰¾åˆ°æœ€å¤§å€¼
 		for (int i = 1; i < len; i++) {
 			if (nums[i] > max)
 				max = nums[i];
@@ -37,7 +37,7 @@ public class CountSort {
 	}
 
 	/**
-	 * ¼ÆÊıÅÅĞòÓÅ»¯°æ£¬½öÓÅ»¯ĞÂ¹¹ÔìÊı×éµÄ³¤¶È
+	 * è®¡æ•°æ’åºä¼˜åŒ–ç‰ˆï¼Œä»…ä¼˜åŒ–æ–°æ„é€ æ•°ç»„çš„é•¿åº¦
 	 * 
 	 * @param nums
 	 */
@@ -48,7 +48,7 @@ public class CountSort {
 		}
 		int max = nums[0];
 		int min = nums[0];
-		// ÕÒµ½×î´óÖµ
+		// æ‰¾åˆ°æœ€å¤§å€¼
 		for (int i = 1; i < len; i++) {
 			if (nums[i] > max)
 				max = nums[i];
@@ -69,7 +69,7 @@ public class CountSort {
 	}
 
 	/**
-	 * ¼ÆÊıÅÅĞòÓÅ»¯°æ£¬ÓÅ»¯ĞÂ¹¹ÔìÊı×éµÄ³¤¶ÈÒÔ¼°ÎÈ¶¨ĞÔ
+	 * è®¡æ•°æ’åºä¼˜åŒ–ç‰ˆï¼Œä¼˜åŒ–æ–°æ„é€ æ•°ç»„çš„é•¿åº¦ä»¥åŠç¨³å®šæ€§
 	 * 
 	 * @param nums
 	 */
@@ -80,7 +80,7 @@ public class CountSort {
 		}
 		int max = nums[0];
 		int min = nums[0];
-		// ÕÒµ½×î´óÖµ
+		// æ‰¾åˆ°æœ€å¤§å€¼
 		for (int i = 1; i < len; i++) {
 			if (nums[i] > max)
 				max = nums[i];
@@ -93,14 +93,14 @@ public class CountSort {
 		for (int i = 0; i < len; i++)
 			countArray[nums[i] - min]++;
 
-		// ½øÒ»²½ÓÅ»¯countArray
+		// è¿›ä¸€æ­¥ä¼˜åŒ–countArray
 		int sum = 0;
 		for (int i = 0; i <= max - min; i++) {
 			sum += countArray[i];
 			countArray[i] = sum;
 		}
 
-		// µ¹Ğò±éÀúÔ­Ê¼Êı×é£¬²åÈëĞÂÊı×éµÄÕıÈ·Î»ÖÃ
+		// å€’åºéå†åŸå§‹æ•°ç»„ï¼Œæ’å…¥æ–°æ•°ç»„çš„æ­£ç¡®ä½ç½®
 		int[] sortedArray = new int[len];
 		for (int i = len - 1; i >= 0; i--) {
 			sortedArray[countArray[nums[i] - min] - 1] = nums[i];

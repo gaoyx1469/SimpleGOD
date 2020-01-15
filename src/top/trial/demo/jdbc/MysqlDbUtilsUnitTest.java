@@ -25,29 +25,29 @@ import top.util.jdbc.MysqlDBCPUtil;
 public class MysqlDbUtilsUnitTest {
 	private QueryRunner qr = new QueryRunner(MysqlDBCPUtil.getDataSource());
 
-	// ²âÊÔINSERT
-	// ¶ÔÓÚMYSQL£¬new Date()»òÕßyyyy-MM-dd¸ñÊ½µÄ×Ö·û´®¶¼¿ÉÒÔ
+	// æµ‹è¯•INSERT
+	// å¯¹äºMYSQLï¼Œnew Date()æˆ–è€…yyyy-MM-ddæ ¼å¼çš„å­—ç¬¦ä¸²éƒ½å¯ä»¥
 	@Test
 	public void testInsert() {
 		try {
-			qr.update("INSERT INTO SG_USER_INFO (SUI_ID,SUI_NAME,SUI_CREADATE) VALUES (?,?,?)", "1000000013", "¾Å",
+			qr.update("INSERT INTO SG_USER_INFO (SUI_ID,SUI_NAME,SUI_CREADATE) VALUES (?,?,?)", "1000000013", "ä¹",
 					new Date());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	// ²âÊÔUPDATE
+	// æµ‹è¯•UPDATE
 	@Test
 	public void testUpdate() {
 		try {
-			qr.update("UPDATE SG_USER_INFO SET SUI_NAME=? WHERE SUI_ID=?", "Ğ¡Æß", "1000000011");
+			qr.update("UPDATE SG_USER_INFO SET SUI_NAME=? WHERE SUI_ID=?", "å°ä¸ƒ", "1000000011");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	// ²âÊÔÅú´¦Àí,¹Ø¼üÔÚÓÚ¶şÎ¬Êı×é
+	// æµ‹è¯•æ‰¹å¤„ç†,å…³é”®åœ¨äºäºŒç»´æ•°ç»„
 	@Test
 	public void testBatch() {
 		Object[][] obs = new Object[3][];
@@ -61,11 +61,11 @@ public class MysqlDbUtilsUnitTest {
 		}
 	}
 
-	// ²âÊÔDML--BLOB,¿ÉÄÜÔì³ÉÄÚ´æÒç³ö
+	// æµ‹è¯•DML--BLOB,å¯èƒ½é€ æˆå†…å­˜æº¢å‡º
 	@Test
 	public void testBlob() {
 		try {
-			// µÃµ½ÊäÈëÁ÷£¬´ËÊ±Ê¹ÓÃ¾ø¶ÔÂ·¾¶£¬²»Í×£¬ÈçºÎÍ¨¹ıÏà¶ÔÂ·¾¶»ñÈ¡£¿
+			// å¾—åˆ°è¾“å…¥æµï¼Œæ­¤æ—¶ä½¿ç”¨ç»å¯¹è·¯å¾„ï¼Œä¸å¦¥ï¼Œå¦‚ä½•é€šè¿‡ç›¸å¯¹è·¯å¾„è·å–ï¼Ÿ
 			InputStream in = new FileInputStream("D:/GitSpace/SimpleGOD/SimpleGOD/WebContent/image/trial/bt.jpg");
 			// System.out.println(in.available());
 			byte b[] = new byte[in.available()];
@@ -73,7 +73,7 @@ public class MysqlDbUtilsUnitTest {
 			in.close();
 			Blob blob = new SerialBlob(b);
 			qr.update("INSERT INTO SG_LOB_TEST (SLT_ID,SLT_NAME,SLT_PAGEIMG,SLT_CREADATE) VALUES (?,?,?,?)", 1000000001,
-					"°´Å¥", blob, new Date());
+					"æŒ‰é’®", blob, new Date());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -83,7 +83,7 @@ public class MysqlDbUtilsUnitTest {
 		}
 	}
 
-	// ²âÊÔDML--CLOB,¿ÉÄÜÔì³ÉÄÚ´æÒç³ö
+	// æµ‹è¯•DML--CLOB,å¯èƒ½é€ æˆå†…å­˜æº¢å‡º
 	@Test
 	public void testClob() {
 		try {
@@ -105,16 +105,18 @@ public class MysqlDbUtilsUnitTest {
 		}
 	}
 
-	// ²âÊÔQUERY,½á¹û´¦ÀíÆ÷
+	// æµ‹è¯•QUERY,ç»“æœå¤„ç†å™¨
 	@Test
 	public void testQryOne() {
 		try {
-			//±¨´íÁË£¬¹À¼ÆÊÇ²»Ö§³ÖBlobºÍClob
-			//LobTestEntity lte = qr.query("SELECT * FROM SG_LOB_TEST WHERE SLT_ID=?", new BeanHandler<LobTestEntity>(LobTestEntity.class), 1000000001);
-			//System.out.println(lte);
-			
-			//ÎŞBlobºÍClobµÄ¾ÍÃ»ÎÊÌâ
-			UserTestEntity ute = qr.query("SELECT * FROM SG_USER_INFO WHERE SUI_ID=?", new BeanHandler<UserTestEntity>(UserTestEntity.class), "1000000001");
+			// æŠ¥é”™äº†ï¼Œä¼°è®¡æ˜¯ä¸æ”¯æŒBlobå’ŒClob
+			// LobTestEntity lte = qr.query("SELECT * FROM SG_LOB_TEST WHERE SLT_ID=?", new
+			// BeanHandler<LobTestEntity>(LobTestEntity.class), 1000000001);
+			// System.out.println(lte);
+
+			// æ— Blobå’ŒClobçš„å°±æ²¡é—®é¢˜
+			UserTestEntity ute = qr.query("SELECT * FROM SG_USER_INFO WHERE SUI_ID=?",
+					new BeanHandler<UserTestEntity>(UserTestEntity.class), "1000000001");
 			System.out.println(ute);
 		} catch (SQLException e) {
 			e.printStackTrace();

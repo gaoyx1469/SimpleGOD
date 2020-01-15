@@ -9,11 +9,11 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 /**
- * ÑİÊ¾»ùÓÚ×ÓÀàµÄ¶¯Ì¬´úÀí
+ * æ¼”ç¤ºåŸºäºå­ç±»çš„åŠ¨æ€ä»£ç†
  * 
- * ÒÀÀµcglib°ü2.2°æ±¾£¬Ì«ĞÂÁË»¹²»ĞĞºÍasm°ü
+ * ä¾èµ–cglibåŒ…2.2ç‰ˆæœ¬ï¼Œå¤ªæ–°äº†è¿˜ä¸è¡Œå’ŒasmåŒ…
  * 
- * ºËĞÄ½Ó¿ÚºÍÀà£ºEnhancer¡¢MethodInterceptor
+ * æ ¸å¿ƒæ¥å£å’Œç±»ï¼šEnhancerã€MethodInterceptor
  * 
  * @author gaoyx
  *
@@ -31,11 +31,11 @@ public class ProxyDemo2 {
 					throws Throwable {
 
 				Object retValue = null;
-				System.out.println("µ÷ÓÃÇ°");
+				System.out.println("è°ƒç”¨å‰");
 				float money = (float) args[0];
 				money = money - 1000f;
 				method.invoke(mt, money);
-				System.out.println("µ÷ÓÃºó");
+				System.out.println("è°ƒç”¨å");
 				return retValue;
 			}
 		});

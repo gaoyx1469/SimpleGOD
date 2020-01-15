@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ¼Ç×¡ÓÃ»§×îºóÒ»´Î·ÃÎÊÊ±¼älastAccessTime
+ * è®°ä½ç”¨æˆ·æœ€åä¸€æ¬¡è®¿é—®æ—¶é—´lastAccessTime
  * 
  * @author Gaoyx
  *
@@ -30,8 +30,8 @@ public class CookieDemoServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter pw = response.getWriter();
-		pw.write("ÉÏ´ÎµÇÂ½Ê±¼ä£º");
-		// È¡cookieÖĞÖ¸¶¨Öµ´òÓ¡µ½Ò³ÃæÉÏ
+		pw.write("ä¸Šæ¬¡ç™»é™†æ—¶é—´ï¼š");
+		// å–cookieä¸­æŒ‡å®šå€¼æ‰“å°åˆ°é¡µé¢ä¸Š
 		Cookie[] cs = request.getCookies();
 		for (int i = 0; cs != null && i < cs.length; i++) {
 			Cookie c = cs[i];
@@ -41,9 +41,9 @@ public class CookieDemoServlet extends HttpServlet {
 				pw.write(new Date(time).toLocaleString());
 			}
 		}
-		// °Ñµ±Ç°·ÃÎÊÊ±¼äĞ´»Øcookie
+		// æŠŠå½“å‰è®¿é—®æ—¶é—´å†™å›cookie
 		Cookie ns = new Cookie("lastAccessTime", System.currentTimeMillis() + "");
-		// ÉèÖÃcookieµÄÉúÃüÖÜÆÚ
+		// è®¾ç½®cookieçš„ç”Ÿå‘½å‘¨æœŸ
 		ns.setMaxAge(30 * 24 * 60 * 60);
 		response.addCookie(ns);
 	}

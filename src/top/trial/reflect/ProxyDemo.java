@@ -9,7 +9,7 @@ import top.trial.demo.dao.impl.MyInvocationHandler;
 import top.trial.demo.dao.impl.UserOperaterDaoImpl;
 
 /**
- * ¶¯Ì¬´úÀíÊ¾Àı´úÂë
+ * åŠ¨æ€ä»£ç†ç¤ºä¾‹ä»£ç 
  * 
  * @author Gaoyx
  *
@@ -18,14 +18,14 @@ public class ProxyDemo {
 
 	@Test
 	public void proxyTest() {
-		// ´´½¨±»´úÀí²Ù×÷Àà
+		// åˆ›å»ºè¢«ä»£ç†æ“ä½œç±»
 		UserOperaterDao uod = new UserOperaterDaoImpl();
-		// ´´½¨InvocationHandler
+		// åˆ›å»ºInvocationHandler
 		MyInvocationHandler handler = new MyInvocationHandler(uod);
-		// Éú³É´úÀíÀà
+		// ç”Ÿæˆä»£ç†ç±»
 		UserOperaterDao proxy = (UserOperaterDao) Proxy.newProxyInstance(uod.getClass().getClassLoader(),
 				uod.getClass().getInterfaces(), handler);
-		// ´úÀíÀàµ÷ÓÃ²Ù×÷Àà·½·¨
+		// ä»£ç†ç±»è°ƒç”¨æ“ä½œç±»æ–¹æ³•
 		proxy.addUser();
 	}
 

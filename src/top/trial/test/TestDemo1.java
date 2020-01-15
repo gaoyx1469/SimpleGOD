@@ -26,7 +26,7 @@ public class TestDemo1 {
 	
 	@Test
 	public void test3() {
-		String a = "ÖÐÎÄ";
+		String a = "ä¸­æ–‡";
 		System.out.println(a);
 		String str = Base64Util.base64Encoding(a);
 		System.out.println(Base64Util.base64Decoding(str));

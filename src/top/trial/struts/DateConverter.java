@@ -9,7 +9,7 @@ import java.util.Map;
 import com.opensymphony.xwork2.conversion.impl.DefaultTypeConverter;
 
 /**
- * strutsµÄDateÀàĞÍ×ª»»Æ÷
+ * strutsçš„Dateç±»å‹è½¬æ¢å™¨
  * 
  * @author Gaoyx
  *
@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.conversion.impl.DefaultTypeConverter;
 public class DateConverter extends DefaultTypeConverter {
 
 	/**
-	 * context£ºognl±í´ïÊ½ÉÏÏÂÎÄ value£ºÇëÇó²ÎÊı»ò·µ»Ø²ÎÊı toType£º×ª»»µÄÀàĞÍ ·µ»ØÖµÎª×ª»»ºóµÄ²ÎÊı
+	 * contextï¼šognlè¡¨è¾¾å¼ä¸Šä¸‹æ–‡ valueï¼šè¯·æ±‚å‚æ•°æˆ–è¿”å›å‚æ•° toTypeï¼šè½¬æ¢çš„ç±»å‹ è¿”å›å€¼ä¸ºè½¬æ¢åçš„å‚æ•°
 	 * 
 	 */
 	@Override
@@ -25,15 +25,15 @@ public class DateConverter extends DefaultTypeConverter {
 
 		DateFormat df = new SimpleDateFormat("yyy/MM/dd");
 
-		if (toType == Date.class) {// String×ªDate,Èë²ÎÊÇÊı×é
-			String dateString = ((String[]) value)[0];// È¡µ½µÚÒ»¸öÊäÈëÖµ
+		if (toType == Date.class) {// Stringè½¬Date,å…¥å‚æ˜¯æ•°ç»„
+			String dateString = ((String[]) value)[0];// å–åˆ°ç¬¬ä¸€ä¸ªè¾“å…¥å€¼
 			try {
 				return df.parse(dateString);
 			} catch (ParseException e) {
 				throw new RuntimeException();
 			}
 			// System.out.println(dateString);
-		} else {// Date×ªString,Èë²ÎÊÇDateÀàĞÍ
+		} else {// Dateè½¬String,å…¥å‚æ˜¯Dateç±»å‹
 			Date dValue = (Date) value;
 			return df.format(dValue);
 		}

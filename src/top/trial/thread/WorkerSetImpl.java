@@ -25,10 +25,10 @@ public class WorkerSetImpl implements Runnable {
 				}
 
 				if (num % 2 == 1) {
-					wd.setName("×óÊÖ");
+					wd.setName("å·¦æ‰‹");
 					wd.setAge(18);
 				} else {
-					wd.setName("ÓÒÊÖ");
+					wd.setName("å³æ‰‹");
 					wd.setAge(20);
 				}
 				wd.setFlag(true);

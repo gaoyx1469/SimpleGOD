@@ -16,7 +16,7 @@ import top.trial.demo.entity.BookEntity;
 import top.trial.demo.entity.BookEntityDB;
 
 /**
- * Õ¹Ê¾ËùÓĞÊé¼®ÁĞ±í Õ¹Ê¾ÓÃ»§ä¯ÀÀÀúÊ·£¨¶ÁÈ¡cookie£©
+ * å±•ç¤ºæ‰€æœ‰ä¹¦ç±åˆ—è¡¨ å±•ç¤ºç”¨æˆ·æµè§ˆå†å²ï¼ˆè¯»å–cookieï¼‰
  * 
  * @author Gaoyx
  *
@@ -32,28 +32,28 @@ public class BookMarketServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Ê¹ÓÃUTF-8±àÂë
+		// ä½¿ç”¨UTF-8ç¼–ç 
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		// »ñÈ¡µ±Ç°Ó¦ÓÃÂ·¾¶
+		// è·å–å½“å‰åº”ç”¨è·¯å¾„
 		String path = request.getContextPath();
 		out.append("Served at: ").append(path);
 
-		// Õ¹Ê¾Êé¼®ÁĞ±í
-		out.write("<h1>ÊéÖĞ×ÔÓĞ»Æ½ğÎİ</h1>");
+		// å±•ç¤ºä¹¦ç±åˆ—è¡¨
+		out.write("<h1>ä¹¦ä¸­è‡ªæœ‰é»„é‡‘å±‹</h1>");
 		Map<String, BookEntity> books = BookEntityDB.getAllBooks();
 
 		for (Map.Entry<String, BookEntity> me : books.entrySet()) {
 			out.write("<a href='" + path + "/BookDetailServlet?bookId=" + me.getKey() + "'>"
 					+ me.getValue().getBookName() + "</a><br/>");
 		}
-		// Õ¹Ê¾ä¯ÀÀÀúÊ·
+		// å±•ç¤ºæµè§ˆå†å²
 		Cookie[] cs = request.getCookies();
 		for (int i = 0; cs != null && i < cs.length; i++) {
 			Cookie c = cs[i];
 			if (Constants.BOOK_HISTORY_COOKIE.equals(c.getName())) {
-				out.write("<h3>ä¯ÀÀÀúÊ·£º</h3>");
+				out.write("<h3>æµè§ˆå†å²ï¼š</h3>");
 				String bookHis = c.getValue();
 				String[] hisBooks = bookHis.split("-");
 				for (String hisBook : hisBooks) {

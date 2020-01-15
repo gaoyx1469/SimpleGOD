@@ -10,7 +10,7 @@ import top.trial.xml.domain.Student;
 import top.util.xml.DocumentUtil;
 
 /**
- * Student ²Ù×÷ÊµÏÖÀà£¨DOM·½Ê½£©
+ * Student æ“ä½œå®ç°ç±»ï¼ˆDOMæ–¹å¼ï¼‰
  * 
  * @author Gaoyx
  *
@@ -29,9 +29,9 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 	public boolean creatStudent(Student student) {
 		boolean result = false;
 		try {
-			// »ñÈ¡Document
+			// è·å–Document
 			Document document = DocumentUtil.getDocument(url);
-			// ´´½¨name¡¢city¡¢gradeÔªËØ²¢ÉèÖÃÖ÷ÌåÄÚÈİ
+			// åˆ›å»ºnameã€cityã€gradeå…ƒç´ å¹¶è®¾ç½®ä¸»ä½“å†…å®¹
 			Element eName = document.createElement("name");
 			eName.setTextContent(student.getName());
 
@@ -40,19 +40,19 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 
 			Element eGrade = document.createElement("grade");
 			eGrade.setTextContent(student.getGrade() + "");
-			// ´´½¨studentÔªËØ²¢ÉèÖÃÊôĞÔ
+			// åˆ›å»ºstudentå…ƒç´ å¹¶è®¾ç½®å±æ€§
 			Element eStudent = document.createElement("student");
 			eStudent.setAttribute("id", student.getId());
 			eStudent.setAttribute("examId", student.getExamId());
-			// ½«name¡¢city¡¢gradeÔªËØÏÂ¹Òµ½studentÏÂ
+			// å°†nameã€cityã€gradeå…ƒç´ ä¸‹æŒ‚åˆ°studentä¸‹
 			eStudent.appendChild(eName);
 			eStudent.appendChild(eCity);
 			eStudent.appendChild(eGrade);
-			// »ñÈ¡examÔªËØ
+			// è·å–examå…ƒç´ 
 			Node nExam = document.getElementsByTagName("exam").item(0);
-			// ½«studentÔªËØÏÂ¹Òµ½examÔªËØÏÂ
+			// å°†studentå…ƒç´ ä¸‹æŒ‚åˆ°examå…ƒç´ ä¸‹
 			nExam.appendChild(eStudent);
-			// Ğ´»ØXML
+			// å†™å›XML
 			DocumentUtil.write2xml(document, url);
 			result = true;
 		} catch (Exception e) {
@@ -72,20 +72,20 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 		boolean result = false;
 
 		try {
-			// »ñÈ¡document
+			// è·å–document
 			Document document = DocumentUtil.getDocument(url);
-			// »ñÈ¡nameµÄNodeList
+			// è·å–nameçš„NodeList
 			NodeList nodeList = document.getElementsByTagName("name");
-			// ±éÀúµÃµ½nameÆ¥ÅäµÄNode
+			// éå†å¾—åˆ°nameåŒ¹é…çš„Node
 			for (int i = 0; i < nodeList.getLength(); i++) {
 				Node node = nodeList.item(i);
 				if (node.getTextContent().equals(name)) {
-					// É¾³ı¸ÃNode
+					// åˆ é™¤è¯¥Node
 					node.getParentNode().getParentNode().removeChild(node.getParentNode());
 					result = true;
 				}
 			}
-			// Ğ´»ØXML
+			// å†™å›XML
 			DocumentUtil.write2xml(document, url);
 		} catch (Exception e) {
 			// e.printStackTrace();
@@ -111,19 +111,19 @@ public class StudentDOMDaoImpl implements StudentXMLDao {
 		String sCity = "";
 		float sGrade = 0.0f;
 		try {
-			// »ñÈ¡Document
+			// è·å–Document
 			Document document = DocumentUtil.getDocument(url);
-			// »ñÈ¡StudentµÄNodeList
+			// è·å–Studentçš„NodeList
 			NodeList nodeList = document.getElementsByTagName("student");
-			// ±éÀúµÃµ½examIdÆ¥ÅäµÄNode
+			// éå†å¾—åˆ°examIdåŒ¹é…çš„Node
 			for (int i = 0; i < nodeList.getLength(); i++) {
 
 				if (nodeList.item(i).getNodeType() == Node.ELEMENT_NODE) {
-					// Ç¿×ªElement£¬»ñÈ¡AttributeÄÚÈİ
+					// å¼ºè½¬Elementï¼Œè·å–Attributeå†…å®¹
 					element = (Element) nodeList.item(i);
 					sExamId = element.getAttribute("examId");
 					if (sExamId.equals(examId)) {
-						// »ñÈ¡×ÓÔªËØ¼°ÔªËØÄÚÈİ
+						// è·å–å­å…ƒç´ åŠå…ƒç´ å†…å®¹
 						sId = element.getAttribute("id");
 						sName = element.getElementsByTagName("name").item(0).getTextContent();
 						sCity = element.getElementsByTagName("city").item(0).getTextContent();

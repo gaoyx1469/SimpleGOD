@@ -3,7 +3,7 @@ package top.trial.spring;
 import java.util.Date;
 
 /**
- * XMLÒÀÀµ×¢ÈëµÄBean
+ * XMLä¾èµ–æ³¨å…¥çš„Bean
  * 
  * @author Gaoyx
  *
@@ -15,14 +15,14 @@ public class SpringDIBean {
 
 	public SpringDIBean(int id) {
 		this.id = id;
-		System.out.println("µ÷ÓÃÁË´ø1²Î¹¹Ôìº¯Êı");
+		System.out.println("è°ƒç”¨äº†å¸¦1å‚æ„é€ å‡½æ•°");
 	}
 
 	public SpringDIBean(int id, String name, Date date) {
 		this.id = id;
 		this.name = name;
 		this.date = date;
-		System.out.println("µ÷ÓÃÁË´ø3²Î¹¹Ôìº¯Êı");
+		System.out.println("è°ƒç”¨äº†å¸¦3å‚æ„é€ å‡½æ•°");
 	}
 
 	public int getId() {

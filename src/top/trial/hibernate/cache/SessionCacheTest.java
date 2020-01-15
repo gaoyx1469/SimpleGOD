@@ -8,7 +8,7 @@ import top.trial.hibernate.GameEntity;
 import top.trial.hibernate.HibernateTestBaseUtil;
 
 /**
- * ¸ÃÀàÎªÒ»¼¶»º´æµÄ²âÊÔÀà
+ * è¯¥ç±»ä¸ºä¸€çº§ç¼“å­˜çš„æµ‹è¯•ç±»
  * 
  * @author Gaoyx1469
  *
@@ -16,14 +16,14 @@ import top.trial.hibernate.HibernateTestBaseUtil;
 public class SessionCacheTest extends HibernateTestBaseUtil {
 
 	/**
-	 * ²âÊÔhibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿µÄ»ñÈ¡£¬ get·½·¨½«Êı¾İ·Åµ½Ò»¼¶»º´æ
+	 * æµ‹è¯•hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘çš„è·å–ï¼Œ getæ–¹æ³•å°†æ•°æ®æ”¾åˆ°ä¸€çº§ç¼“å­˜
 	 */
 	@Test
 	public void testGetMethod() {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 
-		// Ò»ÏÂÊ¹ÓÃÁ½´ÎÁ¢¼´²éÑ¯£¬ÏÔÈ»Ö»·¢³öÒ»´ÎSQL£¬µÚ¶ş´ÎgetÖ±½Ó´Ó»º´æÖĞÄÃ²éÑ¯½á¹û
+		// ä¸€ä¸‹ä½¿ç”¨ä¸¤æ¬¡ç«‹å³æŸ¥è¯¢ï¼Œæ˜¾ç„¶åªå‘å‡ºä¸€æ¬¡SQLï¼Œç¬¬äºŒæ¬¡getç›´æ¥ä»ç¼“å­˜ä¸­æ‹¿æŸ¥è¯¢ç»“æœ
 		GameEntity g1 = session.get(GameEntity.class, 3);
 		GameEntity g2 = session.get(GameEntity.class, 3);
 
@@ -32,14 +32,14 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔhibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿µÄ»ñÈ¡£¬ load·½·¨½«Êı¾İ·Åµ½Ò»¼¶»º´æ
+	 * æµ‹è¯•hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘çš„è·å–ï¼Œ loadæ–¹æ³•å°†æ•°æ®æ”¾åˆ°ä¸€çº§ç¼“å­˜
 	 */
 	@Test
 	public void testLoadMethod() {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 
-		// Ò»ÏÂÊ¹ÓÃÁ½´ÎÁ¢¼´²éÑ¯£¬ÏÔÈ»Ö»·¢³öÒ»´ÎSQL£¬µÚ¶ş´ÎloadÖ±½Ó´Ó»º´æÖĞÄÃ²éÑ¯½á¹û
+		// ä¸€ä¸‹ä½¿ç”¨ä¸¤æ¬¡ç«‹å³æŸ¥è¯¢ï¼Œæ˜¾ç„¶åªå‘å‡ºä¸€æ¬¡SQLï¼Œç¬¬äºŒæ¬¡loadç›´æ¥ä»ç¼“å­˜ä¸­æ‹¿æŸ¥è¯¢ç»“æœ
 		GameEntity g1 = session.load(GameEntity.class, 3);
 		System.out.println(g1.getGameName());
 		GameEntity g2 = session.load(GameEntity.class, 3);
@@ -50,19 +50,19 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔhibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿µÄ»ñÈ¡£¬ save·½·¨
+	 * æµ‹è¯•hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘çš„è·å–ï¼Œ saveæ–¹æ³•
 	 */
 	@Test
 	public void testSaveMethod() {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 
-		// ²âÊÔsave·½·¨
-		GameEntity gameEntity = new GameEntity("É½¿Ú¶¡", "»¶ÀÖÔ´Èª");
-		// ´Ë´¦·¢³öselect max(SGI_ID) from SG_GAME_INFO»ñÈ¡Ö÷¼ü
+		// æµ‹è¯•saveæ–¹æ³•
+		GameEntity gameEntity = new GameEntity("å±±å£ä¸", "æ¬¢ä¹æºæ³‰");
+		// æ­¤å¤„å‘å‡ºselect max(SGI_ID) from SG_GAME_INFOè·å–ä¸»é”®
 		session.save(gameEntity);
 
-		// ´Ë´¦get·½·¨Ã»ÓĞ·¢³öSQLÓï¾ä£¬ÒòÎªÊÂÎñÎ´Ìá½»£¬insertÓï¾ä¶¼Ã»ÓĞ·¢³ö£¬get·½·¨Ö±½Ó´ÓÒ»¼¶»º´æÖĞÄÃÈ¡
+		// æ­¤å¤„getæ–¹æ³•æ²¡æœ‰å‘å‡ºSQLè¯­å¥ï¼Œå› ä¸ºäº‹åŠ¡æœªæäº¤ï¼Œinsertè¯­å¥éƒ½æ²¡æœ‰å‘å‡ºï¼Œgetæ–¹æ³•ç›´æ¥ä»ä¸€çº§ç¼“å­˜ä¸­æ‹¿å–
 		GameEntity game = session.get(GameEntity.class, gameEntity.getGid());
 		System.out.println(game.toString());
 
@@ -71,7 +71,7 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔhibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿µÄÉ¾³ı£¬evict·½·¨ºÍupdate·½·¨£¬Çå³ısessionÌØ¶¨»º´æ¼°Ìí¼ÓÒ»¼¶»º´æ
+	 * æµ‹è¯•hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘çš„åˆ é™¤ï¼Œevictæ–¹æ³•å’Œupdateæ–¹æ³•ï¼Œæ¸…é™¤sessionç‰¹å®šç¼“å­˜åŠæ·»åŠ ä¸€çº§ç¼“å­˜
 	 */
 	@Test
 	public void testEvictAndUpdateMethod() {
@@ -79,11 +79,11 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 		Transaction transaction = session.beginTransaction();
 
 		GameEntity game = session.get(GameEntity.class, 3);
-		// ´Ë´¦Ê¹ÓÃevictÇå¿Õsession»º´æÖĞµÄgame¶ÔÏó
+		// æ­¤å¤„ä½¿ç”¨evictæ¸…ç©ºsessionç¼“å­˜ä¸­çš„gameå¯¹è±¡
 		session.evict(game);
-		// ´Ë´¦Ö´ĞĞupdate·½·¨£¬½«¶ÔÏó·ÅÈëÁË»º´æÖĞ
+		// æ­¤å¤„æ‰§è¡Œupdateæ–¹æ³•ï¼Œå°†å¯¹è±¡æ”¾å…¥äº†ç¼“å­˜ä¸­
 		session.update(game);
-		// ´Ë´¦get·½·¨Ã»ÓĞ·¢³ö²éÑ¯SQL£¬Ö¤Ã÷update·½·¨Ò»¼¶»º´æÉúĞ§
+		// æ­¤å¤„getæ–¹æ³•æ²¡æœ‰å‘å‡ºæŸ¥è¯¢SQLï¼Œè¯æ˜updateæ–¹æ³•ä¸€çº§ç¼“å­˜ç”Ÿæ•ˆ
 		game = session.get(GameEntity.class, 3);
 		// System.out.println(game.toString());
 
@@ -92,7 +92,7 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔhibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿µÄÈ«²¿É¾³ı£¬clear·½·¨£¬Çå³ısessionÈ«²¿»º´æ
+	 * æµ‹è¯•hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘çš„å…¨éƒ¨åˆ é™¤ï¼Œclearæ–¹æ³•ï¼Œæ¸…é™¤sessionå…¨éƒ¨ç¼“å­˜
 	 */
 	@Test
 	public void testClearMethod() {
@@ -100,9 +100,9 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 		Transaction transaction = session.beginTransaction();
 
 		GameEntity game = session.get(GameEntity.class, 3);
-		// ´Ë´¦Ê¹ÓÃevictÇå¿Õsession»º´æÖĞµÄgame¶ÔÏó
+		// æ­¤å¤„ä½¿ç”¨evictæ¸…ç©ºsessionç¼“å­˜ä¸­çš„gameå¯¹è±¡
 		session.clear();
-		// ´Ë´¦get·½·¨ÔÙ´Î·¢³ö²éÑ¯SQL£¬Ö¤Ã÷clear·½·¨É¾³ıÁËÒ»¼¶»º´æ
+		// æ­¤å¤„getæ–¹æ³•å†æ¬¡å‘å‡ºæŸ¥è¯¢SQLï¼Œè¯æ˜clearæ–¹æ³•åˆ é™¤äº†ä¸€çº§ç¼“å­˜
 		game = session.get(GameEntity.class, 3);
 
 		transaction.commit();
@@ -110,7 +110,7 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔÊı¾İ¿âÊı¾İË¢ĞÂµ½hibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿ÖĞ£¬refresh·½·¨
+	 * æµ‹è¯•æ•°æ®åº“æ•°æ®åˆ·æ–°åˆ°hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘ä¸­ï¼Œrefreshæ–¹æ³•
 	 */
 	@Test
 	public void testRefreshMethod() {
@@ -118,8 +118,8 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 		Transaction transaction = session.beginTransaction();
 
 		GameEntity game = session.get(GameEntity.class, 3);
-		game.setGameName("ÎÒ¸ÄÁË¹ş");
-		// refreshÖ±½ÓÓÖ·¢³öÒ»Ìõ²éÑ¯SQLÓï¾ä£¬´ÓÊı¾İ¿â½«Êı¾İË¢µ½»º´æÖĞ£¬½«ÉÏÒ»¾äµÄ¸ü¸Ä»¹Ô­ÁË
+		game.setGameName("æˆ‘æ”¹äº†å“ˆ");
+		// refreshç›´æ¥åˆå‘å‡ºä¸€æ¡æŸ¥è¯¢SQLè¯­å¥ï¼Œä»æ•°æ®åº“å°†æ•°æ®åˆ·åˆ°ç¼“å­˜ä¸­ï¼Œå°†ä¸Šä¸€å¥çš„æ›´æ”¹è¿˜åŸäº†
 		session.refresh(game);
 
 		transaction.commit();
@@ -127,7 +127,7 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 	}
 
 	/**
-	 * ²âÊÔhibernateµÄsession»º´æ¡¾Ò»¼¶»º´æ¡¿ÖĞµÄÊı¾İË¢ĞÂµ½Êı¾İ¿âÖĞ£¬flush·½·¨
+	 * æµ‹è¯•hibernateçš„sessionç¼“å­˜ã€ä¸€çº§ç¼“å­˜ã€‘ä¸­çš„æ•°æ®åˆ·æ–°åˆ°æ•°æ®åº“ä¸­ï¼Œflushæ–¹æ³•
 	 */
 	@Test
 	public void testFlushMethod() {
@@ -135,10 +135,10 @@ public class SessionCacheTest extends HibernateTestBaseUtil {
 		Transaction transaction = session.beginTransaction();
 
 		GameEntity game = session.get(GameEntity.class, 4);
-		game.setGameDescribe("»¶ÀÖ¡¾»ğÆø¡¿Ô´Èª");
-		// ×¢ÒâflushÖ»ÊÇË¢ĞÂÊı¾İµ½Êı¾İ¿â£¬²¢Ã»ÓĞÇå¿ÕÒ»¼¶»º´æ
+		game.setGameDescribe("æ¬¢ä¹ã€ç«æ°”ã€‘æºæ³‰");
+		// æ³¨æ„flushåªæ˜¯åˆ·æ–°æ•°æ®åˆ°æ•°æ®åº“ï¼Œå¹¶æ²¡æœ‰æ¸…ç©ºä¸€çº§ç¼“å­˜
 		session.flush();
-		// ´Ë´¦Ã»ÓĞ·¢³öĞÂµÄ²éÑ¯SQL£¬Ö¤Ã÷²¢Ã»ÓĞÇå¿ÕÒ»¼¶»º´æ
+		// æ­¤å¤„æ²¡æœ‰å‘å‡ºæ–°çš„æŸ¥è¯¢SQLï¼Œè¯æ˜å¹¶æ²¡æœ‰æ¸…ç©ºä¸€çº§ç¼“å­˜
 		GameEntity game2 = session.get(GameEntity.class, 4);
 
 		transaction.commit();

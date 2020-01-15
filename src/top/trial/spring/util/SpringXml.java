@@ -11,7 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import top.util.jdbc.MysqlDBCPUtil;
 
 /**
- * 使用此配置类替代bean_aop_annotation.xml
+ * 浣跨敤姝ら厤缃被鏇夸唬bean_aop_annotation.xml
  * 
  * @author Gaoyx
  *

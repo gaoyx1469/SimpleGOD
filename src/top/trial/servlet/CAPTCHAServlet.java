@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Êä³öCAPTCHAËæ»úÍ¼Æ¬ÑéÖ¤Âë
+ * è¾“å‡ºCAPTCHAéšæœºå›¾ç‰‡éªŒè¯ç 
  * 
  * @author Gaoyx
  *
@@ -31,32 +31,32 @@ public class CAPTCHAServlet extends HttpServlet {
 			throws ServletException, IOException {
 		int width = 250;
 		int height = 60;
-		// ´´½¨ÄÚ´æÍ¼ÏñBufferedImage
+		// åˆ›å»ºå†…å­˜å›¾åƒBufferedImage
 		BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-		// ´´½¨»­±ÊGraphics
+		// åˆ›å»ºç”»ç¬”Graphics
 		Graphics g = bi.getGraphics();
-		// »­±ß¿ò
+		// ç”»è¾¹æ¡†
 		g.setColor(Color.BLUE);
 		g.drawRect(0, 0, width, height);
-		// »­±³¾°É«
+		// ç”»èƒŒæ™¯è‰²
 		g.setColor(Color.YELLOW);
 		g.fillRect(1, 1, width - 2, height - 2);
-		// »­¸ÉÈÅÏß
+		// ç”»å¹²æ‰°çº¿
 		int lineNum = 10;
 		Random r = new Random();
 		g.setColor(Color.RED);
 		for (int i = 0; i < lineNum; i++) {
 			g.drawLine(r.nextInt(width), r.nextInt(height), r.nextInt(width), r.nextInt(height));
 		}
-		// »­Ëæ»úÊı×Ö
+		// ç”»éšæœºæ•°å­—
 		int mathNum = 4;
 		int fontSize = 40;
 		g.setColor(Color.GREEN);
-		g.setFont(new Font("ËÎÌå", Font.BOLD | Font.ITALIC, fontSize));
+		g.setFont(new Font("å®‹ä½“", Font.BOLD | Font.ITALIC, fontSize));
 		for (int j = 1; j <= mathNum; j++) {
 			g.drawString(r.nextInt(10) + "", width * j / (mathNum + 1) - fontSize / 3, height / 2 + fontSize / 3);
 		}
-		// Êä³öµ½ä¯ÀÀÆ÷ImageIO
+		// è¾“å‡ºåˆ°æµè§ˆå™¨ImageIO
 		response.setHeader("Expires", "-1");
 		response.setHeader("Cache-Control", "no-cache");
 		response.setHeader("Pragma", "-1");

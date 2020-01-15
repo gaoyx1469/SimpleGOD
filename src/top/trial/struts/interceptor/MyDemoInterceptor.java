@@ -9,9 +9,9 @@ public class MyDemoInterceptor implements Interceptor {
 
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
-		System.out.println("½øÈëÀ¹½ØÆ÷");
+		System.out.println("è¿›å…¥æ‹¦æˆªå™¨");
 		if(1 == 1) {
-			//´¦ÀíºóĞø¶¯×÷
+			//å¤„ç†åç»­åŠ¨ä½œ
 			return invocation.invoke();
 		}
 		return null;

@@ -23,7 +23,7 @@ public class AccountOperationServiceTest {
 	public void testAddAccount() {
 		SpringAccountBean bean = new SpringAccountBean();
 		bean.setSat_id(3);
-		bean.setSat_name("Ğ¡Íõ");
+		bean.setSat_name("å°ç‹");
 		bean.setSat_value(new BigDecimal("8848.88"));
 		accountOperationService.addAccount(bean);
 	}
@@ -32,7 +32,7 @@ public class AccountOperationServiceTest {
 	public void testUpdateAccount() {
 		SpringAccountBean bean = new SpringAccountBean();
 		bean.setSat_id(3);
-		bean.setSat_name("Ğ¡Íõ");
+		bean.setSat_name("å°ç‹");
 		bean.setSat_value(new BigDecimal("8848.66"));
 		accountOperationService.updateAccount(bean);
 	}
@@ -55,7 +55,7 @@ public class AccountOperationServiceTest {
 	}
 
 	/**
-	 * ÎŞÊÂÎñ°æ±¾×ªÕËÄ£Äâ
+	 * æ— äº‹åŠ¡ç‰ˆæœ¬è½¬è´¦æ¨¡æ‹Ÿ
 	 */
 	@Test
 	public void testTransfer() {
@@ -63,7 +63,7 @@ public class AccountOperationServiceTest {
 	}
 
 	/**
-	 * ÓĞÊÂÎñ°æ±¾×ªÕËÄ£Äâ
+	 * æœ‰äº‹åŠ¡ç‰ˆæœ¬è½¬è´¦æ¨¡æ‹Ÿ
 	 */
 	@Test
 	public void testTransferTransaction() {

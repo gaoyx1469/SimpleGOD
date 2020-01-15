@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import top.trial.spring.dao.AnnotationDao;
 
 /**
- * spring×¢½âÑİÊ¾dao²ãÊµÏÖÀà
+ * springæ³¨è§£æ¼”ç¤ºdaoå±‚å®ç°ç±»
  * 
  * @author Gaoyx
  *
@@ -15,7 +15,7 @@ public class AnnotationDaoImpl implements AnnotationDao {
 
 	@Override
 	public void accountCRDL() {
-		System.out.println("µ÷ÓÃÁËDaoµÄÕË»§²Ù×÷·½·¨");
+		System.out.println("è°ƒç”¨äº†Daoçš„è´¦æˆ·æ“ä½œæ–¹æ³•");
 	}
 
 }

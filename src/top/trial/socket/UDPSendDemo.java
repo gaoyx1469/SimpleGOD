@@ -10,20 +10,18 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 
 /**
- * UDPĞ­Òé·¢ËÍÊı¾İ
+ * UDPåè®®å‘é€æ•°æ®
+ * 
  * @author Gaoyx
  * 
- * 1¡¢´´½¨·¢ËÍ¶ËSocket¶ÔÏóDatagramSocket
- * 2¡¢´´½¨Êı¾İ£¬´ò°ü
- * 3¡¢µ÷ÓÃSocket¶ÔÏó·¢ËÍ·½·¨·¢ËÍ
- * 4¡¢ÊÍ·Å×ÊÔ´
+ *         1ã€åˆ›å»ºå‘é€ç«¯Socketå¯¹è±¡DatagramSocket 2ã€åˆ›å»ºæ•°æ®ï¼Œæ‰“åŒ… 3ã€è°ƒç”¨Socketå¯¹è±¡å‘é€æ–¹æ³•å‘é€ 4ã€é‡Šæ”¾èµ„æº
  */
 public class UDPSendDemo {
 	public static void main(String[] args) throws IOException {
 
 		// SendUDP("Socket UDP Test");
 
-		// ´´½¨·¢ËÍ¶ËSocket¶ÔÏóDatagramSocket
+		// åˆ›å»ºå‘é€ç«¯Socketå¯¹è±¡DatagramSocket
 		DatagramSocket ds = new DatagramSocket();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,12 +29,12 @@ public class UDPSendDemo {
 		while ((line = br.readLine()) != null) {
 			SendUDPSimple(line, ds);
 		}
-		// ÊÍ·Å×ÊÔ´
+		// é‡Šæ”¾èµ„æº
 		ds.close();
 	}
 
 	/**
-	 * UDPĞ­Òé·¢ËÍÊı¾İ
+	 * UDPåè®®å‘é€æ•°æ®
 	 * 
 	 * @param msg
 	 * @throws SocketException
@@ -45,22 +43,22 @@ public class UDPSendDemo {
 	 */
 	private static void SendUDP(String msg) throws SocketException, UnknownHostException, IOException {
 
-		// ´´½¨·¢ËÍ¶ËSocket¶ÔÏóDatagramSocket
+		// åˆ›å»ºå‘é€ç«¯Socketå¯¹è±¡DatagramSocket
 		DatagramSocket ds = new DatagramSocket();
-		// ´´½¨Êı¾İ£¬´ò°ü
+		// åˆ›å»ºæ•°æ®ï¼Œæ‰“åŒ…
 		byte[] buf = msg.getBytes();
-		// Ä¿±êIPºÍÄ¿±ê¶Ë¿Ú
+		// ç›®æ ‡IPå’Œç›®æ ‡ç«¯å£
 		DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName("172.20.72.221"), 10010);
-		// µ÷ÓÃSocket¶ÔÏó·¢ËÍ·½·¨·¢ËÍ
+		// è°ƒç”¨Socketå¯¹è±¡å‘é€æ–¹æ³•å‘é€
 		ds.send(dp);
 
-		System.out.println("·¢ËÍ³É¹¦");
-		// ÊÍ·Å×ÊÔ´
+		System.out.println("å‘é€æˆåŠŸ");
+		// é‡Šæ”¾èµ„æº
 		ds.close();
 	}
 
 	/**
-	 * UDPĞ­Òé·¢ËÍÊı¾İ
+	 * UDPåè®®å‘é€æ•°æ®
 	 * 
 	 * @param msg
 	 * @throws SocketException
@@ -70,13 +68,13 @@ public class UDPSendDemo {
 	private static void SendUDPSimple(String msg, DatagramSocket ds)
 			throws SocketException, UnknownHostException, IOException {
 
-		// ´´½¨Êı¾İ£¬´ò°ü
+		// åˆ›å»ºæ•°æ®ï¼Œæ‰“åŒ…
 		byte[] buf = msg.getBytes();
-		// Ä¿±êIPºÍÄ¿±ê¶Ë¿Ú
+		// ç›®æ ‡IPå’Œç›®æ ‡ç«¯å£
 		DatagramPacket dp = new DatagramPacket(buf, buf.length, InetAddress.getByName("172.20.72.221"), 10010);
-		// µ÷ÓÃSocket¶ÔÏó·¢ËÍ·½·¨·¢ËÍ
+		// è°ƒç”¨Socketå¯¹è±¡å‘é€æ–¹æ³•å‘é€
 		ds.send(dp);
 
-		System.out.println("·¢ËÍ³É¹¦");
+		System.out.println("å‘é€æˆåŠŸ");
 	}
 }

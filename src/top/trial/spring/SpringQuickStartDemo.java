@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Spring ¿ìËÙÈëÃÅÑİÊ¾
+ * Spring å¿«é€Ÿå…¥é—¨æ¼”ç¤º
  * 
  * @author gaoyx
  *
@@ -12,14 +12,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SpringQuickStartDemo {
 
 	public static void main(String[] args) {
-		// ¶ÁÈ¡springÖ÷ÅäÖÃÎÄ¼ş
-		// ApplicationContext½Ó¿ÚÊÇBeanFactoryµÄ×Ó×Ó½Ó¿Ú
-		// ApplicationContext²ÉÓÃÁ¢¼´¼ÓÔØ²ßÂÔ£¬ÔÚ¶ÁÈ¡xmlÎÄ¼şÊ±¾ÍÖ±½Ó½«¶ÔÏó´´½¨³öÀ´£¬
-		// ÊµÏÖÀàÊ¹ÓÃClassPathXmlApplicationContext¡¾Í¨¹ı¶ÁÈ¡ÀàÂ·¾¶ÏÂµÄÎÄ¼ş´´½¨springÈİÆ÷¡¿
-		// FileSystemXmlApplicationContext¡¾Í¨¹ı¶ÁÈ¡ÎÄ¼şÏµÍ³ÏÂµÄÎÄ¼ş´´½¨springÈİÆ÷¡¿
-		// BeanFactory²ÉÓÃÑÓ³Ù¼ÓÔØ²ßÂÔ£¬ÔÚÊ¹ÓÃÊ±²Å½«¶ÔÏó´´½¨³öÀ´£¬ÊµÏÖÀàÊ¹ÓÃXmlBeanFactory
+		// è¯»å–springä¸»é…ç½®æ–‡ä»¶
+		// ApplicationContextæ¥å£æ˜¯BeanFactoryçš„å­å­æ¥å£
+		// ApplicationContexté‡‡ç”¨ç«‹å³åŠ è½½ç­–ç•¥ï¼Œåœ¨è¯»å–xmlæ–‡ä»¶æ—¶å°±ç›´æ¥å°†å¯¹è±¡åˆ›å»ºå‡ºæ¥ï¼Œ
+		// å®ç°ç±»ä½¿ç”¨ClassPathXmlApplicationContextã€é€šè¿‡è¯»å–ç±»è·¯å¾„ä¸‹çš„æ–‡ä»¶åˆ›å»ºspringå®¹å™¨ã€‘
+		// FileSystemXmlApplicationContextã€é€šè¿‡è¯»å–æ–‡ä»¶ç³»ç»Ÿä¸‹çš„æ–‡ä»¶åˆ›å»ºspringå®¹å™¨ã€‘
+		// BeanFactoryé‡‡ç”¨å»¶è¿ŸåŠ è½½ç­–ç•¥ï¼Œåœ¨ä½¿ç”¨æ—¶æ‰å°†å¯¹è±¡åˆ›å»ºå‡ºæ¥ï¼Œå®ç°ç±»ä½¿ç”¨XmlBeanFactory
 		ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
-		// ÉÏËÍ¶ÔÏóÀàĞÍ¿É²»ÓÃÇ¿×ª
+		// ä¸Šé€å¯¹è±¡ç±»å‹å¯ä¸ç”¨å¼ºè½¬
 		// SpringBean sb = (SpringBean)ac.getBean("what");
 		SpringBean sb = ac.getBean("what", SpringBean.class);
 		sb.service();

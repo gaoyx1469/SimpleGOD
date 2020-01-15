@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Êı¾İ¿âÄ£ÄâÀà
+ * æ•°æ®åº“æ¨¡æ‹Ÿç±»
  * 
  * @author Gaoyx
  *
@@ -14,12 +14,12 @@ public class BookEntityDB {
 	private static Map<String, BookEntity> books = new LinkedHashMap<>();
 
 	static {
-		books.put("1", new BookEntity("1", "¡¶LinuxÈëÃÅ¡·", "Áõ±¸", "Áõ¼Ò´óÊåÇ×±Ê", 8.18f));
-		books.put("2", new BookEntity("2", "¡¶Î¢ĞÅĞ¡³ÌĞòÈëÃÅ¡·", "¹ØÓğ", "¹Ø¼Ò´óÊåÇ×±Ê", 7.18f));
-		books.put("3", new BookEntity("3", "¡¶DockerÈëÃÅ¡·", "ÕÅ·É", "ÕÅ¼Ò´óÊåÇ×±Ê", 6.18f));
-		books.put("4", new BookEntity("4", "¡¶PythonÈëÃÅ¡·", "»ÆÖÒ", "»Æ¼Ò´óÊåÇ×±Ê", 5.18f));
-		books.put("5", new BookEntity("5", "¡¶SpringÈëÃÅ¡·", "Âí³¬", "Âí¼Ò´óÊåÇ×±Ê", 4.18f));
-		books.put("6", new BookEntity("6", "¡¶ÔÆ·şÎñÈëÃÅ¡·", "ÕÔÔÆ", "ÕÔ¼Ò´óÊåÇ×±Ê", 3.18f));
+		books.put("1", new BookEntity("1", "ã€ŠLinuxå…¥é—¨ã€‹", "åˆ˜å¤‡", "åˆ˜å®¶å¤§å”äº²ç¬”", 8.18f));
+		books.put("2", new BookEntity("2", "ã€Šå¾®ä¿¡å°ç¨‹åºå…¥é—¨ã€‹", "å…³ç¾½", "å…³å®¶å¤§å”äº²ç¬”", 7.18f));
+		books.put("3", new BookEntity("3", "ã€ŠDockerå…¥é—¨ã€‹", "å¼ é£", "å¼ å®¶å¤§å”äº²ç¬”", 6.18f));
+		books.put("4", new BookEntity("4", "ã€ŠPythonå…¥é—¨ã€‹", "é»„å¿ ", "é»„å®¶å¤§å”äº²ç¬”", 5.18f));
+		books.put("5", new BookEntity("5", "ã€ŠSpringå…¥é—¨ã€‹", "é©¬è¶…", "é©¬å®¶å¤§å”äº²ç¬”", 4.18f));
+		books.put("6", new BookEntity("6", "ã€Šäº‘æœåŠ¡å…¥é—¨ã€‹", "èµµäº‘", "èµµå®¶å¤§å”äº²ç¬”", 3.18f));
 	}
 
 	public static BookEntity getBook(String bookId) {

@@ -5,22 +5,22 @@ import org.junit.Test;
 import top.util.properties.PropertiesUtil;
 
 /**
- * Ò»Íø´ò¾¡È«²¿ÎÄ¼ş¶ÁÈ¡£¬Í¨ÓÃ°æ
+ * ä¸€ç½‘æ‰“å°½å…¨éƒ¨æ–‡ä»¶è¯»å–ï¼Œé€šç”¨ç‰ˆ
  * @author Gaoyx
  *
  */
 public class PathGeneralTest {
 
-	//·Çweb»·¾³ÏÂ¶ÁÈ¡ÎÄ¼ş£¬Êµ¼ÊÊ¹ÓÃÊ±ClassLoaderµ÷ÓÃgetResourceAsStream(url)»ñÈ¡ÊäÈëÁ÷
+	//éwebç¯å¢ƒä¸‹è¯»å–æ–‡ä»¶ï¼Œå®é™…ä½¿ç”¨æ—¶ClassLoaderè°ƒç”¨getResourceAsStream(url)è·å–è¾“å…¥æµ
 	@Test
 	public void getPath () {
-		// Í¨¹ıÀà¼ÓÔØÆ÷£¬»ñÈ¡Â·¾¶£¬¸ùÂ·¾¶¾ÍÔÚclasspathÏÂ
+		// é€šè¿‡ç±»åŠ è½½å™¨ï¼Œè·å–è·¯å¾„ï¼Œæ ¹è·¯å¾„å°±åœ¨classpathä¸‹
 		String path1 = PropertiesUtil.class.getClassLoader().getResource("").toString();
 		System.out.println(path1);
 		String path2 = PropertiesUtil.class.getClassLoader().getResource("").getPath();
 		System.out.println(path2);
 		
-		//Èç¹ûÔÚWebContentÏÂ,·ÃÎÊ²»µ½Ñ¾
+		//å¦‚æœåœ¨WebContentä¸‹,è®¿é—®ä¸åˆ°ä¸«
 		/*String path3 = PropertiesUtil.class.getClassLoader().getResource("../").getPath();
 		System.out.println(path3);
 		String path4 = PropertiesUtil.class.getClassLoader().getResource("../../WebContent/image/trial.bt.jpg").getPath();

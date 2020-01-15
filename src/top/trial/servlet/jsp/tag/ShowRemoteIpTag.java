@@ -7,13 +7,12 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 public class ShowRemoteIpTag extends TagSupport {
 
-	
 	@Override
 	public int doStartTag() throws JspException {
-		
-		//pageContextÊÇTagSupportÀàµÄÊôÐÔ
+
+		// pageContextæ˜¯TagSupportç±»çš„å±žæ€§
 		String remoteIp = pageContext.getRequest().getRemoteAddr();
-		
+
 		try {
 			pageContext.getOut().write(remoteIp);
 		} catch (IOException e) {
@@ -21,5 +20,5 @@ public class ShowRemoteIpTag extends TagSupport {
 		}
 		return super.doStartTag();
 	}
-	
+
 }

@@ -24,16 +24,16 @@ public class MysqlJDBCTestPlus {
 
 		try {
 			prop = PropertiesUtil.getPropertiesByClassloader("jdbc.properties");
-			// 注册驱动
+			// 娉ㄥ唽椹卞姩
 			Class.forName(prop.getProperty("driver"));
-			// 获取连接
+			// 鑾峰彇杩炴帴
 			conn = DriverManager.getConnection(prop.getProperty("jdbc_url"), prop);
-			// 获取sql对象
+			// 鑾峰彇sql瀵硅薄
 			stmt = conn.createStatement();
-			// 获取查询结果
+			// 鑾峰彇鏌ヨ缁撴灉
 			rs = stmt.executeQuery(QUERY_USER_INFO_SQL);
 			List<UserInfoDomain> users = new ArrayList<UserInfoDomain>();
-			// 5.取出结果
+			// 5.鍙栧嚭缁撴灉
 			while (rs.next()) {
 				UserInfoDomain user = new UserInfoDomain();
 				user.setSui_id(rs.getString("sui_id"));
@@ -42,7 +42,7 @@ public class MysqlJDBCTestPlus {
 				user.setSui_creadate(rs.getDate("sui_creadate"));
 				users.add(user);
 			}
-			// 6.遍历结果
+			// 6.閬嶅巻缁撴灉
 			for (UserInfoDomain user : users) {
 				System.out.println(user);
 			}
@@ -53,7 +53,7 @@ public class MysqlJDBCTestPlus {
 		} catch (SQLException e) {
 			new RuntimeException(e);
 		} finally {
-			// 7.释放资源
+			// 7.閲婃斁璧勬簮
 			if (rs != null) {
 				try {
 					rs.close();

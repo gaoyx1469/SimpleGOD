@@ -12,17 +12,12 @@ import top.trial.demo.entity.GameEntity;
  * 
  * @author Gaoyx
  *
- * ·´ÉäÊÇÖ¸Í¨¹ıclassÎÄ¼ş¶ÔÏó£¬Ê¹ÓÃ¸ÃÎÄ¼şÖĞµÄ±äÁ¿ºÍ·½·¨
+ *         åå°„æ˜¯æŒ‡é€šè¿‡classæ–‡ä»¶å¯¹è±¡ï¼Œä½¿ç”¨è¯¥æ–‡ä»¶ä¸­çš„å˜é‡å’Œæ–¹æ³•
  * 
- * ClassÀà£º
- * 		³ÉÔ±±äÁ¿Field
- * 		¹¹Ôì·½·¨Constructor
- * 		³ÉÔ±·½·¨Method
+ *         Classç±»ï¼š æˆå‘˜å˜é‡Field æ„é€ æ–¹æ³•Constructor æˆå‘˜æ–¹æ³•Method
  * 
- * »ñÈ¡classÎÄ¼ş¶ÔÏóµÄ·½·¨
- * 		1:ObjectÀàµÄgetClass()·½·¨
- * 		2:Êı¾İÀàĞÍµÄ¾²Ì¬ÊôĞÔclass
- * 		3:ClassÀàµÄforName()·½·¨
+ *         è·å–classæ–‡ä»¶å¯¹è±¡çš„æ–¹æ³• 1:Objectç±»çš„getClass()æ–¹æ³• 2:æ•°æ®ç±»å‹çš„é™æ€å±æ€§class
+ *         3:Classç±»çš„forName()æ–¹æ³•
  * 
  */
 public class ReflectDemo {
@@ -30,55 +25,55 @@ public class ReflectDemo {
 	@Test
 	public void reflectTest() throws Exception {
 
-		// »ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó
+		// è·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
 		String className = "top.trial.demo.entity.GameEntity";
 		Class c = getClassN(className);
-		
-		//»ñÈ¡Ä¬ÈÏ¹¹Ôì·½·¨¹¹Ôì¶ÔÏó
+
+		// è·å–é»˜è®¤æ„é€ æ–¹æ³•æ„é€ å¯¹è±¡
 		c.newInstance();
 
-		// »ñÈ¡¹«¹²¹¹Ôì·½·¨
+		// è·å–å…¬å…±æ„é€ æ–¹æ³•
 		Constructor[] cons = c.getConstructors();
 		for (Constructor con0 : cons) {
 			// System.out.println(con);
 		}
 
-		// »ñÈ¡ËùÓĞ¹¹Ôì·½·¨
+		// è·å–æ‰€æœ‰æ„é€ æ–¹æ³•
 		Constructor[] consAll = c.getDeclaredConstructors();
 		for (Constructor con0 : consAll) {
 			// System.out.println(con);
 		}
 
-		// »ñÈ¡µ¥¸ö¹«¹²¹¹Ôì·½·¨
+		// è·å–å•ä¸ªå…¬å…±æ„é€ æ–¹æ³•
 		Constructor conP = c.getConstructor();
 		// System.out.println(conP);
 
-		// »ñÈ¡µ¥¸ö¹¹Ôì·½·¨
+		// è·å–å•ä¸ªæ„é€ æ–¹æ³•
 		Constructor conA = c.getDeclaredConstructor(Double.class);
 		// System.out.println(conA);
 
-		// »ñÈ¡µ½GameEntityµÄ¶ÔÏó
+		// è·å–åˆ°GameEntityçš„å¯¹è±¡
 		Object obj = conP.newInstance();
 
-		// Ë½ÓĞ¹¹Ôì·½·¨£¬ĞèÒªÏÈÉèÖÃsetAccessible£¬²ÎÊıÎªtrueÊ±£¬È¡ÏûjavaµÄ·ÃÎÊ¼ì²é¡£
+		// ç§æœ‰æ„é€ æ–¹æ³•ï¼Œéœ€è¦å…ˆè®¾ç½®setAccessibleï¼Œå‚æ•°ä¸ºtrueæ—¶ï¼Œå–æ¶ˆjavaçš„è®¿é—®æ£€æŸ¥ã€‚
 		conA.setAccessible(true);
 		Object obj0 = conA.newInstance(1.23);
 
-		// »ñÈ¡ËùÓĞ¹«¹²³ÉÔ±±äÁ¿/³ÉÔ±±äÁ¿
+		// è·å–æ‰€æœ‰å…¬å…±æˆå‘˜å˜é‡/æˆå‘˜å˜é‡
 		Field[] fs = c.getFields();
 		Field[] fsA = c.getDeclaredFields();
 
-		// »ñÈ¡µ¥¸ö¹«¹²³ÉÔ±±äÁ¿/³ÉÔ±±äÁ¿
+		// è·å–å•ä¸ªå…¬å…±æˆå‘˜å˜é‡/æˆå‘˜å˜é‡
 		Field f = c.getField("name");
 		Field fA = c.getDeclaredField("grade");
 
-		// ¸³Öµ£¬µÚÒ»¸ö²ÎÊıÎª¶ÔÏó£¬µÚ¶ş¸ö²ÎÊıÎªÖµ
+		// èµ‹å€¼ï¼Œç¬¬ä¸€ä¸ªå‚æ•°ä¸ºå¯¹è±¡ï¼Œç¬¬äºŒä¸ªå‚æ•°ä¸ºå€¼
 		fA.setAccessible(true);
 		fA.set(obj, 12.34);
 
-		// »ñÈ¡×Ô¼ºµÄ°üÀ¨¸¸ÀàµÄ¹«¹²³ÉÔ±·½·¨
+		// è·å–è‡ªå·±çš„åŒ…æ‹¬çˆ¶ç±»çš„å…¬å…±æˆå‘˜æ–¹æ³•
 		Method[] ms = c.getMethods();
-		// »ñÈ¡×Ô¼ºµÄÈ«²¿³ÉÔ±·½·¨
+		// è·å–è‡ªå·±çš„å…¨éƒ¨æˆå‘˜æ–¹æ³•
 		Method[] msA = c.getDeclaredMethods();
 
 		Method m = c.getMethod("method", String.class);
@@ -88,12 +83,12 @@ public class ReflectDemo {
 
 	private static Class getClassN(String className) throws ClassNotFoundException {
 
-		// ·½·¨1
+		// æ–¹æ³•1
 		GameEntity gameEntity = new GameEntity();
 		Class c1 = gameEntity.getClass();
-		// ·½Ê½2
+		// æ–¹å¼2
 		Class c2 = GameEntity.class;
-		// ·½Ê½3
+		// æ–¹å¼3
 		Class c3 = Class.forName(className);
 
 		return c3;

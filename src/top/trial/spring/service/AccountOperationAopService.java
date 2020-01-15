@@ -3,19 +3,19 @@ package top.trial.spring.service;
 public interface AccountOperationAopService {
 
 	/**
-	 * Ä£ÄâÕË»§±£´æ²Ù×÷£¬ÎŞ²ÎÊıÎŞ·µ»Ø
+	 * æ¨¡æ‹Ÿè´¦æˆ·ä¿å­˜æ“ä½œï¼Œæ— å‚æ•°æ— è¿”å›
 	 */
 	public void saveAccount();
 
 	/**
-	 * Ä£ÄâÕË»§¸üĞÂ²Ù×÷£¬ÓĞ²ÎÊıÎŞ·µ»Ø
+	 * æ¨¡æ‹Ÿè´¦æˆ·æ›´æ–°æ“ä½œï¼Œæœ‰å‚æ•°æ— è¿”å›
 	 * 
 	 * @param id
 	 */
 	public void updateAccount(int id);
 
 	/**
-	 * Ä£ÄâÕË»§É¾³ı²Ù×÷£¬ÓĞ²ÎÊıÓÖ·´»Ú
+	 * æ¨¡æ‹Ÿè´¦æˆ·åˆ é™¤æ“ä½œï¼Œæœ‰å‚æ•°åˆåæ‚”
 	 * 
 	 * @param id
 	 * @return

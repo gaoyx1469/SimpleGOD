@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 /**
- * °à¼¶ÊµÌå£¬×÷ÎªhibernateÒ»¶Ô¶à²âÊÔµÄ¡°Ò»¡±µÄÒ»·½
+ * ç­çº§å®ä½“ï¼Œä½œä¸ºhibernateä¸€å¯¹å¤šæµ‹è¯•çš„â€œä¸€â€çš„ä¸€æ–¹
  * 
  * @author Gaoyx
  *

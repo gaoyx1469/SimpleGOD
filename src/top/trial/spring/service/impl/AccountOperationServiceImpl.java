@@ -15,7 +15,7 @@ import top.util.jdbc.TransactionUtil;
 @Service(value = "accountOperationService")
 public class AccountOperationServiceImpl implements AccountOperationService {
 
-	// ´Ë´¦¿É×¢Èë
+	// æ­¤å¤„å¯æ³¨å…¥
 	@Autowired
 	AccountOperationDao accountOperationDao;
 
@@ -46,23 +46,23 @@ public class AccountOperationServiceImpl implements AccountOperationService {
 
 	@Override
 	public void transfer(int sourceId, int targetId, BigDecimal amount) {
-		// ²é×ª³öÕË»§ĞÅÏ¢
+		// æŸ¥è½¬å‡ºè´¦æˆ·ä¿¡æ¯
 		SpringAccountBean sourceAccount = accountOperationDao.getAccountById(sourceId);
-		// ×ª³öÕË»§Óà¶îÅĞ¶Ï
+		// è½¬å‡ºè´¦æˆ·ä½™é¢åˆ¤æ–­
 		if (sourceAccount.getSat_value().compareTo(amount) == -1) {
-			// ½ğ¶î²»×ã
-			throw new RuntimeException("ÕË»§Óà¶î²»×ã");
+			// é‡‘é¢ä¸è¶³
+			throw new RuntimeException("è´¦æˆ·ä½™é¢ä¸è¶³");
 		}
-		// ²é×ªÈëÕË»§ĞÅÏ¢
+		// æŸ¥è½¬å…¥è´¦æˆ·ä¿¡æ¯
 		SpringAccountBean targetAccount = accountOperationDao.getAccountById(targetId);
-		// ¼ÆËã×ª³öÕË»§½ğ¶î
+		// è®¡ç®—è½¬å‡ºè´¦æˆ·é‡‘é¢
 		BigDecimal sourceAmount = sourceAccount.getSat_value().subtract(amount);
-		// ¼ÆËã×ªÈëÕË»§½ğ¶î
+		// è®¡ç®—è½¬å…¥è´¦æˆ·é‡‘é¢
 		BigDecimal targetAmount = targetAccount.getSat_value().add(amount);
-		// ¸üĞÂ×ª³öÕË»§½ğ¶î
+		// æ›´æ–°è½¬å‡ºè´¦æˆ·é‡‘é¢
 		sourceAccount.setSat_value(sourceAmount);
 		accountOperationDao.updateAccount(sourceAccount);
-		// ¸üĞÂ×ªÈëÕË»§½ğ¶î
+		// æ›´æ–°è½¬å…¥è´¦æˆ·é‡‘é¢
 		targetAccount.setSat_value(targetAmount);
 		accountOperationDao.updateAccount(targetAccount);
 	}
@@ -70,40 +70,40 @@ public class AccountOperationServiceImpl implements AccountOperationService {
 	@Override
 	public void transferTransaction(int sourceId, int targetId, BigDecimal amount) {
 		try {
-			// ¿ªÆôÊÂÎñ¡¢¹Ø±Õ×Ô¶¯Ìá½»
+			// å¼€å¯äº‹åŠ¡ã€å…³é—­è‡ªåŠ¨æäº¤
 			TransactionUtil.startTransacion();
-			// »ñÈ¡Á¬½Ó
+			// è·å–è¿æ¥
 			Connection conn = TransactionUtil.getConnection();
 
-			// ÒµÎñÂß¼­ÊµÏÖ
-			// ²é×ª³öÕË»§ĞÅÏ¢
+			// ä¸šåŠ¡é€»è¾‘å®ç°
+			// æŸ¥è½¬å‡ºè´¦æˆ·ä¿¡æ¯
 			SpringAccountBean sourceAccount = accountOperationDao.getAccountById(sourceId, conn);
-			// ×ª³öÕË»§Óà¶îÅĞ¶Ï
+			// è½¬å‡ºè´¦æˆ·ä½™é¢åˆ¤æ–­
 			if (sourceAccount.getSat_value().compareTo(amount) == -1) {
-				// ½ğ¶î²»×ã
-				throw new RuntimeException("ÕË»§Óà¶î²»×ã");
+				// é‡‘é¢ä¸è¶³
+				throw new RuntimeException("è´¦æˆ·ä½™é¢ä¸è¶³");
 			}
-			// ²é×ªÈëÕË»§ĞÅÏ¢
+			// æŸ¥è½¬å…¥è´¦æˆ·ä¿¡æ¯
 			SpringAccountBean targetAccount = accountOperationDao.getAccountById(targetId, conn);
-			// ¼ÆËã×ª³öÕË»§½ğ¶î
+			// è®¡ç®—è½¬å‡ºè´¦æˆ·é‡‘é¢
 			BigDecimal sourceAmount = sourceAccount.getSat_value().subtract(amount);
-			// ¼ÆËã×ªÈëÕË»§½ğ¶î
+			// è®¡ç®—è½¬å…¥è´¦æˆ·é‡‘é¢
 			BigDecimal targetAmount = targetAccount.getSat_value().add(amount);
-			// ¸üĞÂ×ª³öÕË»§½ğ¶î
+			// æ›´æ–°è½¬å‡ºè´¦æˆ·é‡‘é¢
 			sourceAccount.setSat_value(sourceAmount);
 			accountOperationDao.updateAccount(sourceAccount, conn);
-			// ¸üĞÂ×ªÈëÕË»§½ğ¶î
+			// æ›´æ–°è½¬å…¥è´¦æˆ·é‡‘é¢
 			targetAccount.setSat_value(targetAmount);
 			accountOperationDao.updateAccount(targetAccount, conn);
 
-			// Ìá½»ÊÂÎñ
+			// æäº¤äº‹åŠ¡
 			TransactionUtil.commit();
 		} catch (Exception e) {
-			// Òì³£»Ø¹öÊÂÎñ
+			// å¼‚å¸¸å›æ»šäº‹åŠ¡
 			TransactionUtil.rollback();
 			throw new RuntimeException(e);
 		} finally {
-			// ÊÍ·Å×ÊÔ´
+			// é‡Šæ”¾èµ„æº
 			TransactionUtil.release();
 		}
 	}

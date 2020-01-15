@@ -7,13 +7,13 @@ import org.junit.Test;
 public class TestGetCurrentSession extends HibernateTestBaseUtil {
 	@Test
 	public void testGetCurrentSession() {
-		// 使用getCurrentSession()方法获取session
+		// 浣跨敤getCurrentSession()鏂规硶鑾峰彇session
 		Session session = sessionFactory.getCurrentSession();
-		// 开启事务，此为getCurrentSession()方法获取session后的必需步骤
+		// 寮�鍚簨鍔★紝姝や负getCurrentSession()鏂规硶鑾峰彇session鍚庣殑蹇呴渶姝ラ
 		Transaction transaction = session.beginTransaction();
 		GameEntity clazz = session.get(GameEntity.class, 1);
 		transaction.commit();
-		// 调用close未报错，是否需要close存疑
+		// 璋冪敤close鏈姤閿欙紝鏄惁闇�瑕乧lose瀛樼枒
 		session.close();
 	}
 }

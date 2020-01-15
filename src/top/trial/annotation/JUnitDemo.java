@@ -3,35 +3,35 @@ package top.trial.annotation;
 import java.lang.reflect.Method;
 
 /**
- * µ¥Ôª²âÊÔÖ÷Àà£¬±éÀúÒªµ¥Ôª²âÊÔµÄÀàµÄ³ÉÔ±·½·¨£¬ÕÒ³öÓĞµ¥Ôª²âÊÔ×¢½âµÄ·½·¨£¬ÀûÓÃ·´ÉäÖ´ĞĞ·½·¨²¢¼ÆËãÖ´ĞĞÊ±¼ä£¬¸ø³ö·´À¡¡£
+ * å•å…ƒæµ‹è¯•ä¸»ç±»ï¼Œéå†è¦å•å…ƒæµ‹è¯•çš„ç±»çš„æˆå‘˜æ–¹æ³•ï¼Œæ‰¾å‡ºæœ‰å•å…ƒæµ‹è¯•æ³¨è§£çš„æ–¹æ³•ï¼Œåˆ©ç”¨åå°„æ‰§è¡Œæ–¹æ³•å¹¶è®¡ç®—æ‰§è¡Œæ—¶é—´ï¼Œç»™å‡ºåé¦ˆã€‚
  * 
  * @author Gaoyx
  *
  */
 public class JUnitDemo {
 	public static void main(String[] args) throws Exception {
-		// »ñÈ¡Òªµ¥Ôª²âÊÔÀàµÄClass
+		// è·å–è¦å•å…ƒæµ‹è¯•ç±»çš„Class
 		Class clazz = Class.forName("top.trial.annotation.UnitCase");
-		// »ñÈ¡È«²¿·½·¨
+		// è·å–å…¨éƒ¨æ–¹æ³•
 		Method methods[] = clazz.getMethods();
-		// ±éÀú·½·¨
+		// éå†æ–¹æ³•
 		for (Method method : methods) {
-			// ÕÒµ½ÓĞ@AnnotationUnitDemo×¢½âµÄ·½·¨
+			// æ‰¾åˆ°æœ‰@AnnotationUnitDemoæ³¨è§£çš„æ–¹æ³•
 			if (method.isAnnotationPresent(AnnotationUnitDemo.class)) {
-				// È¡µÃ×¢½âÊµÀı
+				// å–å¾—æ³¨è§£å®ä¾‹
 				AnnotationUnitDemo annotationUnitDemo = method.getAnnotation(AnnotationUnitDemo.class);
-				// È¡µÃ×¢½âÊôĞÔtimeout()
+				// å–å¾—æ³¨è§£å±æ€§timeout()
 				long timeout = annotationUnitDemo.timeout();
-				System.out.println("timeout:"+timeout);
+				System.out.println("timeout:" + timeout);
 
 				long start = System.currentTimeMillis();
-				// invoke ²ÎÊıÎªnull
+				// invoke å‚æ•°ä¸ºnull
 				method.invoke(clazz.newInstance(), null);
-				// È¡µÃ·½·¨ºÄÊ±
+				// å–å¾—æ–¹æ³•è€—æ—¶
 				long usetime = System.currentTimeMillis() - start;
-				System.out.println("usetime:"+usetime);
+				System.out.println("usetime:" + usetime);
 				if (usetime > timeout) {
-					throw new RuntimeException("ÔËĞĞ³¬Ê±");
+					throw new RuntimeException("è¿è¡Œè¶…æ—¶");
 				}
 			}
 		}

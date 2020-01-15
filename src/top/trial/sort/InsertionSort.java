@@ -3,7 +3,7 @@ package top.trial.sort;
 import java.util.Arrays;
 
 /**
- * ²åÈëÅÅĞò´úÂëÊµÏÖ
+ * æ’å…¥æ’åºä»£ç å®ç°
  * 
  * @author gaoyx
  *
@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class InsertionSort {
 
 	/**
-	 * µÚÒ»°æÅÅĞò´úÂëÊµÏÖ£¬Î´ÓÅ»¯
+	 * ç¬¬ä¸€ç‰ˆæ’åºä»£ç å®ç°ï¼Œæœªä¼˜åŒ–
 	 * 
 	 * @param nums
 	 */
@@ -31,7 +31,7 @@ public class InsertionSort {
 	}
 
 	/**
-	 * µÚ¶ş°æÅÅĞò´úÂëÊµÏÖ£¬ÓÅ»¯½»»»²¿·Ö£¬¼õÉÙ½»»»´ÎÊı
+	 * ç¬¬äºŒç‰ˆæ’åºä»£ç å®ç°ï¼Œä¼˜åŒ–äº¤æ¢éƒ¨åˆ†ï¼Œå‡å°‘äº¤æ¢æ¬¡æ•°
 	 * 
 	 * @param nums
 	 */

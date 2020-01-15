@@ -1,7 +1,7 @@
 package top.trial.thread;
 
 /**
- * ËÀËøÎÊÌâÊ¾ÀıÀà
+ * æ­»é”é—®é¢˜ç¤ºä¾‹ç±»
  * 
  * @author Gaoyx
  *

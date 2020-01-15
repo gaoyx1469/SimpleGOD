@@ -10,7 +10,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 
 /**
- * Document¹¤¾ßÀà£¬DOM·½Ê½²Ù×÷XML
+ * Documentå·¥å…·ç±»ï¼ŒDOMæ–¹å¼æ“ä½œXML
  * 
  * @author Gaoyx
  *
@@ -18,29 +18,29 @@ import org.w3c.dom.Document;
 public class DocumentUtil {
 
 	/**
-	 * ¸ù¾İURL»ñÈ¡XMLµÄDocument¶ÔÏó
+	 * æ ¹æ®URLè·å–XMLçš„Documentå¯¹è±¡
 	 * 
 	 * @param url
-	 * @return Document¶ÔÏó
+	 * @return Documentå¯¹è±¡
 	 * @throws Exception
 	 */
 	public static Document getDocument(String url) throws Exception {
-		// »ñÈ¡DocumentBuilder
+		// è·å–DocumentBuilder
 		DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		// ½âÎö²¢·µ»Ø
+		// è§£æå¹¶è¿”å›
 		return db.parse(url);
 	}
 
 	/**
-	 * ½«Document¶ÔÏóĞ´»ØXMLÎÄ¼ş
+	 * å°†Documentå¯¹è±¡å†™å›XMLæ–‡ä»¶
 	 * 
 	 * @param document
 	 * @throws Exception
 	 */
 	public static void write2xml(Document document, String url) throws Exception {
-		// »ñÈ¡Transformer
+		// è·å–Transformer
 		Transformer tf = TransformerFactory.newInstance().newTransformer();
-		// Ğ´ÈëXMLÎÄ¼ş
+		// å†™å…¥XMLæ–‡ä»¶
 		tf.transform(new DOMSource(document), new StreamResult(url));
 	}
 

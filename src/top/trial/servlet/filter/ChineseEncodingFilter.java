@@ -9,8 +9,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * ×Ö·û¹ıÂËÆ÷
+ * å­—ç¬¦è¿‡æ»¤å™¨
+ * 
  * @author Gaoyx
  *
  */
@@ -30,21 +32,22 @@ public class ChineseEncodingFilter implements Filter {
 
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) resp;
-		
-		// »ñÈ¡FilterµÄ³õÊ¼»¯²ÎÊı
+
+		// è·å–Filterçš„åˆå§‹åŒ–å‚æ•°
 		String encoding = filterConfig.getInitParameter("encoding");
 		if (encoding == null)
 			encoding = "UTF-8";
 
-		// ÉèÖÃPOSTÇëÇóµÄÖĞÎÄÇëÇó²ÎÊı±àÂë
+		// è®¾ç½®POSTè¯·æ±‚çš„ä¸­æ–‡è¯·æ±‚å‚æ•°ç¼–ç 
 		request.setCharacterEncoding(encoding);
 		response.setCharacterEncoding(encoding);
 		response.setContentType("text/html;charset=" + encoding);
-		
-		// ÈôÎªGETÇëÇó·½Ê½£¬ĞèÒªÊ¹ÓÃ°ü×°Éè¼ÆÄ£Ê½ÖØĞ´getParameter·½·¨£¬ÒòÎªget·½·¨Ä¬ÈÏÊ¹ÓÃISO-8859-1½âÂë·½Ê½´«ËÍ²ÎÊı
-		// ÓÉÓÚÔÚJSPÒ³ÃæÅäÖÃÁËpageEncoding="UTF-8"£¬get·½Ê½Ò²ÊÇUTF-8½âÂë£¬Õâ¸ö²»ÓÃÁË¾Í
-		//ChineseEncodingServletRequest crequest = new ChineseEncodingServletRequest(request);
-		
+
+		// è‹¥ä¸ºGETè¯·æ±‚æ–¹å¼ï¼Œéœ€è¦ä½¿ç”¨åŒ…è£…è®¾è®¡æ¨¡å¼é‡å†™getParameteræ–¹æ³•ï¼Œå› ä¸ºgetæ–¹æ³•é»˜è®¤ä½¿ç”¨ISO-8859-1è§£ç æ–¹å¼ä¼ é€å‚æ•°
+		// ç”±äºåœ¨JSPé¡µé¢é…ç½®äº†pageEncoding="UTF-8"ï¼Œgetæ–¹å¼ä¹Ÿæ˜¯UTF-8è§£ç ï¼Œè¿™ä¸ªä¸ç”¨äº†å°±
+		// ChineseEncodingServletRequest crequest = new
+		// ChineseEncodingServletRequest(request);
+
 		chain.doFilter(request, response);
 	}
 

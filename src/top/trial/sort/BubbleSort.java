@@ -1,7 +1,7 @@
 package top.trial.sort;
 
 /**
- * Ã°ÅİÅÅĞò´úÂëÊ¾Àı
+ * å†’æ³¡æ’åºä»£ç ç¤ºä¾‹
  * 
  * @author gaoyx
  *
@@ -9,7 +9,7 @@ package top.trial.sort;
 public class BubbleSort {
 
 	/**
-	 * µÚÒ»°æÃ°ÅİÅÅĞò£¬Î´ÓÅ»¯
+	 * ç¬¬ä¸€ç‰ˆå†’æ³¡æ’åºï¼Œæœªä¼˜åŒ–
 	 * 
 	 * @param nums
 	 */
@@ -17,9 +17,9 @@ public class BubbleSort {
 		int temp = 0;
 
 		for (int i = 0; i < nums.length; i++) {
-			// Ñ­»·±È½ÏÊ±£¬ºóÃæi¸öÒÑ¾­ÓĞĞò£¬²»ĞèÒª¼ÌĞøÃ°Åİ
+			// å¾ªç¯æ¯”è¾ƒæ—¶ï¼Œåé¢iä¸ªå·²ç»æœ‰åºï¼Œä¸éœ€è¦ç»§ç»­å†’æ³¡
 			for (int j = 1; j < nums.length - i; j++) {
-				// ´óµÄÍùºóÅÅ
+				// å¤§çš„å¾€åæ’
 				if (nums[j - 1] > nums[j]) {
 					temp = nums[j - 1];
 					nums[j - 1] = nums[j];
@@ -30,7 +30,7 @@ public class BubbleSort {
 	}
 
 	/**
-	 * µÚ¶ş°æÃ°ÅİÅÅĞò£¬ÓÅ»¯µã£ºÈôÒ»´ÎÑ­»·Ã»ÓĞ½»»»µÄÊı¾İ£¬ËµÃ÷ÍêÈ«ÓĞĞò£¬¿ÉÌø³öÑ­»·
+	 * ç¬¬äºŒç‰ˆå†’æ³¡æ’åºï¼Œä¼˜åŒ–ç‚¹ï¼šè‹¥ä¸€æ¬¡å¾ªç¯æ²¡æœ‰äº¤æ¢çš„æ•°æ®ï¼Œè¯´æ˜å®Œå…¨æœ‰åºï¼Œå¯è·³å‡ºå¾ªç¯
 	 * 
 	 * @param nums
 	 */
@@ -39,10 +39,10 @@ public class BubbleSort {
 		boolean isSorted = true;
 
 		for (int i = 0; i < nums.length; i++) {
-			// Ñ­»·±È½ÏÊ±£¬ºóÃæi¸öÒÑ¾­ÓĞĞò£¬²»ĞèÒª¼ÌĞøÃ°Åİ
+			// å¾ªç¯æ¯”è¾ƒæ—¶ï¼Œåé¢iä¸ªå·²ç»æœ‰åºï¼Œä¸éœ€è¦ç»§ç»­å†’æ³¡
 			isSorted = true;
 			for (int j = 1; j < nums.length - i; j++) {
-				// ´óµÄÍùºóÅÅ
+				// å¤§çš„å¾€åæ’
 				if (nums[j - 1] > nums[j]) {
 					temp = nums[j - 1];
 					nums[j - 1] = nums[j];
@@ -50,29 +50,29 @@ public class BubbleSort {
 					isSorted = false;
 				}
 			}
-			if (isSorted) {// isSortedÎªtrue£¬ËµÃ÷ÄÚÑ­»·Ã¿´Î±È½Ï¶¼Î´¸Ä±äË³Ğò
+			if (isSorted) {// isSortedä¸ºtrueï¼Œè¯´æ˜å†…å¾ªç¯æ¯æ¬¡æ¯”è¾ƒéƒ½æœªæ”¹å˜é¡ºåº
 				return;
 			}
 		}
 	}
 
 	/**
-	 * µÚÈı°æÃ°ÅİÅÅĞò£¬ÓÅ»¯µã£ºÃ¿´ÎÄÚÅÅĞòÍê³ÉºóÕÒµ½ÒÑÓĞĞòµÄÁÙ½çµã£¬¶ø²»ÊÇÃ¿´Î½öÇ°½øÒ»Î»
+	 * ç¬¬ä¸‰ç‰ˆå†’æ³¡æ’åºï¼Œä¼˜åŒ–ç‚¹ï¼šæ¯æ¬¡å†…æ’åºå®Œæˆåæ‰¾åˆ°å·²æœ‰åºçš„ä¸´ç•Œç‚¹ï¼Œè€Œä¸æ˜¯æ¯æ¬¡ä»…å‰è¿›ä¸€ä½
 	 * 
 	 * @param nums
 	 */
 	public static void sortE3(int nums[]) {
 		int temp = 0;
-		boolean isSorted = true;// ÊÇ·ñÒÑÓĞĞò
-		int sortedBorder = nums.length - 1;// ÓĞĞòÁÙ½çµã£¬¼ÇÂ¼×îºóÒ»¸öÎŞĞòµÄÎ»ÖÃ
-		int lastExchangeIndex = 0;// ¼ÇÂ¼×îºó½»»»Î»ÖÃµÄË÷Òı
+		boolean isSorted = true;// æ˜¯å¦å·²æœ‰åº
+		int sortedBorder = nums.length - 1;// æœ‰åºä¸´ç•Œç‚¹ï¼Œè®°å½•æœ€åä¸€ä¸ªæ— åºçš„ä½ç½®
+		int lastExchangeIndex = 0;// è®°å½•æœ€åäº¤æ¢ä½ç½®çš„ç´¢å¼•
 
 		for (int i = 0; i < nums.length; i++) {
-			// Ñ­»·±È½ÏÊ±£¬ºóÃæi¸öÒÑ¾­ÓĞĞò£¬²»ĞèÒª¼ÌĞøÃ°Åİ
+			// å¾ªç¯æ¯”è¾ƒæ—¶ï¼Œåé¢iä¸ªå·²ç»æœ‰åºï¼Œä¸éœ€è¦ç»§ç»­å†’æ³¡
 			isSorted = true;
 			lastExchangeIndex = 0;
 			for (int j = 1; j < sortedBorder + 1; j++) {
-				// ´óµÄÍùºóÅÅ
+				// å¤§çš„å¾€åæ’
 				if (nums[j - 1] > nums[j]) {
 					temp = nums[j - 1];
 					nums[j - 1] = nums[j];
@@ -82,28 +82,28 @@ public class BubbleSort {
 				}
 			}
 			sortedBorder = lastExchangeIndex - 1;
-			if (isSorted) {// isSortedÎªtrue£¬ËµÃ÷ÄÚÑ­»·Ã¿´Î±È½Ï¶¼Î´¸Ä±äË³Ğò
+			if (isSorted) {// isSortedä¸ºtrueï¼Œè¯´æ˜å†…å¾ªç¯æ¯æ¬¡æ¯”è¾ƒéƒ½æœªæ”¹å˜é¡ºåº
 				return;
 			}
 		}
 	}
 
 	/**
-	 * µÚËÄ°æÃ°ÅİÅÅĞò£¬¼¦Î²¾ÆÅÅĞò£¬µ¥ÏòÃ°Åİ±ä¸üÎªË«ÏòÃ°Åİ
+	 * ç¬¬å››ç‰ˆå†’æ³¡æ’åºï¼Œé¸¡å°¾é…’æ’åºï¼Œå•å‘å†’æ³¡å˜æ›´ä¸ºåŒå‘å†’æ³¡
 	 * 
 	 * @param nums
 	 */
 	public static void sortE4(int nums[]) {
 		int temp = 0;
-		boolean isSorted = true;// ÊÇ·ñÒÑÓĞĞò
-		int frontSortedBorder = 0;// ÓĞĞòÁÙ½çµã£¬¼ÇÂ¼µÚÒ»¸öÎŞĞòµÄÎ»ÖÃ
-		int behindSortedBorder = nums.length - 1;// ÓĞĞòÁÙ½çµã£¬¼ÇÂ¼×îºóÒ»¸öÎŞĞòµÄÎ»ÖÃ
-		int lastExchangeIndex = 0;// ¼ÇÂ¼×îºó½»»»Î»ÖÃµÄË÷Òı
+		boolean isSorted = true;// æ˜¯å¦å·²æœ‰åº
+		int frontSortedBorder = 0;// æœ‰åºä¸´ç•Œç‚¹ï¼Œè®°å½•ç¬¬ä¸€ä¸ªæ— åºçš„ä½ç½®
+		int behindSortedBorder = nums.length - 1;// æœ‰åºä¸´ç•Œç‚¹ï¼Œè®°å½•æœ€åä¸€ä¸ªæ— åºçš„ä½ç½®
+		int lastExchangeIndex = 0;// è®°å½•æœ€åäº¤æ¢ä½ç½®çš„ç´¢å¼•
 
 		for (int i = 0; i < nums.length / 2; i++) {
 			isSorted = true;
 			for (int j = frontSortedBorder + 1; j < behindSortedBorder + 1; j++) {
-				// ´óµÄÍùºóÅÅ
+				// å¤§çš„å¾€åæ’
 				if (nums[j - 1] > nums[j]) {
 					temp = nums[j - 1];
 					nums[j - 1] = nums[j];
@@ -113,12 +113,12 @@ public class BubbleSort {
 				}
 			}
 			behindSortedBorder = lastExchangeIndex - 1;
-			if (isSorted) {// isSortedÎªtrue£¬ËµÃ÷ÄÚÑ­»·Ã¿´Î±È½Ï¶¼Î´¸Ä±äË³Ğò
+			if (isSorted) {// isSortedä¸ºtrueï¼Œè¯´æ˜å†…å¾ªç¯æ¯æ¬¡æ¯”è¾ƒéƒ½æœªæ”¹å˜é¡ºåº
 				return;
 			}
 			isSorted = true;
 			for (int j = behindSortedBorder; j > frontSortedBorder; j--) {
-				// ´óµÄÍùºóÅÅ
+				// å¤§çš„å¾€åæ’
 				if (nums[j - 1] > nums[j]) {
 					temp = nums[j - 1];
 					nums[j - 1] = nums[j];
@@ -128,7 +128,7 @@ public class BubbleSort {
 				}
 			}
 			frontSortedBorder = lastExchangeIndex;
-			if (isSorted) {// isSortedÎªtrue£¬ËµÃ÷ÄÚÑ­»·Ã¿´Î±È½Ï¶¼Î´¸Ä±äË³Ğò
+			if (isSorted) {// isSortedä¸ºtrueï¼Œè¯´æ˜å†…å¾ªç¯æ¯æ¬¡æ¯”è¾ƒéƒ½æœªæ”¹å˜é¡ºåº
 				return;
 			}
 		}

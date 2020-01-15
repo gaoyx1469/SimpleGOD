@@ -21,38 +21,38 @@ import top.trial.demo.entity.GameEntity;
 import top.trial.demo.entity.PlayerEntity;
 
 /**
- * ÄÚÊ¡²âÊÔÀà
+ * å†…çœæµ‹è¯•ç±»
  * 
  * @author Gaoyx
  *
  */
 public class IntrospectorDemo {
 
-	// ²âÊÔIntrospectorÀàµÄ·½·¨£¬»ñÈ¡BeanÀàÖĞµÄÊôĞÔÊıÁ¿ºÍÊôĞÔÃû
+	// æµ‹è¯•Introspectorç±»çš„æ–¹æ³•ï¼Œè·å–Beanç±»ä¸­çš„å±æ€§æ•°é‡å’Œå±æ€§å
 	@Test
 	public void test1() throws Exception {
 
-		// µÃµ½GameEntityÖĞµÄÊôĞÔ£¬±»·â×°µ½ÁËBeanInfoÖĞ
+		// å¾—åˆ°GameEntityä¸­çš„å±æ€§ï¼Œè¢«å°è£…åˆ°äº†BeanInfoä¸­
 		BeanInfo bi = Introspector.getBeanInfo(GameEntity.class);
 
-		// µÃµ½ÀàÖĞËùÓĞÊôĞÔÃèÊö
+		// å¾—åˆ°ç±»ä¸­æ‰€æœ‰å±æ€§æè¿°
 		PropertyDescriptor[] ps = bi.getPropertyDescriptors();
 		System.out.println(ps.length);
 
-		// ±éÀúÊôĞÔÃû
+		// éå†å±æ€§å
 		for (PropertyDescriptor p : ps) {
 			System.out.println(p.getName());
 		}
 	}
 
-	// ²âÊÔPropertyDescriptorÀàµÄ·½·¨£¬¾ßÌåÊµÏÖÊ¹ÓÃPropertyDescriptorÉèÖÃºÍ¶ÁÈ¡ÊµÀı¶ÔÏóµÄÊôĞÔÖµ
+	// æµ‹è¯•PropertyDescriptorç±»çš„æ–¹æ³•ï¼Œå…·ä½“å®ç°ä½¿ç”¨PropertyDescriptorè®¾ç½®å’Œè¯»å–å®ä¾‹å¯¹è±¡çš„å±æ€§å€¼
 	@Test
 	public void test2() throws Exception {
 
-		// ÊµÀı»¯¶ÔÏó
+		// å®ä¾‹åŒ–å¯¹è±¡
 		GameEntity ge = new GameEntity();
 
-		// »ñµÃÄ³¸öÊôĞÔµÄÃèÊöÆ÷
+		// è·å¾—æŸä¸ªå±æ€§çš„æè¿°å™¨
 		PropertyDescriptor pd = new PropertyDescriptor("name", GameEntity.class);
 
 		Method mw = pd.getWriteMethod();
@@ -65,39 +65,39 @@ public class IntrospectorDemo {
 
 	}
 
-	// ²âÊÔbeanutils¿ò¼Ü¹¤¾ß°ü
+	// æµ‹è¯•beanutilsæ¡†æ¶å·¥å…·åŒ…
 	@Test
 	public void test3() throws Exception {
 
-		// ÊµÀı»¯¶ÔÏó
+		// å®ä¾‹åŒ–å¯¹è±¡
 		GameEntity ge = new GameEntity();
 
-		// ÉèÖÃÊôĞÔÖµ(µÚÈı¸ö²ÎÊı¿ÉÒÔ°ÑString×ª»»³ÉBeanÖĞËùĞèµÄ»ù±¾ÀàĞÍ£¬·Ç»ù±¾ÀàĞÍµÄ×ª»»¿´ÏÂÀı)
+		// è®¾ç½®å±æ€§å€¼(ç¬¬ä¸‰ä¸ªå‚æ•°å¯ä»¥æŠŠStringè½¬æ¢æˆBeanä¸­æ‰€éœ€çš„åŸºæœ¬ç±»å‹ï¼ŒéåŸºæœ¬ç±»å‹çš„è½¬æ¢çœ‹ä¸‹ä¾‹)
 		BeanUtils.setProperty(ge, "name", "BEANUTILS");
 
-		// »ñÈ¡ÊôĞÔÖµ
+		// è·å–å±æ€§å€¼
 		String name = BeanUtils.getProperty(ge, "name");
 
 		System.out.println(name);
 	}
 
-	// ²âÊÔbeanutils¿ò¼Ü¹¤¾ß°üsetProperty·½·¨ÉèÖÃ·Ç»ù±¾ÀàĞÍµÄÊôĞÔÖµ
+	// æµ‹è¯•beanutilsæ¡†æ¶å·¥å…·åŒ…setPropertyæ–¹æ³•è®¾ç½®éåŸºæœ¬ç±»å‹çš„å±æ€§å€¼
 	@Test
 	public void test4() throws Exception {
 
-		// ÊµÀı»¯¶ÔÏó,¶ÔÏóµÄbirthdayÊôĞÔÊÇDateÊôĞÔ
+		// å®ä¾‹åŒ–å¯¹è±¡,å¯¹è±¡çš„birthdayå±æ€§æ˜¯Dateå±æ€§
 		PlayerEntity pe = new PlayerEntity();
 
-		// ×¢²áÀàĞÍ×ª»»Æ÷(×ª»»Æ÷¹¦ÄÜµÈÍ¬ÓÚConverterµÄÊµÏÖÀà£ºDateLocaleConverterÀà,Ïê¼ûtest5)
+		// æ³¨å†Œç±»å‹è½¬æ¢å™¨(è½¬æ¢å™¨åŠŸèƒ½ç­‰åŒäºConverterçš„å®ç°ç±»ï¼šDateLocaleConverterç±»,è¯¦è§test5)
 		ConvertUtils.register(new Converter() {
 
 			@Override
 			public Object convert(Class type, Object value) {
-				// type:Ä¿±êÀàĞÍ
-				// value:µ±Ç°´«ÈëÖµ
+				// type:ç›®æ ‡ç±»å‹
+				// value:å½“å‰ä¼ å…¥å€¼
 
 				DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-				if (value instanceof String) {// ½«StringÀàĞÍµÄvalue×ª»»ÎªDateÀàĞÍ
+				if (value instanceof String) {// å°†Stringç±»å‹çš„valueè½¬æ¢ä¸ºDateç±»å‹
 
 					String v = (String) value;
 					try {
@@ -107,7 +107,7 @@ public class IntrospectorDemo {
 						e.printStackTrace();
 					}
 
-				} else {// ½«DateÀàĞÍµÄvalue×ª»»ÎªStringÀàĞÍ
+				} else {// å°†Dateç±»å‹çš„valueè½¬æ¢ä¸ºStringç±»å‹
 
 					Date d = (Date) value;
 					String s = df.format(d);
@@ -119,32 +119,32 @@ public class IntrospectorDemo {
 
 		}, Date.class);
 
-		// ÉèÖÃÊôĞÔÖµ
+		// è®¾ç½®å±æ€§å€¼
 		BeanUtils.setProperty(pe, "birthday", "2019-01-08");
 		System.out.println(pe.getBirthday());
 	}
 
-	// ²âÊÔbeanutils¿ò¼Ü¹¤¾ß°üpopulate·½·¨½«
+	// æµ‹è¯•beanutilsæ¡†æ¶å·¥å…·åŒ…populateæ–¹æ³•å°†
 	@Test
 	public void test5() throws Exception {
 
-		// ÊµÀı»¯¶ÔÏó,¶ÔÏóµÄbirthdayÊôĞÔÊÇDateÊôĞÔ
+		// å®ä¾‹åŒ–å¯¹è±¡,å¯¹è±¡çš„birthdayå±æ€§æ˜¯Dateå±æ€§
 		PlayerEntity pe = new PlayerEntity();
 
-		// ĞÂ½¨Map
+		// æ–°å»ºMap
 		Map map = new HashMap();
 		map.put("name", "XXX");
 		map.put("age", "27");
 		map.put("birthday", "1991-10-01");
 		map.put("level", "3");
 
-		System.out.println("´¦ÀíÇ°£º" + pe);
+		System.out.println("å¤„ç†å‰ï¼š" + pe);
 
-		// ×¢²áÀàĞÍ×ª»»Æ÷
+		// æ³¨å†Œç±»å‹è½¬æ¢å™¨
 		ConvertUtils.register(new DateLocaleConverter(), Date.class);
 		BeanUtils.populate(pe, map);
 
-		System.out.println("´¦Àíºó£º" + pe);
+		System.out.println("å¤„ç†åï¼š" + pe);
 
 	}
 }

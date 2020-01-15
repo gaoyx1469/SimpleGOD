@@ -6,16 +6,16 @@ import java.lang.reflect.Method;
 import top.util.properties.PropertiesUtil;
 
 public class UnitCase {
-	
+
 	/**
-	 * ÊµÏÖ´úÂëµÄµ¥Ôª²âÊÔ
+	 * å®ç°ä»£ç çš„å•å…ƒæµ‹è¯•
 	 * 
 	 * @throws Exception
 	 */
-	@AnnotationUnitDemo(timeout=1)
+	@AnnotationUnitDemo(timeout = 1)
 	public void testCase() throws Exception {
 		String rootDemo = PropertiesUtil.getPropertiesValueByClassloader("rootDemo.properties", "propertiesName");
 		System.out.println(rootDemo);
 	}
-	
+
 }

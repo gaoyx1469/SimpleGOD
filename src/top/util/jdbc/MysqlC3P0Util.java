@@ -10,19 +10,19 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
- * ÒıÓÃC3P0Êı¾İ¿âÁ¬½Ó³Ø£¬MysqlJDBCUtilÉı¼¶°æ
+ * å¼•ç”¨C3P0æ•°æ®åº“è¿æ¥æ± ï¼ŒMysqlJDBCUtilå‡çº§ç‰ˆ
  * 
  * @author Gaoyx
  *
  */
 public class MysqlC3P0Util {
 
-	// Ä¬ÈÏÈ¡classpathÏÂµÄc3p0-config.xmlÖĞµÄÅäÖÃ»òclasspathÏÂµÄc3p0.propertiesÖĞµÄÅäÖÃ
-	// ¹¹Ôì·½·¨µÄ²ÎÊıÎªÖ¸¶¨´´½¨µÄÊı¾İÔ´µÄÃû×Ö£¬²»Ğ´¾ÍÃ»ÓĞÃû×Ö
+	// é»˜è®¤å–classpathä¸‹çš„c3p0-config.xmlä¸­çš„é…ç½®æˆ–classpathä¸‹çš„c3p0.propertiesä¸­çš„é…ç½®
+	// æ„é€ æ–¹æ³•çš„å‚æ•°ä¸ºæŒ‡å®šåˆ›å»ºçš„æ•°æ®æºçš„åå­—ï¼Œä¸å†™å°±æ²¡æœ‰åå­—
 	static ComboPooledDataSource cpds = new ComboPooledDataSource("intergalactoApp");
 
 	/**
-	 * »ñÈ¡Êı¾İÔ´
+	 * è·å–æ•°æ®æº
 	 * 
 	 * @return
 	 */
@@ -31,7 +31,7 @@ public class MysqlC3P0Util {
 	}
 
 	/**
-	 * »ñÈ¡Á¬½Ó
+	 * è·å–è¿æ¥
 	 * 
 	 * @return
 	 */
@@ -44,7 +44,7 @@ public class MysqlC3P0Util {
 	}
 
 	/**
-	 * ÊÍ·Å×ÊÔ´
+	 * é‡Šæ”¾èµ„æº
 	 * 
 	 * @param rs
 	 * @param stmt

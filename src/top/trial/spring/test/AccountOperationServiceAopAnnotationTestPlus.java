@@ -12,7 +12,7 @@ import top.trial.spring.service.AccountOperationAopService;
 import top.trial.spring.util.SpringXml;
 
 /**
- * 模拟测试全注解模式下的AOP
+ * 妯℃嫙娴嬭瘯鍏ㄦ敞瑙ｆā寮忎笅鐨凙OP
  * 
  * @author Gaoyx
  *

@@ -34,29 +34,29 @@ public class FileUploadDemoServlet extends HttpServlet {
 		PrintWriter pout = response.getWriter();
 		try {
 			if (ServletFileUpload.isMultipartContent(request)) {
-				DiskFileItemFactory factory = new DiskFileItemFactory();// Ä¬ÈÏÅäÖÃ
-				ServletFileUpload sfu = new ServletFileUpload(factory);// Ê¹ÓÃÄ¬ÈÏÅäÖÃ´´½¨ºËĞÄÀà
-				sfu.setFileSizeMax(4 * 1024 * 1024);// ÉèÖÃµ¥ÎÄ¼ş×î´ó´óĞ¡4M
-				sfu.setSizeMax(10 * 1024 * 1024);// ÉèÖÃ×ÜÎÄ¼ş×î´ó´óĞ¡10M
+				DiskFileItemFactory factory = new DiskFileItemFactory();// é»˜è®¤é…ç½®
+				ServletFileUpload sfu = new ServletFileUpload(factory);// ä½¿ç”¨é»˜è®¤é…ç½®åˆ›å»ºæ ¸å¿ƒç±»
+				sfu.setFileSizeMax(4 * 1024 * 1024);// è®¾ç½®å•æ–‡ä»¶æœ€å¤§å¤§å°4M
+				sfu.setSizeMax(10 * 1024 * 1024);// è®¾ç½®æ€»æ–‡ä»¶æœ€å¤§å¤§å°10M
 				List<FileItem> items = sfu.parseRequest(request);
 				for (FileItem item : items) {
-					if (item.isFormField()) {// ÊÇÆÕÍ¨ÊäÈë
+					if (item.isFormField()) {// æ˜¯æ™®é€šè¾“å…¥
 						String itemName = item.getFieldName();
-						String itemValue = item.getString("UTF-8");// Ê¹ÓÃUTF-8±àÂë×ª»»
+						String itemValue = item.getString("UTF-8");// ä½¿ç”¨UTF-8ç¼–ç è½¬æ¢
 						System.out.println(itemName + "====" + itemValue);
-					} else {// ÊÇÎÄ¼şÊäÈë
-						// µÃµ½MIMEÀàĞÍ
+					} else {// æ˜¯æ–‡ä»¶è¾“å…¥
+						// å¾—åˆ°MIMEç±»å‹
 						String mimeType = item.getContentType();
-						// Ö»ÔÊĞíÉÏ´«Í¼Æ¬
+						// åªå…è®¸ä¸Šä¼ å›¾ç‰‡
 						if (mimeType.startsWith("image")) {
 							InputStream in = item.getInputStream();
 							String fileName = item.getName();
-							if (item.getName() == null || "".equals(item.getName().trim())) {// ¿ÕÎÄ¼şÌø¹ı
+							if (item.getName() == null || "".equals(item.getName().trim())) {// ç©ºæ–‡ä»¶è·³è¿‡
 								continue;
 							}
 							fileName = fileName.substring(item.getName().lastIndexOf("\\") + 1);
 							String filePath = getFilePath(getServletContext().getRealPath("/WEB-INF/files"),
-									UUID.randomUUID() + "_" + fileName);// ÎÄ¼ş·ÅWEB-INFÖĞ£¬ÎÄ¼şÃûÌí¼ÓUUID²¢Ôö¼ÓÁ½²ãÄ¿Â¼½á¹¹
+									UUID.randomUUID() + "_" + fileName);// æ–‡ä»¶æ”¾WEB-INFä¸­ï¼Œæ–‡ä»¶åæ·»åŠ UUIDå¹¶å¢åŠ ä¸¤å±‚ç›®å½•ç»“æ„
 							OutputStream out = new FileOutputStream(filePath);
 
 							byte[] b = new byte[1024];
@@ -66,21 +66,21 @@ public class FileUploadDemoServlet extends HttpServlet {
 							}
 							out.close();
 							in.close();
-							item.delete();// É¾³ıÁÙÊ±ÎÄ¼ş
+							item.delete();// åˆ é™¤ä¸´æ—¶æ–‡ä»¶
 						}
 					}
 				}
 			} else {
-				System.out.println("´úÂëÓĞÎÊÌâ°É¸ç¸ç£¬¿ì¿´¿´Form±íµ¥enctypeµÄÖµ");
+				System.out.println("ä»£ç æœ‰é—®é¢˜å§å“¥å“¥ï¼Œå¿«çœ‹çœ‹Formè¡¨å•enctypeçš„å€¼");
 			}
 		} catch (org.apache.commons.fileupload.FileUploadBase.FileSizeLimitExceededException e) {
-			// µ¥¸öÎÄ¼ş³¬³ö´óĞ¡Ê±µÄÒì³£
-			pout.write("µ¥¸öÎÄ¼ş´óĞ¡²»ÄÜ³¬³ö4M");
+			// å•ä¸ªæ–‡ä»¶è¶…å‡ºå¤§å°æ—¶çš„å¼‚å¸¸
+			pout.write("å•ä¸ªæ–‡ä»¶å¤§å°ä¸èƒ½è¶…å‡º4M");
 		} catch (org.apache.commons.fileupload.FileUploadBase.SizeLimitExceededException e) {
-			// ×ÜÎÄ¼ş³¬³ö´óĞ¡Ê±µÄÒì³£
-			pout.write("×ÜÎÄ¼ş´óĞ¡²»ÄÜ³¬³ö10M");
+			// æ€»æ–‡ä»¶è¶…å‡ºå¤§å°æ—¶çš„å¼‚å¸¸
+			pout.write("æ€»æ–‡ä»¶å¤§å°ä¸èƒ½è¶…å‡º10M");
 		} catch (FileUploadException e) {
-			throw new RuntimeException("·şÎñÆ÷Ã¦");
+			throw new RuntimeException("æœåŠ¡å™¨å¿™");
 		}
 
 	}
@@ -88,8 +88,8 @@ public class FileUploadDemoServlet extends HttpServlet {
 	private String getFilePath(String realPath, String fileName) {
 
 		int hashCode = fileName.hashCode();
-		int dir1 = hashCode & 0xf;// 0000~1111£ºÕûÊı0~15¹²16¸ö
-		int dir2 = (hashCode & 0xf0) >> 4;// 0000~1111£ºÕûÊı0~15¹²16¸ö
+		int dir1 = hashCode & 0xf;// 0000~1111ï¼šæ•´æ•°0~15å…±16ä¸ª
+		int dir2 = (hashCode & 0xf0) >> 4;// 0000~1111ï¼šæ•´æ•°0~15å…±16ä¸ª
 
 		String path = realPath + "\\" + dir1 + "\\" + dir2; // WEB-INF/files/1/12
 		File file = new File(path);

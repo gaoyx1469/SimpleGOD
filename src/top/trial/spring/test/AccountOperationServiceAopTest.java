@@ -8,11 +8,11 @@ import top.trial.spring.service.AccountOperationAopService;
 public class AccountOperationServiceAopTest {
 	public static void main(String[] args) {
 
-		// 加载配置文件
+		// 鍔犺浇閰嶇疆鏂囦欢
 		ApplicationContext ac = new ClassPathXmlApplicationContext("bean_aop.xml");
 
-		// 这里如果使用
-		// AccountOperationAopServiceImpl.class，会报错：BeanNotOfRequiredTypeException
+		// 杩欓噷濡傛灉浣跨敤
+		// AccountOperationAopServiceImpl.class锛屼細鎶ラ敊锛欱eanNotOfRequiredTypeException
 		AccountOperationAopService service = ac.getBean("accountService", AccountOperationAopService.class);
 		service.saveAccount();
 		System.out.println("===========================");

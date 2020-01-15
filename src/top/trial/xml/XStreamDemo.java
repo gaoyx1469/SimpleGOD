@@ -9,7 +9,7 @@ import top.trial.demo.entity.CityEntity;
 import top.trial.demo.entity.ProvinceEntity;
 
 /**
- * Ê¹ÓÃXStream£¬½«JavaBeanĞòÁĞ»¯ÎªxmlµÄDEMO
+ * ä½¿ç”¨XStreamï¼Œå°†JavaBeanåºåˆ—åŒ–ä¸ºxmlçš„DEMO
  * 
  * @author Gaoyx
  *
@@ -17,19 +17,19 @@ import top.trial.demo.entity.ProvinceEntity;
 public class XStreamDemo {
 	public static void main(String[] args) {
 
-		// ×é×°List
+		// ç»„è£…List
 		List<ProvinceEntity> provinces = getProvinces();
 
-		// »ñÈ¡XStream¶ÔÏó
+		// è·å–XStreamå¯¹è±¡
 		XStream xstream = new XStream();
-		xstream.alias("china", List.class);// ½«¸úÔªËØ»»³Échina£¬Ô­Îªlist
-		xstream.alias("province", ProvinceEntity.class);// ½«È«ÀàÃûµÄÔªËØ»»Îª±ğÃû
-		xstream.alias("city", CityEntity.class);// ½«È«ÀàÃûµÄÔªËØ»»Îª±ğÃû
-		xstream.useAttributeFor(ProvinceEntity.class, "name");// ½«nameÔªËØ´Ó×ÓÔªËØ±ä³ÉÊôĞÔ
-		xstream.addImplicitCollection(ProvinceEntity.class, "cities");// ²»ÈÃCollection±¾ÉíÉú³ÉÔªËØ±êÇ©
-		xstream.omitField(CityEntity.class, "level");// É¾³ıcityÏÂµÄlevel±êÇ©¼°Æä×ÓÄÚÈİ
+		xstream.alias("china", List.class);// å°†è·Ÿå…ƒç´ æ¢æˆchinaï¼ŒåŸä¸ºlist
+		xstream.alias("province", ProvinceEntity.class);// å°†å…¨ç±»åçš„å…ƒç´ æ¢ä¸ºåˆ«å
+		xstream.alias("city", CityEntity.class);// å°†å…¨ç±»åçš„å…ƒç´ æ¢ä¸ºåˆ«å
+		xstream.useAttributeFor(ProvinceEntity.class, "name");// å°†nameå…ƒç´ ä»å­å…ƒç´ å˜æˆå±æ€§
+		xstream.addImplicitCollection(ProvinceEntity.class, "cities");// ä¸è®©Collectionæœ¬èº«ç”Ÿæˆå…ƒç´ æ ‡ç­¾
+		xstream.omitField(CityEntity.class, "level");// åˆ é™¤cityä¸‹çš„levelæ ‡ç­¾åŠå…¶å­å†…å®¹
 
-		// ¸ñÊ½»¯List
+		// æ ¼å¼åŒ–List
 		String xml = xstream.toXML(provinces);
 
 		System.out.println(xml);
@@ -39,42 +39,42 @@ public class XStreamDemo {
 		List<ProvinceEntity> provinces = new ArrayList<ProvinceEntity>();
 
 		ProvinceEntity shandong = new ProvinceEntity();
-		shandong.setName("É½¶«");
+		shandong.setName("å±±ä¸œ");
 		shandong.setCities(new ArrayList<CityEntity>());
 		provinces.add(shandong);
 
 		CityEntity heze = new CityEntity();
-		heze.setName("ºÊÔó");
+		heze.setName("èæ³½");
 		heze.setLevel(4);
 		shandong.getCities().add(heze);
 
 		CityEntity weihai = new CityEntity();
-		weihai.setName("Íşº£");
+		weihai.setName("å¨æµ·");
 		weihai.setLevel(3);
 		shandong.getCities().add(weihai);
 
 		CityEntity jinan = new CityEntity();
-		jinan.setName("¼ÃÄÏ");
+		jinan.setName("æµå—");
 		jinan.setLevel(2);
 		shandong.getCities().add(jinan);
 
 		ProvinceEntity guangdong = new ProvinceEntity();
-		guangdong.setName("¹ã¶«");
+		guangdong.setName("å¹¿ä¸œ");
 		guangdong.setCities(new ArrayList<CityEntity>());
 		provinces.add(guangdong);
 
 		CityEntity guangzhou = new CityEntity();
-		guangzhou.setName("¹ãÖİ");
+		guangzhou.setName("å¹¿å·");
 		guangzhou.setLevel(2);
 		guangdong.getCities().add(guangzhou);
 
 		CityEntity shenzhen = new CityEntity();
-		shenzhen.setName("ÉîÛÚ");
+		shenzhen.setName("æ·±åœ³");
 		shenzhen.setLevel(2);
 		guangdong.getCities().add(shenzhen);
 
 		CityEntity zhongshan = new CityEntity();
-		zhongshan.setName("ÖĞÉ½");
+		zhongshan.setName("ä¸­å±±");
 		zhongshan.setLevel(3);
 		guangdong.getCities().add(zhongshan);
 

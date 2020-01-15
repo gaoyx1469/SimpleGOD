@@ -5,7 +5,7 @@ import org.junit.Test;
 import top.trial.xml.domain.WorkerDomain;
 
 /**
- * Ïß³Ì¼òµ¥ÑİÊ¾²Ù×÷Àà
+ * çº¿ç¨‹ç®€å•æ¼”ç¤ºæ“ä½œç±»
  * 
  * @author Gaoyx
  *
@@ -21,15 +21,15 @@ public class ThreadTestDemo {
 	}
 
 	/**
-	 * 3´°¿ÚÂô100ÕÅÆ±ÎÊÌâ(Î´¼ÓËø) ³öÏÖ¸ºÊıÆ±¼°Í¬Ò»ÕÅÆ±¶à´ÎÂô³öµÄÎÊÌâ£¬¼ÓËøºó½â¾ö
+	 * 3çª—å£å–100å¼ ç¥¨é—®é¢˜(æœªåŠ é”) å‡ºç°è´Ÿæ•°ç¥¨åŠåŒä¸€å¼ ç¥¨å¤šæ¬¡å–å‡ºçš„é—®é¢˜ï¼ŒåŠ é”åè§£å†³
 	 */
 	private static void test1() {
 
 		TicketRunnableImpl ticket = new TicketRunnableImpl();
 
-		Thread thread1 = new Thread(ticket, "´°¿Ú1");
-		Thread thread2 = new Thread(ticket, "´°¿Ú2");
-		Thread thread3 = new Thread(ticket, "´°¿Ú3");
+		Thread thread1 = new Thread(ticket, "çª—å£1");
+		Thread thread2 = new Thread(ticket, "çª—å£2");
+		Thread thread3 = new Thread(ticket, "çª—å£3");
 
 		thread1.start();
 		thread2.start();
@@ -37,22 +37,22 @@ public class ThreadTestDemo {
 	}
 
 	/**
-	 * ËÀËøÎÊÌâ¾ÙÀı
+	 * æ­»é”é—®é¢˜ä¸¾ä¾‹
 	 */
 	private static void test2() {
 
 		DieLockRunnableImpl dieLockT = new DieLockRunnableImpl(true);
 		DieLockRunnableImpl dieLockF = new DieLockRunnableImpl(false);
 
-		Thread thread1 = new Thread(dieLockT, "Ïß³Ì1");
-		Thread thread2 = new Thread(dieLockF, "Ïß³Ì2");
+		Thread thread1 = new Thread(dieLockT, "çº¿ç¨‹1");
+		Thread thread2 = new Thread(dieLockF, "çº¿ç¨‹2");
 
 		thread1.start();
 		thread2.start();
 	}
 
 	/**
-	 * µÈ´ı»½ĞÑÊµÀı
+	 * ç­‰å¾…å”¤é†’å®ä¾‹
 	 */
 	private static void test3() {
 
@@ -60,8 +60,8 @@ public class ThreadTestDemo {
 		WorkerSetImpl wsi = new WorkerSetImpl(wd);
 		WaitAndNotifyImpl wani = new WaitAndNotifyImpl(wd);
 
-		Thread thread1 = new Thread(wsi, "Ïß³Ì1");
-		Thread thread2 = new Thread(wani, "Ïß³Ì2");
+		Thread thread1 = new Thread(wsi, "çº¿ç¨‹1");
+		Thread thread2 = new Thread(wani, "çº¿ç¨‹2");
 
 		thread1.start();
 		thread2.start();

@@ -16,7 +16,7 @@ public class TransactionUtil {
 
 	static {
 		try {
-			// Êı¾İÔ´¹¤³§¸ù¾İpropertiesÎÄ¼ş´´½¨Êı¾İÔ´
+			// æ•°æ®æºå·¥å‚æ ¹æ®propertiesæ–‡ä»¶åˆ›å»ºæ•°æ®æº
 			ds = BasicDataSourceFactory
 					.createDataSource(PropertiesUtil.getPropertiesByClassloader("dbcpconfig.properties"));
 		} catch (Exception e) {
@@ -24,12 +24,12 @@ public class TransactionUtil {
 		}
 	}
 
-	// »ñÈ¡Êı¾İÔ´
+	// è·å–æ•°æ®æº
 	public static DataSource getDataSource() {
 		return ds;
 	}
 
-	// »ñÈ¡Á¬½Ó£¬ÈçÊÇÊ×´Î»ñÈ¡£¬Ôò½«Á¬½Ó·Åµ½ThreadLocalÖĞ
+	// è·å–è¿æ¥ï¼Œå¦‚æ˜¯é¦–æ¬¡è·å–ï¼Œåˆ™å°†è¿æ¥æ”¾åˆ°ThreadLocalä¸­
 	public static Connection getConnection() {
 		try {
 			Connection conn = tl.get();
@@ -43,7 +43,7 @@ public class TransactionUtil {
 		}
 	}
 
-	// ¿ªÆôÊÂÎñ£¬ÈçÃ»ÓĞÁ¬½Ó£¬»ñÈ¡Á¬½Ó²¢·Åµ½ThreadLocalÖĞ
+	// å¼€å¯äº‹åŠ¡ï¼Œå¦‚æ²¡æœ‰è¿æ¥ï¼Œè·å–è¿æ¥å¹¶æ”¾åˆ°ThreadLocalä¸­
 	public static void startTransacion() {
 		try {
 			Connection conn = tl.get();
@@ -56,7 +56,7 @@ public class TransactionUtil {
 		}
 	}
 
-	// »Ø¹öÊÂÎñ£¬ÈçÃ»ÓĞÁ¬½Ó£¬»ñÈ¡Á¬½Ó²¢·Åµ½ThreadLocalÖĞ
+	// å›æ»šäº‹åŠ¡ï¼Œå¦‚æ²¡æœ‰è¿æ¥ï¼Œè·å–è¿æ¥å¹¶æ”¾åˆ°ThreadLocalä¸­
 	public static void rollback() {
 		try {
 			Connection conn = tl.get();
@@ -69,7 +69,7 @@ public class TransactionUtil {
 		}
 	}
 
-	// Ìá½»ÊÂÎñ£¬ÈçÃ»ÓĞÁ¬½Ó£¬»ñÈ¡Á¬½Ó²¢·Åµ½ThreadLocalÖĞ
+	// æäº¤äº‹åŠ¡ï¼Œå¦‚æ²¡æœ‰è¿æ¥ï¼Œè·å–è¿æ¥å¹¶æ”¾åˆ°ThreadLocalä¸­
 	public static void commit() {
 		try {
 			Connection conn = tl.get();
@@ -82,7 +82,7 @@ public class TransactionUtil {
 		}
 	}
 
-	// ÊÍ·ÅÁ¬½Ó£¬ÈçÓĞÁ¬½Ó£¬ÊÍ·ÅÁ¬½Ó²¢Çå¿ÕThreadLocalÖĞ±¾Ïß³ÌµÄConnection
+	// é‡Šæ”¾è¿æ¥ï¼Œå¦‚æœ‰è¿æ¥ï¼Œé‡Šæ”¾è¿æ¥å¹¶æ¸…ç©ºThreadLocalä¸­æœ¬çº¿ç¨‹çš„Connection
 	public static void release() {
 		try {
 			Connection conn = tl.get();

@@ -5,26 +5,26 @@ import top.trial.xml.domain.Student;
 public interface StudentXMLDao {
 
 	/**
-	 * Ìí¼ÓStudentµ½XMLÎÄ¼şÖĞ
+	 * æ·»åŠ Studentåˆ°XMLæ–‡ä»¶ä¸­
 	 * 
 	 * @param student
-	 * @return ³É¹¦·µ»Øtrue£»Ê§°Ü·µ»Øfalse
+	 * @return æˆåŠŸè¿”å›trueï¼›å¤±è´¥è¿”å›false
 	 */
 	boolean creatStudent(Student student);
 
 	/**
-	 * ¸ù¾İnameÊôĞÔ£¬´ÓXMLÎÄ¼şÖĞÉ¾³ıStudent
+	 * æ ¹æ®nameå±æ€§ï¼Œä»XMLæ–‡ä»¶ä¸­åˆ é™¤Student
 	 * 
 	 * @param student
-	 * @return ³É¹¦·µ»Øtrue£»Ê§°Ü·µ»Øfalse
+	 * @return æˆåŠŸè¿”å›trueï¼›å¤±è´¥è¿”å›false
 	 */
 	boolean deleteStudent(String name);
 
 	/**
-	 * ¸ù¾İexamId²éÑ¯StudentĞÅÏ¢
+	 * æ ¹æ®examIdæŸ¥è¯¢Studentä¿¡æ¯
 	 * 
 	 * @param examId
-	 * @return ³É¹¦·µ»ØStudent£»Ê§°Ü·µ»Ønull
+	 * @return æˆåŠŸè¿”å›Studentï¼›å¤±è´¥è¿”å›null
 	 */
 	Student findStudent(String examId);
 

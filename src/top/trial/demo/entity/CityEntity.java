@@ -1,7 +1,7 @@
 package top.trial.demo.entity;
 
 /**
- * 城市实体
+ * 鍩庡競瀹炰綋
  * 
  * @author Gaoyx
  *

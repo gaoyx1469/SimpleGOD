@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
- * Í°ÅÅĞò´úÂëÊµÏÖ£¬¼ÆÊıÅÅĞòµÄÉı¼¶°æ£¬
+ * æ¡¶æ’åºä»£ç å®ç°ï¼Œè®¡æ•°æ’åºçš„å‡çº§ç‰ˆï¼Œ
  * 
  * @author Gaoyx
  *
@@ -13,7 +13,7 @@ import java.util.LinkedList;
 public class BucketSort {
 
 	/**
-	 * Í°ÅÅĞò£¬Î´ÓÅ»¯´úÂë£¬Í°ÊıµÈÓÚÔ­Ê¼ĞòÁĞÔªËØ¸öÊı
+	 * æ¡¶æ’åºï¼Œæœªä¼˜åŒ–ä»£ç ï¼Œæ¡¶æ•°ç­‰äºåŸå§‹åºåˆ—å…ƒç´ ä¸ªæ•°
 	 * 
 	 * @param nums
 	 */
@@ -25,7 +25,7 @@ public class BucketSort {
 
 		double max = nums[0];
 		double min = nums[0];
-		// ÕÒµ½×î´óÖµºÍ×îĞ¡Öµ
+		// æ‰¾åˆ°æœ€å¤§å€¼å’Œæœ€å°å€¼
 		for (int i = 1; i < len; i++) {
 			if (nums[i] > max)
 				max = nums[i];
@@ -33,24 +33,24 @@ public class BucketSort {
 				min = nums[i];
 		}
 
-		// ³õÊ¼»¯Í°
+		// åˆå§‹åŒ–æ¡¶
 		ArrayList<LinkedList<Double>> bucketList = new ArrayList<LinkedList<Double>>(len);
 		for (int i = 0; i < len; i++) {
 			bucketList.add(new LinkedList<Double>());
 		}
 
-		// ±éÀúÊı×é£¬ÈëÍ°
+		// éå†æ•°ç»„ï¼Œå…¥æ¡¶
 		for (int i = 0; i < len; i++) {
 			int num = (int) ((nums[i] - min) * (len - 1) / (max - min));
 			bucketList.get(num).add(nums[i]);
 		}
 
-		// Í°ÄÚÅÅĞò£¬Ö±½ÓÊ¹ÓÃCollectionsµÄsort·½·¨
+		// æ¡¶å†…æ’åºï¼Œç›´æ¥ä½¿ç”¨Collectionsçš„sortæ–¹æ³•
 		for (int i = 0; i < len; i++) {
 			Collections.sort(bucketList.get(i));
 		}
 
-		// Êä³ö
+		// è¾“å‡º
 		int index = 0;
 		for (LinkedList<Double> list : bucketList) {
 			for (Double num : list) {

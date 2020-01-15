@@ -16,7 +16,7 @@ import top.trial.spring.dao.AccountOperationDao;
 @Repository(value = "accountOperationDao")
 public class AccountOperationDaoImpl implements AccountOperationDao {
 
-	// ´Ë´¦¿É×¢Èë
+	// æ­¤å¤„å¯æ³¨å…¥
 	@Autowired
 	private QueryRunner qr;
 

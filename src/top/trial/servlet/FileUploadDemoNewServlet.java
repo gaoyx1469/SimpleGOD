@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 /**
- * Ê¹ÓÃServlet3.0¹æ·¶ÊµÏÖÎÄ¼şÉÏ´«£¬Ğ¡Demo£¬Î´×ö·ÖÄ¿Â¼´æ´¢ºÍÎÄ¼şÖØÃüÃû
+ * ä½¿ç”¨Servlet3.0è§„èŒƒå®ç°æ–‡ä»¶ä¸Šä¼ ï¼Œå°Demoï¼Œæœªåšåˆ†ç›®å½•å­˜å‚¨å’Œæ–‡ä»¶é‡å‘½å
  */
 @WebServlet("/FileUploadDemoNewServlet")
 @MultipartConfig
@@ -24,16 +24,16 @@ public class FileUploadDemoNewServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//»ñÈ¡ÉÏ´«ÎÄ¼ş²¿·Ö
+		// è·å–ä¸Šä¼ æ–‡ä»¶éƒ¨åˆ†
 		Part part = request.getPart("f1");
-		//Êä³öContent-DispositionÊôĞÔ
+		// è¾“å‡ºContent-Dispositionå±æ€§
 		System.out.println(part.getHeader("Content-Disposition"));
-		//½ØÈ¡µ½ÆäÖĞµÄÎÄ¼şÃû
+		// æˆªå–åˆ°å…¶ä¸­çš„æ–‡ä»¶å
 		String fileName = part.getHeader("Content-Disposition").substring(
 				part.getHeader("Content-Disposition").lastIndexOf("filename=\"") + 10,
 				part.getHeader("Content-Disposition").length() - 1);
 		System.out.println(fileName);
-		//Ö±½ÓÊä³öµ½Ö¸¶¨Â·¾¶£¬¡¾Ç°ÌáÊÇÄ¿Â¼´æÔÚ¡¿
+		// ç›´æ¥è¾“å‡ºåˆ°æŒ‡å®šè·¯å¾„ï¼Œã€å‰ææ˜¯ç›®å½•å­˜åœ¨ã€‘
 		part.write(getServletContext().getRealPath("/unpackage") + "\\" + fileName);
 	}
 

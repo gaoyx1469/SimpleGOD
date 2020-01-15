@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import top.trial.spring.service.AccountOperationAopService;
 
 /**
- * 模拟测试半注解模式下的AOP
+ * 妯℃嫙娴嬭瘯鍗婃敞瑙ｆā寮忎笅鐨凙OP
  * 
  * @author Gaoyx
  *
@@ -14,7 +14,7 @@ import top.trial.spring.service.AccountOperationAopService;
 public class AccountOperationServiceAopAnnotationTest {
 	public static void main(String[] args) {
 
-		// 加载配置文件
+		// 鍔犺浇閰嶇疆鏂囦欢
 		ApplicationContext ac = new ClassPathXmlApplicationContext("bean_aop_annotation.xml");
 
 		AccountOperationAopService service = ac.getBean("accountService", AccountOperationAopService.class);

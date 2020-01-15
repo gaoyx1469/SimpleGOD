@@ -10,8 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import top.trial.spring.AccountEntity;
 
 /**
- * JdbcTemplateÊ¹ÓÃDemo£¬Ö÷ÒªÉæ¼°update¡¢queryÒÔ¼°queryForObject·½·¨£¬ÒÔ¼°BeanPropertyRowMapperÀà
- * ÈôÊµÌåÀàµÄset·½·¨Óë±íµÄÁĞÃû²»Ò»ÖÂ£¬¿ÉÒÔ×Ô¼ºĞ´ÊµÏÖÀàÊµÏÖRowMapper½Ó¿Ú£¬ÖØĞ´·½·¨×Ô¼º·â×°
+ * JdbcTemplateä½¿ç”¨Demoï¼Œä¸»è¦æ¶‰åŠupdateã€queryä»¥åŠqueryForObjectæ–¹æ³•ï¼Œä»¥åŠBeanPropertyRowMapperç±»
+ * è‹¥å®ä½“ç±»çš„setæ–¹æ³•ä¸è¡¨çš„åˆ—åä¸ä¸€è‡´ï¼Œå¯ä»¥è‡ªå·±å†™å®ç°ç±»å®ç°RowMapperæ¥å£ï¼Œé‡å†™æ–¹æ³•è‡ªå·±å°è£…
  * 
  * @author Gaoyx
  *
@@ -27,25 +27,25 @@ public class JdbcTemplateCUDDemo {
 		// jt.execute("insert into sg_account_test (SAT_ID,SAT_NAME,SAT_VALUE) values
 		// (6,'JdbcTemplateIoC',5000.00)");
 
-		// Ôö
+		// å¢
 		create(jt);
 
-		// ²é
+		// æŸ¥
 		query(jt);
 		System.out.println("===================");
 
-		// ¸Ä
+		// æ”¹
 		update(jt);
 
-		// ²éÈ«²¿
+		// æŸ¥å…¨éƒ¨
 		queryAll(jt);
 		count(jt);
 		System.out.println("===================");
 
-		// É¾
+		// åˆ 
 		delete(jt);
 
-		// ²éÈ«²¿
+		// æŸ¥å…¨éƒ¨
 		queryAll(jt);
 	}
 
@@ -66,7 +66,7 @@ public class JdbcTemplateCUDDemo {
 
 	/**
 	 * BeanPropertyRowMapper<AccountEntity>(AccountEntity.class)
-	 * ×Ô¶¯·â×°£¬ÒªÇóAccountEntityÄÚµÄsettings·½·¨ÓëÊı¾İ¿âµÄÁĞÃû±£³ÖÒ»ÖÂ
+	 * è‡ªåŠ¨å°è£…ï¼Œè¦æ±‚AccountEntityå†…çš„settingsæ–¹æ³•ä¸æ•°æ®åº“çš„åˆ—åä¿æŒä¸€è‡´
 	 * 
 	 * @param jt
 	 */
@@ -80,7 +80,7 @@ public class JdbcTemplateCUDDemo {
 
 	/**
 	 * BeanPropertyRowMapper<AccountEntity>(AccountEntity.class)
-	 * ×Ô¶¯·â×°£¬ÒªÇóAccountEntityÄÚµÄsettings·½·¨ÓëÊı¾İ¿âµÄÁĞÃû±£³ÖÒ»ÖÂ
+	 * è‡ªåŠ¨å°è£…ï¼Œè¦æ±‚AccountEntityå†…çš„settingsæ–¹æ³•ä¸æ•°æ®åº“çš„åˆ—åä¿æŒä¸€è‡´
 	 * 
 	 * @param jt
 	 */
@@ -93,7 +93,7 @@ public class JdbcTemplateCUDDemo {
 	}
 
 	/**
-	 * ¾ÛºÏº¯Êı·µ»Øµ¥ĞĞµ¥ÁĞÊı¾İ£¬Ê¹ÓÃqueryForObject·½·¨
+	 * èšåˆå‡½æ•°è¿”å›å•è¡Œå•åˆ—æ•°æ®ï¼Œä½¿ç”¨queryForObjectæ–¹æ³•
 	 * @param jt
 	 */
 	private static void count(JdbcTemplate jt) {

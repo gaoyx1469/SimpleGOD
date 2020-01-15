@@ -3,7 +3,7 @@ package top.trial.demo.entity;
 import java.util.List;
 
 /**
- * 省份实体
+ * 鐪佷唤瀹炰綋
  * 
  * @author Gaoyx
  *

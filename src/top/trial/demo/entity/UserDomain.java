@@ -1,7 +1,7 @@
 package top.trial.demo.entity;
 
 /**
- * ÓÃ»§ÊµÌåÀà
+ * ç”¨æˆ·å®ä½“ç±»
  * 
  * @author Gaoyx
  *

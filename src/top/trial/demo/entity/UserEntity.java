@@ -4,23 +4,23 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * ÓÃ»§×¢²áĞÅÏ¢ÊµÌåÀà
+ * ç”¨æˆ·æ³¨å†Œä¿¡æ¯å®ä½“ç±»
  * 
  * @author Gaoyx
  *
  */
 public class UserEntity {
 
-	private String name;// ĞÕÃû
-	private String password;// ÃÜÂë
-	private Date birthday;// ÉúÈÕ
-	private int age;// ÄêÁä
-	private int level;// µÈ¼¶
-	private String gender;// ĞÔ±ğ
-	private boolean married;// »é·ñ
-	private String[] hobby;// ĞËÈ¤
-	private String homecity;// ¼®¹á
-	private String description;// ¼ò½é
+	private String name;// å§“å
+	private String password;// å¯†ç 
+	private Date birthday;// ç”Ÿæ—¥
+	private int age;// å¹´é¾„
+	private int level;// ç­‰çº§
+	private String gender;// æ€§åˆ«
+	private boolean married;// å©šå¦
+	private String[] hobby;// å…´è¶£
+	private String homecity;// ç±è´¯
+	private String description;// ç®€ä»‹
 
 	public String getName() {
 		return name;

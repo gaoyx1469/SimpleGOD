@@ -14,20 +14,20 @@ public class OuterDemoFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		//System.out.println("OuterDemoFilter Before");
+		// System.out.println("OuterDemoFilter Before");
 		chain.doFilter(request, response);
-		//System.out.println("OuterDemoFilter After");
+		// System.out.println("OuterDemoFilter After");
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		//System.out.println("OuterDemoFilter Init");
+		// System.out.println("OuterDemoFilter Init");
 		Filter.super.init(filterConfig);
 	}
-	
+
 	@Override
 	public void destroy() {
-		//System.out.println("OuterDemoFilter Destroy");
+		// System.out.println("OuterDemoFilter Destroy");
 		Filter.super.destroy();
 	}
 }

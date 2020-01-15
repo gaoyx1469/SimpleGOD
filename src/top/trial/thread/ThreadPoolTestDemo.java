@@ -18,7 +18,7 @@ public class ThreadPoolTestDemo {
 	}
 
 	/**
-	 * Ïß³Ì³ØÊ¹ÓÃ¾ÙÀý
+	 * çº¿ç¨‹æ± ä½¿ç”¨ä¸¾ä¾‹
 	 */
 	private static void test1() {
 
@@ -32,7 +32,7 @@ public class ThreadPoolTestDemo {
 	}
 
 	/**
-	 * CallableÊ¹ÓÃ
+	 * Callableä½¿ç”¨
 	 * 
 	 * @throws ExecutionException
 	 * @throws InterruptedException

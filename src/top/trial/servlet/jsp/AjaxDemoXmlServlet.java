@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÑİÊ¾Ajaxµ÷ÓÃºóÊä³ötext´¿ÎÄ±¾
+ * æ¼”ç¤ºAjaxè°ƒç”¨åè¾“å‡ºtextçº¯æ–‡æœ¬
  * 
  * @author Gaoyx
  *

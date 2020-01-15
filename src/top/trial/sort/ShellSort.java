@@ -1,7 +1,7 @@
 package top.trial.sort;
 
 /**
- * оё╤ШеепРкЦ╥╗й╣ож
+ * Е╦▄Е╟■Ф▌▓Е╨▐Г╝≈ФЁ∙Е╝·Г▌╟
  * 
  * @author gaoyx
  *
@@ -9,7 +9,7 @@ package top.trial.sort;
 public class ShellSort {
 
 	/**
-	 * ╣зр╩╟Фоё╤ШеепР
+	 * Г╛╛Д╦─Г┴┬Е╦▄Е╟■Ф▌▓Е╨▐
 	 * @param nums
 	 */
 	public static void sortE1(int[] nums) {
@@ -21,10 +21,10 @@ public class ShellSort {
 		int d = len;
 
 		while (d > 1) {
-			d = d / 2;// оё╤ШтЖа©ё╛ц©╢нуш╟К
+			d = d / 2;// Е╦▄Е╟■Е╒·И┤▐О╪▄Ф╞▐Ф╛║Ф┼≤Е█┼
 			for (int x = 0; x < d; x++) {
 
-				// ртобн╙╡ЕхКеепР
+				// Д╩╔Д╦▀Д╦╨Ф▐▓Е┘╔Ф▌▓Е╨▐
 				for (int y = x + d; y < len; y = y + d) {
 					int temp = nums[y];
 					int z = y - d;

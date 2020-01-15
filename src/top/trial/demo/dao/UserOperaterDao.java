@@ -3,7 +3,7 @@ package top.trial.demo.dao;
 import top.trial.demo.entity.UserDomain;
 
 /**
- * 此类作为一个Demo接口，为各个trial提供接口引用实例
+ * 姝ょ被浣滀负涓�涓狣emo鎺ュ彛锛屼负鍚勪釜trial鎻愪緵鎺ュ彛寮曠敤瀹炰緥
  * 
  * @author Gaoyx
  *

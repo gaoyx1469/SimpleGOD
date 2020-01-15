@@ -11,10 +11,10 @@ public class Dom4JDemoPlus {
 	public void dom4JDemoTest() {
 		StudentDom4JDaoImpl studentDao = new StudentDom4JDaoImpl();
 
-		// Ôö
+		// å¢
 		// addAStudent(studentDao);
 
-		// ²é
+		// æŸ¥
 		// Student student = studentDao.findStudent("120003");
 		// System.out.println(student);
 
@@ -25,7 +25,7 @@ public class Dom4JDemoPlus {
 		 * e) { // e.printStackTrace(); throw new RuntimeException(e); }
 		 */
 
-		// É¾
+		// åˆ 
 		// System.out.println(studentDao.deleteStudent(deleteTip));
 	}
 
@@ -35,7 +35,7 @@ public class Dom4JDemoPlus {
 		student.setId("0003");
 		student.setExamId("120003");
 		student.setName("Candy");
-		student.setCity("Íşº£");
+		student.setCity("å¨æµ·");
 		student.setGrade(95.5f);
 
 		System.out.println(studentDao.creatStudent(student));

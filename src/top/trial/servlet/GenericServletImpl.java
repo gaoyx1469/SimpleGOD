@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 /**
- * ServletÈëÃÅ£¬ÑİÊ¾GenericServletÊ¹ÓÃ£¬Ê¹ÓÃÊ±ÅäÖÃweb.xml£¬»òÕßÊ¹ÓÃ×¢½â
+ * Servletå…¥é—¨ï¼Œæ¼”ç¤ºGenericServletä½¿ç”¨ï¼Œä½¿ç”¨æ—¶é…ç½®web.xmlï¼Œæˆ–è€…ä½¿ç”¨æ³¨è§£
  * 
  * @author Gaoyx
  *
@@ -18,25 +18,25 @@ import javax.servlet.ServletResponse;
 public class GenericServletImpl extends GenericServlet {
 
 	public GenericServletImpl() {
-		System.out.println("µ÷ÓÃÁËÎŞ²Î¹¹Ôì·½·¨");
+		System.out.println("è°ƒç”¨äº†æ— å‚æ„é€ æ–¹æ³•");
 	}
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("µ÷ÓÃÁË³õÊ¼»¯init·½·¨");
+		System.out.println("è°ƒç”¨äº†åˆå§‹åŒ–initæ–¹æ³•");
 	}
 
 	@Override
 	public void destroy() {
-		System.out.println("µ÷ÓÃÁËÏú»Ùdestroy·½·¨");
+		System.out.println("è°ƒç”¨äº†é”€æ¯destroyæ–¹æ³•");
 	}
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		System.out.println("µ÷ÓÃÁËservice·½·¨");
+		System.out.println("è°ƒç”¨äº†serviceæ–¹æ³•");
 		OutputStream out = res.getOutputStream();
 		out.write("Hello Servlet!".getBytes());
-		// ¹Ø±ÕÊä³öÁ÷£¬µ«ÊÇ²»±ØÒª£¬»á×Ô¶¯¹Ø
+		// å…³é—­è¾“å‡ºæµï¼Œä½†æ˜¯ä¸å¿…è¦ï¼Œä¼šè‡ªåŠ¨å…³
 		// out.close();
 	}
 

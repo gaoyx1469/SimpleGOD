@@ -23,28 +23,28 @@ import top.util.properties.PropertiesUtil;
 public class JavaMailDemo {
 	public static void main(String[] args)
 			throws AddressException, MessagingException, FileNotFoundException, IOException {
-		Properties props = PropertiesUtil.getPropertiesByClassloader("javaMail.properties");// ¶ÁÈ¡»·¾³±äÁ¿£¬·¢ËÍÓÊ¼şÊ±Ê¹ÓÃ,°üº¬Ğ­Òé¡¢·şÎñÆ÷ºÍÊÇ·ñÑéÖ¤ÓÃ»§ĞÅÏ¢
-		Session session = Session.getDefaultInstance(props);// ¼ÓÔØ»·¾³±äÁ¿
+		Properties props = PropertiesUtil.getPropertiesByClassloader("javaMail.properties");// è¯»å–ç¯å¢ƒå˜é‡ï¼Œå‘é€é‚®ä»¶æ—¶ä½¿ç”¨,åŒ…å«åè®®ã€æœåŠ¡å™¨å’Œæ˜¯å¦éªŒè¯ç”¨æˆ·ä¿¡æ¯
+		Session session = Session.getDefaultInstance(props);// åŠ è½½ç¯å¢ƒå˜é‡
 		MimeMessage message = new MimeMessage(session);
 
-		// ÓÊ¼şÍ·
-		message.setFrom(new InternetAddress("xxxx@163.com"));// ·¢¼şÈË
-		message.setRecipient(Message.RecipientType.TO, new InternetAddress("yyyy@126.com"));// ÊÕ¼şÈË
-		message.setSubject("JavaMail  Ö÷Ìâ");
+		// é‚®ä»¶å¤´
+		message.setFrom(new InternetAddress("xxxx@163.com"));// å‘ä»¶äºº
+		message.setRecipient(Message.RecipientType.TO, new InternetAddress("yyyy@126.com"));// æ”¶ä»¶äºº
+		message.setSubject("JavaMail  ä¸»é¢˜");
 
-		// ½öÓĞÎÄ×ÖµÄÓÊ¼şÕıÎÄ
+		// ä»…æœ‰æ–‡å­—çš„é‚®ä»¶æ­£æ–‡
 		// textOnly(message);
 
-		// °üº¬ÎÄ×ÖºÍÍ¼Æ¬µÄÓÊ¼şÕıÎÄ
+		// åŒ…å«æ–‡å­—å’Œå›¾ç‰‡çš„é‚®ä»¶æ­£æ–‡
 		// textAndPic(message);
 
-		// °üº¬ÎÄ×ÖºÍÍ¼Æ¬µÄÓÊ¼şÕıÎÄ£¬²¢ÇÒÓĞ¸½¼ş
+		// åŒ…å«æ–‡å­—å’Œå›¾ç‰‡çš„é‚®ä»¶æ­£æ–‡ï¼Œå¹¶ä¸”æœ‰é™„ä»¶
 		comp(message);
 
-		// ÓÊ¼şĞ´Èë±¾µØ
+		// é‚®ä»¶å†™å…¥æœ¬åœ°
 		// message.writeTo(new FileOutputStream("D:\\1.eml"));
 
-		// ÓÊ¼ş·¢ËÍ
+		// é‚®ä»¶å‘é€
 		Transport ts = session.getTransport();
 		ts.connect("username", "password");
 		;
@@ -53,80 +53,80 @@ public class JavaMailDemo {
 		ts.close();
 	}
 
-	// °üº¬ÎÄ×ÖºÍÍ¼Æ¬µÄÓÊ¼şÕıÎÄ£¬²¢ÇÒÓĞ¸½¼ş
+	// åŒ…å«æ–‡å­—å’Œå›¾ç‰‡çš„é‚®ä»¶æ­£æ–‡ï¼Œå¹¶ä¸”æœ‰é™„ä»¶
 	private static void comp(MimeMessage message) throws MessagingException, UnsupportedEncodingException {
 
-		// ÎÄ×Ö²¿·Ö
+		// æ–‡å­—éƒ¨åˆ†
 		MimeBodyPart textPart = new MimeBodyPart();
-		textPart.setContent("ÓÊ¼şÕıÎÄ<img src='cid:pic'/>µ½´Ë½áÊø<img src='cid:pic2'>", "text/html;charset=UTF-8");// Ö¸¶¨±àÂëÎªUTF-8
+		textPart.setContent("é‚®ä»¶æ­£æ–‡<img src='cid:pic'/>åˆ°æ­¤ç»“æŸ<img src='cid:pic2'>", "text/html;charset=UTF-8");// æŒ‡å®šç¼–ç ä¸ºUTF-8
 
-		// Í¼Æ¬²¿·Ö
+		// å›¾ç‰‡éƒ¨åˆ†
 		MimeBodyPart picPart = new MimeBodyPart();
-		DataHandler dh = new DataHandler(new FileDataSource("D:/workSpace/ËØ²Ä¿â/icon/green-leaves-3.png"));// ½èÖúJAF¿ò¼Ü£¬¶ÁÈ¡Í¼Æ¬£¬²»ĞèÒªÔÙÉèÖÃMIMEÀàĞÍÁË
+		DataHandler dh = new DataHandler(new FileDataSource("D:/workSpace/ç´ æåº“/icon/green-leaves-3.png"));// å€ŸåŠ©JAFæ¡†æ¶ï¼Œè¯»å–å›¾ç‰‡ï¼Œä¸éœ€è¦å†è®¾ç½®MIMEç±»å‹äº†
 		picPart.setDataHandler(dh);
 		picPart.setContentID("pic");
 
-		// µÚ¶şÍ¼Æ¬²¿·Ö
+		// ç¬¬äºŒå›¾ç‰‡éƒ¨åˆ†
 		MimeBodyPart picPart2 = new MimeBodyPart();
-		dh = new DataHandler(new FileDataSource("D:/workSpace/ËØ²Ä¿â/icon/puzzle-piece@3x.png"));// ½èÖúJAF¿ò¼Ü£¬¶ÁÈ¡Í¼Æ¬£¬²»ĞèÒªÔÙÉèÖÃMIMEÀàĞÍÁË
+		dh = new DataHandler(new FileDataSource("D:/workSpace/ç´ æåº“/icon/puzzle-piece@3x.png"));// å€ŸåŠ©JAFæ¡†æ¶ï¼Œè¯»å–å›¾ç‰‡ï¼Œä¸éœ€è¦å†è®¾ç½®MIMEç±»å‹äº†
 		picPart2.setDataHandler(dh);
 		picPart2.setContentID("pic2");
 
-		// ½ºË®²¿·Ö£¬È«²¿Õ³×¡
+		// èƒ¶æ°´éƒ¨åˆ†ï¼Œå…¨éƒ¨ç²˜ä½
 		MimeMultipart multipart = new MimeMultipart();
 		multipart.addBodyPart(textPart);
 		multipart.addBodyPart(picPart);
 		multipart.addBodyPart(picPart2);
-		multipart.setSubType("related");// Ö¸¶¨º¬ÄÚÇ¶×ÊÔ´
+		multipart.setSubType("related");// æŒ‡å®šå«å†…åµŒèµ„æº
 
-		// ×é×°µ½ĞÂµÄBodyPart,ÎÄ±¾¼ÓÍ¼Æ¬-->ÕıÎÄ
+		// ç»„è£…åˆ°æ–°çš„BodyPart,æ–‡æœ¬åŠ å›¾ç‰‡-->æ­£æ–‡
 		MimeBodyPart bodyPart = new MimeBodyPart();
 		bodyPart.setContent(multipart);
 
-		// ¸½¼ş²¿·Ö
+		// é™„ä»¶éƒ¨åˆ†
 		MimeBodyPart attPart = new MimeBodyPart();
-		dh = new DataHandler(new FileDataSource("C:\\Users\\admin\\Desktop\\sss\\µ¼³öPDF.rar"));// ½èÖúJAF¿ò¼Ü£¬¶ÁÈ¡ZIP£¬²»ĞèÒªÔÙÉèÖÃMIMEÀàĞÍÁË
+		dh = new DataHandler(new FileDataSource("C:\\Users\\admin\\Desktop\\sss\\å¯¼å‡ºPDF.rar"));// å€ŸåŠ©JAFæ¡†æ¶ï¼Œè¯»å–ZIPï¼Œä¸éœ€è¦å†è®¾ç½®MIMEç±»å‹äº†
 		String fileName = dh.getName();
 		attPart.setDataHandler(dh);
-		attPart.setFileName(fileName);// ÊÖ¹¤ÉèÖÃ¸½¼şÃû£¬·ñÔò¿ÉÄÜÂÒÂë»ò²»ÏÔÊ¾£¬Èç»¹ÂÒÂë£¬Ôò½«fileName»»ÎªMimeUtility.encodeText(fileName)
+		attPart.setFileName(fileName);// æ‰‹å·¥è®¾ç½®é™„ä»¶åï¼Œå¦åˆ™å¯èƒ½ä¹±ç æˆ–ä¸æ˜¾ç¤ºï¼Œå¦‚è¿˜ä¹±ç ï¼Œåˆ™å°†fileNameæ¢ä¸ºMimeUtility.encodeText(fileName)
 
-		// ÕıÎÄÓë¸½¼ş½ºË®²¿·Ö
+		// æ­£æ–‡ä¸é™„ä»¶èƒ¶æ°´éƒ¨åˆ†
 		MimeMultipart compMultipart = new MimeMultipart();
 		compMultipart.addBodyPart(bodyPart);
 		compMultipart.addBodyPart(attPart);
-		compMultipart.setSubType("mixed");// Ö¸¶¨º¬¸½¼ş
+		compMultipart.setSubType("mixed");// æŒ‡å®šå«é™„ä»¶
 
 		message.setContent(compMultipart);
 		message.saveChanges();
 
 	}
 
-	// °üº¬ÎÄ×ÖºÍÍ¼Æ¬µÄÓÊ¼şÕıÎÄ
+	// åŒ…å«æ–‡å­—å’Œå›¾ç‰‡çš„é‚®ä»¶æ­£æ–‡
 	private static void textAndPic(MimeMessage message) throws MessagingException {
 
-		// ÎÄ×Ö²¿·Ö
+		// æ–‡å­—éƒ¨åˆ†
 		MimeBodyPart textPart = new MimeBodyPart();
-		textPart.setContent("ÓÊ¼şÕıÎÄ<img src='cid:pic'/>µ½´Ë½áÊø", "text/html;charset=UTF-8");// Ö¸¶¨±àÂëÎªUTF-8
+		textPart.setContent("é‚®ä»¶æ­£æ–‡<img src='cid:pic'/>åˆ°æ­¤ç»“æŸ", "text/html;charset=UTF-8");// æŒ‡å®šç¼–ç ä¸ºUTF-8
 
-		// Í¼Æ¬²¿·Ö
+		// å›¾ç‰‡éƒ¨åˆ†
 		MimeBodyPart picPart = new MimeBodyPart();
-		DataHandler dh = new DataHandler(new FileDataSource("D:/workSpace/ËØ²Ä¿â/icon/green-leaves-3.png"));// ½èÖúJAF¿ò¼Ü£¬¶ÁÈ¡Í¼Æ¬£¬²»ĞèÒªÔÙÉèÖÃMIMEÀàĞÍÁË
+		DataHandler dh = new DataHandler(new FileDataSource("D:/workSpace/ç´ æåº“/icon/green-leaves-3.png"));// å€ŸåŠ©JAFæ¡†æ¶ï¼Œè¯»å–å›¾ç‰‡ï¼Œä¸éœ€è¦å†è®¾ç½®MIMEç±»å‹äº†
 		picPart.setDataHandler(dh);
 		picPart.setContentID("pic");
 
-		// ½ºË®²¿·Ö
+		// èƒ¶æ°´éƒ¨åˆ†
 		MimeMultipart multipart = new MimeMultipart();
 		multipart.addBodyPart(textPart);
 		multipart.addBodyPart(picPart);
 		multipart.setSubType("related");
 
-		// ×îºó×é×°
+		// æœ€åç»„è£…
 		message.setContent(multipart);
 	}
 
-	// ½öÓĞÎÄ×ÖµÄÓÊ¼şÕıÎÄ
+	// ä»…æœ‰æ–‡å­—çš„é‚®ä»¶æ­£æ–‡
 	private static void textOnly(MimeMessage message) throws MessagingException {
-		// ÓÊ¼şÕıÎÄ
-		message.setText("ÕâÊÇJavaMailÕıÎÄ", "UTF-8");
+		// é‚®ä»¶æ­£æ–‡
+		message.setText("è¿™æ˜¯JavaMailæ­£æ–‡", "UTF-8");
 	}
 }

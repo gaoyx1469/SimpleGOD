@@ -7,7 +7,7 @@ import top.trial.spring.dao.AnnotationDao;
 import top.trial.spring.service.AnnotationService;
 
 /**
- * spring注解演示service层实现类
+ * spring娉ㄨВ婕旂ずservice灞傚疄鐜扮被
  * 
  * @author Gaoyx
  *

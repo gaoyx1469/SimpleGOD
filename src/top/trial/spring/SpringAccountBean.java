@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import org.springframework.stereotype.Component;
 
 /**
- * Spring演示AOP事务的JavaBean
+ * Spring婕旂ずAOP浜嬪姟鐨凧avaBean
  * 
  * @author Gaoyx
  *
