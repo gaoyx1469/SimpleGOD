@@ -25,6 +25,14 @@ public class SortTest {
 		// HeapSort.sortE1(nums);
 		CountSort.sortE3(nums);
 
+		double[] numsDouble = { 5.1, 8.1, 6.1, 3.1, 9.1, 2.1, 1.1, 7.1, 6.1 };
+		BucketSort.sortE1(numsDouble);
+
+		String[] stringArray = { "acdc", "efgy", "ejhf", "savfdbr", "df" };
+		RadixSort.sortE1(stringArray);
+
 		System.out.println(Arrays.toString(nums));
+		System.out.println(Arrays.toString(numsDouble));
+		System.out.println(Arrays.toString(stringArray));
 	}
 }
