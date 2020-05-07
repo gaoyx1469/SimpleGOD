@@ -14,10 +14,11 @@ public class WorkerSetImpl implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			synchronized (wd) {
+			synchronized (wd) {// 两个线程都使用wd作为锁，保证数据安全
 
 				if (wd.isFlag()) {
 					try {
+						// System.out.println("implwait1");
 						wd.wait();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
@@ -32,6 +33,7 @@ public class WorkerSetImpl implements Runnable {
 					wd.setAge(20);
 				}
 				wd.setFlag(true);
+				// System.out.println("implnotify1");
 				wd.notify();
 				num++;
 			}
